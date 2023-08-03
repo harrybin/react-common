@@ -161,3 +161,23 @@ You are loading @emotion/react when it is already loaded. Running multiple insta
 * Admin rights on your local machine
 * NPM installed
 
+
+---
+## Using the package
+As long as the package is not deployed somewhere, simply do the following steps to us eit in your projekt:
+- check this repo out
+- run 
+  ``` sh 
+  npm i
+  npm run build
+  ```
+- make it locally awailable as package:
+  ``` sh 
+  npm link
+  ```
+- finally link the package into your project using
+  ``` sh
+  npm link @harrybin/react-common
+  ```
+
+
