@@ -1,0 +1,59 @@
+{
+  "versioning": "semver",
+  "packageFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    }
+  ],
+  "types": [
+    {
+      "type": "feat",
+      "section": ":sparkles: Features"
+    },
+    {
+      "type": "fix",
+      "section": ":bug: Bug Fixes"
+    },
+    {
+      "type": "perf",
+      "section": ":rocket: Performance Improvements"
+    },
+    {
+      "type": "docs",
+      "section": ":books: Documentation Changes"
+    },
+    {
+      "type": "style",
+      "section": ":art: Style Changes"
+    },
+    {
+      "type": "refactor",
+      "section": ":hammer: Maintenance"
+    },
+    {
+      "type": "test",
+      "section": ":white_check_mark: Tests"
+    },
+    {
+      "type": "Revert",
+      "hidden": true
+    },
+    {
+      "type": "Reset",
+      "hidden": true
+    },
+    {
+      "type": "Merge",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    }
+  ]
+}

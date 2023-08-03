@@ -1,0 +1,6 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.autoIndent": "full",
+  "editor.insertSpaces": true,
+}

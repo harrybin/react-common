@@ -1,0 +1,2 @@
+# Let Git auto-determine text files and enforce LF line endings for them
+* text=auto eol=lf
