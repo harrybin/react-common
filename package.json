@@ -30,7 +30,7 @@
         "release": "standard-version --skip-commit"
     },
     "publishConfig": {
-        "@harrybin:registry": "https://github.com/harrybin/"
+        "registry": "https://npm.pkg.github.com/@harrybin/react-common"
     },
     "dependencies": {
         "@emotion/css": "^11.11.2",
