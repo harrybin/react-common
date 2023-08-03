@@ -1,0 +1,1 @@
+{"version":3,"file":"useQuery.d.ts","sourceRoot":"","sources":["../../../src/communication/useQuery.ts"],"names":[],"mappings":"AACA,OAAO,EAAW,gBAAgB,EAAE,MAAM,WAAW,CAAC;AACtD,OAAO,EAAE,kBAAkB,EAAE,MAAM,qBAAqB,CAAC;AAGzD;;;;GAIG;AAEH;;GAEG;AACH,eAAO,MAAM,iBAAiB,oCAA2C,CAAC;AAE1E;;;;GAIG;AACH,wBAAgB,QAAQ,CAAC,CAAC,SAAS,MAAM,EAAE,KAAK,EAAE,kBAAkB,GAAG,CAAC,GAAG,SAAS,CA2BnF"}

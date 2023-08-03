@@ -1,7 +1,5 @@
 # node
 node_modules/
-# build
-dist
 storybook-static/
 docswrapper/docs/
 .idea/

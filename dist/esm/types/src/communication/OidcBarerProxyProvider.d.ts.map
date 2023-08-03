@@ -1,0 +1,1 @@
+{"version":3,"file":"OidcBarerProxyProvider.d.ts","sourceRoot":"","sources":["../../../src/communication/OidcBarerProxyProvider.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAU/B,wBAAgB,sBAAsB,CAAC,KAAK,EAAE;IAAE,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAA;CAAE,qBAQ1E;AAED,wBAAgB,aAAa,WAE5B"}
