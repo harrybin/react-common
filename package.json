@@ -4,7 +4,10 @@
     "description": "A library that contains useful generic react components helperfunctions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
-    "repository": "https://github.com/harrybin/react-common.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/harrybin/react-common.git"
+    },
     "homepage": "https://pages.github.com/harrybin/react-common",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
