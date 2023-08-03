@@ -30,7 +30,7 @@
         "release": "standard-version --skip-commit"
     },
     "publishConfig": {
-        "@harrybin:registry": "https://guthub.com/harrybin/"
+        "@harrybin:registry": "https://github.com/harrybin/"
     },
     "dependencies": {
         "@emotion/css": "^11.11.2",
