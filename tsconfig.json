@@ -28,7 +28,7 @@
             "src/utils/index.ts",
             "src/communication/index.ts"
         ],
-        "out": "docswrapper/docs",
+        "out": "docs",
         "blockTags": [
             "@param",
             "@returns"
