@@ -155,7 +155,7 @@ export const useEffectDebugger = (
         }
 
         return accum;
-    }, {});
+    }, {}) as {};
 
     if (Object.keys(changedDeps).length) {
         console.log('[useEffectDebugger] ', changedDeps);
