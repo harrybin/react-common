@@ -6,3 +6,6 @@ storybook-static/
 testResults
 coverage
 .tgz
+
+# keep the file as is for GH pages
+docs/.nojekyll
