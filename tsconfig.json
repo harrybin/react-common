@@ -28,7 +28,7 @@
             "src/utils/index.ts",
             "src/communication/index.ts"
         ],
-        "out": "docs",
+        "out": "docs/typedoc",
         "blockTags": [
             "@param",
             "@returns"
