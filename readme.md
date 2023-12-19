@@ -4,7 +4,7 @@
 
 A library providing generic react-components, including helperfunctions and custom-hooks. 
 It is published as a package and can be installed via npm. The project also contains a storybook that can be used to test react components.
-The storybook is deployed on the [GitHub Pages](https://pages.github/harrybin/react-common) of the project. To access the documentation for [Helperfunctions/CustomHooks](https://pages.github/harrybin/react-common) click on the corresponding tab of the GitHub repository.   
+The storybook is deployed on the **[GitHub Pages](https://harrybin.github.io/react-common/)** of the project. To access the documentation for [Helperfunctions/CustomHooks](https://pages.github/harrybin/react-common) click on the corresponding tab of the GitHub repository.   
 ## Table of contents
 
 1. [Installing](#installing)
