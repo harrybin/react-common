@@ -1,13 +1,13 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { BoxedIcon } from './BoxedIcon';
-import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+import { AccessAlarm } from '@mui/icons-material';
 
 export default {
     title: 'React Common Components/Components/BoxedIcon',
     component: BoxedIcon,
-} as ComponentMeta<typeof BoxedIcon>;
-const Template: ComponentStory<typeof BoxedIcon> = (args) => <BoxedIcon {...args} />;
+} as Meta<typeof BoxedIcon>;
+const Template: StoryFn<typeof BoxedIcon> = (args) => <BoxedIcon {...args} />;
 
 export const BoxedIconStory = Template.bind({});
 BoxedIconStory.args = {
