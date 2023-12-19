@@ -16,8 +16,8 @@
         "dist"
     ],
     "scripts": {
-        "predeploy": "npm run build && npm run build-storybook && npm run docs ",
-        "deploy": "gh-pages -d docs && npm run docs",
+        "deploy": "gh-pages -d docs && npm run docs && npm run touchJekyll",
+        "touchJekyll": "touch docs/.nojekyll",
         "docs": "npx typedoc",
         "build": "rollup -c",
         "storybook": "storybook dev -p 6006",
