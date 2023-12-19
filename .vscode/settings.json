@@ -3,4 +3,9 @@
   "editor.renderControlCharacters": true,
   "editor.autoIndent": "full",
   "editor.insertSpaces": true,
+  "cSpell.words": [
+    "accum",
+    "Didmount",
+    "sourounding"
+  ],
 }

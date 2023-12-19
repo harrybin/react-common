@@ -39180,7 +39180,7 @@ function usePrevious(props) {
     return ref.current;
 }
 /**
- * true if the reference comparison of the current props equals the one of the props from the previos render.
+ * true if the reference comparison of the current props equals the one of the props from the previous render.
  *
  * @export
  * @template T type of props
@@ -39210,7 +39210,7 @@ function useFirstRender() {
 }
 /**
  * Passed function is executed as "onDidmount" lifecycle function.
- * It's, only when the component is mouted/rendered the first time.
+ * It's, only when the component is mounted/rendered the first time.
  *
  * @export
  * @returns {boolean}
@@ -39254,7 +39254,7 @@ function useDefaultProps(props, defaultProps) {
 /**
  * hook used tu replace 'useEffect' for getting debug information which dependency change caused the useEffect call.
  * Add an additional string[] with the dependency names as last array to get more readable logs.
- * @example <caption>original --> debuggin</caption>
+ * @example <caption>original --> debugging</caption>
  *  ```ts
  *  //original code
  *  useEffect(()=>{
@@ -39262,7 +39262,7 @@ function useDefaultProps(props, defaultProps) {
  *  },[dep1, dep2])
  *  ```
  *  ```ts
- *  //origanl code
+ *  //original code
  *  useEffectDebugger(()=>{
  *   //debugging code
  *  },[dep1, dep2],["dep1","dep2"])
@@ -39272,37 +39272,33 @@ function useDefaultProps(props, defaultProps) {
  * @param {DependencyList} dependencies
  * @param {string[]} [dependencyNames=[]]
  */
-// export const useEffectDebugger = (
-//   effectHook: EffectCallback,
-//   dependencies: DependencyList,
-//   dependencyNames: string[] = [],
-// ) => {
-//   const previousDeps = usePrevious(dependencies) ?? [];
-//   const changedDeps = dependencies.reduce((accum, dependency, index) => {
-//     if (dependency !== previousDeps[index]) {
-//       const keyName = dependencyNames[index] || index;
-//       return {
-//         ...accum,
-//         [keyName]: {
-//           before: previousDeps[index],
-//           after: dependency,
-//         },
-//       };
-//     }
-//     return accum;
-//   }, {});
-//   if (Object.keys(changedDeps).length) {
-//     console.log('[useEffectDebugger] ', changedDeps);
-//   }
-//   useEffect(effectHook, [effectHook]);
-// };
+const useEffectDebugger = (effectHook, dependencies, dependencyNames = []) => {
+    var _a;
+    const previousDeps = (_a = usePrevious(dependencies)) !== null && _a !== void 0 ? _a : [];
+    const changedDeps = dependencies.reduce((accum, dependency, index) => {
+        if (dependency !== previousDeps[index]) {
+            const keyName = dependencyNames[index] || index;
+            return Object.assign({}, accum, {
+                [keyName]: {
+                    before: previousDeps[index],
+                    after: dependency,
+                },
+            });
+        }
+        return accum;
+    }, {});
+    if (Object.keys(changedDeps).length) {
+        console.log('[useEffectDebugger] ', changedDeps);
+    }
+    useEffect(effectHook, [effectHook]);
+};
 /**
  * Used to calculate the rest height of a page. With this you can set a component to fill the rest height of a page.
  * Remarks: only works for components directly rendering. If your component is rendered lazy, like components on non-active tabs you need useOnScreen too. See FillHeight component.
  * @export
  * @template T type of the container around the element to set the restHeight
  * @param {React.MutableRefObject<T>} ref ref of the container sourounding the element
- * @param {React.Dispatch<React.SetStateAction<number>>} setRestHeight state setter for the hieght of the lement to fill the rest of the page
+ * @param {React.Dispatch<React.SetStateAction<number>>} setRestHeight state setter for the height of the element to fill the rest of the page
  * @returns
  */
 // export function useDimensions<T extends Element>(
@@ -39335,7 +39331,7 @@ function useDefaultProps(props, defaultProps) {
  * @export
  * @template T type of component to observe
  * @param {React.MutableRefObject<T>} ref ref of component to observe
- * @param {() => void} [notifyIntersectionChange] event fired when visibel state of component changes
+ * @param {() => void} [notifyIntersectionChange] event fired when visible state of component changes
  * @param {string} [rootMargin='0px'] intersection buffer for accuracy
  * @returns
  */
@@ -39458,7 +39454,7 @@ function usePersistedStateOneway(prefix, key, defaultValue) {
  * Provides a ref-variable (like useRef) but also stores it value in the local storage and is used like useState.
  *
  * @export
- * @template T type of the ref-varaible
+ * @template T type of the ref-variable
  * @param {string} key the name/key for the storage value
  * @param {T} defaultValue default value
  * @return {*}  {[T, Dispatch<SetStateAction<T>>]} [value,setter] array like when using useState
@@ -49309,5 +49305,5 @@ function useQuery(props) {
     return wrappedPromise.query();
 }
 
-export { BoxedIcon, ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, useDebugMode, useDefaultProps, useDidMount, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useWillUnmount };
+export { BoxedIcon, ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useWillUnmount };
 //# sourceMappingURL=index.js.map
