@@ -17,7 +17,7 @@
     ],
     "scripts": {
         "predeploy": "npm run build && npm run build-storybook && npm run docs ",
-        "deploy": "gh-pages -d docs",
+        "deploy": "gh-pages -d docs && npm run docs",
         "docs": "npx typedoc",
         "build": "rollup -c",
         "storybook": "storybook dev -p 6006",
