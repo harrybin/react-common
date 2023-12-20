@@ -16,7 +16,7 @@
         "dist"
     ],
     "scripts": {
-        "deploy": "gh-pages -d docs && npm run docs && npm run touchJekyll",
+        "deploy": "npm run build-storybook && npm run docs && npm run touchJekyll",
         "touchJekyll": "touch docs/.nojekyll",
         "docs": "npx typedoc",
         "build": "rollup -c",
