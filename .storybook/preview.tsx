@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { theme } from '../src/themes/mui.theme';
 import React from 'react';
+import { themes } from '@storybook/theming';
 
 const preview: Preview = {
     parameters: {
@@ -11,6 +12,9 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/,
             },
+        },
+        docs: {
+            theme: themes.dark,
         },
     },
 };

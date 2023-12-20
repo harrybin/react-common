@@ -3,16 +3,28 @@
     "tasks": [
         {
             "label": "Run Storybook",
-            "type": "shell",
-            "command": "npm run storybook",
+            "type": "npm",
+            "script": "storybook",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "presentation": {
-                "reveal": "always",
-                "panel": "dedicated"
-            }
-        }
+        },
+        {
+            "label": "Create Storybook&Docs",
+            "type": "npm",
+            "script": "deploy",
+            "group": {
+                "kind": "build",
+            },
+        },
+        {
+            "label": "Create Package",
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "build",
+            },
+        },
     ]
 }
