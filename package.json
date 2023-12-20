@@ -1,14 +1,11 @@
 {
     "name": "@harrybin/react-common",
     "version": "0.0.1",
-    "description": "A library that contains useful generic react components helperfunctions and custom hooks.",
+    "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/harrybin/react-common.git"
-    },
-    "homepage": "https://github.com/harrybin/react-common",
+    "repository": "https://github.com/harrybin/react-common",
+    "homepage": "https://harrybin.github.io/react-common/",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/types/src/index.d.ts",
