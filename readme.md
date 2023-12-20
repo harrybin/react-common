@@ -25,9 +25,15 @@ As long as the package is not deployed somewhere, simply do the following steps 
 
 ---
 
+<a name="installing"></a>
+## Installing
+```bash
+  npm install @harrybin/react-common
+```
+___
+
 ## Table of contents
 
-1. [Installing](#installing)
 2. [Storybook](#storybook)  
 3. [Architecture](#architecture)
 4. [Dependencies](#dependencies)
@@ -36,14 +42,6 @@ As long as the package is not deployed somewhere, simply do the following steps 
 7. [Issues](#issues)  
 8. [Appendix](#appendix)
 
-
-___
-
-<a name="installing"></a>
-## Installing
-```bash
-  npm install @harrybin/react-common
-```
 ___
 
 <a name ="storybook"></a>
