@@ -5,9 +5,35 @@
 A library providing generic react-components, including helperfunctions and custom-hooks. 
 It is published as a package and can be installed via npm. The project also contains a storybook that can be used to test react components.
 The storybook is deployed on the **[GitHub Pages](https://harrybin.github.io/react-common/)** of the project. To access the documentation for [Helperfunctions/CustomHooks](https://pages.github/harrybin/react-common) click on the corresponding tab of the GitHub repository.   
+
+## Using the package
+As long as the package is not deployed somewhere, simply do the following steps to us eit in your projekt:
+- check this repo out
+- run 
+  ``` sh 
+  npm i
+  npm run build
+  ```
+- make it locally awailable as package:
+  ``` sh 
+  npm link
+  ```
+- finally link the package into your project using
+  ``` sh
+  npm link @harrybin/react-common
+  ```
+
+---
+
+<a name="installing"></a>
+## Installing
+```bash
+  npm install @harrybin/react-common
+```
+___
+
 ## Table of contents
 
-1. [Installing](#installing)
 2. [Storybook](#storybook)  
 3. [Architecture](#architecture)
 4. [Dependencies](#dependencies)
@@ -16,14 +42,6 @@ The storybook is deployed on the **[GitHub Pages](https://harrybin.github.io/rea
 7. [Issues](#issues)  
 8. [Appendix](#appendix)
 
-
-___
-
-<a name="installing"></a>
-## Installing
-```bash
-  npm install @harrybin/react-common
-```
 ___
 
 <a name ="storybook"></a>
@@ -161,23 +179,5 @@ You are loading @emotion/react when it is already loaded. Running multiple insta
 * Admin rights on your local machine
 * NPM installed
 
-
----
-## Using the package
-As long as the package is not deployed somewhere, simply do the following steps to us eit in your projekt:
-- check this repo out
-- run 
-  ``` sh 
-  npm i
-  npm run build
-  ```
-- make it locally awailable as package:
-  ``` sh 
-  npm link
-  ```
-- finally link the package into your project using
-  ``` sh
-  npm link @harrybin/react-common
-  ```
 
 
