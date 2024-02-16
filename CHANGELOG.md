@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/harrybin/react-common/compare/v0.0.4...v0.0.5) (2024-02-16)
+
+
+### Features
+
+* made @mui/material a peerDependency ([fbf014c](https://github.com/harrybin/react-common/commit/fbf014cba770391f2440ba2b66863653149e955e))
+
 ### [0.0.4](https://github.com/harrybin/react-common/compare/v0.0.3...v0.0.4) (2024-02-16)
 
 
