@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/harrybin/react-common/compare/v0.0.9...v0.0.10) (2024-02-16)
+
+
+### Bug Fixes
+
+* some build issues ([18e6fb6](https://github.com/harrybin/react-common/commit/18e6fb6d66be32da8c5eca3b51a816dd19583f25))
+
 ### [0.0.9](https://github.com/harrybin/react-common/compare/v0.0.8...v0.0.9) (2024-02-16)
 
 ### [0.0.6](https://github.com/harrybin/react-common/compare/v0.0.5...v0.0.6) (2024-02-16)

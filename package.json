@@ -1,6 +1,6 @@
 {
     "name": "@harrybin/react-common",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
@@ -64,6 +64,7 @@
         "rimraf": "^5.0.5",
         "rollup": "^4.11.0",
         "rollup-plugin-dts": "^6.1.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-replace": "^2.2.0",
         "standard-version": "^9.5.0",
         "storybook": "^7.6.16",
