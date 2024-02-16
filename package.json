@@ -4,8 +4,14 @@
     "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
-    "repository": "https://github.com/harrybin/react-common",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/harrybin/react-common.git"
+    },
     "homepage": "https://harrybin.github.io/react-common/",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/types/src/index.d.ts",
@@ -25,9 +31,6 @@
         "test:ui": "vitest --ui --api 3333 --coverage",
         "test:coverage": "vitest run --coverage",
         "release": "standard-version --skip-commit"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/@harrybin/react-common"
     },
     "dependencies": {
         "@emotion/css": "^11.11.2",
