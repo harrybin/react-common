@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/harrybin/react-common/compare/v0.0.3...v0.0.4) (2024-02-16)
+
+
+### Features
+
+* removed boxedIcon component ([b687f0c](https://github.com/harrybin/react-common/commit/b687f0c7510401ac8d65bb7967d4a30ad9411060))
+
 ### 0.0.3 (2024-02-16)
 
 
