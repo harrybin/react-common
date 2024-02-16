@@ -56,16 +56,29 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-function n(){return n=Object.assign?Object.assign.bind():function(t){for(var n=1;n<arguments.length;n++){var e=arguments[n];for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);}return t},n.apply(this,arguments)}const e=["children","options"],r$1=["allowFullScreen","allowTransparency","autoComplete","autoFocus","autoPlay","cellPadding","cellSpacing","charSet","className","classId","colSpan","contentEditable","contextMenu","crossOrigin","encType","formAction","formEncType","formMethod","formNoValidate","formTarget","frameBorder","hrefLang","inputMode","keyParams","keyType","marginHeight","marginWidth","maxLength","mediaGroup","minLength","noValidate","radioGroup","readOnly","rowSpan","spellCheck","srcDoc","srcLang","srcSet","tabIndex","useMap"].reduce((t,n)=>(t[n.toLowerCase()]=n,t),{for:"htmlFor"}),o={amp:"&",apos:"'",gt:">",lt:"<",nbsp:" ",quot:"“"},c$1=["style","script"],a=/([-A-Z0-9_:]+)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|(?:\{((?:\\.|{[^}]*?}|[^}])*)\})))?/gi,_$2=/mailto:/i,u$1=/\n{2,}$/,i=/^( *>[^\n]+(\n[^\n]+)*\n*)+\n{2,}/,s=/^ *> ?/gm,l=/^ {2,}\n/,f$1=/^(?:( *[-*_])){3,} *(?:\n *)+\n/,d=/^\s*(`{3,}|~{3,}) *(\S+)?([^\n]*?)?\n([\s\S]+?)\s*\1 *(?:\n *)*\n?/,p=/^(?: {4}[^\n]+\n*)+(?:\n *)+\n?/,m$1=/^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,g=/^(?:\n *)*\n/,y=/\r\n?/g,h$1=/^\[\^([^\]]+)](:.*)\n/,k=/^\[\^([^\]]+)]/,x$1=/\f/g,b$1=/^\s*?\[(x|\s)\]/,$=/^ *(#{1,6}) *([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,v$1=/^ *(#{1,6}) +([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,S$1=/^([^\n]+)\n *(=|-){3,} *(?:\n *)+\n/,z=/^ *(?!<[a-z][^ >/]* ?\/>)<([a-z][^ >/]*) ?([^>]*)\/{0}>\n?(\s*(?:<\1[^>]*?>[\s\S]*?<\/\1>|(?!<\1)[\s\S])*?)<\/\1>\n*/i,w$1=/&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-fA-F]{1,6});/gi,A=/^<!--[\s\S]*?(?:-->)/,E$1=/^(data|aria|x)-[a-z_][a-z\d_.-]*$/,L$1=/^ *<([a-z][a-z0-9:]*)(?:\s+((?:<.*?>|[^>])*))?\/?>(?!<\/\1>)(\s*\n)?/i,M$1=/^\{.*\}$/,O$1=/^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,I$1=/^<([^ >]+@[^ >]+)>/,j=/^<([^ >]+:\/[^ >]+)>/,B$1=/-([a-z])?/gi,R$1=/^(.*\|?.*)\n *(\|? *[-:]+ *\|[-| :]*)\n((?:.*\|.*\n)*)\n?/,T=/^\[([^\]]*)\]:\s+<?([^\s>]+)>?\s*("([^"]*)")?/,C$1=/^!\[([^\]]*)\] ?\[([^\]]*)\]/,D=/^\[([^\]]*)\] ?\[([^\]]*)\]/,F=/(\[|\])/g,N$1=/(\n|^[-*]\s|^#|^ {2,}|^-{2,}|^>\s)/,P$1=/\t/g,Z=/^ *\| */,G$1=/(^ *\||\| *$)/g,H=/ *$/,q=/^ *:-+: *$/,U=/^ *:-+ *$/,V=/^ *-+: *$/,W=/^([*_])\1((?:\[.*?\][([].*?[)\]]|<.*?>(?:.*?<.*?>)?|`.*?`|~+.*?~+|.)*?)\1\1(?!\1)/,Q=/^([*_])((?:\[.*?\][([].*?[)\]]|<.*?>(?:.*?<.*?>)?|`.*?`|~+.*?~+|.)*?)\1(?!\1|\w)/,X=/^==((?:\[.*?\]|<.*?>(?:.*?<.*?>)?|`.*?`|.)*?)==/,J=/^~~((?:\[.*?\]|<.*?>(?:.*?<.*?>)?|`.*?`|.)*?)~~/,K=/^\\([^0-9A-Za-z\s])/,Y=/^[\s\S]+?(?=[^0-9A-Z\s\u00c0-\uffff&#;.()'"]|\d+\.|\n\n| {2,}\n|\w+:\S|$)/i,tt=/^\n+/,nt=/^([ \t]*)/,et=/\\([^\\])/g,rt=/ *\n+$/,ot=/(?:^|\n)( *)$/,ct="(?:\\d+\\.)",at="(?:[*+-])";function _t$1(t){return "( *)("+(1===t?ct:at)+") +"}const ut=_t$1(1),it=_t$1(2);function st(t){return new RegExp("^"+(1===t?ut:it))}const lt=st(1),ft=st(2);function dt(t){return new RegExp("^"+(1===t?ut:it)+"[^\\n]*(?:\\n(?!\\1"+(1===t?ct:at)+" )[^\\n]*)*(\\n|$)","gm")}const pt=dt(1),mt=dt(2);function gt(t){const n=1===t?ct:at;return new RegExp("^( *)("+n+") [\\s\\S]+?(?:\\n{2,}(?! )(?!\\1"+n+" (?!"+n+" ))\\n*|\\s*\\n*$)")}const yt=gt(1),ht=gt(2);function kt(t,n){const e=1===n,r=e?yt:ht,o=e?pt:mt,c=e?lt:ft;return {t(t,n,e){const o=ot.exec(e);return o&&(n.o||!n._&&!n.u)?r.exec(t=o[1]+t):null},i:Ht.HIGH,l(t,n,r){const a=e?+t[2]:void 0,_=t[0].replace(u$1,"\n").match(o);let i=!1;return {p:_.map(function(t,e){const o=c.exec(t)[0].length,a=new RegExp("^ {1,"+o+"}","gm"),u=t.replace(a,"").replace(c,""),s=e===_.length-1,l=-1!==u.indexOf("\n\n")||s&&i;i=l;const f=r._,d=r.o;let p;r.o=!0,l?(r._=!1,p=u.replace(rt,"\n\n")):(r._=!0,p=u.replace(rt,""));const m=n(p,r);return r._=f,r.o=d,m}),m:e,g:a}},h:(n,e,r)=>t(n.m?"ol":"ul",{key:r.k,start:n.g},n.p.map(function(n,o){return t("li",{key:o},e(n,r))}))}}const xt=/^\[([^\]]*)]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/,bt=/^!\[([^\]]*)]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/,$t=[i,d,p,$,S$1,v$1,A,R$1,pt,yt,mt,ht],vt=[...$t,/^[^\n]+(?:  \n|\n{2,})/,z,L$1];function St(t){return t.replace(/[ÀÁÂÃÄÅàáâãäåæÆ]/g,"a").replace(/[çÇ]/g,"c").replace(/[ðÐ]/g,"d").replace(/[ÈÉÊËéèêë]/g,"e").replace(/[ÏïÎîÍíÌì]/g,"i").replace(/[Ññ]/g,"n").replace(/[øØœŒÕõÔôÓóÒò]/g,"o").replace(/[ÜüÛûÚúÙù]/g,"u").replace(/[ŸÿÝý]/g,"y").replace(/[^a-z0-9- ]/gi,"").replace(/ /gi,"-").toLowerCase()}function zt(t){return V.test(t)?"right":q.test(t)?"center":U.test(t)?"left":null}function wt(t,n,e){const r=e.$;e.$=!0;const o=n(t.trim(),e);e.$=r;let c=[[]];return o.forEach(function(t,n){"tableSeparator"===t.type?0!==n&&n!==o.length-1&&c.push([]):("text"!==t.type||null!=o[n+1]&&"tableSeparator"!==o[n+1].type||(t.v=t.v.replace(H,"")),c[c.length-1].push(t));}),c}function At(t,n,e){e._=!0;const r=wt(t[1],n,e),o=t[2].replace(G$1,"").split("|").map(zt),c=function(t,n,e){return t.trim().split("\n").map(function(t){return wt(t,n,e)})}(t[3],n,e);return e._=!1,{S:o,A:c,L:r,type:"table"}}function Et(t,n){return null==t.S[n]?{}:{textAlign:t.S[n]}}function Lt(t){return function(n,e){return e._?t.exec(n):null}}function Mt(t){return function(n,e){return e._||e.u?t.exec(n):null}}function Ot(t){return function(n,e){return e._||e.u?null:t.exec(n)}}function It(t){return function(n){return t.exec(n)}}function jt(t,n,e){if(n._||n.u)return null;if(e&&!e.endsWith("\n"))return null;let r="";t.split("\n").every(t=>!$t.some(n=>n.test(t))&&(r+=t+"\n",t.trim()));const o=r.trimEnd();return ""==o?null:[r,o]}function Bt(t){try{if(decodeURIComponent(t).replace(/[^A-Za-z0-9/:]/g,"").match(/^\s*(javascript|vbscript|data(?!:image)):/i))return}catch(t){return null}return t}function Rt(t){return t.replace(et,"$1")}function Tt(t,n,e){const r=e._||!1,o=e.u||!1;e._=!0,e.u=!0;const c=t(n,e);return e._=r,e.u=o,c}function Ct(t,n,e){const r=e._||!1,o=e.u||!1;e._=!1,e.u=!0;const c=t(n,e);return e._=r,e.u=o,c}function Dt(t,n,e){return e._=!1,t(n,e)}const Ft=(t,n,e)=>({v:Tt(n,t[1],e)});function Nt(){return {}}function Pt(){return null}function Zt(...t){return t.filter(Boolean).join(" ")}function Gt(t,n,e){let r=t;const o=n.split(".");for(;o.length&&(r=r[o[0]],void 0!==r);)o.shift();return r||e}var Ht;function qt(e,u={}){u.overrides=u.overrides||{},u.slugify=u.slugify||St,u.namedCodesToUnicode=u.namedCodesToUnicode?n({},o,u.namedCodesToUnicode):o;const G=u.createElement||React.createElement;function H(t,e,...r){const o=Gt(u.overrides,`${t}.props`,{});return G(function(t,n){const e=Gt(n,t);return e?"function"==typeof e||"object"==typeof e&&"render"in e?e:Gt(n,`${t}.component`,t):t}(t,u.overrides),n({},e,o,{className:Zt(null==e?void 0:e.className,o.className)||void 0}),...r)}function q(n){let e=!1;u.forceInline?e=!0:u.forceBlock||(e=!1===N$1.test(n));const r=ct(ot(e?n:`${n.trimEnd().replace(tt,"")}\n\n`,{_:e}));for(;"string"==typeof r[r.length-1]&&!r[r.length-1].trim();)r.pop();if(null===u.wrapper)return r;const o=u.wrapper||(e?"span":"div");let c;if(r.length>1||u.forceWrapper)c=r;else {if(1===r.length)return c=r[0],"string"==typeof c?H("span",{key:"outer"},c):c;c=null;}return React.createElement(o,{key:"outer"},c)}function U(n){const e=n.match(a);return e?e.reduce(function(n,e,o){const c=e.indexOf("=");if(-1!==c){const a=function(t){return -1!==t.indexOf("-")&&null===t.match(E$1)&&(t=t.replace(B$1,function(t,n){return n.toUpperCase()})),t}(e.slice(0,c)).trim(),_=function(t){const n=t[0];return ('"'===n||"'"===n)&&t.length>=2&&t[t.length-1]===n?t.slice(1,-1):t}(e.slice(c+1).trim()),u=r$1[a]||a,i=n[u]=function(t,n){return "style"===t?n.split(/;\s?/).reduce(function(t,n){const e=n.slice(0,n.indexOf(":"));return t[e.replace(/(-[a-z])/g,t=>t[1].toUpperCase())]=n.slice(e.length+1).trim(),t},{}):"href"===t?Bt(n):(n.match(M$1)&&(n=n.slice(1,n.length-1)),"true"===n||"false"!==n&&n)}(a,_);"string"==typeof i&&(z.test(i)||L$1.test(i))&&(n[u]=React.cloneElement(q(i.trim()),{key:o}));}else "style"!==e&&(n[r$1[e]||e]=!0);return n},{}):null}const V=[],et={},rt={blockQuote:{t:Ot(i),i:Ht.HIGH,l:(t,n,e)=>({v:n(t[0].replace(s,""),e)}),h:(t,n,e)=>H("blockquote",{key:e.k},n(t.v,e))},breakLine:{t:It(l),i:Ht.HIGH,l:Nt,h:(t,n,e)=>H("br",{key:e.k})},breakThematic:{t:Ot(f$1),i:Ht.HIGH,l:Nt,h:(t,n,e)=>H("hr",{key:e.k})},codeBlock:{t:Ot(p),i:Ht.MAX,l:t=>({v:t[0].replace(/^ {4}/gm,"").replace(/\n+$/,""),M:void 0}),h:(t,e,r)=>H("pre",{key:r.k},H("code",n({},t.O,{className:t.M?`lang-${t.M}`:""}),t.v))},codeFenced:{t:Ot(d),i:Ht.MAX,l:t=>({O:U(t[3]||""),v:t[4],M:t[2]||void 0,type:"codeBlock"})},codeInline:{t:Mt(m$1),i:Ht.LOW,l:t=>({v:t[2]}),h:(t,n,e)=>H("code",{key:e.k},t.v)},footnote:{t:Ot(h$1),i:Ht.MAX,l:t=>(V.push({I:t[2],j:t[1]}),{}),h:Pt},footnoteReference:{t:Lt(k),i:Ht.HIGH,l:t=>({v:t[1],B:`#${u.slugify(t[1])}`}),h:(t,n,e)=>H("a",{key:e.k,href:Bt(t.B)},H("sup",{key:e.k},t.v))},gfmTask:{t:Lt(b$1),i:Ht.HIGH,l:t=>({R:"x"===t[1].toLowerCase()}),h:(t,n,e)=>H("input",{checked:t.R,key:e.k,readOnly:!0,type:"checkbox"})},heading:{t:Ot(u.enforceAtxHeadings?v$1:$),i:Ht.HIGH,l:(t,n,e)=>({v:Tt(n,t[2],e),T:u.slugify(t[2]),C:t[1].length}),h:(t,n,e)=>H(`h${t.C}`,{id:t.T,key:e.k},n(t.v,e))},headingSetext:{t:Ot(S$1),i:Ht.MAX,l:(t,n,e)=>({v:Tt(n,t[1],e),C:"="===t[2]?1:2,type:"heading"})},htmlComment:{t:It(A),i:Ht.HIGH,l:()=>({}),h:Pt},image:{t:Mt(bt),i:Ht.HIGH,l:t=>({D:t[1],B:Rt(t[2]),F:t[3]}),h:(t,n,e)=>H("img",{key:e.k,alt:t.D||void 0,title:t.F||void 0,src:Bt(t.B)})},link:{t:Lt(xt),i:Ht.LOW,l:(t,n,e)=>({v:Ct(n,t[1],e),B:Rt(t[2]),F:t[3]}),h:(t,n,e)=>H("a",{key:e.k,href:Bt(t.B),title:t.F},n(t.v,e))},linkAngleBraceStyleDetector:{t:Lt(j),i:Ht.MAX,l:t=>({v:[{v:t[1],type:"text"}],B:t[1],type:"link"})},linkBareUrlDetector:{t:(t,n)=>n.N?null:Lt(O$1)(t,n),i:Ht.MAX,l:t=>({v:[{v:t[1],type:"text"}],B:t[1],F:void 0,type:"link"})},linkMailtoDetector:{t:Lt(I$1),i:Ht.MAX,l(t){let n=t[1],e=t[1];return _$2.test(e)||(e="mailto:"+e),{v:[{v:n.replace("mailto:",""),type:"text"}],B:e,type:"link"}}},orderedList:kt(H,1),unorderedList:kt(H,2),newlineCoalescer:{t:Ot(g),i:Ht.LOW,l:Nt,h:()=>"\n"},paragraph:{t:jt,i:Ht.LOW,l:Ft,h:(t,n,e)=>H("p",{key:e.k},n(t.v,e))},ref:{t:Lt(T),i:Ht.MAX,l:t=>(et[t[1]]={B:t[2],F:t[4]},{}),h:Pt},refImage:{t:Mt(C$1),i:Ht.MAX,l:t=>({D:t[1]||void 0,P:t[2]}),h:(t,n,e)=>H("img",{key:e.k,alt:t.D,src:Bt(et[t.P].B),title:et[t.P].F})},refLink:{t:Lt(D),i:Ht.MAX,l:(t,n,e)=>({v:n(t[1],e),Z:n(t[0].replace(F,"\\$1"),e),P:t[2]}),h:(t,n,e)=>et[t.P]?H("a",{key:e.k,href:Bt(et[t.P].B),title:et[t.P].F},n(t.v,e)):H("span",{key:e.k},n(t.Z,e))},table:{t:Ot(R$1),i:Ht.HIGH,l:At,h:(t,n,e)=>H("table",{key:e.k},H("thead",null,H("tr",null,t.L.map(function(r,o){return H("th",{key:o,style:Et(t,o)},n(r,e))}))),H("tbody",null,t.A.map(function(r,o){return H("tr",{key:o},r.map(function(r,o){return H("td",{key:o,style:Et(t,o)},n(r,e))}))})))},tableSeparator:{t:function(t,n){return n.$?(n._=!0,Z.exec(t)):null},i:Ht.HIGH,l:function(){return {type:"tableSeparator"}},h:()=>" | "},text:{t:It(Y),i:Ht.MIN,l:t=>({v:t[0].replace(w$1,(t,n)=>u.namedCodesToUnicode[n]?u.namedCodesToUnicode[n]:t)}),h:t=>t.v},textBolded:{t:Mt(W),i:Ht.MED,l:(t,n,e)=>({v:n(t[2],e)}),h:(t,n,e)=>H("strong",{key:e.k},n(t.v,e))},textEmphasized:{t:Mt(Q),i:Ht.LOW,l:(t,n,e)=>({v:n(t[2],e)}),h:(t,n,e)=>H("em",{key:e.k},n(t.v,e))},textEscaped:{t:Mt(K),i:Ht.HIGH,l:t=>({v:t[1],type:"text"})},textMarked:{t:Mt(X),i:Ht.LOW,l:Ft,h:(t,n,e)=>H("mark",{key:e.k},n(t.v,e))},textStrikethroughed:{t:Mt(J),i:Ht.LOW,l:Ft,h:(t,n,e)=>H("del",{key:e.k},n(t.v,e))}};!0!==u.disableParsingRawHTML&&(rt.htmlBlock={t:It(z),i:Ht.HIGH,l(t,n,e){const[,r]=t[3].match(nt),o=new RegExp(`^${r}`,"gm"),a=t[3].replace(o,""),_=(u=a,vt.some(t=>t.test(u))?Dt:Tt);var u;const i=t[1].toLowerCase(),s=-1!==c$1.indexOf(i);e.N=e.N||"a"===i;const l=s?t[3]:_(n,a,e);return e.N=!1,{O:U(t[2]),v:l,G:s,H:s?i:t[1]}},h:(t,e,r)=>H(t.H,n({key:r.k},t.O),t.G?t.v:e(t.v,r))},rt.htmlSelfClosing={t:It(L$1),i:Ht.HIGH,l:t=>({O:U(t[2]||""),H:t[1]}),h:(t,e,r)=>H(t.H,n({},t.O,{key:r.k}))});const ot=function(t){let n=Object.keys(t);function e(r,o){let c=[],a="";for(;r;){let _=0;for(;_<n.length;){const u=n[_],i=t[u],s=i.t(r,o,a);if(s){const t=s[0];r=r.substring(t.length);const n=i.l(s,e,o);null==n.type&&(n.type=u),c.push(n),a=t;break}_++;}}return c}return n.sort(function(n,e){let r=t[n].i,o=t[e].i;return r!==o?r-o:n<e?-1:1}),function(t,n){return e(function(t){return t.replace(y,"\n").replace(x$1,"").replace(P$1,"    ")}(t),n)}}(rt),ct=(at=function(t){return function(n,e,r){return t[n.type].h(n,e,r)}}(rt),function t(n,e={}){if(Array.isArray(n)){const r=e.k,o=[];let c=!1;for(let r=0;r<n.length;r++){e.k=r;const a=t(n[r],e),_="string"==typeof a;_&&c?o[o.length-1]+=a:null!==a&&o.push(a),c=_;}return e.k=r,o}return at(n,t,e)});var at;const _t=q(e);return V.length?H("div",null,_t,H("footer",{key:"footer"},V.map(function(t){return H("div",{id:u.slugify(t.j),key:t.j},t.j,ct(ot(t.I,{_:!0})))}))):_t}!function(t){t[t.MAX=0]="MAX",t[t.HIGH=1]="HIGH",t[t.MED=2]="MED",t[t.LOW=3]="LOW",t[t.MIN=4]="MIN";}(Ht||(Ht={}));var ReactMarkdown = n=>{let{children:r,options:o}=n,c=function(t,n){if(null==t)return {};var e,r,o={},c=Object.keys(t);for(r=0;r<c.length;r++)n.indexOf(e=c[r])>=0||(o[e]=t[e]);return o}(n,e);return React.cloneElement(qt(r,o),c)};
+function n(){return n=Object.assign?Object.assign.bind():function(e){for(var n=1;n<arguments.length;n++){var t=arguments[n];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r]);}return e},n.apply(this,arguments)}const t=["children","options"];var r$1,i;!function(e){e.blockQuote="0",e.breakLine="1",e.breakThematic="2",e.codeBlock="3",e.codeFenced="4",e.codeInline="5",e.footnote="6",e.footnoteReference="7",e.gfmTask="8",e.heading="9",e.headingSetext="10",e.htmlBlock="11",e.htmlComment="12",e.htmlSelfClosing="13",e.image="14",e.link="15",e.linkAngleBraceStyleDetector="16",e.linkBareUrlDetector="17",e.linkMailtoDetector="18",e.newlineCoalescer="19",e.orderedList="20",e.paragraph="21",e.ref="22",e.refImage="23",e.refLink="24",e.table="25",e.tableSeparator="26",e.text="27",e.textBolded="28",e.textEmphasized="29",e.textEscaped="30",e.textMarked="31",e.textStrikethroughed="32",e.unorderedList="33";}(r$1||(r$1={})),function(e){e[e.MAX=0]="MAX",e[e.HIGH=1]="HIGH",e[e.MED=2]="MED",e[e.LOW=3]="LOW",e[e.MIN=4]="MIN";}(i||(i={}));const l=["allowFullScreen","allowTransparency","autoComplete","autoFocus","autoPlay","cellPadding","cellSpacing","charSet","className","classId","colSpan","contentEditable","contextMenu","crossOrigin","encType","formAction","formEncType","formMethod","formNoValidate","formTarget","frameBorder","hrefLang","inputMode","keyParams","keyType","marginHeight","marginWidth","maxLength","mediaGroup","minLength","noValidate","radioGroup","readOnly","rowSpan","spellCheck","srcDoc","srcLang","srcSet","tabIndex","useMap"].reduce((e,n)=>(e[n.toLowerCase()]=n,e),{for:"htmlFor"}),o={amp:"&",apos:"'",gt:">",lt:"<",nbsp:" ",quot:"“"},c$1=["style","script"],a=/([-A-Z0-9_:]+)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|(?:\{((?:\\.|{[^}]*?}|[^}])*)\})))?/gi,s=/mailto:/i,d=/\n{2,}$/,u$1=/^( *>[^\n]+(\n[^\n]+)*\n*)+\n{2,}/,p=/^ *> ?/gm,f$1=/^ {2,}\n/,h$1=/^(?:( *[-*_])){3,} *(?:\n *)+\n/,m$1=/^\s*(`{3,}|~{3,}) *(\S+)?([^\n]*?)?\n([\s\S]+?)\s*\1 *(?:\n *)*\n?/,g=/^(?: {4}[^\n]+\n*)+(?:\n *)+\n?/,y=/^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,k=/^(?:\n *)*\n/,x$1=/\r\n?/g,v$1=/^\[\^([^\]]+)](:.*)\n/,b$1=/^\[\^([^\]]+)]/,$=/\f/g,S$1=/^---[ \t]*\n(.|\n)*\n---[ \t]*\n/,w$1=/^\s*?\[(x|\s)\]/,C$1=/^ *(#{1,6}) *([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,E$1=/^ *(#{1,6}) +([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,A=/^([^\n]+)\n *(=|-){3,} *(?:\n *)+\n/,O$1=/^ *(?!<[a-z][^ >/]* ?\/>)<([a-z][^ >/]*) ?([^>]*)\/{0}>\n?(\s*(?:<\1[^>]*?>[\s\S]*?<\/\1>|(?!<\1)[\s\S])*?)<\/\1>\n*/i,T=/&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-fA-F]{1,6});/gi,L$1=/^<!--[\s\S]*?(?:-->)/,z=/^(data|aria|x)-[a-z_][a-z\d_.-]*$/,M$1=/^ *<([a-z][a-z0-9:]*)(?:\s+((?:<.*?>|[^>])*))?\/?>(?!<\/\1>)(\s*\n)?/i,I$1=/^\{.*\}$/,R$1=/^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,U=/^<([^ >]+@[^ >]+)>/,j=/^<([^ >]+:\/[^ >]+)>/,B$1=/-([a-z])?/gi,N$1=/^(.*\|?.*)\n *(\|? *[-:]+ *\|[-| :]*)\n((?:.*\|.*\n)*)\n?/,H=/^\[([^\]]*)\]:\s+<?([^\s>]+)>?\s*("([^"]*)")?/,D=/^!\[([^\]]*)\] ?\[([^\]]*)\]/,P$1=/^\[([^\]]*)\] ?\[([^\]]*)\]/,_$2=/(\[|\])/g,F=/(\n|^[-*]\s|^#|^ {2,}|^-{2,}|^>\s)/,W=/\t/g,G$1=/^ *\| */,Z=/(^ *\||\| *$)/g,q=/ *$/,V=/^ *:-+: *$/,X=/^ *:-+ *$/,Q=/^ *-+: *$/,J=/^([*_])\1((?:\[.*?\][([].*?[)\]]|<.*?>(?:.*?<.*?>)?|`.*?`|~+.*?~+|.)*?)\1\1(?!\1)/,K=/^([*_])((?:\[.*?\][([].*?[)\]]|<.*?>(?:.*?<.*?>)?|`.*?`|~+.*?~+|.)*?)\1(?!\1|\w)/,Y=/^==((?:\[.*?\]|<.*?>(?:.*?<.*?>)?|`.*?`|.)*?)==/,ee=/^~~((?:\[.*?\]|<.*?>(?:.*?<.*?>)?|`.*?`|.)*?)~~/,ne=/^\\([^0-9A-Za-z\s])/,te=/^[\s\S]+?(?=[^0-9A-Z\s\u00c0-\uffff&#;.()'"]|\d+\.|\n\n| {2,}\n|\w+:\S|$)/i,re=/^\n+/,ie=/^([ \t]*)/,le=/\\([^\\])/g,oe=/ *\n+$/,ce=/(?:^|\n)( *)$/,ae="(?:\\d+\\.)",se="(?:[*+-])";function de(e){return "( *)("+(1===e?ae:se)+") +"}const ue=de(1),pe=de(2);function fe(e){return new RegExp("^"+(1===e?ue:pe))}const he=fe(1),me=fe(2);function ge(e){return new RegExp("^"+(1===e?ue:pe)+"[^\\n]*(?:\\n(?!\\1"+(1===e?ae:se)+" )[^\\n]*)*(\\n|$)","gm")}const ye=ge(1),ke=ge(2);function xe(e){const n=1===e?ae:se;return new RegExp("^( *)("+n+") [\\s\\S]+?(?:\\n{2,}(?! )(?!\\1"+n+" (?!"+n+" ))\\n*|\\s*\\n*$)")}const ve=xe(1),be=xe(2);function $e(e,n){const t=1===n,r=t?ve:be,i=t?ye:ke,l=t?he:me;return {match(e,n,t){const i=ce.exec(t);return i&&(n.list||!n.inline&&!n.simple)?r.exec(e=i[1]+e):null},order:1,parse(e,n,r){const o=t?+e[2]:void 0,c=e[0].replace(d,"\n").match(i);let a=!1;return {items:c.map(function(e,t){const i=l.exec(e)[0].length,o=new RegExp("^ {1,"+i+"}","gm"),s=e.replace(o,"").replace(l,""),d=t===c.length-1,u=-1!==s.indexOf("\n\n")||d&&a;a=u;const p=r.inline,f=r.list;let h;r.list=!0,u?(r.inline=!1,h=s.replace(oe,"\n\n")):(r.inline=!0,h=s.replace(oe,""));const m=n(h,r);return r.inline=p,r.list=f,m}),ordered:t,start:o}},render:(n,t,r)=>e(n.ordered?"ol":"ul",{key:r.key,start:"20"===n.type?n.start:void 0},n.items.map(function(n,i){return e("li",{key:i},t(n,r))}))}}const Se=/^\[([^\]]*)]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/,we=/^!\[([^\]]*)]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/,Ce=[u$1,m$1,g,C$1,A,E$1,L$1,N$1,ye,ve,ke,be],Ee=[...Ce,/^[^\n]+(?:  \n|\n{2,})/,O$1,M$1];function Ae(e){return e.replace(/[ÀÁÂÃÄÅàáâãäåæÆ]/g,"a").replace(/[çÇ]/g,"c").replace(/[ðÐ]/g,"d").replace(/[ÈÉÊËéèêë]/g,"e").replace(/[ÏïÎîÍíÌì]/g,"i").replace(/[Ññ]/g,"n").replace(/[øØœŒÕõÔôÓóÒò]/g,"o").replace(/[ÜüÛûÚúÙù]/g,"u").replace(/[ŸÿÝý]/g,"y").replace(/[^a-z0-9- ]/gi,"").replace(/ /gi,"-").toLowerCase()}function Oe(e){return Q.test(e)?"right":V.test(e)?"center":X.test(e)?"left":null}function Te(e,n,t){const r=t.inTable;t.inTable=!0;const i=n(e.trim(),t);t.inTable=r;let l=[[]];return i.forEach(function(e,n){"26"===e.type?0!==n&&n!==i.length-1&&l.push([]):("27"!==e.type||null!=i[n+1]&&"26"!==i[n+1].type||(e.text=e.text.replace(q,"")),l[l.length-1].push(e));}),l}function Le(e,n,t){t.inline=!0;const r=Te(e[1],n,t),i=e[2].replace(Z,"").split("|").map(Oe),l=function(e,n,t){return e.trim().split("\n").map(function(e){return Te(e,n,t)})}(e[3],n,t);return t.inline=!1,{align:i,cells:l,header:r,type:"25"}}function ze(e,n){return null==e.align[n]?{}:{textAlign:e.align[n]}}function Me(e){return function(n,t){return t.inline?e.exec(n):null}}function Ie(e){return function(n,t){return t.inline||t.simple?e.exec(n):null}}function Re(e){return function(n,t){return t.inline||t.simple?null:e.exec(n)}}function Ue(e){return function(n){return e.exec(n)}}function je(e,n,t){if(n.inline||n.simple)return null;if(t&&!t.endsWith("\n"))return null;let r="";e.split("\n").every(e=>!Ce.some(n=>n.test(e))&&(r+=e+"\n",e.trim()));const i=r.trimEnd();return ""==i?null:[r,i]}function Be(e){try{if(decodeURIComponent(e).replace(/[^A-Za-z0-9/:]/g,"").match(/^\s*(javascript|vbscript|data(?!:image)):/i))return}catch(e){return null}return e}function Ne(e){return e.replace(le,"$1")}function He(e,n,t){const r=t.inline||!1,i=t.simple||!1;t.inline=!0,t.simple=!0;const l=e(n,t);return t.inline=r,t.simple=i,l}function De(e,n,t){const r=t.inline||!1,i=t.simple||!1;t.inline=!1,t.simple=!0;const l=e(n,t);return t.inline=r,t.simple=i,l}function Pe(e,n,t){return t.inline=!1,e(n,t)}const _e=(e,n,t)=>({children:He(n,e[1],t)});function Fe(){return {}}function We(){return null}function Ge(...e){return e.filter(Boolean).join(" ")}function Ze(e,n,t){let r=e;const i=n.split(".");for(;i.length&&(r=r[i[0]],void 0!==r);)i.shift();return r||t}function qe(t,r={}){r.overrides=r.overrides||{},r.slugify=r.slugify||Ae,r.namedCodesToUnicode=r.namedCodesToUnicode?n({},o,r.namedCodesToUnicode):o;const i=r.createElement||React.createElement;function d(e,t,...l){const o=Ze(r.overrides,`${e}.props`,{});return i(function(e,n){const t=Ze(n,e);return t?"function"==typeof t||"object"==typeof t&&"render"in t?t:Ze(n,`${e}.component`,e):e}(e,r.overrides),n({},t,o,{className:Ge(null==t?void 0:t.className,o.className)||void 0}),...l)}function Z(n){n=n.replace(S$1,"");let t=!1;r.forceInline?t=!0:r.forceBlock||(t=!1===F.test(n));const i=oe(le(t?n:`${n.trimEnd().replace(re,"")}\n\n`,{inline:t}));for(;"string"==typeof i[i.length-1]&&!i[i.length-1].trim();)i.pop();if(null===r.wrapper)return i;const l=r.wrapper||(t?"span":"div");let o;if(i.length>1||r.forceWrapper)o=i;else {if(1===i.length)return o=i[0],"string"==typeof o?d("span",{key:"outer"},o):o;o=null;}return React.createElement(l,{key:"outer"},o)}function q(n){const t=n.match(a);return t?t.reduce(function(n,t,r){const i=t.indexOf("=");if(-1!==i){const o=function(e){return -1!==e.indexOf("-")&&null===e.match(z)&&(e=e.replace(B$1,function(e,n){return n.toUpperCase()})),e}(t.slice(0,i)).trim(),c=function(e){const n=e[0];return ('"'===n||"'"===n)&&e.length>=2&&e[e.length-1]===n?e.slice(1,-1):e}(t.slice(i+1).trim()),a=l[o]||o,s=n[a]=function(e,n){return "style"===e?n.split(/;\s?/).reduce(function(e,n){const t=n.slice(0,n.indexOf(":"));return e[t.replace(/(-[a-z])/g,e=>e[1].toUpperCase())]=n.slice(t.length+1).trim(),e},{}):"href"===e||"src"===e?Be(n):(n.match(I$1)&&(n=n.slice(1,n.length-1)),"true"===n||"false"!==n&&n)}(o,c);"string"==typeof s&&(O$1.test(s)||M$1.test(s))&&(n[a]=React.cloneElement(Z(s.trim()),{key:r}));}else "style"!==t&&(n[l[t]||t]=!0);return n},{}):null}const V=[],X={},Q={0:{match:Re(u$1),order:1,parse:(e,n,t)=>({children:n(e[0].replace(p,""),t)}),render:(e,n,t)=>d("blockquote",{key:t.key},n(e.children,t))},1:{match:Ue(f$1),order:1,parse:Fe,render:(e,n,t)=>d("br",{key:t.key})},2:{match:Re(h$1),order:1,parse:Fe,render:(e,n,t)=>d("hr",{key:t.key})},3:{match:Re(g),order:0,parse:e=>({lang:void 0,text:e[0].replace(/^ {4}/gm,"").replace(/\n+$/,"")}),render:(e,t,r)=>d("pre",{key:r.key},d("code",n({},e.attrs,{className:e.lang?`lang-${e.lang}`:""}),e.text))},4:{match:Re(m$1),order:0,parse:e=>({attrs:q(e[3]||""),lang:e[2]||void 0,text:e[4],type:"3"})},5:{match:Ie(y),order:3,parse:e=>({text:e[2]}),render:(e,n,t)=>d("code",{key:t.key},e.text)},6:{match:Re(v$1),order:0,parse:e=>(V.push({footnote:e[2],identifier:e[1]}),{}),render:We},7:{match:Me(b$1),order:1,parse:e=>({target:`#${r.slugify(e[1])}`,text:e[1]}),render:(e,n,t)=>d("a",{key:t.key,href:Be(e.target)},d("sup",{key:t.key},e.text))},8:{match:Me(w$1),order:1,parse:e=>({completed:"x"===e[1].toLowerCase()}),render:(e,n,t)=>d("input",{checked:e.completed,key:t.key,readOnly:!0,type:"checkbox"})},9:{match:Re(r.enforceAtxHeadings?E$1:C$1),order:1,parse:(e,n,t)=>({children:He(n,e[2],t),id:r.slugify(e[2]),level:e[1].length}),render:(e,n,t)=>d(`h${e.level}`,{id:e.id,key:t.key},n(e.children,t))},10:{match:Re(A),order:0,parse:(e,n,t)=>({children:He(n,e[1],t),level:"="===e[2]?1:2,type:"9"})},11:{match:Ue(O$1),order:1,parse(e,n,t){const[,r]=e[3].match(ie),i=new RegExp(`^${r}`,"gm"),l=e[3].replace(i,""),o=(a=l,Ee.some(e=>e.test(a))?Pe:He);var a;const s=e[1].toLowerCase(),d=-1!==c$1.indexOf(s),u={attrs:q(e[2]),noInnerParse:d,tag:d?s:e[1]};return t.inAnchor=t.inAnchor||"a"===s,d?u.text=e[3]:u.children=o(n,l,t),t.inAnchor=!1,u},render:(e,t,r)=>d(e.tag,n({key:r.key},e.attrs),e.text||t(e.children,r))},13:{match:Ue(M$1),order:1,parse:e=>({attrs:q(e[2]||""),tag:e[1]}),render:(e,t,r)=>d(e.tag,n({},e.attrs,{key:r.key}))},12:{match:Ue(L$1),order:1,parse:()=>({}),render:We},14:{match:Ie(we),order:1,parse:e=>({alt:e[1],target:Ne(e[2]),title:e[3]}),render:(e,n,t)=>d("img",{key:t.key,alt:e.alt||void 0,title:e.title||void 0,src:Be(e.target)})},15:{match:Me(Se),order:3,parse:(e,n,t)=>({children:De(n,e[1],t),target:Ne(e[2]),title:e[3]}),render:(e,n,t)=>d("a",{key:t.key,href:Be(e.target),title:e.title},n(e.children,t))},16:{match:Me(j),order:0,parse:e=>({children:[{text:e[1],type:"27"}],target:e[1],type:"15"})},17:{match:(e,n)=>n.inAnchor?null:Me(R$1)(e,n),order:0,parse:e=>({children:[{text:e[1],type:"27"}],target:e[1],title:void 0,type:"15"})},18:{match:Me(U),order:0,parse(e){let n=e[1],t=e[1];return s.test(t)||(t="mailto:"+t),{children:[{text:n.replace("mailto:",""),type:"27"}],target:t,type:"15"}}},20:$e(d,1),33:$e(d,2),19:{match:Re(k),order:3,parse:Fe,render:()=>"\n"},21:{match:je,order:3,parse:_e,render:(e,n,t)=>d("p",{key:t.key},n(e.children,t))},22:{match:Me(H),order:0,parse:e=>(X[e[1]]={target:e[2],title:e[4]},{}),render:We},23:{match:Ie(D),order:0,parse:e=>({alt:e[1]||void 0,ref:e[2]}),render:(e,n,t)=>d("img",{key:t.key,alt:e.alt,src:Be(X[e.ref].target),title:X[e.ref].title})},24:{match:Me(P$1),order:0,parse:(e,n,t)=>({children:n(e[1],t),fallbackChildren:n(e[0].replace(_$2,"\\$1"),t),ref:e[2]}),render:(e,n,t)=>X[e.ref]?d("a",{key:t.key,href:Be(X[e.ref].target),title:X[e.ref].title},n(e.children,t)):d("span",{key:t.key},n(e.fallbackChildren,t))},25:{match:Re(N$1),order:1,parse:Le,render:(e,n,t)=>d("table",{key:t.key},d("thead",null,d("tr",null,e.header.map(function(r,i){return d("th",{key:i,style:ze(e,i)},n(r,t))}))),d("tbody",null,e.cells.map(function(r,i){return d("tr",{key:i},r.map(function(r,i){return d("td",{key:i,style:ze(e,i)},n(r,t))}))})))},26:{match:function(e,n){return n.inTable?(n.inline=!0,G$1.exec(e)):null},order:1,parse:function(){return {type:"26"}},render:()=>" | "},27:{match:Ue(te),order:4,parse:e=>({text:e[0].replace(T,(e,n)=>r.namedCodesToUnicode[n]?r.namedCodesToUnicode[n]:e)}),render:e=>e.text},28:{match:Ie(J),order:2,parse:(e,n,t)=>({children:n(e[2],t)}),render:(e,n,t)=>d("strong",{key:t.key},n(e.children,t))},29:{match:Ie(K),order:3,parse:(e,n,t)=>({children:n(e[2],t)}),render:(e,n,t)=>d("em",{key:t.key},n(e.children,t))},30:{match:Ie(ne),order:1,parse:e=>({text:e[1],type:"27"})},31:{match:Ie(Y),order:3,parse:_e,render:(e,n,t)=>d("mark",{key:t.key},n(e.children,t))},32:{match:Ie(ee),order:3,parse:_e,render:(e,n,t)=>d("del",{key:t.key},n(e.children,t))}};!0===r.disableParsingRawHTML&&(delete Q[11],delete Q[13]);const le=function(e){let n=Object.keys(e);function t(r,i){let l=[],o="";for(;r;){let c=0;for(;c<n.length;){const a=n[c],s=e[a],d=s.match(r,i,o);if(d){const e=d[0];r=r.substring(e.length);const n=s.parse(d,t,i);null==n.type&&(n.type=a),l.push(n),o=e;break}c++;}}return l}return n.sort(function(n,t){let r=e[n].order,i=e[t].order;return r!==i?r-i:1}),function(e,n){return t(function(e){return e.replace(x$1,"\n").replace($,"").replace(W,"    ")}(e),n)}}(Q),oe=(ce=function(e,n){return function(t,r,i){const l=e[t.type].render;return n?n(()=>l(t,r,i),t,r,i):l(t,r,i)}}(Q,r.renderRule),function e(n,t={}){if(Array.isArray(n)){const r=t.key,i=[];let l=!1;for(let r=0;r<n.length;r++){t.key=r;const o=e(n[r],t),c="string"==typeof o;c&&l?i[i.length-1]+=o:null!==o&&i.push(o),l=c;}return t.key=r,i}return ce(n,e,t)});var ce;const ae=Z(t);return V.length?d("div",null,ae,d("footer",{key:"footer"},V.map(function(e){return d("div",{id:r.slugify(e.identifier),key:e.identifier},e.identifier,oe(le(e.footnote,{inline:!0})))}))):ae}var ReactMarkdown = n=>{let{children:r,options:i}=n,l=function(e,n){if(null==e)return {};var t,r,i={},l=Object.keys(e);for(r=0;r<l.length;r++)n.indexOf(t=l[r])>=0||(i[t]=e[t]);return i}(n,t);return React.cloneElement(qe(r,i),l)};
 
-function chainPropTypes(propType1, propType2) {
-  if (process.env.NODE_ENV === 'production') {
-    return () => null;
+/**
+ * WARNING: Don't import this directly.
+ * Use `MuiError` from `@mui-internal/babel-macros/MuiError.macro` instead.
+ * @param {number} code
+ */
+function formatMuiErrorMessage(code) {
+  // Apply babel-plugin-transform-template-literals in loose mode
+  // loose mode is safe if we're concatenating primitives
+  // see https://babeljs.io/docs/en/babel-plugin-transform-template-literals#loose
+  /* eslint-disable prefer-template */
+  let url = 'https://mui.com/production-error/?code=' + code;
+  for (let i = 1; i < arguments.length; i += 1) {
+    // rest params over-transpile for this case
+    // eslint-disable-next-line prefer-rest-params
+    url += '&args[]=' + encodeURIComponent(arguments[i]);
   }
-  return function validate(...args) {
-    return propType1(...args) || propType2(...args);
-  };
+  return 'Minified MUI error #' + code + '; visit ' + url + ' for the full message.';
+  /* eslint-enable prefer-template */
 }
+
+var THEME_ID = '$$material';
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -81,2220 +94,6 @@ function _extends() {
   };
   return _extends.apply(this, arguments);
 }
-
-function isPlainObject$2(item) {
-  return item !== null && typeof item === 'object' && item.constructor === Object;
-}
-function deepClone(source) {
-  if (!isPlainObject$2(source)) {
-    return source;
-  }
-  const output = {};
-  Object.keys(source).forEach(key => {
-    output[key] = deepClone(source[key]);
-  });
-  return output;
-}
-function deepmerge(target, source, options = {
-  clone: true
-}) {
-  const output = options.clone ? _extends({}, target) : target;
-  if (isPlainObject$2(target) && isPlainObject$2(source)) {
-    Object.keys(source).forEach(key => {
-      // Avoid prototype pollution
-      if (key === '__proto__') {
-        return;
-      }
-      if (isPlainObject$2(source[key]) && key in target && isPlainObject$2(target[key])) {
-        // Since `output` is a clone of `target` and we have narrowed `target` in this block we can cast to the same type.
-        output[key] = deepmerge(target[key], source[key], options);
-      } else if (options.clone) {
-        output[key] = isPlainObject$2(source[key]) ? deepClone(source[key]) : source[key];
-      } else {
-        output[key] = source[key];
-      }
-    });
-  }
-  return output;
-}
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function getDefaultExportFromCjs (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
-var propTypes = {exports: {}};
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var ReactPropTypesSecret_1;
-var hasRequiredReactPropTypesSecret;
-
-function requireReactPropTypesSecret () {
-	if (hasRequiredReactPropTypesSecret) return ReactPropTypesSecret_1;
-	hasRequiredReactPropTypesSecret = 1;
-
-	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-	ReactPropTypesSecret_1 = ReactPropTypesSecret;
-	return ReactPropTypesSecret_1;
-}
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var factoryWithThrowingShims;
-var hasRequiredFactoryWithThrowingShims;
-
-function requireFactoryWithThrowingShims () {
-	if (hasRequiredFactoryWithThrowingShims) return factoryWithThrowingShims;
-	hasRequiredFactoryWithThrowingShims = 1;
-
-	var ReactPropTypesSecret = requireReactPropTypesSecret();
-
-	function emptyFunction() {}
-	function emptyFunctionWithReset() {}
-	emptyFunctionWithReset.resetWarningCache = emptyFunction;
-
-	factoryWithThrowingShims = function() {
-	  function shim(props, propName, componentName, location, propFullName, secret) {
-	    if (secret === ReactPropTypesSecret) {
-	      // It is still safe when called from React.
-	      return;
-	    }
-	    var err = new Error(
-	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-	      'Use PropTypes.checkPropTypes() to call them. ' +
-	      'Read more at http://fb.me/use-check-prop-types'
-	    );
-	    err.name = 'Invariant Violation';
-	    throw err;
-	  }	  shim.isRequired = shim;
-	  function getShim() {
-	    return shim;
-	  }	  // Important!
-	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-	  var ReactPropTypes = {
-	    array: shim,
-	    bigint: shim,
-	    bool: shim,
-	    func: shim,
-	    number: shim,
-	    object: shim,
-	    string: shim,
-	    symbol: shim,
-
-	    any: shim,
-	    arrayOf: getShim,
-	    element: shim,
-	    elementType: shim,
-	    instanceOf: getShim,
-	    node: shim,
-	    objectOf: getShim,
-	    oneOf: getShim,
-	    oneOfType: getShim,
-	    shape: getShim,
-	    exact: getShim,
-
-	    checkPropTypes: emptyFunctionWithReset,
-	    resetWarningCache: emptyFunction
-	  };
-
-	  ReactPropTypes.PropTypes = ReactPropTypes;
-
-	  return ReactPropTypes;
-	};
-	return factoryWithThrowingShims;
-}
-
-var reactIs$3 = {exports: {}};
-
-var reactIs_development$2 = {};
-
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_development$2;
-
-function requireReactIs_development$2 () {
-	if (hasRequiredReactIs_development$2) return reactIs_development$2;
-	hasRequiredReactIs_development$2 = 1;
-
-
-
-	if (process.env.NODE_ENV !== "production") {
-	  (function() {
-
-	// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-	// nor polyfill, then a plain number is used for performance.
-	var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-	var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-	var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-	var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-	var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-	var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-	var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-	var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-	// (unstable) APIs that have been removed. Can we remove the symbols?
-
-	var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-	var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-	var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-	var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-	var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-	var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-	var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-	var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-	var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-	var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-	var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
-
-	function isValidElementType(type) {
-	  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-	  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-	}
-
-	function typeOf(object) {
-	  if (typeof object === 'object' && object !== null) {
-	    var $$typeof = object.$$typeof;
-
-	    switch ($$typeof) {
-	      case REACT_ELEMENT_TYPE:
-	        var type = object.type;
-
-	        switch (type) {
-	          case REACT_ASYNC_MODE_TYPE:
-	          case REACT_CONCURRENT_MODE_TYPE:
-	          case REACT_FRAGMENT_TYPE:
-	          case REACT_PROFILER_TYPE:
-	          case REACT_STRICT_MODE_TYPE:
-	          case REACT_SUSPENSE_TYPE:
-	            return type;
-
-	          default:
-	            var $$typeofType = type && type.$$typeof;
-
-	            switch ($$typeofType) {
-	              case REACT_CONTEXT_TYPE:
-	              case REACT_FORWARD_REF_TYPE:
-	              case REACT_LAZY_TYPE:
-	              case REACT_MEMO_TYPE:
-	              case REACT_PROVIDER_TYPE:
-	                return $$typeofType;
-
-	              default:
-	                return $$typeof;
-	            }
-
-	        }
-
-	      case REACT_PORTAL_TYPE:
-	        return $$typeof;
-	    }
-	  }
-
-	  return undefined;
-	} // AsyncMode is deprecated along with isAsyncMode
-
-	var AsyncMode = REACT_ASYNC_MODE_TYPE;
-	var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-	var ContextConsumer = REACT_CONTEXT_TYPE;
-	var ContextProvider = REACT_PROVIDER_TYPE;
-	var Element = REACT_ELEMENT_TYPE;
-	var ForwardRef = REACT_FORWARD_REF_TYPE;
-	var Fragment = REACT_FRAGMENT_TYPE;
-	var Lazy = REACT_LAZY_TYPE;
-	var Memo = REACT_MEMO_TYPE;
-	var Portal = REACT_PORTAL_TYPE;
-	var Profiler = REACT_PROFILER_TYPE;
-	var StrictMode = REACT_STRICT_MODE_TYPE;
-	var Suspense = REACT_SUSPENSE_TYPE;
-	var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-
-	function isAsyncMode(object) {
-	  {
-	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-	    }
-	  }
-
-	  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-	}
-	function isConcurrentMode(object) {
-	  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-	}
-	function isContextConsumer(object) {
-	  return typeOf(object) === REACT_CONTEXT_TYPE;
-	}
-	function isContextProvider(object) {
-	  return typeOf(object) === REACT_PROVIDER_TYPE;
-	}
-	function isElement(object) {
-	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-	}
-	function isForwardRef(object) {
-	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-	}
-	function isFragment(object) {
-	  return typeOf(object) === REACT_FRAGMENT_TYPE;
-	}
-	function isLazy(object) {
-	  return typeOf(object) === REACT_LAZY_TYPE;
-	}
-	function isMemo(object) {
-	  return typeOf(object) === REACT_MEMO_TYPE;
-	}
-	function isPortal(object) {
-	  return typeOf(object) === REACT_PORTAL_TYPE;
-	}
-	function isProfiler(object) {
-	  return typeOf(object) === REACT_PROFILER_TYPE;
-	}
-	function isStrictMode(object) {
-	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-	}
-	function isSuspense(object) {
-	  return typeOf(object) === REACT_SUSPENSE_TYPE;
-	}
-
-	reactIs_development$2.AsyncMode = AsyncMode;
-	reactIs_development$2.ConcurrentMode = ConcurrentMode;
-	reactIs_development$2.ContextConsumer = ContextConsumer;
-	reactIs_development$2.ContextProvider = ContextProvider;
-	reactIs_development$2.Element = Element;
-	reactIs_development$2.ForwardRef = ForwardRef;
-	reactIs_development$2.Fragment = Fragment;
-	reactIs_development$2.Lazy = Lazy;
-	reactIs_development$2.Memo = Memo;
-	reactIs_development$2.Portal = Portal;
-	reactIs_development$2.Profiler = Profiler;
-	reactIs_development$2.StrictMode = StrictMode;
-	reactIs_development$2.Suspense = Suspense;
-	reactIs_development$2.isAsyncMode = isAsyncMode;
-	reactIs_development$2.isConcurrentMode = isConcurrentMode;
-	reactIs_development$2.isContextConsumer = isContextConsumer;
-	reactIs_development$2.isContextProvider = isContextProvider;
-	reactIs_development$2.isElement = isElement;
-	reactIs_development$2.isForwardRef = isForwardRef;
-	reactIs_development$2.isFragment = isFragment;
-	reactIs_development$2.isLazy = isLazy;
-	reactIs_development$2.isMemo = isMemo;
-	reactIs_development$2.isPortal = isPortal;
-	reactIs_development$2.isProfiler = isProfiler;
-	reactIs_development$2.isStrictMode = isStrictMode;
-	reactIs_development$2.isSuspense = isSuspense;
-	reactIs_development$2.isValidElementType = isValidElementType;
-	reactIs_development$2.typeOf = typeOf;
-	  })();
-	}
-	return reactIs_development$2;
-}
-
-var reactIs_production_min$2 = {};
-
-/** @license React v16.13.1
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_production_min$2;
-
-function requireReactIs_production_min$2 () {
-	if (hasRequiredReactIs_production_min$2) return reactIs_production_min$2;
-	hasRequiredReactIs_production_min$2 = 1;
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-	Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-	function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min$2.AsyncMode=l;reactIs_production_min$2.ConcurrentMode=m;reactIs_production_min$2.ContextConsumer=k;reactIs_production_min$2.ContextProvider=h;reactIs_production_min$2.Element=c;reactIs_production_min$2.ForwardRef=n;reactIs_production_min$2.Fragment=e;reactIs_production_min$2.Lazy=t;reactIs_production_min$2.Memo=r;reactIs_production_min$2.Portal=d;
-	reactIs_production_min$2.Profiler=g;reactIs_production_min$2.StrictMode=f;reactIs_production_min$2.Suspense=p;reactIs_production_min$2.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min$2.isConcurrentMode=A;reactIs_production_min$2.isContextConsumer=function(a){return z(a)===k};reactIs_production_min$2.isContextProvider=function(a){return z(a)===h};reactIs_production_min$2.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min$2.isForwardRef=function(a){return z(a)===n};reactIs_production_min$2.isFragment=function(a){return z(a)===e};reactIs_production_min$2.isLazy=function(a){return z(a)===t};
-	reactIs_production_min$2.isMemo=function(a){return z(a)===r};reactIs_production_min$2.isPortal=function(a){return z(a)===d};reactIs_production_min$2.isProfiler=function(a){return z(a)===g};reactIs_production_min$2.isStrictMode=function(a){return z(a)===f};reactIs_production_min$2.isSuspense=function(a){return z(a)===p};
-	reactIs_production_min$2.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min$2.typeOf=z;
-	return reactIs_production_min$2;
-}
-
-var hasRequiredReactIs;
-
-function requireReactIs () {
-	if (hasRequiredReactIs) return reactIs$3.exports;
-	hasRequiredReactIs = 1;
-
-	if (process.env.NODE_ENV === 'production') {
-	  reactIs$3.exports = requireReactIs_production_min$2();
-	} else {
-	  reactIs$3.exports = requireReactIs_development$2();
-	}
-	return reactIs$3.exports;
-}
-
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-var objectAssign;
-var hasRequiredObjectAssign;
-
-function requireObjectAssign () {
-	if (hasRequiredObjectAssign) return objectAssign;
-	hasRequiredObjectAssign = 1;
-	/* eslint-disable no-unused-vars */
-	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-	function toObject(val) {
-		if (val === null || val === undefined) {
-			throw new TypeError('Object.assign cannot be called with null or undefined');
-		}
-
-		return Object(val);
-	}
-
-	function shouldUseNative() {
-		try {
-			if (!Object.assign) {
-				return false;
-			}
-
-			// Detect buggy property enumeration order in older V8 versions.
-
-			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-			var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-			test1[5] = 'de';
-			if (Object.getOwnPropertyNames(test1)[0] === '5') {
-				return false;
-			}
-
-			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-			var test2 = {};
-			for (var i = 0; i < 10; i++) {
-				test2['_' + String.fromCharCode(i)] = i;
-			}
-			var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-				return test2[n];
-			});
-			if (order2.join('') !== '0123456789') {
-				return false;
-			}
-
-			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-			var test3 = {};
-			'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-				test3[letter] = letter;
-			});
-			if (Object.keys(Object.assign({}, test3)).join('') !==
-					'abcdefghijklmnopqrst') {
-				return false;
-			}
-
-			return true;
-		} catch (err) {
-			// We don't expect any of the above to throw, but better to be safe.
-			return false;
-		}
-	}
-
-	objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
-		var from;
-		var to = toObject(target);
-		var symbols;
-
-		for (var s = 1; s < arguments.length; s++) {
-			from = Object(arguments[s]);
-
-			for (var key in from) {
-				if (hasOwnProperty.call(from, key)) {
-					to[key] = from[key];
-				}
-			}
-
-			if (getOwnPropertySymbols) {
-				symbols = getOwnPropertySymbols(from);
-				for (var i = 0; i < symbols.length; i++) {
-					if (propIsEnumerable.call(from, symbols[i])) {
-						to[symbols[i]] = from[symbols[i]];
-					}
-				}
-			}
-		}
-
-		return to;
-	};
-	return objectAssign;
-}
-
-var has$5;
-var hasRequiredHas;
-
-function requireHas () {
-	if (hasRequiredHas) return has$5;
-	hasRequiredHas = 1;
-	has$5 = Function.call.bind(Object.prototype.hasOwnProperty);
-	return has$5;
-}
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var checkPropTypes_1;
-var hasRequiredCheckPropTypes;
-
-function requireCheckPropTypes () {
-	if (hasRequiredCheckPropTypes) return checkPropTypes_1;
-	hasRequiredCheckPropTypes = 1;
-
-	var printWarning = function() {};
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var ReactPropTypesSecret = requireReactPropTypesSecret();
-	  var loggedTypeFailures = {};
-	  var has = requireHas();
-
-	  printWarning = function(text) {
-	    var message = 'Warning: ' + text;
-	    if (typeof console !== 'undefined') {
-	      console.error(message);
-	    }
-	    try {
-	      // --- Welcome to debugging React ---
-	      // This error was thrown as a convenience so that you can use this stack
-	      // to find the callsite that caused this warning to fire.
-	      throw new Error(message);
-	    } catch (x) { /**/ }
-	  };
-	}
-
-	/**
-	 * Assert that the values match with the type specs.
-	 * Error messages are memorized and will only be shown once.
-	 *
-	 * @param {object} typeSpecs Map of name to a ReactPropType
-	 * @param {object} values Runtime values that need to be type-checked
-	 * @param {string} location e.g. "prop", "context", "child context"
-	 * @param {string} componentName Name of the component for error messages.
-	 * @param {?Function} getStack Returns the component stack.
-	 * @private
-	 */
-	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-	  if (process.env.NODE_ENV !== 'production') {
-	    for (var typeSpecName in typeSpecs) {
-	      if (has(typeSpecs, typeSpecName)) {
-	        var error;
-	        // Prop type validation may throw. In case they do, we don't want to
-	        // fail the render phase where it didn't fail before. So we log it.
-	        // After these have been cleaned up, we'll let them throw.
-	        try {
-	          // This is intentionally an invariant that gets caught. It's the same
-	          // behavior as without this statement except with a better message.
-	          if (typeof typeSpecs[typeSpecName] !== 'function') {
-	            var err = Error(
-	              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-	              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
-	              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
-	            );
-	            err.name = 'Invariant Violation';
-	            throw err;
-	          }
-	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-	        } catch (ex) {
-	          error = ex;
-	        }
-	        if (error && !(error instanceof Error)) {
-	          printWarning(
-	            (componentName || 'React class') + ': type specification of ' +
-	            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
-	            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
-	            'You may have forgotten to pass an argument to the type checker ' +
-	            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
-	            'shape all require an argument).'
-	          );
-	        }
-	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-	          // Only monitor this failure once because there tends to be a lot of the
-	          // same error.
-	          loggedTypeFailures[error.message] = true;
-
-	          var stack = getStack ? getStack() : '';
-
-	          printWarning(
-	            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
-	          );
-	        }
-	      }
-	    }
-	  }
-	}
-
-	/**
-	 * Resets warning cache when testing.
-	 *
-	 * @private
-	 */
-	checkPropTypes.resetWarningCache = function() {
-	  if (process.env.NODE_ENV !== 'production') {
-	    loggedTypeFailures = {};
-	  }
-	};
-
-	checkPropTypes_1 = checkPropTypes;
-	return checkPropTypes_1;
-}
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var factoryWithTypeCheckers;
-var hasRequiredFactoryWithTypeCheckers;
-
-function requireFactoryWithTypeCheckers () {
-	if (hasRequiredFactoryWithTypeCheckers) return factoryWithTypeCheckers;
-	hasRequiredFactoryWithTypeCheckers = 1;
-
-	var ReactIs = requireReactIs();
-	var assign = requireObjectAssign();
-
-	var ReactPropTypesSecret = requireReactPropTypesSecret();
-	var has = requireHas();
-	var checkPropTypes = requireCheckPropTypes();
-
-	var printWarning = function() {};
-
-	if (process.env.NODE_ENV !== 'production') {
-	  printWarning = function(text) {
-	    var message = 'Warning: ' + text;
-	    if (typeof console !== 'undefined') {
-	      console.error(message);
-	    }
-	    try {
-	      // --- Welcome to debugging React ---
-	      // This error was thrown as a convenience so that you can use this stack
-	      // to find the callsite that caused this warning to fire.
-	      throw new Error(message);
-	    } catch (x) {}
-	  };
-	}
-
-	function emptyFunctionThatReturnsNull() {
-	  return null;
-	}
-
-	factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
-	  /* global Symbol */
-	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-	  /**
-	   * Returns the iterator method function contained on the iterable object.
-	   *
-	   * Be sure to invoke the function with the iterable as context:
-	   *
-	   *     var iteratorFn = getIteratorFn(myIterable);
-	   *     if (iteratorFn) {
-	   *       var iterator = iteratorFn.call(myIterable);
-	   *       ...
-	   *     }
-	   *
-	   * @param {?object} maybeIterable
-	   * @return {?function}
-	   */
-	  function getIteratorFn(maybeIterable) {
-	    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-	    if (typeof iteratorFn === 'function') {
-	      return iteratorFn;
-	    }
-	  }
-
-	  /**
-	   * Collection of methods that allow declaration and validation of props that are
-	   * supplied to React components. Example usage:
-	   *
-	   *   var Props = require('ReactPropTypes');
-	   *   var MyArticle = React.createClass({
-	   *     propTypes: {
-	   *       // An optional string prop named "description".
-	   *       description: Props.string,
-	   *
-	   *       // A required enum prop named "category".
-	   *       category: Props.oneOf(['News','Photos']).isRequired,
-	   *
-	   *       // A prop named "dialog" that requires an instance of Dialog.
-	   *       dialog: Props.instanceOf(Dialog).isRequired
-	   *     },
-	   *     render: function() { ... }
-	   *   });
-	   *
-	   * A more formal specification of how these methods are used:
-	   *
-	   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-	   *   decl := ReactPropTypes.{type}(.isRequired)?
-	   *
-	   * Each and every declaration produces a function with the same signature. This
-	   * allows the creation of custom validation functions. For example:
-	   *
-	   *  var MyLink = React.createClass({
-	   *    propTypes: {
-	   *      // An optional string or URI prop named "href".
-	   *      href: function(props, propName, componentName) {
-	   *        var propValue = props[propName];
-	   *        if (propValue != null && typeof propValue !== 'string' &&
-	   *            !(propValue instanceof URI)) {
-	   *          return new Error(
-	   *            'Expected a string or an URI for ' + propName + ' in ' +
-	   *            componentName
-	   *          );
-	   *        }
-	   *      }
-	   *    },
-	   *    render: function() {...}
-	   *  });
-	   *
-	   * @internal
-	   */
-
-	  var ANONYMOUS = '<<anonymous>>';
-
-	  // Important!
-	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-	  var ReactPropTypes = {
-	    array: createPrimitiveTypeChecker('array'),
-	    bigint: createPrimitiveTypeChecker('bigint'),
-	    bool: createPrimitiveTypeChecker('boolean'),
-	    func: createPrimitiveTypeChecker('function'),
-	    number: createPrimitiveTypeChecker('number'),
-	    object: createPrimitiveTypeChecker('object'),
-	    string: createPrimitiveTypeChecker('string'),
-	    symbol: createPrimitiveTypeChecker('symbol'),
-
-	    any: createAnyTypeChecker(),
-	    arrayOf: createArrayOfTypeChecker,
-	    element: createElementTypeChecker(),
-	    elementType: createElementTypeTypeChecker(),
-	    instanceOf: createInstanceTypeChecker,
-	    node: createNodeChecker(),
-	    objectOf: createObjectOfTypeChecker,
-	    oneOf: createEnumTypeChecker,
-	    oneOfType: createUnionTypeChecker,
-	    shape: createShapeTypeChecker,
-	    exact: createStrictShapeTypeChecker,
-	  };
-
-	  /**
-	   * inlined Object.is polyfill to avoid requiring consumers ship their own
-	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-	   */
-	  /*eslint-disable no-self-compare*/
-	  function is(x, y) {
-	    // SameValue algorithm
-	    if (x === y) {
-	      // Steps 1-5, 7-10
-	      // Steps 6.b-6.e: +0 != -0
-	      return x !== 0 || 1 / x === 1 / y;
-	    } else {
-	      // Step 6.a: NaN == NaN
-	      return x !== x && y !== y;
-	    }
-	  }
-	  /*eslint-enable no-self-compare*/
-
-	  /**
-	   * We use an Error-like object for backward compatibility as people may call
-	   * PropTypes directly and inspect their output. However, we don't use real
-	   * Errors anymore. We don't inspect their stack anyway, and creating them
-	   * is prohibitively expensive if they are created too often, such as what
-	   * happens in oneOfType() for any type before the one that matched.
-	   */
-	  function PropTypeError(message, data) {
-	    this.message = message;
-	    this.data = data && typeof data === 'object' ? data: {};
-	    this.stack = '';
-	  }
-	  // Make `instanceof Error` still work for returned errors.
-	  PropTypeError.prototype = Error.prototype;
-
-	  function createChainableTypeChecker(validate) {
-	    if (process.env.NODE_ENV !== 'production') {
-	      var manualPropTypeCallCache = {};
-	      var manualPropTypeWarningCount = 0;
-	    }
-	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-	      componentName = componentName || ANONYMOUS;
-	      propFullName = propFullName || propName;
-
-	      if (secret !== ReactPropTypesSecret) {
-	        if (throwOnDirectAccess) {
-	          // New behavior only for users of `prop-types` package
-	          var err = new Error(
-	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-	            'Use `PropTypes.checkPropTypes()` to call them. ' +
-	            'Read more at http://fb.me/use-check-prop-types'
-	          );
-	          err.name = 'Invariant Violation';
-	          throw err;
-	        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
-	          // Old behavior for people using React.PropTypes
-	          var cacheKey = componentName + ':' + propName;
-	          if (
-	            !manualPropTypeCallCache[cacheKey] &&
-	            // Avoid spamming the console because they are often not actionable except for lib authors
-	            manualPropTypeWarningCount < 3
-	          ) {
-	            printWarning(
-	              'You are manually calling a React.PropTypes validation ' +
-	              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
-	              'and will throw in the standalone `prop-types` package. ' +
-	              'You may be seeing this warning due to a third-party PropTypes ' +
-	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
-	            );
-	            manualPropTypeCallCache[cacheKey] = true;
-	            manualPropTypeWarningCount++;
-	          }
-	        }
-	      }
-	      if (props[propName] == null) {
-	        if (isRequired) {
-	          if (props[propName] === null) {
-	            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-	          }
-	          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-	        }
-	        return null;
-	      } else {
-	        return validate(props, propName, componentName, location, propFullName);
-	      }
-	    }
-
-	    var chainedCheckType = checkType.bind(null, false);
-	    chainedCheckType.isRequired = checkType.bind(null, true);
-
-	    return chainedCheckType;
-	  }
-
-	  function createPrimitiveTypeChecker(expectedType) {
-	    function validate(props, propName, componentName, location, propFullName, secret) {
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== expectedType) {
-	        // `propValue` being instance of, say, date/regexp, pass the 'object'
-	        // check, but we can offer a more precise error message here rather than
-	        // 'of type `object`'.
-	        var preciseType = getPreciseType(propValue);
-
-	        return new PropTypeError(
-	          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
-	          {expectedType: expectedType}
-	        );
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createAnyTypeChecker() {
-	    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-	  }
-
-	  function createArrayOfTypeChecker(typeChecker) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (typeof typeChecker !== 'function') {
-	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-	      }
-	      var propValue = props[propName];
-	      if (!Array.isArray(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-	      }
-	      for (var i = 0; i < propValue.length; i++) {
-	        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-	        if (error instanceof Error) {
-	          return error;
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createElementTypeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      if (!isValidElement(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createElementTypeTypeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      if (!ReactIs.isValidElementType(propValue)) {
-	        var propType = getPropType(propValue);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createInstanceTypeChecker(expectedClass) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (!(props[propName] instanceof expectedClass)) {
-	        var expectedClassName = expectedClass.name || ANONYMOUS;
-	        var actualClassName = getClassName(props[propName]);
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createEnumTypeChecker(expectedValues) {
-	    if (!Array.isArray(expectedValues)) {
-	      if (process.env.NODE_ENV !== 'production') {
-	        if (arguments.length > 1) {
-	          printWarning(
-	            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
-	            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
-	          );
-	        } else {
-	          printWarning('Invalid argument supplied to oneOf, expected an array.');
-	        }
-	      }
-	      return emptyFunctionThatReturnsNull;
-	    }
-
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      for (var i = 0; i < expectedValues.length; i++) {
-	        if (is(propValue, expectedValues[i])) {
-	          return null;
-	        }
-	      }
-
-	      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-	        var type = getPreciseType(value);
-	        if (type === 'symbol') {
-	          return String(value);
-	        }
-	        return value;
-	      });
-	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createObjectOfTypeChecker(typeChecker) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (typeof typeChecker !== 'function') {
-	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-	      }
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== 'object') {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-	      }
-	      for (var key in propValue) {
-	        if (has(propValue, key)) {
-	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-	          if (error instanceof Error) {
-	            return error;
-	          }
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createUnionTypeChecker(arrayOfTypeCheckers) {
-	    if (!Array.isArray(arrayOfTypeCheckers)) {
-	      process.env.NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-	      return emptyFunctionThatReturnsNull;
-	    }
-
-	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-	      var checker = arrayOfTypeCheckers[i];
-	      if (typeof checker !== 'function') {
-	        printWarning(
-	          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
-	          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
-	        );
-	        return emptyFunctionThatReturnsNull;
-	      }
-	    }
-
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var expectedTypes = [];
-	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-	        var checker = arrayOfTypeCheckers[i];
-	        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-	        if (checkerResult == null) {
-	          return null;
-	        }
-	        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
-	          expectedTypes.push(checkerResult.data.expectedType);
-	        }
-	      }
-	      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
-	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createNodeChecker() {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      if (!isNode(props[propName])) {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function invalidValidatorError(componentName, location, propFullName, key, type) {
-	    return new PropTypeError(
-	      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
-	      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
-	    );
-	  }
-
-	  function createShapeTypeChecker(shapeTypes) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== 'object') {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-	      }
-	      for (var key in shapeTypes) {
-	        var checker = shapeTypes[key];
-	        if (typeof checker !== 'function') {
-	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-	        }
-	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-	        if (error) {
-	          return error;
-	        }
-	      }
-	      return null;
-	    }
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function createStrictShapeTypeChecker(shapeTypes) {
-	    function validate(props, propName, componentName, location, propFullName) {
-	      var propValue = props[propName];
-	      var propType = getPropType(propValue);
-	      if (propType !== 'object') {
-	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-	      }
-	      // We need to check all keys in case some are required but missing from props.
-	      var allKeys = assign({}, props[propName], shapeTypes);
-	      for (var key in allKeys) {
-	        var checker = shapeTypes[key];
-	        if (has(shapeTypes, key) && typeof checker !== 'function') {
-	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-	        }
-	        if (!checker) {
-	          return new PropTypeError(
-	            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
-	            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
-	            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
-	          );
-	        }
-	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-	        if (error) {
-	          return error;
-	        }
-	      }
-	      return null;
-	    }
-
-	    return createChainableTypeChecker(validate);
-	  }
-
-	  function isNode(propValue) {
-	    switch (typeof propValue) {
-	      case 'number':
-	      case 'string':
-	      case 'undefined':
-	        return true;
-	      case 'boolean':
-	        return !propValue;
-	      case 'object':
-	        if (Array.isArray(propValue)) {
-	          return propValue.every(isNode);
-	        }
-	        if (propValue === null || isValidElement(propValue)) {
-	          return true;
-	        }
-
-	        var iteratorFn = getIteratorFn(propValue);
-	        if (iteratorFn) {
-	          var iterator = iteratorFn.call(propValue);
-	          var step;
-	          if (iteratorFn !== propValue.entries) {
-	            while (!(step = iterator.next()).done) {
-	              if (!isNode(step.value)) {
-	                return false;
-	              }
-	            }
-	          } else {
-	            // Iterator will provide entry [k,v] tuples rather than values.
-	            while (!(step = iterator.next()).done) {
-	              var entry = step.value;
-	              if (entry) {
-	                if (!isNode(entry[1])) {
-	                  return false;
-	                }
-	              }
-	            }
-	          }
-	        } else {
-	          return false;
-	        }
-
-	        return true;
-	      default:
-	        return false;
-	    }
-	  }
-
-	  function isSymbol(propType, propValue) {
-	    // Native Symbol.
-	    if (propType === 'symbol') {
-	      return true;
-	    }
-
-	    // falsy value can't be a Symbol
-	    if (!propValue) {
-	      return false;
-	    }
-
-	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-	    if (propValue['@@toStringTag'] === 'Symbol') {
-	      return true;
-	    }
-
-	    // Fallback for non-spec compliant Symbols which are polyfilled.
-	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-	      return true;
-	    }
-
-	    return false;
-	  }
-
-	  // Equivalent of `typeof` but with special handling for array and regexp.
-	  function getPropType(propValue) {
-	    var propType = typeof propValue;
-	    if (Array.isArray(propValue)) {
-	      return 'array';
-	    }
-	    if (propValue instanceof RegExp) {
-	      // Old webkits (at least until Android 4.0) return 'function' rather than
-	      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-	      // passes PropTypes.object.
-	      return 'object';
-	    }
-	    if (isSymbol(propType, propValue)) {
-	      return 'symbol';
-	    }
-	    return propType;
-	  }
-
-	  // This handles more types than `getPropType`. Only used for error messages.
-	  // See `createPrimitiveTypeChecker`.
-	  function getPreciseType(propValue) {
-	    if (typeof propValue === 'undefined' || propValue === null) {
-	      return '' + propValue;
-	    }
-	    var propType = getPropType(propValue);
-	    if (propType === 'object') {
-	      if (propValue instanceof Date) {
-	        return 'date';
-	      } else if (propValue instanceof RegExp) {
-	        return 'regexp';
-	      }
-	    }
-	    return propType;
-	  }
-
-	  // Returns a string that is postfixed to a warning about an invalid type.
-	  // For example, "undefined" or "of type array"
-	  function getPostfixForTypeWarning(value) {
-	    var type = getPreciseType(value);
-	    switch (type) {
-	      case 'array':
-	      case 'object':
-	        return 'an ' + type;
-	      case 'boolean':
-	      case 'date':
-	      case 'regexp':
-	        return 'a ' + type;
-	      default:
-	        return type;
-	    }
-	  }
-
-	  // Returns class name of the object, if any.
-	  function getClassName(propValue) {
-	    if (!propValue.constructor || !propValue.constructor.name) {
-	      return ANONYMOUS;
-	    }
-	    return propValue.constructor.name;
-	  }
-
-	  ReactPropTypes.checkPropTypes = checkPropTypes;
-	  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-	  ReactPropTypes.PropTypes = ReactPropTypes;
-
-	  return ReactPropTypes;
-	};
-	return factoryWithTypeCheckers;
-}
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = requireReactIs();
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  propTypes.exports = requireFactoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  propTypes.exports = requireFactoryWithThrowingShims()();
-}
-
-var propTypesExports = propTypes.exports;
-var PropTypes = /*@__PURE__*/getDefaultExportFromCjs(propTypesExports);
-
-function isClassComponent$1(elementType) {
-  // elementType.prototype?.isReactComponent
-  const {
-    prototype = {}
-  } = elementType;
-  return Boolean(prototype.isReactComponent);
-}
-function acceptingRef(props, propName, componentName, location, propFullName) {
-  const element = props[propName];
-  const safePropName = propFullName || propName;
-  if (element == null ||
-  // When server-side rendering React doesn't warn either.
-  // This is not an accurate check for SSR.
-  // This is only in place for Emotion compat.
-  // TODO: Revisit once https://github.com/facebook/react/issues/20047 is resolved.
-  typeof window === 'undefined') {
-    return null;
-  }
-  let warningHint;
-  const elementType = element.type;
-  /**
-   * Blacklisting instead of whitelisting
-   *
-   * Blacklisting will miss some components, such as React.Fragment. Those will at least
-   * trigger a warning in React.
-   * We can't whitelist because there is no safe way to detect React.forwardRef
-   * or class components. "Safe" means there's no public API.
-   *
-   */
-  if (typeof elementType === 'function' && !isClassComponent$1(elementType)) {
-    warningHint = 'Did you accidentally use a plain function component for an element instead?';
-  }
-  if (warningHint !== undefined) {
-    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an element that can hold a ref. ${warningHint} ` + 'For more information see https://mui.com/r/caveat-with-refs-guide');
-  }
-  return null;
-}
-const elementAcceptingRef = chainPropTypes(PropTypes.element, acceptingRef);
-elementAcceptingRef.isRequired = chainPropTypes(PropTypes.element.isRequired, acceptingRef);
-var elementAcceptingRef$1 = elementAcceptingRef;
-
-function isClassComponent(elementType) {
-  // elementType.prototype?.isReactComponent
-  const {
-    prototype = {}
-  } = elementType;
-  return Boolean(prototype.isReactComponent);
-}
-function elementTypeAcceptingRef(props, propName, componentName, location, propFullName) {
-  const propValue = props[propName];
-  const safePropName = propFullName || propName;
-  if (propValue == null ||
-  // When server-side rendering React doesn't warn either.
-  // This is not an accurate check for SSR.
-  // This is only in place for emotion compat.
-  // TODO: Revisit once https://github.com/facebook/react/issues/20047 is resolved.
-  typeof window === 'undefined') {
-    return null;
-  }
-  let warningHint;
-
-  /**
-   * Blacklisting instead of whitelisting
-   *
-   * Blacklisting will miss some components, such as React.Fragment. Those will at least
-   * trigger a warning in React.
-   * We can't whitelist because there is no safe way to detect React.forwardRef
-   * or class components. "Safe" means there's no public API.
-   *
-   */
-  if (typeof propValue === 'function' && !isClassComponent(propValue)) {
-    warningHint = 'Did you accidentally provide a plain function component instead?';
-  }
-  if (warningHint !== undefined) {
-    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an element type that can hold a ref. ${warningHint} ` + 'For more information see https://mui.com/r/caveat-with-refs-guide');
-  }
-  return null;
-}
-var elementTypeAcceptingRef$1 = chainPropTypes(PropTypes.elementType, elementTypeAcceptingRef);
-
-// This module is based on https://github.com/airbnb/prop-types-exact repository.
-// However, in order to reduce the number of dependencies and to remove some extra safe checks
-// the module was forked.
-
-const specialProperty = 'exact-prop: \u200b';
-function exactProp(propTypes) {
-  if (process.env.NODE_ENV === 'production') {
-    return propTypes;
-  }
-  return _extends({}, propTypes, {
-    [specialProperty]: props => {
-      const unsupportedProps = Object.keys(props).filter(prop => !propTypes.hasOwnProperty(prop));
-      if (unsupportedProps.length > 0) {
-        return new Error(`The following props are not supported: ${unsupportedProps.map(prop => `\`${prop}\``).join(', ')}. Please remove them.`);
-      }
-      return null;
-    }
-  });
-}
-
-/**
- * WARNING: Don't import this directly.
- * Use `MuiError` from `@mui/utils/macros/MuiError.macro` instead.
- * @param {number} code
- */
-function formatMuiErrorMessage(code) {
-  // Apply babel-plugin-transform-template-literals in loose mode
-  // loose mode is safe iff we're concatenating primitives
-  // see https://babeljs.io/docs/en/babel-plugin-transform-template-literals#loose
-  /* eslint-disable prefer-template */
-  let url = 'https://mui.com/production-error/?code=' + code;
-  for (let i = 1; i < arguments.length; i += 1) {
-    // rest params over-transpile for this case
-    // eslint-disable-next-line prefer-rest-params
-    url += '&args[]=' + encodeURIComponent(arguments[i]);
-  }
-  return 'Minified MUI error #' + code + '; visit ' + url + ' for the full message.';
-  /* eslint-enable prefer-template */
-}
-
-var reactIs$2 = {exports: {}};
-
-var reactIs_development$1 = {};
-
-/**
- * @license React
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_development$1;
-
-function requireReactIs_development$1 () {
-	if (hasRequiredReactIs_development$1) return reactIs_development$1;
-	hasRequiredReactIs_development$1 = 1;
-
-	if (process.env.NODE_ENV !== "production") {
-	  (function() {
-
-	// ATTENTION
-	// When adding new symbols to this file,
-	// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-	// The Symbol used to tag the ReactElement-like types.
-	var REACT_ELEMENT_TYPE = Symbol.for('react.element');
-	var REACT_PORTAL_TYPE = Symbol.for('react.portal');
-	var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
-	var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
-	var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
-	var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
-	var REACT_CONTEXT_TYPE = Symbol.for('react.context');
-	var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
-	var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
-	var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
-	var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
-	var REACT_MEMO_TYPE = Symbol.for('react.memo');
-	var REACT_LAZY_TYPE = Symbol.for('react.lazy');
-	var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
-
-	// -----------------------------------------------------------------------------
-
-	var enableScopeAPI = false; // Experimental Create Event Handle API.
-	var enableCacheElement = false;
-	var enableTransitionTracing = false; // No known bugs, but needs performance testing
-
-	var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
-	// stuff. Intended to enable React core members to more easily debug scheduling
-	// issues in DEV builds.
-
-	var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
-
-	var REACT_MODULE_REFERENCE;
-
-	{
-	  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
-	}
-
-	function isValidElementType(type) {
-	  if (typeof type === 'string' || typeof type === 'function') {
-	    return true;
-	  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
-
-
-	  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
-	    return true;
-	  }
-
-	  if (typeof type === 'object' && type !== null) {
-	    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
-	    // types supported by any Flight configuration anywhere since
-	    // we don't know which Flight build this will end up being used
-	    // with.
-	    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
-	      return true;
-	    }
-	  }
-
-	  return false;
-	}
-
-	function typeOf(object) {
-	  if (typeof object === 'object' && object !== null) {
-	    var $$typeof = object.$$typeof;
-
-	    switch ($$typeof) {
-	      case REACT_ELEMENT_TYPE:
-	        var type = object.type;
-
-	        switch (type) {
-	          case REACT_FRAGMENT_TYPE:
-	          case REACT_PROFILER_TYPE:
-	          case REACT_STRICT_MODE_TYPE:
-	          case REACT_SUSPENSE_TYPE:
-	          case REACT_SUSPENSE_LIST_TYPE:
-	            return type;
-
-	          default:
-	            var $$typeofType = type && type.$$typeof;
-
-	            switch ($$typeofType) {
-	              case REACT_SERVER_CONTEXT_TYPE:
-	              case REACT_CONTEXT_TYPE:
-	              case REACT_FORWARD_REF_TYPE:
-	              case REACT_LAZY_TYPE:
-	              case REACT_MEMO_TYPE:
-	              case REACT_PROVIDER_TYPE:
-	                return $$typeofType;
-
-	              default:
-	                return $$typeof;
-	            }
-
-	        }
-
-	      case REACT_PORTAL_TYPE:
-	        return $$typeof;
-	    }
-	  }
-
-	  return undefined;
-	}
-	var ContextConsumer = REACT_CONTEXT_TYPE;
-	var ContextProvider = REACT_PROVIDER_TYPE;
-	var Element = REACT_ELEMENT_TYPE;
-	var ForwardRef = REACT_FORWARD_REF_TYPE;
-	var Fragment = REACT_FRAGMENT_TYPE;
-	var Lazy = REACT_LAZY_TYPE;
-	var Memo = REACT_MEMO_TYPE;
-	var Portal = REACT_PORTAL_TYPE;
-	var Profiler = REACT_PROFILER_TYPE;
-	var StrictMode = REACT_STRICT_MODE_TYPE;
-	var Suspense = REACT_SUSPENSE_TYPE;
-	var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
-	var hasWarnedAboutDeprecatedIsAsyncMode = false;
-	var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
-
-	function isAsyncMode(object) {
-	  {
-	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-	    }
-	  }
-
-	  return false;
-	}
-	function isConcurrentMode(object) {
-	  {
-	    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
-	      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
-
-	      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-	    }
-	  }
-
-	  return false;
-	}
-	function isContextConsumer(object) {
-	  return typeOf(object) === REACT_CONTEXT_TYPE;
-	}
-	function isContextProvider(object) {
-	  return typeOf(object) === REACT_PROVIDER_TYPE;
-	}
-	function isElement(object) {
-	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-	}
-	function isForwardRef(object) {
-	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-	}
-	function isFragment(object) {
-	  return typeOf(object) === REACT_FRAGMENT_TYPE;
-	}
-	function isLazy(object) {
-	  return typeOf(object) === REACT_LAZY_TYPE;
-	}
-	function isMemo(object) {
-	  return typeOf(object) === REACT_MEMO_TYPE;
-	}
-	function isPortal(object) {
-	  return typeOf(object) === REACT_PORTAL_TYPE;
-	}
-	function isProfiler(object) {
-	  return typeOf(object) === REACT_PROFILER_TYPE;
-	}
-	function isStrictMode(object) {
-	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-	}
-	function isSuspense(object) {
-	  return typeOf(object) === REACT_SUSPENSE_TYPE;
-	}
-	function isSuspenseList(object) {
-	  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
-	}
-
-	reactIs_development$1.ContextConsumer = ContextConsumer;
-	reactIs_development$1.ContextProvider = ContextProvider;
-	reactIs_development$1.Element = Element;
-	reactIs_development$1.ForwardRef = ForwardRef;
-	reactIs_development$1.Fragment = Fragment;
-	reactIs_development$1.Lazy = Lazy;
-	reactIs_development$1.Memo = Memo;
-	reactIs_development$1.Portal = Portal;
-	reactIs_development$1.Profiler = Profiler;
-	reactIs_development$1.StrictMode = StrictMode;
-	reactIs_development$1.Suspense = Suspense;
-	reactIs_development$1.SuspenseList = SuspenseList;
-	reactIs_development$1.isAsyncMode = isAsyncMode;
-	reactIs_development$1.isConcurrentMode = isConcurrentMode;
-	reactIs_development$1.isContextConsumer = isContextConsumer;
-	reactIs_development$1.isContextProvider = isContextProvider;
-	reactIs_development$1.isElement = isElement;
-	reactIs_development$1.isForwardRef = isForwardRef;
-	reactIs_development$1.isFragment = isFragment;
-	reactIs_development$1.isLazy = isLazy;
-	reactIs_development$1.isMemo = isMemo;
-	reactIs_development$1.isPortal = isPortal;
-	reactIs_development$1.isProfiler = isProfiler;
-	reactIs_development$1.isStrictMode = isStrictMode;
-	reactIs_development$1.isSuspense = isSuspense;
-	reactIs_development$1.isSuspenseList = isSuspenseList;
-	reactIs_development$1.isValidElementType = isValidElementType;
-	reactIs_development$1.typeOf = typeOf;
-	  })();
-	}
-	return reactIs_development$1;
-}
-
-var reactIs_production_min$1 = {};
-
-/**
- * @license React
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_production_min$1;
-
-function requireReactIs_production_min$1 () {
-	if (hasRequiredReactIs_production_min$1) return reactIs_production_min$1;
-	hasRequiredReactIs_production_min$1 = 1;
-var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
-	function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}reactIs_production_min$1.ContextConsumer=h;reactIs_production_min$1.ContextProvider=g;reactIs_production_min$1.Element=b;reactIs_production_min$1.ForwardRef=l;reactIs_production_min$1.Fragment=d;reactIs_production_min$1.Lazy=q;reactIs_production_min$1.Memo=p;reactIs_production_min$1.Portal=c;reactIs_production_min$1.Profiler=f;reactIs_production_min$1.StrictMode=e;reactIs_production_min$1.Suspense=m;
-	reactIs_production_min$1.SuspenseList=n;reactIs_production_min$1.isAsyncMode=function(){return !1};reactIs_production_min$1.isConcurrentMode=function(){return !1};reactIs_production_min$1.isContextConsumer=function(a){return v(a)===h};reactIs_production_min$1.isContextProvider=function(a){return v(a)===g};reactIs_production_min$1.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b};reactIs_production_min$1.isForwardRef=function(a){return v(a)===l};reactIs_production_min$1.isFragment=function(a){return v(a)===d};reactIs_production_min$1.isLazy=function(a){return v(a)===q};reactIs_production_min$1.isMemo=function(a){return v(a)===p};
-	reactIs_production_min$1.isPortal=function(a){return v(a)===c};reactIs_production_min$1.isProfiler=function(a){return v(a)===f};reactIs_production_min$1.isStrictMode=function(a){return v(a)===e};reactIs_production_min$1.isSuspense=function(a){return v(a)===m};reactIs_production_min$1.isSuspenseList=function(a){return v(a)===n};
-	reactIs_production_min$1.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};reactIs_production_min$1.typeOf=v;
-	return reactIs_production_min$1;
-}
-
-if (process.env.NODE_ENV === 'production') {
-  reactIs$2.exports = requireReactIs_production_min$1();
-} else {
-  reactIs$2.exports = requireReactIs_development$1();
-}
-
-var reactIsExports$1 = reactIs$2.exports;
-
-// Simplified polyfill for IE11 support
-// https://github.com/JamesMGreene/Function.name/blob/58b314d4a983110c3682f1228f845d39ccca1817/Function.name.js#L3
-const fnNameMatchRegex = /^\s*function(?:\s|\s*\/\*.*\*\/\s*)+([^(\s/]*)\s*/;
-function getFunctionName(fn) {
-  const match = `${fn}`.match(fnNameMatchRegex);
-  const name = match && match[1];
-  return name || '';
-}
-function getFunctionComponentName(Component, fallback = '') {
-  return Component.displayName || Component.name || getFunctionName(Component) || fallback;
-}
-function getWrappedName(outerType, innerType, wrapperName) {
-  const functionName = getFunctionComponentName(innerType);
-  return outerType.displayName || (functionName !== '' ? `${wrapperName}(${functionName})` : wrapperName);
-}
-
-/**
- * cherry-pick from
- * https://github.com/facebook/react/blob/769b1f270e1251d9dbdce0fcbd9e92e502d059b8/packages/shared/getComponentName.js
- * originally forked from recompose/getDisplayName with added IE11 support
- */
-function getDisplayName(Component) {
-  if (Component == null) {
-    return undefined;
-  }
-  if (typeof Component === 'string') {
-    return Component;
-  }
-  if (typeof Component === 'function') {
-    return getFunctionComponentName(Component, 'Component');
-  }
-
-  // TypeScript can't have components as objects but they exist in the form of `memo` or `Suspense`
-  if (typeof Component === 'object') {
-    switch (Component.$$typeof) {
-      case reactIsExports$1.ForwardRef:
-        return getWrappedName(Component, Component.render, 'ForwardRef');
-      case reactIsExports$1.Memo:
-        return getWrappedName(Component, Component.type, 'memo');
-      default:
-        return undefined;
-    }
-  }
-  return undefined;
-}
-
-function HTMLElementType(props, propName, componentName, location, propFullName) {
-  if (process.env.NODE_ENV === 'production') {
-    return null;
-  }
-  const propValue = props[propName];
-  const safePropName = propFullName || propName;
-  if (propValue == null) {
-    return null;
-  }
-  if (propValue && propValue.nodeType !== 1) {
-    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an HTMLElement.`);
-  }
-  return null;
-}
-
-const refType = PropTypes.oneOfType([PropTypes.func, PropTypes.object]);
-var refType$1 = refType;
-
-// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
-//
-// A strict capitalization should uppercase the first letter of each word in the sentence.
-// We only handle the first word.
-function capitalize$1(string) {
-  if (typeof string !== 'string') {
-    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`capitalize(string)\` expects a string argument.` : formatMuiErrorMessage(7));
-  }
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-/**
- * Safe chained function.
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- */
-function createChainedFunction(...funcs) {
-  return funcs.reduce((acc, func) => {
-    if (func == null) {
-      return acc;
-    }
-    return function chainedFunction(...args) {
-      acc.apply(this, args);
-      func.apply(this, args);
-    };
-  }, () => {});
-}
-
-// Corresponds to 10 frames at 60 Hz.
-// A few bytes payload overhead when lodash/debounce is ~3 kB and debounce ~300 B.
-function debounce(func, wait = 166) {
-  let timeout;
-  function debounced(...args) {
-    const later = () => {
-      // @ts-ignore
-      func.apply(this, args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  }
-  debounced.clear = () => {
-    clearTimeout(timeout);
-  };
-  return debounced;
-}
-
-function isMuiElement(element, muiNames) {
-  var _muiName, _element$type;
-  return /*#__PURE__*/React.isValidElement(element) && muiNames.indexOf( // For server components `muiName` is avaialble in element.type._payload.value.muiName
-  // relevant info - https://github.com/facebook/react/blob/2807d781a08db8e9873687fccc25c0f12b4fb3d4/packages/react/src/ReactLazy.js#L45
-  // eslint-disable-next-line no-underscore-dangle
-  (_muiName = element.type.muiName) != null ? _muiName : (_element$type = element.type) == null || (_element$type = _element$type._payload) == null || (_element$type = _element$type.value) == null ? void 0 : _element$type.muiName) !== -1;
-}
-
-function ownerDocument(node) {
-  return node && node.ownerDocument || document;
-}
-
-function ownerWindow(node) {
-  const doc = ownerDocument(node);
-  return doc.defaultView || window;
-}
-
-function requirePropFactory(componentNameInError, Component) {
-  if (process.env.NODE_ENV === 'production') {
-    return () => null;
-  }
-
-  // eslint-disable-next-line react/forbid-foreign-prop-types
-  const prevPropTypes = Component ? _extends({}, Component.propTypes) : null;
-  const requireProp = requiredProp => (props, propName, componentName, location, propFullName, ...args) => {
-    const propFullNameSafe = propFullName || propName;
-    const defaultTypeChecker = prevPropTypes == null ? void 0 : prevPropTypes[propFullNameSafe];
-    if (defaultTypeChecker) {
-      const typeCheckerResult = defaultTypeChecker(props, propName, componentName, location, propFullName, ...args);
-      if (typeCheckerResult) {
-        return typeCheckerResult;
-      }
-    }
-    if (typeof props[propName] !== 'undefined' && !props[requiredProp]) {
-      return new Error(`The prop \`${propFullNameSafe}\` of ` + `\`${componentNameInError}\` can only be used together with the \`${requiredProp}\` prop.`);
-    }
-    return null;
-  };
-  return requireProp;
-}
-
-/**
- * TODO v5: consider making it private
- *
- * passes {value} to {ref}
- *
- * WARNING: Be sure to only call this inside a callback that is passed as a ref.
- * Otherwise, make sure to cleanup the previous {ref} if it changes. See
- * https://github.com/mui/material-ui/issues/13539
- *
- * Useful if you want to expose the ref of an inner component to the public API
- * while still using it inside the component.
- * @param ref A ref callback or ref object. If anything falsy, this is a no-op.
- */
-function setRef(ref, value) {
-  if (typeof ref === 'function') {
-    ref(value);
-  } else if (ref) {
-    ref.current = value;
-  }
-}
-
-/**
- * A version of `React.useLayoutEffect` that does not show a warning when server-side rendering.
- * This is useful for effects that are only needed for client-side rendering but not for SSR.
- *
- * Before you use this hook, make sure to read https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
- * and confirm it doesn't apply to your use-case.
- */
-const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
-var useEnhancedEffect$1 = useEnhancedEffect;
-
-let globalId = 0;
-function useGlobalId(idOverride) {
-  const [defaultId, setDefaultId] = React.useState(idOverride);
-  const id = idOverride || defaultId;
-  React.useEffect(() => {
-    if (defaultId == null) {
-      // Fallback to this default id when possible.
-      // Use the incrementing value for client-side rendering only.
-      // We can't use it server-side.
-      // If you want to use random values please consider the Birthday Problem: https://en.wikipedia.org/wiki/Birthday_problem
-      globalId += 1;
-      setDefaultId(`mui-${globalId}`);
-    }
-  }, [defaultId]);
-  return id;
-}
-
-// downstream bundlers may remove unnecessary concatenation, but won't remove toString call -- Workaround for https://github.com/webpack/webpack/issues/14814
-const maybeReactUseId = React['useId'.toString()];
-/**
- *
- * @example <div id={useId()} />
- * @param idOverride
- * @returns {string}
- */
-function useId(idOverride) {
-  if (maybeReactUseId !== undefined) {
-    const reactId = maybeReactUseId();
-    return idOverride != null ? idOverride : reactId;
-  }
-  // eslint-disable-next-line react-hooks/rules-of-hooks -- `React.useId` is invariant at runtime.
-  return useGlobalId(idOverride);
-}
-
-function useControlled({
-  controlled,
-  default: defaultProp,
-  name,
-  state = 'value'
-}) {
-  // isControlled is ignored in the hook dependency lists as it should never change.
-  const {
-    current: isControlled
-  } = React.useRef(controlled !== undefined);
-  const [valueState, setValue] = React.useState(defaultProp);
-  const value = isControlled ? controlled : valueState;
-  if (process.env.NODE_ENV !== 'production') {
-    React.useEffect(() => {
-      if (isControlled !== (controlled !== undefined)) {
-        console.error([`MUI: A component is changing the ${isControlled ? '' : 'un'}controlled ${state} state of ${name} to be ${isControlled ? 'un' : ''}controlled.`, 'Elements should not switch from uncontrolled to controlled (or vice versa).', `Decide between using a controlled or uncontrolled ${name} ` + 'element for the lifetime of the component.', "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
-      }
-    }, [state, name, controlled]);
-    const {
-      current: defaultValue
-    } = React.useRef(defaultProp);
-    React.useEffect(() => {
-      if (!isControlled && defaultValue !== defaultProp) {
-        console.error([`MUI: A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` + `To suppress this warning opt to use a controlled ${name}.`].join('\n'));
-      }
-    }, [JSON.stringify(defaultProp)]);
-  }
-  const setValueIfUncontrolled = React.useCallback(newValue => {
-    if (!isControlled) {
-      setValue(newValue);
-    }
-  }, []);
-  return [value, setValueIfUncontrolled];
-}
-
-/**
- * Inspired by https://github.com/facebook/react/issues/14099#issuecomment-440013892
- * See RFC in https://github.com/reactjs/rfcs/pull/220
- */
-
-function useEventCallback(fn) {
-  const ref = React.useRef(fn);
-  useEnhancedEffect$1(() => {
-    ref.current = fn;
-  });
-  return React.useRef((...args) =>
-  // @ts-expect-error hide `this`
-  (0, ref.current)(...args)).current;
-}
-
-function useForkRef(...refs) {
-  /**
-   * This will create a new function if the refs passed to this hook change and are all defined.
-   * This means react will call the old forkRef with `null` and the new forkRef
-   * with the ref. Cleanup naturally emerges from this behavior.
-   */
-  return React.useMemo(() => {
-    if (refs.every(ref => ref == null)) {
-      return null;
-    }
-    return instance => {
-      refs.forEach(ref => {
-        setRef(ref, instance);
-      });
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, refs);
-}
-
-let hadKeyboardEvent = true;
-let hadFocusVisibleRecently = false;
-let hadFocusVisibleRecentlyTimeout;
-const inputTypesWhitelist = {
-  text: true,
-  search: true,
-  url: true,
-  tel: true,
-  email: true,
-  password: true,
-  number: true,
-  date: true,
-  month: true,
-  week: true,
-  time: true,
-  datetime: true,
-  'datetime-local': true
-};
-
-/**
- * Computes whether the given element should automatically trigger the
- * `focus-visible` class being added, i.e. whether it should always match
- * `:focus-visible` when focused.
- * @param {Element} node
- * @returns {boolean}
- */
-function focusTriggersKeyboardModality(node) {
-  const {
-    type,
-    tagName
-  } = node;
-  if (tagName === 'INPUT' && inputTypesWhitelist[type] && !node.readOnly) {
-    return true;
-  }
-  if (tagName === 'TEXTAREA' && !node.readOnly) {
-    return true;
-  }
-  if (node.isContentEditable) {
-    return true;
-  }
-  return false;
-}
-
-/**
- * Keep track of our keyboard modality state with `hadKeyboardEvent`.
- * If the most recent user interaction was via the keyboard;
- * and the key press did not include a meta, alt/option, or control key;
- * then the modality is keyboard. Otherwise, the modality is not keyboard.
- * @param {KeyboardEvent} event
- */
-function handleKeyDown(event) {
-  if (event.metaKey || event.altKey || event.ctrlKey) {
-    return;
-  }
-  hadKeyboardEvent = true;
-}
-
-/**
- * If at any point a user clicks with a pointing device, ensure that we change
- * the modality away from keyboard.
- * This avoids the situation where a user presses a key on an already focused
- * element, and then clicks on a different element, focusing it with a
- * pointing device, while we still think we're in keyboard modality.
- */
-function handlePointerDown() {
-  hadKeyboardEvent = false;
-}
-function handleVisibilityChange() {
-  if (this.visibilityState === 'hidden') {
-    // If the tab becomes active again, the browser will handle calling focus
-    // on the element (Safari actually calls it twice).
-    // If this tab change caused a blur on an element with focus-visible,
-    // re-apply the class when the user switches back to the tab.
-    if (hadFocusVisibleRecently) {
-      hadKeyboardEvent = true;
-    }
-  }
-}
-function prepare(doc) {
-  doc.addEventListener('keydown', handleKeyDown, true);
-  doc.addEventListener('mousedown', handlePointerDown, true);
-  doc.addEventListener('pointerdown', handlePointerDown, true);
-  doc.addEventListener('touchstart', handlePointerDown, true);
-  doc.addEventListener('visibilitychange', handleVisibilityChange, true);
-}
-function isFocusVisible(event) {
-  const {
-    target
-  } = event;
-  try {
-    return target.matches(':focus-visible');
-  } catch (error) {
-    // Browsers not implementing :focus-visible will throw a SyntaxError.
-    // We use our own heuristic for those browsers.
-    // Rethrow might be better if it's not the expected error but do we really
-    // want to crash if focus-visible malfunctioned?
-  }
-
-  // No need for validFocusTarget check. The user does that by attaching it to
-  // focusable events only.
-  return hadKeyboardEvent || focusTriggersKeyboardModality(target);
-}
-function useIsFocusVisible() {
-  const ref = React.useCallback(node => {
-    if (node != null) {
-      prepare(node.ownerDocument);
-    }
-  }, []);
-  const isFocusVisibleRef = React.useRef(false);
-
-  /**
-   * Should be called if a blur event is fired
-   */
-  function handleBlurVisible() {
-    // checking against potential state variable does not suffice if we focus and blur synchronously.
-    // React wouldn't have time to trigger a re-render so `focusVisible` would be stale.
-    // Ideally we would adjust `isFocusVisible(event)` to look at `relatedTarget` for blur events.
-    // This doesn't work in IE11 due to https://github.com/facebook/react/issues/3751
-    // TODO: check again if React releases their internal changes to focus event handling (https://github.com/facebook/react/pull/19186).
-    if (isFocusVisibleRef.current) {
-      // To detect a tab/window switch, we look for a blur event followed
-      // rapidly by a visibility change.
-      // If we don't see a visibility change within 100ms, it's probably a
-      // regular focus change.
-      hadFocusVisibleRecently = true;
-      window.clearTimeout(hadFocusVisibleRecentlyTimeout);
-      hadFocusVisibleRecentlyTimeout = window.setTimeout(() => {
-        hadFocusVisibleRecently = false;
-      }, 100);
-      isFocusVisibleRef.current = false;
-      return true;
-    }
-    return false;
-  }
-
-  /**
-   * Should be called if a blur event is fired
-   */
-  function handleFocusVisible(event) {
-    if (isFocusVisible(event)) {
-      isFocusVisibleRef.current = true;
-      return true;
-    }
-    return false;
-  }
-  return {
-    isFocusVisibleRef,
-    onFocus: handleFocusVisible,
-    onBlur: handleBlurVisible,
-    ref
-  };
-}
-
-// A change of the browser zoom change the scrollbar size.
-// Credit https://github.com/twbs/bootstrap/blob/488fd8afc535ca3a6ad4dc581f5e89217b6a36ac/js/src/util/scrollbar.js#L14-L18
-function getScrollbarSize(doc) {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth#usage_notes
-  const documentWidth = doc.documentElement.clientWidth;
-  return Math.abs(window.innerWidth - documentWidth);
-}
-
-function getTypeByValue(value) {
-  const valueType = typeof value;
-  switch (valueType) {
-    case 'number':
-      if (Number.isNaN(value)) {
-        return 'NaN';
-      }
-      if (!Number.isFinite(value)) {
-        return 'Infinity';
-      }
-      if (value !== Math.floor(value)) {
-        return 'float';
-      }
-      return 'number';
-    case 'object':
-      if (value === null) {
-        return 'null';
-      }
-      return value.constructor.name;
-    default:
-      return valueType;
-  }
-}
-
-// IE 11 support
-function ponyfillIsInteger(x) {
-  // eslint-disable-next-line no-restricted-globals
-  return typeof x === 'number' && isFinite(x) && Math.floor(x) === x;
-}
-const isInteger = Number.isInteger || ponyfillIsInteger;
-function requiredInteger(props, propName, componentName, location) {
-  const propValue = props[propName];
-  if (propValue == null || !isInteger(propValue)) {
-    const propType = getTypeByValue(propValue);
-    return new RangeError(`Invalid ${location} \`${propName}\` of type \`${propType}\` supplied to \`${componentName}\`, expected \`integer\`.`);
-  }
-  return null;
-}
-function validator(props, propName, ...other) {
-  const propValue = props[propName];
-  if (propValue === undefined) {
-    return null;
-  }
-  return requiredInteger(props, propName, ...other);
-}
-function validatorNoop() {
-  return null;
-}
-validator.isRequired = requiredInteger;
-validatorNoop.isRequired = validatorNoop;
-var integerPropType = process.env.NODE_ENV === 'production' ? validatorNoop : validator;
-
-/**
- * Add keys, values of `defaultProps` that does not exist in `props`
- * @param {object} defaultProps
- * @param {object} props
- * @returns {object} resolved props
- */
-function resolveProps(defaultProps, props) {
-  const output = _extends({}, props);
-  Object.keys(defaultProps).forEach(propName => {
-    if (propName.toString().match(/^(components|slots)$/)) {
-      output[propName] = _extends({}, defaultProps[propName], output[propName]);
-    } else if (propName.toString().match(/^(componentsProps|slotProps)$/)) {
-      const defaultSlotProps = defaultProps[propName] || {};
-      const slotProps = props[propName];
-      output[propName] = {};
-      if (!slotProps || !Object.keys(slotProps)) {
-        // Reduce the iteration if the slot props is empty
-        output[propName] = defaultSlotProps;
-      } else if (!defaultSlotProps || !Object.keys(defaultSlotProps)) {
-        // Reduce the iteration if the default slot props is empty
-        output[propName] = slotProps;
-      } else {
-        output[propName] = _extends({}, slotProps);
-        Object.keys(defaultSlotProps).forEach(slotPropName => {
-          output[propName][slotPropName] = resolveProps(defaultSlotProps[slotPropName], slotProps[slotPropName]);
-        });
-      }
-    } else if (output[propName] === undefined) {
-      output[propName] = defaultProps[propName];
-    }
-  });
-  return output;
-}
-
-function composeClasses(slots, getUtilityClass, classes = undefined) {
-  const output = {};
-  Object.keys(slots).forEach(
-  // `Object.keys(slots)` can't be wider than `T` because we infer `T` from `slots`.
-  // @ts-expect-error https://github.com/microsoft/TypeScript/pull/12253#issuecomment-263132208
-  slot => {
-    output[slot] = slots[slot].reduce((acc, key) => {
-      if (key) {
-        const utilityClass = getUtilityClass(key);
-        if (utilityClass !== '') {
-          acc.push(utilityClass);
-        }
-        if (classes && classes[key]) {
-          acc.push(classes[key]);
-        }
-      }
-      return acc;
-    }, []).join(' ');
-  });
-  return output;
-}
-
-const defaultGenerator = componentName => componentName;
-const createClassNameGenerator = () => {
-  let generate = defaultGenerator;
-  return {
-    configure(generator) {
-      generate = generator;
-    },
-    generate(componentName) {
-      return generate(componentName);
-    },
-    reset() {
-      generate = defaultGenerator;
-    }
-  };
-};
-const ClassNameGenerator = createClassNameGenerator();
-var ClassNameGenerator$1 = ClassNameGenerator;
-
-// If GlobalStateSlot is changed, GLOBAL_STATE_CLASSES in
-// \packages\api-docs-builder\utils\parseSlotsAndClasses.ts must be updated accordingly.
-
-const globalStateClassesMapping = {
-  active: 'active',
-  checked: 'checked',
-  completed: 'completed',
-  disabled: 'disabled',
-  error: 'error',
-  expanded: 'expanded',
-  focused: 'focused',
-  focusVisible: 'focusVisible',
-  open: 'open',
-  readOnly: 'readOnly',
-  required: 'required',
-  selected: 'selected'
-};
-function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
-  const globalStateClass = globalStateClassesMapping[slot];
-  return globalStateClass ? `${globalStatePrefix}-${globalStateClass}` : `${ClassNameGenerator$1.generate(componentName)}-${slot}`;
-}
-
-function generateUtilityClasses(componentName, slots, globalStatePrefix = 'Mui') {
-  const result = {};
-  slots.forEach(slot => {
-    result[slot] = generateUtilityClass(componentName, slot, globalStatePrefix);
-  });
-  return result;
-}
-
-var THEME_ID = '$$material';
 
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -3737,9 +1536,40 @@ var createCache = function createCache(options) {
   return cache;
 };
 
-var reactIs$1 = {exports: {}};
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-var reactIs_development = {};
+function getDefaultExportFromCjs (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+var reactIs$3 = {exports: {}};
+
+var reactIs_production_min$2 = {};
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_production_min$2;
+
+function requireReactIs_production_min$2 () {
+	if (hasRequiredReactIs_production_min$2) return reactIs_production_min$2;
+	hasRequiredReactIs_production_min$2 = 1;
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+	Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+	function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min$2.AsyncMode=l;reactIs_production_min$2.ConcurrentMode=m;reactIs_production_min$2.ContextConsumer=k;reactIs_production_min$2.ContextProvider=h;reactIs_production_min$2.Element=c;reactIs_production_min$2.ForwardRef=n;reactIs_production_min$2.Fragment=e;reactIs_production_min$2.Lazy=t;reactIs_production_min$2.Memo=r;reactIs_production_min$2.Portal=d;
+	reactIs_production_min$2.Profiler=g;reactIs_production_min$2.StrictMode=f;reactIs_production_min$2.Suspense=p;reactIs_production_min$2.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min$2.isConcurrentMode=A;reactIs_production_min$2.isContextConsumer=function(a){return z(a)===k};reactIs_production_min$2.isContextProvider=function(a){return z(a)===h};reactIs_production_min$2.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min$2.isForwardRef=function(a){return z(a)===n};reactIs_production_min$2.isFragment=function(a){return z(a)===e};reactIs_production_min$2.isLazy=function(a){return z(a)===t};
+	reactIs_production_min$2.isMemo=function(a){return z(a)===r};reactIs_production_min$2.isPortal=function(a){return z(a)===d};reactIs_production_min$2.isProfiler=function(a){return z(a)===g};reactIs_production_min$2.isStrictMode=function(a){return z(a)===f};reactIs_production_min$2.isSuspense=function(a){return z(a)===p};
+	reactIs_production_min$2.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min$2.typeOf=z;
+	return reactIs_production_min$2;
+}
+
+var reactIs_development$2 = {};
 
 /** @license React v16.13.1
  * react-is.development.js
@@ -3750,11 +1580,11 @@ var reactIs_development = {};
  * LICENSE file in the root directory of this source tree.
  */
 
-var hasRequiredReactIs_development;
+var hasRequiredReactIs_development$2;
 
-function requireReactIs_development () {
-	if (hasRequiredReactIs_development) return reactIs_development;
-	hasRequiredReactIs_development = 1;
+function requireReactIs_development$2 () {
+	if (hasRequiredReactIs_development$2) return reactIs_development$2;
+	hasRequiredReactIs_development$2 = 1;
 
 
 
@@ -3895,73 +1725,48 @@ function requireReactIs_development () {
 	  return typeOf(object) === REACT_SUSPENSE_TYPE;
 	}
 
-	reactIs_development.AsyncMode = AsyncMode;
-	reactIs_development.ConcurrentMode = ConcurrentMode;
-	reactIs_development.ContextConsumer = ContextConsumer;
-	reactIs_development.ContextProvider = ContextProvider;
-	reactIs_development.Element = Element;
-	reactIs_development.ForwardRef = ForwardRef;
-	reactIs_development.Fragment = Fragment;
-	reactIs_development.Lazy = Lazy;
-	reactIs_development.Memo = Memo;
-	reactIs_development.Portal = Portal;
-	reactIs_development.Profiler = Profiler;
-	reactIs_development.StrictMode = StrictMode;
-	reactIs_development.Suspense = Suspense;
-	reactIs_development.isAsyncMode = isAsyncMode;
-	reactIs_development.isConcurrentMode = isConcurrentMode;
-	reactIs_development.isContextConsumer = isContextConsumer;
-	reactIs_development.isContextProvider = isContextProvider;
-	reactIs_development.isElement = isElement;
-	reactIs_development.isForwardRef = isForwardRef;
-	reactIs_development.isFragment = isFragment;
-	reactIs_development.isLazy = isLazy;
-	reactIs_development.isMemo = isMemo;
-	reactIs_development.isPortal = isPortal;
-	reactIs_development.isProfiler = isProfiler;
-	reactIs_development.isStrictMode = isStrictMode;
-	reactIs_development.isSuspense = isSuspense;
-	reactIs_development.isValidElementType = isValidElementType;
-	reactIs_development.typeOf = typeOf;
+	reactIs_development$2.AsyncMode = AsyncMode;
+	reactIs_development$2.ConcurrentMode = ConcurrentMode;
+	reactIs_development$2.ContextConsumer = ContextConsumer;
+	reactIs_development$2.ContextProvider = ContextProvider;
+	reactIs_development$2.Element = Element;
+	reactIs_development$2.ForwardRef = ForwardRef;
+	reactIs_development$2.Fragment = Fragment;
+	reactIs_development$2.Lazy = Lazy;
+	reactIs_development$2.Memo = Memo;
+	reactIs_development$2.Portal = Portal;
+	reactIs_development$2.Profiler = Profiler;
+	reactIs_development$2.StrictMode = StrictMode;
+	reactIs_development$2.Suspense = Suspense;
+	reactIs_development$2.isAsyncMode = isAsyncMode;
+	reactIs_development$2.isConcurrentMode = isConcurrentMode;
+	reactIs_development$2.isContextConsumer = isContextConsumer;
+	reactIs_development$2.isContextProvider = isContextProvider;
+	reactIs_development$2.isElement = isElement;
+	reactIs_development$2.isForwardRef = isForwardRef;
+	reactIs_development$2.isFragment = isFragment;
+	reactIs_development$2.isLazy = isLazy;
+	reactIs_development$2.isMemo = isMemo;
+	reactIs_development$2.isPortal = isPortal;
+	reactIs_development$2.isProfiler = isProfiler;
+	reactIs_development$2.isStrictMode = isStrictMode;
+	reactIs_development$2.isSuspense = isSuspense;
+	reactIs_development$2.isValidElementType = isValidElementType;
+	reactIs_development$2.typeOf = typeOf;
 	  })();
 	}
-	return reactIs_development;
-}
-
-var reactIs_production_min = {};
-
-/** @license React v16.13.1
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_production_min;
-
-function requireReactIs_production_min () {
-	if (hasRequiredReactIs_production_min) return reactIs_production_min;
-	hasRequiredReactIs_production_min = 1;
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-	Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-	function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min.AsyncMode=l;reactIs_production_min.ConcurrentMode=m;reactIs_production_min.ContextConsumer=k;reactIs_production_min.ContextProvider=h;reactIs_production_min.Element=c;reactIs_production_min.ForwardRef=n;reactIs_production_min.Fragment=e;reactIs_production_min.Lazy=t;reactIs_production_min.Memo=r;reactIs_production_min.Portal=d;
-	reactIs_production_min.Profiler=g;reactIs_production_min.StrictMode=f;reactIs_production_min.Suspense=p;reactIs_production_min.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min.isConcurrentMode=A;reactIs_production_min.isContextConsumer=function(a){return z(a)===k};reactIs_production_min.isContextProvider=function(a){return z(a)===h};reactIs_production_min.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min.isForwardRef=function(a){return z(a)===n};reactIs_production_min.isFragment=function(a){return z(a)===e};reactIs_production_min.isLazy=function(a){return z(a)===t};
-	reactIs_production_min.isMemo=function(a){return z(a)===r};reactIs_production_min.isPortal=function(a){return z(a)===d};reactIs_production_min.isProfiler=function(a){return z(a)===g};reactIs_production_min.isStrictMode=function(a){return z(a)===f};reactIs_production_min.isSuspense=function(a){return z(a)===p};
-	reactIs_production_min.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min.typeOf=z;
-	return reactIs_production_min;
+	return reactIs_development$2;
 }
 
 if (process.env.NODE_ENV === 'production') {
-  reactIs$1.exports = requireReactIs_production_min();
+  reactIs$3.exports = requireReactIs_production_min$2();
 } else {
-  reactIs$1.exports = requireReactIs_development();
+  reactIs$3.exports = requireReactIs_development$2();
 }
 
-var reactIsExports = reactIs$1.exports;
+var reactIsExports$1 = reactIs$3.exports;
 
-var reactIs = reactIsExports;
+var reactIs$2 = reactIsExports$1;
 var FORWARD_REF_STATICS = {
   '$$typeof': true,
   render: true,
@@ -3978,8 +1783,8 @@ var MEMO_STATICS = {
   type: true
 };
 var TYPE_STATICS = {};
-TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
-TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+TYPE_STATICS[reactIs$2.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs$2.Memo] = MEMO_STATICS;
 
 var isBrowser$4 = typeof document !== 'undefined';
 function getRegisteredStyles(registered, registeredStyles, classNames) {
@@ -4603,7 +2408,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 var pkg = {
 	name: "@emotion/react",
-	version: "11.11.1",
+	version: "11.11.3",
 	main: "dist/emotion-react.cjs.js",
 	module: "dist/emotion-react.esm.js",
 	browser: {
@@ -4676,7 +2481,7 @@ var pkg = {
 		"@babel/runtime": "^7.18.3",
 		"@emotion/babel-plugin": "^11.11.0",
 		"@emotion/cache": "^11.11.0",
-		"@emotion/serialize": "^1.1.2",
+		"@emotion/serialize": "^1.1.3",
 		"@emotion/use-insertion-effect-with-fallbacks": "^1.0.1",
 		"@emotion/utils": "^1.2.1",
 		"@emotion/weak-memoize": "^0.3.1",
@@ -4692,7 +2497,7 @@ var pkg = {
 	},
 	devDependencies: {
 		"@definitelytyped/dtslint": "0.0.112",
-		"@emotion/css": "11.11.0",
+		"@emotion/css": "11.11.2",
 		"@emotion/css-prettifier": "1.1.3",
 		"@emotion/server": "11.11.0",
 		"@emotion/styled": "11.11.0",
@@ -5222,7 +3027,1212 @@ tags.forEach(function (tagName) {
   newStyled[tagName] = newStyled(tagName);
 });
 
+var propTypes = {exports: {}};
+
+var reactIs$1 = {exports: {}};
+
+var reactIs_production_min$1 = {};
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_production_min$1;
+
+function requireReactIs_production_min$1 () {
+	if (hasRequiredReactIs_production_min$1) return reactIs_production_min$1;
+	hasRequiredReactIs_production_min$1 = 1;
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+	Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+	function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min$1.AsyncMode=l;reactIs_production_min$1.ConcurrentMode=m;reactIs_production_min$1.ContextConsumer=k;reactIs_production_min$1.ContextProvider=h;reactIs_production_min$1.Element=c;reactIs_production_min$1.ForwardRef=n;reactIs_production_min$1.Fragment=e;reactIs_production_min$1.Lazy=t;reactIs_production_min$1.Memo=r;reactIs_production_min$1.Portal=d;
+	reactIs_production_min$1.Profiler=g;reactIs_production_min$1.StrictMode=f;reactIs_production_min$1.Suspense=p;reactIs_production_min$1.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min$1.isConcurrentMode=A;reactIs_production_min$1.isContextConsumer=function(a){return z(a)===k};reactIs_production_min$1.isContextProvider=function(a){return z(a)===h};reactIs_production_min$1.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min$1.isForwardRef=function(a){return z(a)===n};reactIs_production_min$1.isFragment=function(a){return z(a)===e};reactIs_production_min$1.isLazy=function(a){return z(a)===t};
+	reactIs_production_min$1.isMemo=function(a){return z(a)===r};reactIs_production_min$1.isPortal=function(a){return z(a)===d};reactIs_production_min$1.isProfiler=function(a){return z(a)===g};reactIs_production_min$1.isStrictMode=function(a){return z(a)===f};reactIs_production_min$1.isSuspense=function(a){return z(a)===p};
+	reactIs_production_min$1.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min$1.typeOf=z;
+	return reactIs_production_min$1;
+}
+
+var reactIs_development$1 = {};
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_development$1;
+
+function requireReactIs_development$1 () {
+	if (hasRequiredReactIs_development$1) return reactIs_development$1;
+	hasRequiredReactIs_development$1 = 1;
+
+
+
+	if (process.env.NODE_ENV !== "production") {
+	  (function() {
+
+	// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+	// nor polyfill, then a plain number is used for performance.
+	var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+	var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+	var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+	var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+	var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+	var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+	var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+	var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+	// (unstable) APIs that have been removed. Can we remove the symbols?
+
+	var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+	var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+	var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+	var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+	var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+	var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+	var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+	var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+	var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+	var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+	var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+	function isValidElementType(type) {
+	  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+	  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+	}
+
+	function typeOf(object) {
+	  if (typeof object === 'object' && object !== null) {
+	    var $$typeof = object.$$typeof;
+
+	    switch ($$typeof) {
+	      case REACT_ELEMENT_TYPE:
+	        var type = object.type;
+
+	        switch (type) {
+	          case REACT_ASYNC_MODE_TYPE:
+	          case REACT_CONCURRENT_MODE_TYPE:
+	          case REACT_FRAGMENT_TYPE:
+	          case REACT_PROFILER_TYPE:
+	          case REACT_STRICT_MODE_TYPE:
+	          case REACT_SUSPENSE_TYPE:
+	            return type;
+
+	          default:
+	            var $$typeofType = type && type.$$typeof;
+
+	            switch ($$typeofType) {
+	              case REACT_CONTEXT_TYPE:
+	              case REACT_FORWARD_REF_TYPE:
+	              case REACT_LAZY_TYPE:
+	              case REACT_MEMO_TYPE:
+	              case REACT_PROVIDER_TYPE:
+	                return $$typeofType;
+
+	              default:
+	                return $$typeof;
+	            }
+
+	        }
+
+	      case REACT_PORTAL_TYPE:
+	        return $$typeof;
+	    }
+	  }
+
+	  return undefined;
+	} // AsyncMode is deprecated along with isAsyncMode
+
+	var AsyncMode = REACT_ASYNC_MODE_TYPE;
+	var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+	var ContextConsumer = REACT_CONTEXT_TYPE;
+	var ContextProvider = REACT_PROVIDER_TYPE;
+	var Element = REACT_ELEMENT_TYPE;
+	var ForwardRef = REACT_FORWARD_REF_TYPE;
+	var Fragment = REACT_FRAGMENT_TYPE;
+	var Lazy = REACT_LAZY_TYPE;
+	var Memo = REACT_MEMO_TYPE;
+	var Portal = REACT_PORTAL_TYPE;
+	var Profiler = REACT_PROFILER_TYPE;
+	var StrictMode = REACT_STRICT_MODE_TYPE;
+	var Suspense = REACT_SUSPENSE_TYPE;
+	var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+	function isAsyncMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+	    }
+	  }
+
+	  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+	}
+	function isConcurrentMode(object) {
+	  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+	}
+	function isContextConsumer(object) {
+	  return typeOf(object) === REACT_CONTEXT_TYPE;
+	}
+	function isContextProvider(object) {
+	  return typeOf(object) === REACT_PROVIDER_TYPE;
+	}
+	function isElement(object) {
+	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+	}
+	function isForwardRef(object) {
+	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+	}
+	function isFragment(object) {
+	  return typeOf(object) === REACT_FRAGMENT_TYPE;
+	}
+	function isLazy(object) {
+	  return typeOf(object) === REACT_LAZY_TYPE;
+	}
+	function isMemo(object) {
+	  return typeOf(object) === REACT_MEMO_TYPE;
+	}
+	function isPortal(object) {
+	  return typeOf(object) === REACT_PORTAL_TYPE;
+	}
+	function isProfiler(object) {
+	  return typeOf(object) === REACT_PROFILER_TYPE;
+	}
+	function isStrictMode(object) {
+	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+	}
+	function isSuspense(object) {
+	  return typeOf(object) === REACT_SUSPENSE_TYPE;
+	}
+
+	reactIs_development$1.AsyncMode = AsyncMode;
+	reactIs_development$1.ConcurrentMode = ConcurrentMode;
+	reactIs_development$1.ContextConsumer = ContextConsumer;
+	reactIs_development$1.ContextProvider = ContextProvider;
+	reactIs_development$1.Element = Element;
+	reactIs_development$1.ForwardRef = ForwardRef;
+	reactIs_development$1.Fragment = Fragment;
+	reactIs_development$1.Lazy = Lazy;
+	reactIs_development$1.Memo = Memo;
+	reactIs_development$1.Portal = Portal;
+	reactIs_development$1.Profiler = Profiler;
+	reactIs_development$1.StrictMode = StrictMode;
+	reactIs_development$1.Suspense = Suspense;
+	reactIs_development$1.isAsyncMode = isAsyncMode;
+	reactIs_development$1.isConcurrentMode = isConcurrentMode;
+	reactIs_development$1.isContextConsumer = isContextConsumer;
+	reactIs_development$1.isContextProvider = isContextProvider;
+	reactIs_development$1.isElement = isElement;
+	reactIs_development$1.isForwardRef = isForwardRef;
+	reactIs_development$1.isFragment = isFragment;
+	reactIs_development$1.isLazy = isLazy;
+	reactIs_development$1.isMemo = isMemo;
+	reactIs_development$1.isPortal = isPortal;
+	reactIs_development$1.isProfiler = isProfiler;
+	reactIs_development$1.isStrictMode = isStrictMode;
+	reactIs_development$1.isSuspense = isSuspense;
+	reactIs_development$1.isValidElementType = isValidElementType;
+	reactIs_development$1.typeOf = typeOf;
+	  })();
+	}
+	return reactIs_development$1;
+}
+
+var hasRequiredReactIs;
+
+function requireReactIs () {
+	if (hasRequiredReactIs) return reactIs$1.exports;
+	hasRequiredReactIs = 1;
+
+	if (process.env.NODE_ENV === 'production') {
+	  reactIs$1.exports = requireReactIs_production_min$1();
+	} else {
+	  reactIs$1.exports = requireReactIs_development$1();
+	}
+	return reactIs$1.exports;
+}
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+var objectAssign;
+var hasRequiredObjectAssign;
+
+function requireObjectAssign () {
+	if (hasRequiredObjectAssign) return objectAssign;
+	hasRequiredObjectAssign = 1;
+	/* eslint-disable no-unused-vars */
+	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+	function toObject(val) {
+		if (val === null || val === undefined) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	function shouldUseNative() {
+		try {
+			if (!Object.assign) {
+				return false;
+			}
+
+			// Detect buggy property enumeration order in older V8 versions.
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+			var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+			test1[5] = 'de';
+			if (Object.getOwnPropertyNames(test1)[0] === '5') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test2 = {};
+			for (var i = 0; i < 10; i++) {
+				test2['_' + String.fromCharCode(i)] = i;
+			}
+			var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+				return test2[n];
+			});
+			if (order2.join('') !== '0123456789') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test3 = {};
+			'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+				test3[letter] = letter;
+			});
+			if (Object.keys(Object.assign({}, test3)).join('') !==
+					'abcdefghijklmnopqrst') {
+				return false;
+			}
+
+			return true;
+		} catch (err) {
+			// We don't expect any of the above to throw, but better to be safe.
+			return false;
+		}
+	}
+
+	objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+		var from;
+		var to = toObject(target);
+		var symbols;
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = Object(arguments[s]);
+
+			for (var key in from) {
+				if (hasOwnProperty.call(from, key)) {
+					to[key] = from[key];
+				}
+			}
+
+			if (getOwnPropertySymbols) {
+				symbols = getOwnPropertySymbols(from);
+				for (var i = 0; i < symbols.length; i++) {
+					if (propIsEnumerable.call(from, symbols[i])) {
+						to[symbols[i]] = from[symbols[i]];
+					}
+				}
+			}
+		}
+
+		return to;
+	};
+	return objectAssign;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var ReactPropTypesSecret_1;
+var hasRequiredReactPropTypesSecret;
+
+function requireReactPropTypesSecret () {
+	if (hasRequiredReactPropTypesSecret) return ReactPropTypesSecret_1;
+	hasRequiredReactPropTypesSecret = 1;
+
+	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+	ReactPropTypesSecret_1 = ReactPropTypesSecret;
+	return ReactPropTypesSecret_1;
+}
+
+var has$5;
+var hasRequiredHas;
+
+function requireHas () {
+	if (hasRequiredHas) return has$5;
+	hasRequiredHas = 1;
+	has$5 = Function.call.bind(Object.prototype.hasOwnProperty);
+	return has$5;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var checkPropTypes_1;
+var hasRequiredCheckPropTypes;
+
+function requireCheckPropTypes () {
+	if (hasRequiredCheckPropTypes) return checkPropTypes_1;
+	hasRequiredCheckPropTypes = 1;
+
+	var printWarning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  var ReactPropTypesSecret = requireReactPropTypesSecret();
+	  var loggedTypeFailures = {};
+	  var has = requireHas();
+
+	  printWarning = function(text) {
+	    var message = 'Warning: ' + text;
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) { /**/ }
+	  };
+	}
+
+	/**
+	 * Assert that the values match with the type specs.
+	 * Error messages are memorized and will only be shown once.
+	 *
+	 * @param {object} typeSpecs Map of name to a ReactPropType
+	 * @param {object} values Runtime values that need to be type-checked
+	 * @param {string} location e.g. "prop", "context", "child context"
+	 * @param {string} componentName Name of the component for error messages.
+	 * @param {?Function} getStack Returns the component stack.
+	 * @private
+	 */
+	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    for (var typeSpecName in typeSpecs) {
+	      if (has(typeSpecs, typeSpecName)) {
+	        var error;
+	        // Prop type validation may throw. In case they do, we don't want to
+	        // fail the render phase where it didn't fail before. So we log it.
+	        // After these have been cleaned up, we'll let them throw.
+	        try {
+	          // This is intentionally an invariant that gets caught. It's the same
+	          // behavior as without this statement except with a better message.
+	          if (typeof typeSpecs[typeSpecName] !== 'function') {
+	            var err = Error(
+	              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+	              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+	              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
+	            );
+	            err.name = 'Invariant Violation';
+	            throw err;
+	          }
+	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+	        } catch (ex) {
+	          error = ex;
+	        }
+	        if (error && !(error instanceof Error)) {
+	          printWarning(
+	            (componentName || 'React class') + ': type specification of ' +
+	            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+	            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+	            'You may have forgotten to pass an argument to the type checker ' +
+	            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+	            'shape all require an argument).'
+	          );
+	        }
+	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+	          // Only monitor this failure once because there tends to be a lot of the
+	          // same error.
+	          loggedTypeFailures[error.message] = true;
+
+	          var stack = getStack ? getStack() : '';
+
+	          printWarning(
+	            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+	          );
+	        }
+	      }
+	    }
+	  }
+	}
+
+	/**
+	 * Resets warning cache when testing.
+	 *
+	 * @private
+	 */
+	checkPropTypes.resetWarningCache = function() {
+	  if (process.env.NODE_ENV !== 'production') {
+	    loggedTypeFailures = {};
+	  }
+	};
+
+	checkPropTypes_1 = checkPropTypes;
+	return checkPropTypes_1;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var factoryWithTypeCheckers;
+var hasRequiredFactoryWithTypeCheckers;
+
+function requireFactoryWithTypeCheckers () {
+	if (hasRequiredFactoryWithTypeCheckers) return factoryWithTypeCheckers;
+	hasRequiredFactoryWithTypeCheckers = 1;
+
+	var ReactIs = requireReactIs();
+	var assign = requireObjectAssign();
+
+	var ReactPropTypesSecret = requireReactPropTypesSecret();
+	var has = requireHas();
+	var checkPropTypes = requireCheckPropTypes();
+
+	var printWarning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  printWarning = function(text) {
+	    var message = 'Warning: ' + text;
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) {}
+	  };
+	}
+
+	function emptyFunctionThatReturnsNull() {
+	  return null;
+	}
+
+	factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
+	  /* global Symbol */
+	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+	  /**
+	   * Returns the iterator method function contained on the iterable object.
+	   *
+	   * Be sure to invoke the function with the iterable as context:
+	   *
+	   *     var iteratorFn = getIteratorFn(myIterable);
+	   *     if (iteratorFn) {
+	   *       var iterator = iteratorFn.call(myIterable);
+	   *       ...
+	   *     }
+	   *
+	   * @param {?object} maybeIterable
+	   * @return {?function}
+	   */
+	  function getIteratorFn(maybeIterable) {
+	    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+	    if (typeof iteratorFn === 'function') {
+	      return iteratorFn;
+	    }
+	  }
+
+	  /**
+	   * Collection of methods that allow declaration and validation of props that are
+	   * supplied to React components. Example usage:
+	   *
+	   *   var Props = require('ReactPropTypes');
+	   *   var MyArticle = React.createClass({
+	   *     propTypes: {
+	   *       // An optional string prop named "description".
+	   *       description: Props.string,
+	   *
+	   *       // A required enum prop named "category".
+	   *       category: Props.oneOf(['News','Photos']).isRequired,
+	   *
+	   *       // A prop named "dialog" that requires an instance of Dialog.
+	   *       dialog: Props.instanceOf(Dialog).isRequired
+	   *     },
+	   *     render: function() { ... }
+	   *   });
+	   *
+	   * A more formal specification of how these methods are used:
+	   *
+	   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+	   *   decl := ReactPropTypes.{type}(.isRequired)?
+	   *
+	   * Each and every declaration produces a function with the same signature. This
+	   * allows the creation of custom validation functions. For example:
+	   *
+	   *  var MyLink = React.createClass({
+	   *    propTypes: {
+	   *      // An optional string or URI prop named "href".
+	   *      href: function(props, propName, componentName) {
+	   *        var propValue = props[propName];
+	   *        if (propValue != null && typeof propValue !== 'string' &&
+	   *            !(propValue instanceof URI)) {
+	   *          return new Error(
+	   *            'Expected a string or an URI for ' + propName + ' in ' +
+	   *            componentName
+	   *          );
+	   *        }
+	   *      }
+	   *    },
+	   *    render: function() {...}
+	   *  });
+	   *
+	   * @internal
+	   */
+
+	  var ANONYMOUS = '<<anonymous>>';
+
+	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+	  var ReactPropTypes = {
+	    array: createPrimitiveTypeChecker('array'),
+	    bigint: createPrimitiveTypeChecker('bigint'),
+	    bool: createPrimitiveTypeChecker('boolean'),
+	    func: createPrimitiveTypeChecker('function'),
+	    number: createPrimitiveTypeChecker('number'),
+	    object: createPrimitiveTypeChecker('object'),
+	    string: createPrimitiveTypeChecker('string'),
+	    symbol: createPrimitiveTypeChecker('symbol'),
+
+	    any: createAnyTypeChecker(),
+	    arrayOf: createArrayOfTypeChecker,
+	    element: createElementTypeChecker(),
+	    elementType: createElementTypeTypeChecker(),
+	    instanceOf: createInstanceTypeChecker,
+	    node: createNodeChecker(),
+	    objectOf: createObjectOfTypeChecker,
+	    oneOf: createEnumTypeChecker,
+	    oneOfType: createUnionTypeChecker,
+	    shape: createShapeTypeChecker,
+	    exact: createStrictShapeTypeChecker,
+	  };
+
+	  /**
+	   * inlined Object.is polyfill to avoid requiring consumers ship their own
+	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+	   */
+	  /*eslint-disable no-self-compare*/
+	  function is(x, y) {
+	    // SameValue algorithm
+	    if (x === y) {
+	      // Steps 1-5, 7-10
+	      // Steps 6.b-6.e: +0 != -0
+	      return x !== 0 || 1 / x === 1 / y;
+	    } else {
+	      // Step 6.a: NaN == NaN
+	      return x !== x && y !== y;
+	    }
+	  }
+	  /*eslint-enable no-self-compare*/
+
+	  /**
+	   * We use an Error-like object for backward compatibility as people may call
+	   * PropTypes directly and inspect their output. However, we don't use real
+	   * Errors anymore. We don't inspect their stack anyway, and creating them
+	   * is prohibitively expensive if they are created too often, such as what
+	   * happens in oneOfType() for any type before the one that matched.
+	   */
+	  function PropTypeError(message, data) {
+	    this.message = message;
+	    this.data = data && typeof data === 'object' ? data: {};
+	    this.stack = '';
+	  }
+	  // Make `instanceof Error` still work for returned errors.
+	  PropTypeError.prototype = Error.prototype;
+
+	  function createChainableTypeChecker(validate) {
+	    if (process.env.NODE_ENV !== 'production') {
+	      var manualPropTypeCallCache = {};
+	      var manualPropTypeWarningCount = 0;
+	    }
+	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+	      componentName = componentName || ANONYMOUS;
+	      propFullName = propFullName || propName;
+
+	      if (secret !== ReactPropTypesSecret) {
+	        if (throwOnDirectAccess) {
+	          // New behavior only for users of `prop-types` package
+	          var err = new Error(
+	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	            'Use `PropTypes.checkPropTypes()` to call them. ' +
+	            'Read more at http://fb.me/use-check-prop-types'
+	          );
+	          err.name = 'Invariant Violation';
+	          throw err;
+	        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+	          // Old behavior for people using React.PropTypes
+	          var cacheKey = componentName + ':' + propName;
+	          if (
+	            !manualPropTypeCallCache[cacheKey] &&
+	            // Avoid spamming the console because they are often not actionable except for lib authors
+	            manualPropTypeWarningCount < 3
+	          ) {
+	            printWarning(
+	              'You are manually calling a React.PropTypes validation ' +
+	              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
+	              'and will throw in the standalone `prop-types` package. ' +
+	              'You may be seeing this warning due to a third-party PropTypes ' +
+	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+	            );
+	            manualPropTypeCallCache[cacheKey] = true;
+	            manualPropTypeWarningCount++;
+	          }
+	        }
+	      }
+	      if (props[propName] == null) {
+	        if (isRequired) {
+	          if (props[propName] === null) {
+	            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+	          }
+	          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+	        }
+	        return null;
+	      } else {
+	        return validate(props, propName, componentName, location, propFullName);
+	      }
+	    }
+
+	    var chainedCheckType = checkType.bind(null, false);
+	    chainedCheckType.isRequired = checkType.bind(null, true);
+
+	    return chainedCheckType;
+	  }
+
+	  function createPrimitiveTypeChecker(expectedType) {
+	    function validate(props, propName, componentName, location, propFullName, secret) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== expectedType) {
+	        // `propValue` being instance of, say, date/regexp, pass the 'object'
+	        // check, but we can offer a more precise error message here rather than
+	        // 'of type `object`'.
+	        var preciseType = getPreciseType(propValue);
+
+	        return new PropTypeError(
+	          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+	          {expectedType: expectedType}
+	        );
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createAnyTypeChecker() {
+	    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+	  }
+
+	  function createArrayOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+	      }
+	      var propValue = props[propName];
+	      if (!Array.isArray(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+	      }
+	      for (var i = 0; i < propValue.length; i++) {
+	        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+	        if (error instanceof Error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createElementTypeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      if (!isValidElement(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createElementTypeTypeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      if (!ReactIs.isValidElementType(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createInstanceTypeChecker(expectedClass) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!(props[propName] instanceof expectedClass)) {
+	        var expectedClassName = expectedClass.name || ANONYMOUS;
+	        var actualClassName = getClassName(props[propName]);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createEnumTypeChecker(expectedValues) {
+	    if (!Array.isArray(expectedValues)) {
+	      if (process.env.NODE_ENV !== 'production') {
+	        if (arguments.length > 1) {
+	          printWarning(
+	            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+	            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+	          );
+	        } else {
+	          printWarning('Invalid argument supplied to oneOf, expected an array.');
+	        }
+	      }
+	      return emptyFunctionThatReturnsNull;
+	    }
+
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      for (var i = 0; i < expectedValues.length; i++) {
+	        if (is(propValue, expectedValues[i])) {
+	          return null;
+	        }
+	      }
+
+	      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+	        var type = getPreciseType(value);
+	        if (type === 'symbol') {
+	          return String(value);
+	        }
+	        return value;
+	      });
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createObjectOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+	      }
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+	      }
+	      for (var key in propValue) {
+	        if (has(propValue, key)) {
+	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	          if (error instanceof Error) {
+	            return error;
+	          }
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createUnionTypeChecker(arrayOfTypeCheckers) {
+	    if (!Array.isArray(arrayOfTypeCheckers)) {
+	      process.env.NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+	      return emptyFunctionThatReturnsNull;
+	    }
+
+	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	      var checker = arrayOfTypeCheckers[i];
+	      if (typeof checker !== 'function') {
+	        printWarning(
+	          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+	          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+	        );
+	        return emptyFunctionThatReturnsNull;
+	      }
+	    }
+
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var expectedTypes = [];
+	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	        var checker = arrayOfTypeCheckers[i];
+	        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+	        if (checkerResult == null) {
+	          return null;
+	        }
+	        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+	          expectedTypes.push(checkerResult.data.expectedType);
+	        }
+	      }
+	      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createNodeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!isNode(props[propName])) {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function invalidValidatorError(componentName, location, propFullName, key, type) {
+	    return new PropTypeError(
+	      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+	      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+	    );
+	  }
+
+	  function createShapeTypeChecker(shapeTypes) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+	      }
+	      for (var key in shapeTypes) {
+	        var checker = shapeTypes[key];
+	        if (typeof checker !== 'function') {
+	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+	        }
+	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	        if (error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createStrictShapeTypeChecker(shapeTypes) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+	      }
+	      // We need to check all keys in case some are required but missing from props.
+	      var allKeys = assign({}, props[propName], shapeTypes);
+	      for (var key in allKeys) {
+	        var checker = shapeTypes[key];
+	        if (has(shapeTypes, key) && typeof checker !== 'function') {
+	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+	        }
+	        if (!checker) {
+	          return new PropTypeError(
+	            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+	            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+	            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
+	          );
+	        }
+	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	        if (error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function isNode(propValue) {
+	    switch (typeof propValue) {
+	      case 'number':
+	      case 'string':
+	      case 'undefined':
+	        return true;
+	      case 'boolean':
+	        return !propValue;
+	      case 'object':
+	        if (Array.isArray(propValue)) {
+	          return propValue.every(isNode);
+	        }
+	        if (propValue === null || isValidElement(propValue)) {
+	          return true;
+	        }
+
+	        var iteratorFn = getIteratorFn(propValue);
+	        if (iteratorFn) {
+	          var iterator = iteratorFn.call(propValue);
+	          var step;
+	          if (iteratorFn !== propValue.entries) {
+	            while (!(step = iterator.next()).done) {
+	              if (!isNode(step.value)) {
+	                return false;
+	              }
+	            }
+	          } else {
+	            // Iterator will provide entry [k,v] tuples rather than values.
+	            while (!(step = iterator.next()).done) {
+	              var entry = step.value;
+	              if (entry) {
+	                if (!isNode(entry[1])) {
+	                  return false;
+	                }
+	              }
+	            }
+	          }
+	        } else {
+	          return false;
+	        }
+
+	        return true;
+	      default:
+	        return false;
+	    }
+	  }
+
+	  function isSymbol(propType, propValue) {
+	    // Native Symbol.
+	    if (propType === 'symbol') {
+	      return true;
+	    }
+
+	    // falsy value can't be a Symbol
+	    if (!propValue) {
+	      return false;
+	    }
+
+	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+	    if (propValue['@@toStringTag'] === 'Symbol') {
+	      return true;
+	    }
+
+	    // Fallback for non-spec compliant Symbols which are polyfilled.
+	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+	      return true;
+	    }
+
+	    return false;
+	  }
+
+	  // Equivalent of `typeof` but with special handling for array and regexp.
+	  function getPropType(propValue) {
+	    var propType = typeof propValue;
+	    if (Array.isArray(propValue)) {
+	      return 'array';
+	    }
+	    if (propValue instanceof RegExp) {
+	      // Old webkits (at least until Android 4.0) return 'function' rather than
+	      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+	      // passes PropTypes.object.
+	      return 'object';
+	    }
+	    if (isSymbol(propType, propValue)) {
+	      return 'symbol';
+	    }
+	    return propType;
+	  }
+
+	  // This handles more types than `getPropType`. Only used for error messages.
+	  // See `createPrimitiveTypeChecker`.
+	  function getPreciseType(propValue) {
+	    if (typeof propValue === 'undefined' || propValue === null) {
+	      return '' + propValue;
+	    }
+	    var propType = getPropType(propValue);
+	    if (propType === 'object') {
+	      if (propValue instanceof Date) {
+	        return 'date';
+	      } else if (propValue instanceof RegExp) {
+	        return 'regexp';
+	      }
+	    }
+	    return propType;
+	  }
+
+	  // Returns a string that is postfixed to a warning about an invalid type.
+	  // For example, "undefined" or "of type array"
+	  function getPostfixForTypeWarning(value) {
+	    var type = getPreciseType(value);
+	    switch (type) {
+	      case 'array':
+	      case 'object':
+	        return 'an ' + type;
+	      case 'boolean':
+	      case 'date':
+	      case 'regexp':
+	        return 'a ' + type;
+	      default:
+	        return type;
+	    }
+	  }
+
+	  // Returns class name of the object, if any.
+	  function getClassName(propValue) {
+	    if (!propValue.constructor || !propValue.constructor.name) {
+	      return ANONYMOUS;
+	    }
+	    return propValue.constructor.name;
+	  }
+
+	  ReactPropTypes.checkPropTypes = checkPropTypes;
+	  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+
+	  return ReactPropTypes;
+	};
+	return factoryWithTypeCheckers;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var factoryWithThrowingShims;
+var hasRequiredFactoryWithThrowingShims;
+
+function requireFactoryWithThrowingShims () {
+	if (hasRequiredFactoryWithThrowingShims) return factoryWithThrowingShims;
+	hasRequiredFactoryWithThrowingShims = 1;
+
+	var ReactPropTypesSecret = requireReactPropTypesSecret();
+
+	function emptyFunction() {}
+	function emptyFunctionWithReset() {}
+	emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+	factoryWithThrowingShims = function() {
+	  function shim(props, propName, componentName, location, propFullName, secret) {
+	    if (secret === ReactPropTypesSecret) {
+	      // It is still safe when called from React.
+	      return;
+	    }
+	    var err = new Error(
+	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	      'Use PropTypes.checkPropTypes() to call them. ' +
+	      'Read more at http://fb.me/use-check-prop-types'
+	    );
+	    err.name = 'Invariant Violation';
+	    throw err;
+	  }	  shim.isRequired = shim;
+	  function getShim() {
+	    return shim;
+	  }	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+	  var ReactPropTypes = {
+	    array: shim,
+	    bigint: shim,
+	    bool: shim,
+	    func: shim,
+	    number: shim,
+	    object: shim,
+	    string: shim,
+	    symbol: shim,
+
+	    any: shim,
+	    arrayOf: getShim,
+	    element: shim,
+	    elementType: shim,
+	    instanceOf: getShim,
+	    node: shim,
+	    objectOf: getShim,
+	    oneOf: getShim,
+	    oneOfType: getShim,
+	    shape: getShim,
+	    exact: getShim,
+
+	    checkPropTypes: emptyFunctionWithReset,
+	    resetWarningCache: emptyFunction
+	  };
+
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+
+	  return ReactPropTypes;
+	};
+	return factoryWithThrowingShims;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = requireReactIs();
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  propTypes.exports = requireFactoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  propTypes.exports = requireFactoryWithThrowingShims()();
+}
+
+var propTypesExports = propTypes.exports;
+var PropTypes = /*@__PURE__*/getDefaultExportFromCjs(propTypesExports);
+
 var jsxRuntime = {exports: {}};
+
+var reactJsxRuntime_production_min = {};
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactJsxRuntime_production_min;
+
+function requireReactJsxRuntime_production_min () {
+	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
+	hasRequiredReactJsxRuntime_production_min = 1;
+var f=React__default,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
+	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
+	return reactJsxRuntime_production_min;
+}
 
 var reactJsxRuntime_development = {};
 
@@ -6546,28 +5556,6 @@ function requireReactJsxRuntime_development () {
 	return reactJsxRuntime_development;
 }
 
-var reactJsxRuntime_production_min = {};
-
-/**
- * @license React
- * react-jsx-runtime.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactJsxRuntime_production_min;
-
-function requireReactJsxRuntime_production_min () {
-	if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
-	hasRequiredReactJsxRuntime_production_min = 1;
-var f=React__default,k=Symbol.for("react.element"),l=Symbol.for("react.fragment"),m=Object.prototype.hasOwnProperty,n=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,p={key:!0,ref:!0,__self:!0,__source:!0};
-	function q(c,a,g){var b,d={},e=null,h=null;void 0!==g&&(e=""+g);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(h=a.ref);for(b in a)m.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return {$$typeof:k,type:c,key:e,ref:h,props:d,_owner:n.current}}reactJsxRuntime_production_min.Fragment=l;reactJsxRuntime_production_min.jsx=q;reactJsxRuntime_production_min.jsxs=q;
-	return reactJsxRuntime_production_min;
-}
-
 if (process.env.NODE_ENV === 'production') {
   jsxRuntime.exports = requireReactJsxRuntime_production_min();
 } else {
@@ -6576,7 +5564,7 @@ if (process.env.NODE_ENV === 'production') {
 
 var jsxRuntimeExports = jsxRuntime.exports;
 
-function isEmpty$4(obj) {
+function isEmpty$3(obj) {
   return obj === undefined || obj === null || Object.keys(obj).length === 0;
 }
 function GlobalStyles$2(props) {
@@ -6584,7 +5572,7 @@ function GlobalStyles$2(props) {
     styles,
     defaultTheme = {}
   } = props;
-  const globalStyles = typeof styles === 'function' ? themeInput => styles(isEmpty$4(themeInput) ? defaultTheme : themeInput) : styles;
+  const globalStyles = typeof styles === 'function' ? themeInput => styles(isEmpty$3(themeInput) ? defaultTheme : themeInput) : styles;
   return /*#__PURE__*/jsxRuntimeExports.jsx(Global, {
     styles: globalStyles
   });
@@ -6595,13 +5583,13 @@ process.env.NODE_ENV !== "production" ? GlobalStyles$2.propTypes = {
 } : void 0;
 
 /**
- * @mui/styled-engine v5.15.1
+ * @mui/styled-engine v5.15.9
  *
  * @license MIT
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-function styled$2(tag, options) {
+function styled$1(tag, options) {
   const stylesFactory = newStyled(tag, options);
   if (process.env.NODE_ENV !== 'production') {
     return (...styles) => {
@@ -6626,7 +5614,1084 @@ const internal_processStyles = (tag, processor) => {
   }
 };
 
-const _excluded$I = ["values", "unit", "step"];
+function chainPropTypes(propType1, propType2) {
+  if (process.env.NODE_ENV === 'production') {
+    return () => null;
+  }
+  return function validate(...args) {
+    return propType1(...args) || propType2(...args);
+  };
+}
+
+// https://github.com/sindresorhus/is-plain-obj/blob/main/index.js
+function isPlainObject$2(item) {
+  if (typeof item !== 'object' || item === null) {
+    return false;
+  }
+  const prototype = Object.getPrototypeOf(item);
+  return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in item) && !(Symbol.iterator in item);
+}
+function deepClone(source) {
+  if (!isPlainObject$2(source)) {
+    return source;
+  }
+  const output = {};
+  Object.keys(source).forEach(key => {
+    output[key] = deepClone(source[key]);
+  });
+  return output;
+}
+function deepmerge(target, source, options = {
+  clone: true
+}) {
+  const output = options.clone ? _extends({}, target) : target;
+  if (isPlainObject$2(target) && isPlainObject$2(source)) {
+    Object.keys(source).forEach(key => {
+      // Avoid prototype pollution
+      if (key === '__proto__') {
+        return;
+      }
+      if (isPlainObject$2(source[key]) && key in target && isPlainObject$2(target[key])) {
+        // Since `output` is a clone of `target` and we have narrowed `target` in this block we can cast to the same type.
+        output[key] = deepmerge(target[key], source[key], options);
+      } else if (options.clone) {
+        output[key] = isPlainObject$2(source[key]) ? deepClone(source[key]) : source[key];
+      } else {
+        output[key] = source[key];
+      }
+    });
+  }
+  return output;
+}
+
+function isClassComponent$1(elementType) {
+  // elementType.prototype?.isReactComponent
+  const {
+    prototype = {}
+  } = elementType;
+  return Boolean(prototype.isReactComponent);
+}
+function acceptingRef(props, propName, componentName, location, propFullName) {
+  const element = props[propName];
+  const safePropName = propFullName || propName;
+  if (element == null ||
+  // When server-side rendering React doesn't warn either.
+  // This is not an accurate check for SSR.
+  // This is only in place for Emotion compat.
+  // TODO: Revisit once https://github.com/facebook/react/issues/20047 is resolved.
+  typeof window === 'undefined') {
+    return null;
+  }
+  let warningHint;
+  const elementType = element.type;
+  /**
+   * Blacklisting instead of whitelisting
+   *
+   * Blacklisting will miss some components, such as React.Fragment. Those will at least
+   * trigger a warning in React.
+   * We can't whitelist because there is no safe way to detect React.forwardRef
+   * or class components. "Safe" means there's no public API.
+   *
+   */
+  if (typeof elementType === 'function' && !isClassComponent$1(elementType)) {
+    warningHint = 'Did you accidentally use a plain function component for an element instead?';
+  }
+  if (warningHint !== undefined) {
+    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an element that can hold a ref. ${warningHint} ` + 'For more information see https://mui.com/r/caveat-with-refs-guide');
+  }
+  return null;
+}
+const elementAcceptingRef = chainPropTypes(PropTypes.element, acceptingRef);
+elementAcceptingRef.isRequired = chainPropTypes(PropTypes.element.isRequired, acceptingRef);
+var elementAcceptingRef$1 = elementAcceptingRef;
+
+function isClassComponent(elementType) {
+  // elementType.prototype?.isReactComponent
+  const {
+    prototype = {}
+  } = elementType;
+  return Boolean(prototype.isReactComponent);
+}
+function elementTypeAcceptingRef(props, propName, componentName, location, propFullName) {
+  const propValue = props[propName];
+  const safePropName = propFullName || propName;
+  if (propValue == null ||
+  // When server-side rendering React doesn't warn either.
+  // This is not an accurate check for SSR.
+  // This is only in place for emotion compat.
+  // TODO: Revisit once https://github.com/facebook/react/issues/20047 is resolved.
+  typeof window === 'undefined') {
+    return null;
+  }
+  let warningHint;
+
+  /**
+   * Blacklisting instead of whitelisting
+   *
+   * Blacklisting will miss some components, such as React.Fragment. Those will at least
+   * trigger a warning in React.
+   * We can't whitelist because there is no safe way to detect React.forwardRef
+   * or class components. "Safe" means there's no public API.
+   *
+   */
+  if (typeof propValue === 'function' && !isClassComponent(propValue)) {
+    warningHint = 'Did you accidentally provide a plain function component instead?';
+  }
+  if (warningHint !== undefined) {
+    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an element type that can hold a ref. ${warningHint} ` + 'For more information see https://mui.com/r/caveat-with-refs-guide');
+  }
+  return null;
+}
+var elementTypeAcceptingRef$1 = chainPropTypes(PropTypes.elementType, elementTypeAcceptingRef);
+
+// This module is based on https://github.com/airbnb/prop-types-exact repository.
+// However, in order to reduce the number of dependencies and to remove some extra safe checks
+// the module was forked.
+
+const specialProperty = 'exact-prop: \u200b';
+function exactProp(propTypes) {
+  if (process.env.NODE_ENV === 'production') {
+    return propTypes;
+  }
+  return _extends({}, propTypes, {
+    [specialProperty]: props => {
+      const unsupportedProps = Object.keys(props).filter(prop => !propTypes.hasOwnProperty(prop));
+      if (unsupportedProps.length > 0) {
+        return new Error(`The following props are not supported: ${unsupportedProps.map(prop => `\`${prop}\``).join(', ')}. Please remove them.`);
+      }
+      return null;
+    }
+  });
+}
+
+var reactIs = {exports: {}};
+
+var reactIs_production_min = {};
+
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_production_min;
+
+function requireReactIs_production_min () {
+	if (hasRequiredReactIs_production_min) return reactIs_production_min;
+	hasRequiredReactIs_production_min = 1;
+var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
+	function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}reactIs_production_min.ContextConsumer=h;reactIs_production_min.ContextProvider=g;reactIs_production_min.Element=b;reactIs_production_min.ForwardRef=l;reactIs_production_min.Fragment=d;reactIs_production_min.Lazy=q;reactIs_production_min.Memo=p;reactIs_production_min.Portal=c;reactIs_production_min.Profiler=f;reactIs_production_min.StrictMode=e;reactIs_production_min.Suspense=m;
+	reactIs_production_min.SuspenseList=n;reactIs_production_min.isAsyncMode=function(){return !1};reactIs_production_min.isConcurrentMode=function(){return !1};reactIs_production_min.isContextConsumer=function(a){return v(a)===h};reactIs_production_min.isContextProvider=function(a){return v(a)===g};reactIs_production_min.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b};reactIs_production_min.isForwardRef=function(a){return v(a)===l};reactIs_production_min.isFragment=function(a){return v(a)===d};reactIs_production_min.isLazy=function(a){return v(a)===q};reactIs_production_min.isMemo=function(a){return v(a)===p};
+	reactIs_production_min.isPortal=function(a){return v(a)===c};reactIs_production_min.isProfiler=function(a){return v(a)===f};reactIs_production_min.isStrictMode=function(a){return v(a)===e};reactIs_production_min.isSuspense=function(a){return v(a)===m};reactIs_production_min.isSuspenseList=function(a){return v(a)===n};
+	reactIs_production_min.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};reactIs_production_min.typeOf=v;
+	return reactIs_production_min;
+}
+
+var reactIs_development = {};
+
+/**
+ * @license React
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_development;
+
+function requireReactIs_development () {
+	if (hasRequiredReactIs_development) return reactIs_development;
+	hasRequiredReactIs_development = 1;
+
+	if (process.env.NODE_ENV !== "production") {
+	  (function() {
+
+	// ATTENTION
+	// When adding new symbols to this file,
+	// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+	// The Symbol used to tag the ReactElement-like types.
+	var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+	var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+	var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+	var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+	var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+	var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+	var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+	var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
+	var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+	var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+	var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+	var REACT_MEMO_TYPE = Symbol.for('react.memo');
+	var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+	var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
+
+	// -----------------------------------------------------------------------------
+
+	var enableScopeAPI = false; // Experimental Create Event Handle API.
+	var enableCacheElement = false;
+	var enableTransitionTracing = false; // No known bugs, but needs performance testing
+
+	var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
+	// stuff. Intended to enable React core members to more easily debug scheduling
+	// issues in DEV builds.
+
+	var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
+
+	var REACT_MODULE_REFERENCE;
+
+	{
+	  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
+	}
+
+	function isValidElementType(type) {
+	  if (typeof type === 'string' || typeof type === 'function') {
+	    return true;
+	  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+	  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
+	    return true;
+	  }
+
+	  if (typeof type === 'object' && type !== null) {
+	    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+	    // types supported by any Flight configuration anywhere since
+	    // we don't know which Flight build this will end up being used
+	    // with.
+	    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
+	      return true;
+	    }
+	  }
+
+	  return false;
+	}
+
+	function typeOf(object) {
+	  if (typeof object === 'object' && object !== null) {
+	    var $$typeof = object.$$typeof;
+
+	    switch ($$typeof) {
+	      case REACT_ELEMENT_TYPE:
+	        var type = object.type;
+
+	        switch (type) {
+	          case REACT_FRAGMENT_TYPE:
+	          case REACT_PROFILER_TYPE:
+	          case REACT_STRICT_MODE_TYPE:
+	          case REACT_SUSPENSE_TYPE:
+	          case REACT_SUSPENSE_LIST_TYPE:
+	            return type;
+
+	          default:
+	            var $$typeofType = type && type.$$typeof;
+
+	            switch ($$typeofType) {
+	              case REACT_SERVER_CONTEXT_TYPE:
+	              case REACT_CONTEXT_TYPE:
+	              case REACT_FORWARD_REF_TYPE:
+	              case REACT_LAZY_TYPE:
+	              case REACT_MEMO_TYPE:
+	              case REACT_PROVIDER_TYPE:
+	                return $$typeofType;
+
+	              default:
+	                return $$typeof;
+	            }
+
+	        }
+
+	      case REACT_PORTAL_TYPE:
+	        return $$typeof;
+	    }
+	  }
+
+	  return undefined;
+	}
+	var ContextConsumer = REACT_CONTEXT_TYPE;
+	var ContextProvider = REACT_PROVIDER_TYPE;
+	var Element = REACT_ELEMENT_TYPE;
+	var ForwardRef = REACT_FORWARD_REF_TYPE;
+	var Fragment = REACT_FRAGMENT_TYPE;
+	var Lazy = REACT_LAZY_TYPE;
+	var Memo = REACT_MEMO_TYPE;
+	var Portal = REACT_PORTAL_TYPE;
+	var Profiler = REACT_PROFILER_TYPE;
+	var StrictMode = REACT_STRICT_MODE_TYPE;
+	var Suspense = REACT_SUSPENSE_TYPE;
+	var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
+	var hasWarnedAboutDeprecatedIsAsyncMode = false;
+	var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
+
+	function isAsyncMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+	    }
+	  }
+
+	  return false;
+	}
+	function isConcurrentMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+	      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+	    }
+	  }
+
+	  return false;
+	}
+	function isContextConsumer(object) {
+	  return typeOf(object) === REACT_CONTEXT_TYPE;
+	}
+	function isContextProvider(object) {
+	  return typeOf(object) === REACT_PROVIDER_TYPE;
+	}
+	function isElement(object) {
+	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+	}
+	function isForwardRef(object) {
+	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+	}
+	function isFragment(object) {
+	  return typeOf(object) === REACT_FRAGMENT_TYPE;
+	}
+	function isLazy(object) {
+	  return typeOf(object) === REACT_LAZY_TYPE;
+	}
+	function isMemo(object) {
+	  return typeOf(object) === REACT_MEMO_TYPE;
+	}
+	function isPortal(object) {
+	  return typeOf(object) === REACT_PORTAL_TYPE;
+	}
+	function isProfiler(object) {
+	  return typeOf(object) === REACT_PROFILER_TYPE;
+	}
+	function isStrictMode(object) {
+	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+	}
+	function isSuspense(object) {
+	  return typeOf(object) === REACT_SUSPENSE_TYPE;
+	}
+	function isSuspenseList(object) {
+	  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
+	}
+
+	reactIs_development.ContextConsumer = ContextConsumer;
+	reactIs_development.ContextProvider = ContextProvider;
+	reactIs_development.Element = Element;
+	reactIs_development.ForwardRef = ForwardRef;
+	reactIs_development.Fragment = Fragment;
+	reactIs_development.Lazy = Lazy;
+	reactIs_development.Memo = Memo;
+	reactIs_development.Portal = Portal;
+	reactIs_development.Profiler = Profiler;
+	reactIs_development.StrictMode = StrictMode;
+	reactIs_development.Suspense = Suspense;
+	reactIs_development.SuspenseList = SuspenseList;
+	reactIs_development.isAsyncMode = isAsyncMode;
+	reactIs_development.isConcurrentMode = isConcurrentMode;
+	reactIs_development.isContextConsumer = isContextConsumer;
+	reactIs_development.isContextProvider = isContextProvider;
+	reactIs_development.isElement = isElement;
+	reactIs_development.isForwardRef = isForwardRef;
+	reactIs_development.isFragment = isFragment;
+	reactIs_development.isLazy = isLazy;
+	reactIs_development.isMemo = isMemo;
+	reactIs_development.isPortal = isPortal;
+	reactIs_development.isProfiler = isProfiler;
+	reactIs_development.isStrictMode = isStrictMode;
+	reactIs_development.isSuspense = isSuspense;
+	reactIs_development.isSuspenseList = isSuspenseList;
+	reactIs_development.isValidElementType = isValidElementType;
+	reactIs_development.typeOf = typeOf;
+	  })();
+	}
+	return reactIs_development;
+}
+
+if (process.env.NODE_ENV === 'production') {
+  reactIs.exports = requireReactIs_production_min();
+} else {
+  reactIs.exports = requireReactIs_development();
+}
+
+var reactIsExports = reactIs.exports;
+
+// Simplified polyfill for IE11 support
+// https://github.com/JamesMGreene/Function.name/blob/58b314d4a983110c3682f1228f845d39ccca1817/Function.name.js#L3
+const fnNameMatchRegex = /^\s*function(?:\s|\s*\/\*.*\*\/\s*)+([^(\s/]*)\s*/;
+function getFunctionName(fn) {
+  const match = `${fn}`.match(fnNameMatchRegex);
+  const name = match && match[1];
+  return name || '';
+}
+function getFunctionComponentName(Component, fallback = '') {
+  return Component.displayName || Component.name || getFunctionName(Component) || fallback;
+}
+function getWrappedName(outerType, innerType, wrapperName) {
+  const functionName = getFunctionComponentName(innerType);
+  return outerType.displayName || (functionName !== '' ? `${wrapperName}(${functionName})` : wrapperName);
+}
+
+/**
+ * cherry-pick from
+ * https://github.com/facebook/react/blob/769b1f270e1251d9dbdce0fcbd9e92e502d059b8/packages/shared/getComponentName.js
+ * originally forked from recompose/getDisplayName with added IE11 support
+ */
+function getDisplayName(Component) {
+  if (Component == null) {
+    return undefined;
+  }
+  if (typeof Component === 'string') {
+    return Component;
+  }
+  if (typeof Component === 'function') {
+    return getFunctionComponentName(Component, 'Component');
+  }
+
+  // TypeScript can't have components as objects but they exist in the form of `memo` or `Suspense`
+  if (typeof Component === 'object') {
+    switch (Component.$$typeof) {
+      case reactIsExports.ForwardRef:
+        return getWrappedName(Component, Component.render, 'ForwardRef');
+      case reactIsExports.Memo:
+        return getWrappedName(Component, Component.type, 'memo');
+      default:
+        return undefined;
+    }
+  }
+  return undefined;
+}
+
+function HTMLElementType(props, propName, componentName, location, propFullName) {
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
+  const propValue = props[propName];
+  const safePropName = propFullName || propName;
+  if (propValue == null) {
+    return null;
+  }
+  if (propValue && propValue.nodeType !== 1) {
+    return new Error(`Invalid ${location} \`${safePropName}\` supplied to \`${componentName}\`. ` + `Expected an HTMLElement.`);
+  }
+  return null;
+}
+
+const refType = PropTypes.oneOfType([PropTypes.func, PropTypes.object]);
+var refType$1 = refType;
+
+// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
+//
+// A strict capitalization should uppercase the first letter of each word in the sentence.
+// We only handle the first word.
+function capitalize$1(string) {
+  if (typeof string !== 'string') {
+    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`capitalize(string)\` expects a string argument.` : formatMuiErrorMessage(7));
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/**
+ * Safe chained function.
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ */
+function createChainedFunction(...funcs) {
+  return funcs.reduce((acc, func) => {
+    if (func == null) {
+      return acc;
+    }
+    return function chainedFunction(...args) {
+      acc.apply(this, args);
+      func.apply(this, args);
+    };
+  }, () => {});
+}
+
+// Corresponds to 10 frames at 60 Hz.
+// A few bytes payload overhead when lodash/debounce is ~3 kB and debounce ~300 B.
+function debounce(func, wait = 166) {
+  let timeout;
+  function debounced(...args) {
+    const later = () => {
+      // @ts-ignore
+      func.apply(this, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  }
+  debounced.clear = () => {
+    clearTimeout(timeout);
+  };
+  return debounced;
+}
+
+function isMuiElement(element, muiNames) {
+  var _muiName, _element$type;
+  return /*#__PURE__*/React.isValidElement(element) && muiNames.indexOf( // For server components `muiName` is avaialble in element.type._payload.value.muiName
+  // relevant info - https://github.com/facebook/react/blob/2807d781a08db8e9873687fccc25c0f12b4fb3d4/packages/react/src/ReactLazy.js#L45
+  // eslint-disable-next-line no-underscore-dangle
+  (_muiName = element.type.muiName) != null ? _muiName : (_element$type = element.type) == null || (_element$type = _element$type._payload) == null || (_element$type = _element$type.value) == null ? void 0 : _element$type.muiName) !== -1;
+}
+
+function ownerDocument(node) {
+  return node && node.ownerDocument || document;
+}
+
+function ownerWindow(node) {
+  const doc = ownerDocument(node);
+  return doc.defaultView || window;
+}
+
+function requirePropFactory(componentNameInError, Component) {
+  if (process.env.NODE_ENV === 'production') {
+    return () => null;
+  }
+
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  const prevPropTypes = Component ? _extends({}, Component.propTypes) : null;
+  const requireProp = requiredProp => (props, propName, componentName, location, propFullName, ...args) => {
+    const propFullNameSafe = propFullName || propName;
+    const defaultTypeChecker = prevPropTypes == null ? void 0 : prevPropTypes[propFullNameSafe];
+    if (defaultTypeChecker) {
+      const typeCheckerResult = defaultTypeChecker(props, propName, componentName, location, propFullName, ...args);
+      if (typeCheckerResult) {
+        return typeCheckerResult;
+      }
+    }
+    if (typeof props[propName] !== 'undefined' && !props[requiredProp]) {
+      return new Error(`The prop \`${propFullNameSafe}\` of ` + `\`${componentNameInError}\` can only be used together with the \`${requiredProp}\` prop.`);
+    }
+    return null;
+  };
+  return requireProp;
+}
+
+/**
+ * TODO v5: consider making it private
+ *
+ * passes {value} to {ref}
+ *
+ * WARNING: Be sure to only call this inside a callback that is passed as a ref.
+ * Otherwise, make sure to cleanup the previous {ref} if it changes. See
+ * https://github.com/mui/material-ui/issues/13539
+ *
+ * Useful if you want to expose the ref of an inner component to the public API
+ * while still using it inside the component.
+ * @param ref A ref callback or ref object. If anything falsy, this is a no-op.
+ */
+function setRef(ref, value) {
+  if (typeof ref === 'function') {
+    ref(value);
+  } else if (ref) {
+    ref.current = value;
+  }
+}
+
+/**
+ * A version of `React.useLayoutEffect` that does not show a warning when server-side rendering.
+ * This is useful for effects that are only needed for client-side rendering but not for SSR.
+ *
+ * Before you use this hook, make sure to read https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+ * and confirm it doesn't apply to your use-case.
+ */
+const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+
+let globalId = 0;
+function useGlobalId(idOverride) {
+  const [defaultId, setDefaultId] = React.useState(idOverride);
+  const id = idOverride || defaultId;
+  React.useEffect(() => {
+    if (defaultId == null) {
+      // Fallback to this default id when possible.
+      // Use the incrementing value for client-side rendering only.
+      // We can't use it server-side.
+      // If you want to use random values please consider the Birthday Problem: https://en.wikipedia.org/wiki/Birthday_problem
+      globalId += 1;
+      setDefaultId(`mui-${globalId}`);
+    }
+  }, [defaultId]);
+  return id;
+}
+
+// downstream bundlers may remove unnecessary concatenation, but won't remove toString call -- Workaround for https://github.com/webpack/webpack/issues/14814
+const maybeReactUseId = React['useId'.toString()];
+/**
+ *
+ * @example <div id={useId()} />
+ * @param idOverride
+ * @returns {string}
+ */
+function useId(idOverride) {
+  if (maybeReactUseId !== undefined) {
+    const reactId = maybeReactUseId();
+    return idOverride != null ? idOverride : reactId;
+  }
+  // eslint-disable-next-line react-hooks/rules-of-hooks -- `React.useId` is invariant at runtime.
+  return useGlobalId(idOverride);
+}
+
+function useControlled({
+  controlled,
+  default: defaultProp,
+  name,
+  state = 'value'
+}) {
+  // isControlled is ignored in the hook dependency lists as it should never change.
+  const {
+    current: isControlled
+  } = React.useRef(controlled !== undefined);
+  const [valueState, setValue] = React.useState(defaultProp);
+  const value = isControlled ? controlled : valueState;
+  if (process.env.NODE_ENV !== 'production') {
+    React.useEffect(() => {
+      if (isControlled !== (controlled !== undefined)) {
+        console.error([`MUI: A component is changing the ${isControlled ? '' : 'un'}controlled ${state} state of ${name} to be ${isControlled ? 'un' : ''}controlled.`, 'Elements should not switch from uncontrolled to controlled (or vice versa).', `Decide between using a controlled or uncontrolled ${name} ` + 'element for the lifetime of the component.', "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", 'More info: https://fb.me/react-controlled-components'].join('\n'));
+      }
+    }, [state, name, controlled]);
+    const {
+      current: defaultValue
+    } = React.useRef(defaultProp);
+    React.useEffect(() => {
+      if (!isControlled && defaultValue !== defaultProp) {
+        console.error([`MUI: A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` + `To suppress this warning opt to use a controlled ${name}.`].join('\n'));
+      }
+    }, [JSON.stringify(defaultProp)]);
+  }
+  const setValueIfUncontrolled = React.useCallback(newValue => {
+    if (!isControlled) {
+      setValue(newValue);
+    }
+  }, []);
+  return [value, setValueIfUncontrolled];
+}
+
+/**
+ * Inspired by https://github.com/facebook/react/issues/14099#issuecomment-440013892
+ * See RFC in https://github.com/reactjs/rfcs/pull/220
+ */
+
+function useEventCallback(fn) {
+  const ref = React.useRef(fn);
+  useEnhancedEffect(() => {
+    ref.current = fn;
+  });
+  return React.useRef((...args) =>
+  // @ts-expect-error hide `this`
+  (0, ref.current)(...args)).current;
+}
+
+function useForkRef(...refs) {
+  /**
+   * This will create a new function if the refs passed to this hook change and are all defined.
+   * This means react will call the old forkRef with `null` and the new forkRef
+   * with the ref. Cleanup naturally emerges from this behavior.
+   */
+  return React.useMemo(() => {
+    if (refs.every(ref => ref == null)) {
+      return null;
+    }
+    return instance => {
+      refs.forEach(ref => {
+        setRef(ref, instance);
+      });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, refs);
+}
+
+const UNINITIALIZED = {};
+
+/**
+ * A React.useRef() that is initialized lazily with a function. Note that it accepts an optional
+ * initialization argument, so the initialization function doesn't need to be an inline closure.
+ *
+ * @usage
+ *   const ref = useLazyRef(sortColumns, columns)
+ */
+function useLazyRef(init, initArg) {
+  const ref = React.useRef(UNINITIALIZED);
+  if (ref.current === UNINITIALIZED) {
+    ref.current = init(initArg);
+  }
+  return ref;
+}
+
+const EMPTY = [];
+
+/**
+ * A React.useEffect equivalent that runs once, when the component is mounted.
+ */
+function useOnMount(fn) {
+  /* eslint-disable react-hooks/exhaustive-deps */
+  React.useEffect(fn, EMPTY);
+  /* eslint-enable react-hooks/exhaustive-deps */
+}
+
+class Timeout {
+  constructor() {
+    this.currentId = 0;
+    this.clear = () => {
+      if (this.currentId !== 0) {
+        clearTimeout(this.currentId);
+        this.currentId = 0;
+      }
+    };
+    this.disposeEffect = () => {
+      return this.clear;
+    };
+  }
+  static create() {
+    return new Timeout();
+  }
+  /**
+   * Executes `fn` after `delay`, clearing any previously scheduled call.
+   */
+  start(delay, fn) {
+    this.clear();
+    this.currentId = setTimeout(() => {
+      this.currentId = 0;
+      fn();
+    }, delay);
+  }
+}
+function useTimeout() {
+  const timeout = useLazyRef(Timeout.create).current;
+  useOnMount(timeout.disposeEffect);
+  return timeout;
+}
+
+let hadKeyboardEvent = true;
+let hadFocusVisibleRecently = false;
+const hadFocusVisibleRecentlyTimeout = new Timeout();
+const inputTypesWhitelist = {
+  text: true,
+  search: true,
+  url: true,
+  tel: true,
+  email: true,
+  password: true,
+  number: true,
+  date: true,
+  month: true,
+  week: true,
+  time: true,
+  datetime: true,
+  'datetime-local': true
+};
+
+/**
+ * Computes whether the given element should automatically trigger the
+ * `focus-visible` class being added, i.e. whether it should always match
+ * `:focus-visible` when focused.
+ * @param {Element} node
+ * @returns {boolean}
+ */
+function focusTriggersKeyboardModality(node) {
+  const {
+    type,
+    tagName
+  } = node;
+  if (tagName === 'INPUT' && inputTypesWhitelist[type] && !node.readOnly) {
+    return true;
+  }
+  if (tagName === 'TEXTAREA' && !node.readOnly) {
+    return true;
+  }
+  if (node.isContentEditable) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Keep track of our keyboard modality state with `hadKeyboardEvent`.
+ * If the most recent user interaction was via the keyboard;
+ * and the key press did not include a meta, alt/option, or control key;
+ * then the modality is keyboard. Otherwise, the modality is not keyboard.
+ * @param {KeyboardEvent} event
+ */
+function handleKeyDown(event) {
+  if (event.metaKey || event.altKey || event.ctrlKey) {
+    return;
+  }
+  hadKeyboardEvent = true;
+}
+
+/**
+ * If at any point a user clicks with a pointing device, ensure that we change
+ * the modality away from keyboard.
+ * This avoids the situation where a user presses a key on an already focused
+ * element, and then clicks on a different element, focusing it with a
+ * pointing device, while we still think we're in keyboard modality.
+ */
+function handlePointerDown() {
+  hadKeyboardEvent = false;
+}
+function handleVisibilityChange() {
+  if (this.visibilityState === 'hidden') {
+    // If the tab becomes active again, the browser will handle calling focus
+    // on the element (Safari actually calls it twice).
+    // If this tab change caused a blur on an element with focus-visible,
+    // re-apply the class when the user switches back to the tab.
+    if (hadFocusVisibleRecently) {
+      hadKeyboardEvent = true;
+    }
+  }
+}
+function prepare(doc) {
+  doc.addEventListener('keydown', handleKeyDown, true);
+  doc.addEventListener('mousedown', handlePointerDown, true);
+  doc.addEventListener('pointerdown', handlePointerDown, true);
+  doc.addEventListener('touchstart', handlePointerDown, true);
+  doc.addEventListener('visibilitychange', handleVisibilityChange, true);
+}
+function isFocusVisible(event) {
+  const {
+    target
+  } = event;
+  try {
+    return target.matches(':focus-visible');
+  } catch (error) {
+    // Browsers not implementing :focus-visible will throw a SyntaxError.
+    // We use our own heuristic for those browsers.
+    // Rethrow might be better if it's not the expected error but do we really
+    // want to crash if focus-visible malfunctioned?
+  }
+
+  // No need for validFocusTarget check. The user does that by attaching it to
+  // focusable events only.
+  return hadKeyboardEvent || focusTriggersKeyboardModality(target);
+}
+function useIsFocusVisible() {
+  const ref = React.useCallback(node => {
+    if (node != null) {
+      prepare(node.ownerDocument);
+    }
+  }, []);
+  const isFocusVisibleRef = React.useRef(false);
+
+  /**
+   * Should be called if a blur event is fired
+   */
+  function handleBlurVisible() {
+    // checking against potential state variable does not suffice if we focus and blur synchronously.
+    // React wouldn't have time to trigger a re-render so `focusVisible` would be stale.
+    // Ideally we would adjust `isFocusVisible(event)` to look at `relatedTarget` for blur events.
+    // This doesn't work in IE11 due to https://github.com/facebook/react/issues/3751
+    // TODO: check again if React releases their internal changes to focus event handling (https://github.com/facebook/react/pull/19186).
+    if (isFocusVisibleRef.current) {
+      // To detect a tab/window switch, we look for a blur event followed
+      // rapidly by a visibility change.
+      // If we don't see a visibility change within 100ms, it's probably a
+      // regular focus change.
+      hadFocusVisibleRecently = true;
+      hadFocusVisibleRecentlyTimeout.start(100, () => {
+        hadFocusVisibleRecently = false;
+      });
+      isFocusVisibleRef.current = false;
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Should be called if a blur event is fired
+   */
+  function handleFocusVisible(event) {
+    if (isFocusVisible(event)) {
+      isFocusVisibleRef.current = true;
+      return true;
+    }
+    return false;
+  }
+  return {
+    isFocusVisibleRef,
+    onFocus: handleFocusVisible,
+    onBlur: handleBlurVisible,
+    ref
+  };
+}
+
+// A change of the browser zoom change the scrollbar size.
+// Credit https://github.com/twbs/bootstrap/blob/488fd8afc535ca3a6ad4dc581f5e89217b6a36ac/js/src/util/scrollbar.js#L14-L18
+function getScrollbarSize(doc) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth#usage_notes
+  const documentWidth = doc.documentElement.clientWidth;
+  return Math.abs(window.innerWidth - documentWidth);
+}
+
+function getTypeByValue(value) {
+  const valueType = typeof value;
+  switch (valueType) {
+    case 'number':
+      if (Number.isNaN(value)) {
+        return 'NaN';
+      }
+      if (!Number.isFinite(value)) {
+        return 'Infinity';
+      }
+      if (value !== Math.floor(value)) {
+        return 'float';
+      }
+      return 'number';
+    case 'object':
+      if (value === null) {
+        return 'null';
+      }
+      return value.constructor.name;
+    default:
+      return valueType;
+  }
+}
+
+// IE 11 support
+function ponyfillIsInteger(x) {
+  // eslint-disable-next-line no-restricted-globals
+  return typeof x === 'number' && isFinite(x) && Math.floor(x) === x;
+}
+const isInteger = Number.isInteger || ponyfillIsInteger;
+function requiredInteger(props, propName, componentName, location) {
+  const propValue = props[propName];
+  if (propValue == null || !isInteger(propValue)) {
+    const propType = getTypeByValue(propValue);
+    return new RangeError(`Invalid ${location} \`${propName}\` of type \`${propType}\` supplied to \`${componentName}\`, expected \`integer\`.`);
+  }
+  return null;
+}
+function validator(props, propName, ...other) {
+  const propValue = props[propName];
+  if (propValue === undefined) {
+    return null;
+  }
+  return requiredInteger(props, propName, ...other);
+}
+function validatorNoop() {
+  return null;
+}
+validator.isRequired = requiredInteger;
+validatorNoop.isRequired = validatorNoop;
+var integerPropType = process.env.NODE_ENV === 'production' ? validatorNoop : validator;
+
+/**
+ * Add keys, values of `defaultProps` that does not exist in `props`
+ * @param {object} defaultProps
+ * @param {object} props
+ * @returns {object} resolved props
+ */
+function resolveProps(defaultProps, props) {
+  const output = _extends({}, props);
+  Object.keys(defaultProps).forEach(propName => {
+    if (propName.toString().match(/^(components|slots)$/)) {
+      output[propName] = _extends({}, defaultProps[propName], output[propName]);
+    } else if (propName.toString().match(/^(componentsProps|slotProps)$/)) {
+      const defaultSlotProps = defaultProps[propName] || {};
+      const slotProps = props[propName];
+      output[propName] = {};
+      if (!slotProps || !Object.keys(slotProps)) {
+        // Reduce the iteration if the slot props is empty
+        output[propName] = defaultSlotProps;
+      } else if (!defaultSlotProps || !Object.keys(defaultSlotProps)) {
+        // Reduce the iteration if the default slot props is empty
+        output[propName] = slotProps;
+      } else {
+        output[propName] = _extends({}, slotProps);
+        Object.keys(defaultSlotProps).forEach(slotPropName => {
+          output[propName][slotPropName] = resolveProps(defaultSlotProps[slotPropName], slotProps[slotPropName]);
+        });
+      }
+    } else if (output[propName] === undefined) {
+      output[propName] = defaultProps[propName];
+    }
+  });
+  return output;
+}
+
+function composeClasses(slots, getUtilityClass, classes = undefined) {
+  const output = {};
+  Object.keys(slots).forEach(
+  // `Object.keys(slots)` can't be wider than `T` because we infer `T` from `slots`.
+  // @ts-expect-error https://github.com/microsoft/TypeScript/pull/12253#issuecomment-263132208
+  slot => {
+    output[slot] = slots[slot].reduce((acc, key) => {
+      if (key) {
+        const utilityClass = getUtilityClass(key);
+        if (utilityClass !== '') {
+          acc.push(utilityClass);
+        }
+        if (classes && classes[key]) {
+          acc.push(classes[key]);
+        }
+      }
+      return acc;
+    }, []).join(' ');
+  });
+  return output;
+}
+
+const defaultGenerator = componentName => componentName;
+const createClassNameGenerator = () => {
+  let generate = defaultGenerator;
+  return {
+    configure(generator) {
+      generate = generator;
+    },
+    generate(componentName) {
+      return generate(componentName);
+    },
+    reset() {
+      generate = defaultGenerator;
+    }
+  };
+};
+const ClassNameGenerator = createClassNameGenerator();
+var ClassNameGenerator$1 = ClassNameGenerator;
+
+const globalStateClasses = {
+  active: 'active',
+  checked: 'checked',
+  completed: 'completed',
+  disabled: 'disabled',
+  error: 'error',
+  expanded: 'expanded',
+  focused: 'focused',
+  focusVisible: 'focusVisible',
+  open: 'open',
+  readOnly: 'readOnly',
+  required: 'required',
+  selected: 'selected'
+};
+function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
+  const globalStateClass = globalStateClasses[slot];
+  return globalStateClass ? `${globalStatePrefix}-${globalStateClass}` : `${ClassNameGenerator$1.generate(componentName)}-${slot}`;
+}
+
+function generateUtilityClasses(componentName, slots, globalStatePrefix = 'Mui') {
+  const result = {};
+  slots.forEach(slot => {
+    result[slot] = generateUtilityClass(componentName, slot, globalStatePrefix);
+  });
+  return result;
+}
+
+function clamp(val, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) {
+  return Math.max(min, Math.min(val, max));
+}
+
+const _excluded$H = ["values", "unit", "step"];
 const sortBreakpointsValues = values => {
   const breakpointsAsArray = Object.keys(values).map(key => ({
     key,
@@ -6660,7 +6725,7 @@ function createBreakpoints(breakpoints) {
       unit = 'px',
       step = 5
     } = breakpoints,
-    other = _objectWithoutPropertiesLoose(breakpoints, _excluded$I);
+    other = _objectWithoutPropertiesLoose(breakpoints, _excluded$H);
   const sortedValues = sortBreakpointsValues(values);
   const keys = Object.keys(sortedValues);
   function up(key) {
@@ -7728,7 +7793,82 @@ const styleFunctionSx = unstable_createStyleFunctionSx();
 styleFunctionSx.filterProps = ['sx'];
 var styleFunctionSx$1 = styleFunctionSx;
 
-const _excluded$H = ["breakpoints", "palette", "spacing", "shape"];
+/**
+ * A universal utility to style components with multiple color modes. Always use it from the theme object.
+ * It works with:
+ *  - [Basic theme](https://mui.com/material-ui/customization/dark-mode/)
+ *  - [CSS theme variables](https://mui.com/material-ui/experimental-api/css-theme-variables/overview/)
+ *  - Zero-runtime engine
+ *
+ * Tips: Use an array over object spread and place `theme.applyStyles()` last.
+ *
+ * ✅ [{ background: '#e5e5e5' }, theme.applyStyles('dark', { background: '#1c1c1c' })]
+ *
+ * 🚫 { background: '#e5e5e5', ...theme.applyStyles('dark', { background: '#1c1c1c' })}
+ *
+ * @example
+ * 1. using with `styled`:
+ * ```jsx
+ *   const Component = styled('div')(({ theme }) => [
+ *     { background: '#e5e5e5' },
+ *     theme.applyStyles('dark', {
+ *       background: '#1c1c1c',
+ *       color: '#fff',
+ *     }),
+ *   ]);
+ * ```
+ *
+ * @example
+ * 2. using with `sx` prop:
+ * ```jsx
+ *   <Box sx={theme => [
+ *     { background: '#e5e5e5' },
+ *     theme.applyStyles('dark', {
+ *        background: '#1c1c1c',
+ *        color: '#fff',
+ *      }),
+ *     ]}
+ *   />
+ * ```
+ *
+ * @example
+ * 3. theming a component:
+ * ```jsx
+ *   extendTheme({
+ *     components: {
+ *       MuiButton: {
+ *         styleOverrides: {
+ *           root: ({ theme }) => [
+ *             { background: '#e5e5e5' },
+ *             theme.applyStyles('dark', {
+ *               background: '#1c1c1c',
+ *               color: '#fff',
+ *             }),
+ *           ],
+ *         },
+ *       }
+ *     }
+ *   })
+ *```
+ */
+function applyStyles(key, styles) {
+  // @ts-expect-error this is 'any' type
+  const theme = this;
+  if (theme.vars && typeof theme.getColorSchemeSelector === 'function') {
+    // If CssVarsProvider is used as a provider,
+    // returns '* :where([data-mui-color-scheme="light|dark"]) &'
+    const selector = theme.getColorSchemeSelector(key).replace(/(\[[^\]]+\])/, '*:where($1)');
+    return {
+      [selector]: styles
+    };
+  }
+  if (theme.palette.mode === key) {
+    return styles;
+  }
+  return {};
+}
+
+const _excluded$G = ["breakpoints", "palette", "spacing", "shape"];
 function createTheme$1(options = {}, ...args) {
   const {
       breakpoints: breakpointsInput = {},
@@ -7736,7 +7876,7 @@ function createTheme$1(options = {}, ...args) {
       spacing: spacingInput,
       shape: shapeInput = {}
     } = options,
-    other = _objectWithoutPropertiesLoose(options, _excluded$H);
+    other = _objectWithoutPropertiesLoose(options, _excluded$G);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
   let muiTheme = deepmerge({
@@ -7750,6 +7890,7 @@ function createTheme$1(options = {}, ...args) {
     spacing,
     shape: _extends({}, shape$1, shapeInput)
   }, other);
+  muiTheme.applyStyles = applyStyles;
   muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
   muiTheme.unstable_sxConfig = _extends({}, defaultSxConfig$1, other == null ? void 0 : other.unstable_sxConfig);
   muiTheme.unstable_sx = function sx(props) {
@@ -7786,10 +7927,10 @@ function GlobalStyles$1({
   });
 }
 process.env.NODE_ENV !== "production" ? GlobalStyles$1.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit TypeScript types and run "yarn proptypes"  |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * @ignore
    */
@@ -7804,7 +7945,7 @@ process.env.NODE_ENV !== "production" ? GlobalStyles$1.propTypes /* remove-propt
   themeId: PropTypes.string
 } : void 0;
 
-const _excluded$G = ["sx"];
+const _excluded$F = ["sx"];
 const splitProps = props => {
   var _props$theme$unstable, _props$theme;
   const result = {
@@ -7825,7 +7966,7 @@ function extendSxProp(props) {
   const {
       sx: inSx
     } = props,
-    other = _objectWithoutPropertiesLoose(props, _excluded$G);
+    other = _objectWithoutPropertiesLoose(props, _excluded$F);
   const {
     systemProps,
     otherProps
@@ -7849,9 +7990,9 @@ function extendSxProp(props) {
   });
 }
 
-function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e))for(t=0;t<e.length;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);else for(t in e)e[t]&&(n&&(n+=" "),n+=t);return n}function clsx(){for(var e,t,f=0,n="";f<arguments.length;)(e=arguments[f++])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}
+function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e)){var o=e.length;for(t=0;t<o;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);}else for(f in e)e[f]&&(n&&(n+=" "),n+=f);return n}function clsx(){for(var e,t,f=0,n="",o=arguments.length;f<o;f++)(e=arguments[f])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}
 
-const _excluded$F = ["className", "component"];
+const _excluded$E = ["className", "component"];
 function createBox(options = {}) {
   const {
     themeId,
@@ -7859,7 +8000,7 @@ function createBox(options = {}) {
     defaultClassName = 'MuiBox-root',
     generateClassName
   } = options;
-  const BoxRoot = styled$2('div', {
+  const BoxRoot = styled$1('div', {
     shouldForwardProp: prop => prop !== 'theme' && prop !== 'sx' && prop !== 'as'
   })(styleFunctionSx$1);
   const Box = /*#__PURE__*/React.forwardRef(function Box(inProps, ref) {
@@ -7869,7 +8010,7 @@ function createBox(options = {}) {
         className,
         component = 'div'
       } = _extendSxProp,
-      other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$F);
+      other = _objectWithoutPropertiesLoose(_extendSxProp, _excluded$E);
     return /*#__PURE__*/jsxRuntimeExports.jsx(BoxRoot, _extends({
       as: component,
       ref: ref,
@@ -7880,33 +8021,9 @@ function createBox(options = {}) {
   return Box;
 }
 
-const _excluded$E = ["variant"];
-function isEmpty$3(string) {
-  return string.length === 0;
-}
-
-/**
- * Generates string classKey based on the properties provided. It starts with the
- * variant if defined, and then it appends all other properties in alphabetical order.
- * @param {object} props - the properties for which the classKey should be created.
- */
-function propsToClassKey(props) {
-  const {
-      variant
-    } = props,
-    other = _objectWithoutPropertiesLoose(props, _excluded$E);
-  let classKey = variant || '';
-  Object.keys(other).sort().forEach(key => {
-    if (key === 'color') {
-      classKey += isEmpty$3(classKey) ? props[key] : capitalize$1(props[key]);
-    } else {
-      classKey += `${isEmpty$3(classKey) ? key : capitalize$1(key)}${capitalize$1(props[key].toString())}`;
-    }
-  });
-  return classKey;
-}
-
-const _excluded$D = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+const _excluded$D = ["ownerState"],
+  _excluded2$3 = ["variants"],
+  _excluded3$1 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
 function isEmpty$2(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -7919,54 +8036,6 @@ function isStringTag(tag) {
   // it's a lowercase character
   tag.charCodeAt(0) > 96;
 }
-const getStyleOverrides = (name, theme) => {
-  if (theme.components && theme.components[name] && theme.components[name].styleOverrides) {
-    return theme.components[name].styleOverrides;
-  }
-  return null;
-};
-const transformVariants = variants => {
-  const variantsStyles = {};
-  if (variants) {
-    variants.forEach(definition => {
-      const key = propsToClassKey(definition.props);
-      variantsStyles[key] = definition.style;
-    });
-  }
-  return variantsStyles;
-};
-const getVariantStyles = (name, theme) => {
-  let variants = [];
-  if (theme && theme.components && theme.components[name] && theme.components[name].variants) {
-    variants = theme.components[name].variants;
-  }
-  return transformVariants(variants);
-};
-const variantsResolver = (props, styles, variants) => {
-  const {
-    ownerState = {}
-  } = props;
-  const variantsStyles = [];
-  if (variants) {
-    variants.forEach(variant => {
-      let isMatch = true;
-      Object.keys(variant.props).forEach(key => {
-        if (ownerState[key] !== variant.props[key] && props[key] !== variant.props[key]) {
-          isMatch = false;
-        }
-      });
-      if (isMatch) {
-        variantsStyles.push(styles[propsToClassKey(variant.props)]);
-      }
-    });
-  }
-  return variantsStyles;
-};
-const themeVariantsResolver = (props, styles, theme, name) => {
-  var _theme$components;
-  const themeVariants = theme == null || (_theme$components = theme.components) == null || (_theme$components = _theme$components[name]) == null ? void 0 : _theme$components.variants;
-  return variantsResolver(props, styles, themeVariants);
-};
 
 // Update /system/styled/#api in case if this changes
 function shouldForwardProp(prop) {
@@ -7992,29 +8061,51 @@ function defaultOverridesResolver(slot) {
   }
   return (props, styles) => styles[slot];
 }
-const muiStyledFunctionResolver = ({
-  styledArg,
-  props,
-  defaultTheme,
-  themeId
-}) => {
-  const resolvedStyles = styledArg(_extends({}, props, {
-    theme: resolveTheme(_extends({}, props, {
-      defaultTheme,
-      themeId
-    }))
-  }));
-  let optionalVariants;
-  if (resolvedStyles && resolvedStyles.variants) {
-    optionalVariants = resolvedStyles.variants;
-    delete resolvedStyles.variants;
+function processStyleArg(callableStyle, _ref) {
+  let {
+      ownerState
+    } = _ref,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$D);
+  const resolvedStylesArg = typeof callableStyle === 'function' ? callableStyle(_extends({
+    ownerState
+  }, props)) : callableStyle;
+  if (Array.isArray(resolvedStylesArg)) {
+    return resolvedStylesArg.flatMap(resolvedStyle => processStyleArg(resolvedStyle, _extends({
+      ownerState
+    }, props)));
   }
-  if (optionalVariants) {
-    const variantsStyles = variantsResolver(props, transformVariants(optionalVariants), optionalVariants);
-    return [resolvedStyles, ...variantsStyles];
+  if (!!resolvedStylesArg && typeof resolvedStylesArg === 'object' && Array.isArray(resolvedStylesArg.variants)) {
+    const {
+        variants = []
+      } = resolvedStylesArg,
+      otherStyles = _objectWithoutPropertiesLoose(resolvedStylesArg, _excluded2$3);
+    let result = otherStyles;
+    variants.forEach(variant => {
+      let isMatch = true;
+      if (typeof variant.props === 'function') {
+        isMatch = variant.props(_extends({
+          ownerState
+        }, props));
+      } else {
+        Object.keys(variant.props).forEach(key => {
+          if ((ownerState == null ? void 0 : ownerState[key]) !== variant.props[key] && props[key] !== variant.props[key]) {
+            isMatch = false;
+          }
+        });
+      }
+      if (isMatch) {
+        if (!Array.isArray(result)) {
+          result = [result];
+        }
+        result.push(typeof variant.style === 'function' ? variant.style(_extends({
+          ownerState
+        }, props)) : variant.style);
+      }
+    });
+    return result;
   }
-  return resolvedStyles;
-};
+  return resolvedStylesArg;
+}
 function createStyled(input = {}) {
   const {
     themeId,
@@ -8043,7 +8134,7 @@ function createStyled(input = {}) {
         // For more details: https://github.com/mui/material-ui/pull/37908
         overridesResolver = defaultOverridesResolver(lowercaseFirstLetter(componentSlot))
       } = inputOptions,
-      options = _objectWithoutPropertiesLoose(inputOptions, _excluded$D);
+      options = _objectWithoutPropertiesLoose(inputOptions, _excluded3$1);
 
     // if skipVariantsResolver option is defined, take the value, otherwise, true for root and false for other slots.
     const skipVariantsResolver = inputSkipVariantsResolver !== undefined ? inputSkipVariantsResolver :
@@ -8072,96 +8163,61 @@ function createStyled(input = {}) {
       // for string (html) tag, preserve the behavior in emotion & styled-components.
       shouldForwardPropOption = undefined;
     }
-    const defaultStyledResolver = styled$2(tag, _extends({
+    const defaultStyledResolver = styled$1(tag, _extends({
       shouldForwardProp: shouldForwardPropOption,
       label
     }, options));
-    const muiStyledResolver = (styleArg, ...expressions) => {
-      const expressionsWithDefaultTheme = expressions ? expressions.map(stylesArg => {
-        // On the server Emotion doesn't use React.forwardRef for creating components, so the created
-        // component stays as a function. This condition makes sure that we do not interpolate functions
-        // which are basically components used as a selectors.
-        if (typeof stylesArg === 'function' && stylesArg.__emotion_real !== stylesArg) {
-          return props => muiStyledFunctionResolver({
-            styledArg: stylesArg,
-            props,
-            defaultTheme,
-            themeId
-          });
-        }
-        if (isPlainObject$2(stylesArg)) {
-          let transformedStylesArg = stylesArg;
-          let styledArgVariants;
-          if (stylesArg && stylesArg.variants) {
-            styledArgVariants = stylesArg.variants;
-            delete transformedStylesArg.variants;
-            transformedStylesArg = props => {
-              let result = stylesArg;
-              const variantStyles = variantsResolver(props, transformVariants(styledArgVariants), styledArgVariants);
-              variantStyles.forEach(variantStyle => {
-                result = deepmerge(result, variantStyle);
-              });
-              return result;
-            };
-          }
-          return transformedStylesArg;
-        }
-        return stylesArg;
-      }) : [];
-      let transformedStyleArg = styleArg;
-      if (isPlainObject$2(styleArg)) {
-        let styledArgVariants;
-        if (styleArg && styleArg.variants) {
-          styledArgVariants = styleArg.variants;
-          delete transformedStyleArg.variants;
-          transformedStyleArg = props => {
-            let result = styleArg;
-            const variantStyles = variantsResolver(props, transformVariants(styledArgVariants), styledArgVariants);
-            variantStyles.forEach(variantStyle => {
-              result = deepmerge(result, variantStyle);
-            });
-            return result;
-          };
-        }
-      } else if (typeof styleArg === 'function' &&
+    const transformStyleArg = stylesArg => {
       // On the server Emotion doesn't use React.forwardRef for creating components, so the created
       // component stays as a function. This condition makes sure that we do not interpolate functions
       // which are basically components used as a selectors.
-      styleArg.__emotion_real !== styleArg) {
-        // If the type is function, we need to define the default theme.
-        transformedStyleArg = props => muiStyledFunctionResolver({
-          styledArg: styleArg,
-          props,
-          defaultTheme,
-          themeId
-        });
+      if (typeof stylesArg === 'function' && stylesArg.__emotion_real !== stylesArg || isPlainObject$2(stylesArg)) {
+        return props => processStyleArg(stylesArg, _extends({}, props, {
+          theme: resolveTheme({
+            theme: props.theme,
+            defaultTheme,
+            themeId
+          })
+        }));
       }
+      return stylesArg;
+    };
+    const muiStyledResolver = (styleArg, ...expressions) => {
+      let transformedStyleArg = transformStyleArg(styleArg);
+      const expressionsWithDefaultTheme = expressions ? expressions.map(transformStyleArg) : [];
       if (componentName && overridesResolver) {
         expressionsWithDefaultTheme.push(props => {
           const theme = resolveTheme(_extends({}, props, {
             defaultTheme,
             themeId
           }));
-          const styleOverrides = getStyleOverrides(componentName, theme);
-          if (styleOverrides) {
-            const resolvedStyleOverrides = {};
-            Object.entries(styleOverrides).forEach(([slotKey, slotStyle]) => {
-              resolvedStyleOverrides[slotKey] = typeof slotStyle === 'function' ? slotStyle(_extends({}, props, {
-                theme
-              })) : slotStyle;
-            });
-            return overridesResolver(props, resolvedStyleOverrides);
+          if (!theme.components || !theme.components[componentName] || !theme.components[componentName].styleOverrides) {
+            return null;
           }
-          return null;
+          const styleOverrides = theme.components[componentName].styleOverrides;
+          const resolvedStyleOverrides = {};
+          // TODO: v7 remove iteration and use `resolveStyleArg(styleOverrides[slot])` directly
+          Object.entries(styleOverrides).forEach(([slotKey, slotStyle]) => {
+            resolvedStyleOverrides[slotKey] = processStyleArg(slotStyle, _extends({}, props, {
+              theme
+            }));
+          });
+          return overridesResolver(props, resolvedStyleOverrides);
         });
       }
       if (componentName && !skipVariantsResolver) {
         expressionsWithDefaultTheme.push(props => {
+          var _theme$components;
           const theme = resolveTheme(_extends({}, props, {
             defaultTheme,
             themeId
           }));
-          return themeVariantsResolver(props, getVariantStyles(componentName, theme), theme, componentName);
+          const themeVariants = theme == null || (_theme$components = theme.components) == null || (_theme$components = _theme$components[componentName]) == null ? void 0 : _theme$components.variants;
+          return processStyleArg({
+            variants: themeVariants
+          }, _extends({}, props, {
+            theme
+          }));
         });
       }
       if (!skipSx) {
@@ -8227,7 +8283,6 @@ function useThemeProps$1({
   return mergedProps;
 }
 
-/* eslint-disable @typescript-eslint/naming-convention */
 /**
  * Returns a number whose value is limited to the given range.
  * @param {number} value The value to be clamped
@@ -8235,13 +8290,13 @@ function useThemeProps$1({
  * @param {number} max The upper boundary of the output range
  * @returns {number} A number in the range [min, max]
  */
-function clamp(value, min = 0, max = 1) {
+function clampWrapper(value, min = 0, max = 1) {
   if (process.env.NODE_ENV !== 'production') {
     if (value < min || value > max) {
       console.error(`MUI: The value provided ${value} is out of range [${min}, ${max}].`);
     }
   }
-  return Math.min(Math.max(min, value), max);
+  return clamp(value, min, max);
 }
 
 /**
@@ -8406,7 +8461,7 @@ function getContrastRatio(foreground, background) {
  */
 function alpha(color, value) {
   color = decomposeColor(color);
-  value = clamp(value);
+  value = clampWrapper(value);
   if (color.type === 'rgb' || color.type === 'hsl') {
     color.type += 'a';
   }
@@ -8426,7 +8481,7 @@ function alpha(color, value) {
  */
 function darken(color, coefficient) {
   color = decomposeColor(color);
-  coefficient = clamp(coefficient);
+  coefficient = clampWrapper(coefficient);
   if (color.type.indexOf('hsl') !== -1) {
     color.values[2] *= 1 - coefficient;
   } else if (color.type.indexOf('rgb') !== -1 || color.type.indexOf('color') !== -1) {
@@ -8445,7 +8500,7 @@ function darken(color, coefficient) {
  */
 function lighten(color, coefficient) {
   color = decomposeColor(color);
-  coefficient = clamp(coefficient);
+  coefficient = clampWrapper(coefficient);
   if (color.type.indexOf('hsl') !== -1) {
     color.values[2] += (100 - color.values[2]) * coefficient;
   } else if (color.type.indexOf('rgb') !== -1) {
@@ -8998,7 +9053,6 @@ function createShadow(...px) {
 
 // Values from https://github.com/material-components/material-components-web/blob/be8747f94574669cb5e7add1a7c54fa41a89cec7/packages/mdc-elevation/_variables.scss
 const shadows = ['none', createShadow(0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0), createShadow(0, 3, 1, -2, 0, 2, 2, 0, 0, 1, 5, 0), createShadow(0, 3, 3, -2, 0, 3, 4, 0, 0, 1, 8, 0), createShadow(0, 2, 4, -1, 0, 4, 5, 0, 0, 1, 10, 0), createShadow(0, 3, 5, -1, 0, 5, 8, 0, 0, 1, 14, 0), createShadow(0, 3, 5, -1, 0, 6, 10, 0, 0, 1, 18, 0), createShadow(0, 4, 5, -2, 0, 7, 10, 1, 0, 2, 16, 1), createShadow(0, 5, 5, -3, 0, 8, 10, 1, 0, 3, 14, 2), createShadow(0, 5, 6, -3, 0, 9, 12, 1, 0, 3, 16, 2), createShadow(0, 6, 6, -3, 0, 10, 14, 1, 0, 4, 18, 3), createShadow(0, 6, 7, -4, 0, 11, 15, 1, 0, 4, 20, 3), createShadow(0, 7, 8, -4, 0, 12, 17, 2, 0, 5, 22, 4), createShadow(0, 7, 8, -4, 0, 13, 19, 2, 0, 5, 24, 4), createShadow(0, 7, 9, -4, 0, 14, 21, 2, 0, 5, 26, 4), createShadow(0, 8, 9, -5, 0, 15, 22, 2, 0, 6, 28, 5), createShadow(0, 8, 10, -5, 0, 16, 24, 2, 0, 6, 30, 5), createShadow(0, 8, 11, -5, 0, 17, 26, 2, 0, 6, 32, 5), createShadow(0, 9, 11, -5, 0, 18, 28, 2, 0, 7, 34, 6), createShadow(0, 9, 12, -6, 0, 19, 29, 2, 0, 7, 36, 6), createShadow(0, 10, 13, -6, 0, 20, 31, 3, 0, 8, 38, 7), createShadow(0, 10, 13, -6, 0, 21, 33, 3, 0, 8, 40, 7), createShadow(0, 10, 14, -6, 0, 22, 35, 3, 0, 8, 42, 7), createShadow(0, 11, 14, -7, 0, 23, 36, 3, 0, 9, 44, 8), createShadow(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8)];
-var shadows$1 = shadows;
 
 const _excluded$A = ["duration", "easing", "delay"];
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
@@ -9120,7 +9174,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     mixins: createMixins(systemTheme.breakpoints, mixinsInput),
     palette,
     // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
-    shadows: shadows$1.slice(),
+    shadows: shadows.slice(),
     typography: createTypography(palette, typographyInput),
     transitions: createTransitions(transitionsInput),
     zIndex: _extends({}, zIndex$1)
@@ -9198,7 +9252,6 @@ const styled = createStyled({
   defaultTheme: defaultTheme$2,
   rootShouldForwardProp
 });
-var styled$1 = styled;
 
 // Inspired by https://github.com/material-components/material-components-ios/blob/bca36107405594d5b7b16265a5b0ed698f85a5ee/components/Elevation/src/UIColor%2BMaterialElevation.m#L61
 const getOverlayAlpha = elevation => {
@@ -9210,7 +9263,6 @@ const getOverlayAlpha = elevation => {
   }
   return (alphaValue / 100).toFixed(2);
 };
-var getOverlayAlpha$1 = getOverlayAlpha;
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const objectFromEntries = !Object
@@ -9692,18 +9744,34 @@ function createWithStyles(params) {
                         : Object.keys(nameOrWrappedName)[0];
                 }
             }
-            {
+            let name = undefined;
+            displayName: {
                 const displayName = Component_.displayName;
-                if (typeof displayName === "string" && displayName !== "") {
-                    return displayName;
+                if (typeof displayName !== "string" || displayName === "") {
+                    break displayName;
                 }
+                name = displayName;
             }
-            {
-                const { name } = Component_;
-                if (name) {
-                    return name.replace(/\$/g, "usd");
+            functionName: {
+                if (name !== undefined) {
+                    break functionName;
                 }
+                const functionName = Component_.name;
+                if (typeof functionName !== "string" || functionName === "") {
+                    break functionName;
+                }
+                name = functionName;
             }
+            if (name === undefined) {
+                return undefined;
+            }
+            // Special case for dollar sign
+            name = name.replace(/\$/g, "usd");
+            // Replacing open and close parentheses
+            name = name.replace(/\(/g, "_").replace(/\)/g, "_");
+            // Catch-all replacement for characters not allowed in CSS class names
+            name = name.replace(/[^a-zA-Z0-9-_]/g, "_");
+            return name;
         })();
         const useStyles = makeStyles(Object.assign(Object.assign({}, params), { name }))(typeof cssObjectByRuleNameOrGetCssObjectByRuleName === "function"
             ? (theme, props, classes) => incorporateMediaQueries(cssObjectByRuleNameOrGetCssObjectByRuleName(theme, props, classes))
@@ -9966,7 +10034,7 @@ const useUtilityClasses$r = ownerState => {
   };
   return composeClasses(slots, getTypographyUtilityClass, classes);
 };
-const TypographyRoot = styled$1('span', {
+const TypographyRoot = styled('span', {
   name: 'MuiTypography',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -10060,10 +10128,10 @@ const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, re
   }, other));
 });
 process.env.NODE_ENV !== "production" ? Typography.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * Set the text-align on the component.
    * @default 'inherit'
@@ -10164,7 +10232,6 @@ const getTextDecoration = ({
   }
   return alpha(color, 0.4);
 };
-var getTextDecoration$1 = getTextDecoration;
 
 const _excluded$x = ["className", "color", "component", "onBlur", "onFocus", "TypographyClasses", "underline", "variant", "sx"];
 const useUtilityClasses$q = ownerState => {
@@ -10179,7 +10246,7 @@ const useUtilityClasses$q = ownerState => {
   };
   return composeClasses(slots, getLinkUtilityClass, classes);
 };
-const LinkRoot = styled$1(Typography$1, {
+const LinkRoot = styled(Typography$1, {
   name: 'MuiLink',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -10202,7 +10269,7 @@ const LinkRoot = styled$1(Typography$1, {
   }, ownerState.underline === 'always' && _extends({
     textDecoration: 'underline'
   }, ownerState.color !== 'inherit' && {
-    textDecorationColor: getTextDecoration$1({
+    textDecorationColor: getTextDecoration({
       theme,
       ownerState
     })
@@ -10305,10 +10372,10 @@ const Link = /*#__PURE__*/React.forwardRef(function Link(inProps, ref) {
   }, other));
 });
 process.env.NODE_ENV !== "production" ? Link.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -27617,7 +27684,7 @@ const useUtilityClasses$p = ownerState => {
   };
   return composeClasses(slots, getSvgIconUtilityClass, classes);
 };
-const SvgIconRoot = styled$1('svg', {
+const SvgIconRoot = styled('svg', {
   name: 'MuiSvgIcon',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -27705,10 +27772,10 @@ const SvgIcon = /*#__PURE__*/React.forwardRef(function SvgIcon(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? SvgIcon.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * Node passed into the SVG element.
    */
@@ -27777,11 +27844,10 @@ process.env.NODE_ENV !== "production" ? SvgIcon.propTypes /* remove-proptypes */
   viewBox: PropTypes.string
 } : void 0;
 SvgIcon.muiName = 'SvgIcon';
-var SvgIcon$1 = SvgIcon;
 
 function createSvgIcon(path, displayName) {
   function Component(props, ref) {
-    return /*#__PURE__*/jsxRuntimeExports.jsx(SvgIcon$1, _extends({
+    return /*#__PURE__*/jsxRuntimeExports.jsx(SvgIcon, _extends({
       "data-testid": `${displayName}Icon`,
       ref: ref
     }, props, {
@@ -27793,7 +27859,7 @@ function createSvgIcon(path, displayName) {
     // React prior to 16.14 ignores `displayName` on the wrapper.
     Component.displayName = `${displayName}Icon`;
   }
-  Component.muiName = SvgIcon$1.muiName;
+  Component.muiName = SvgIcon.muiName;
   return /*#__PURE__*/React.memo( /*#__PURE__*/React.forwardRef(Component));
 }
 
@@ -28817,7 +28883,7 @@ const useUtilityClasses$o = ownerState => {
   };
   return composeClasses(slots, getPaperUtilityClass, classes);
 };
-const PaperRoot = styled$1('div', {
+const PaperRoot = styled('div', {
   name: 'MuiPaper',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -28842,7 +28908,7 @@ const PaperRoot = styled$1('div', {
   }, ownerState.variant === 'elevation' && _extends({
     boxShadow: (theme.vars || theme).shadows[ownerState.elevation]
   }, !theme.vars && theme.palette.mode === 'dark' && {
-    backgroundImage: `linear-gradient(${alpha('#fff', getOverlayAlpha$1(ownerState.elevation))}, ${alpha('#fff', getOverlayAlpha$1(ownerState.elevation))})`
+    backgroundImage: `linear-gradient(${alpha('#fff', getOverlayAlpha(ownerState.elevation))}, ${alpha('#fff', getOverlayAlpha(ownerState.elevation))})`
   }, theme.vars && {
     backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
   }));
@@ -28882,10 +28948,10 @@ const Paper = /*#__PURE__*/React.forwardRef(function Paper(inProps, ref) {
   }, other));
 });
 process.env.NODE_ENV !== "production" ? Paper.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -28934,6 +29000,180 @@ process.env.NODE_ENV !== "production" ? Paper.propTypes /* remove-proptypes */ =
   variant: PropTypes /* @typescript-to-proptypes-ignore */.oneOfType([PropTypes.oneOf(['elevation', 'outlined']), PropTypes.string])
 } : void 0;
 var Paper$1 = Paper;
+
+/**
+ * Determines if a given element is a DOM element name (i.e. not a React component).
+ */
+function isHostComponent(element) {
+  return typeof element === 'string';
+}
+
+/**
+ * Type of the ownerState based on the type of an element it applies to.
+ * This resolves to the provided OwnerState for React components and `undefined` for host components.
+ * Falls back to `OwnerState | undefined` when the exact type can't be determined in development time.
+ */
+
+/**
+ * Appends the ownerState object to the props, merging with the existing one if necessary.
+ *
+ * @param elementType Type of the element that owns the `existingProps`. If the element is a DOM node or undefined, `ownerState` is not applied.
+ * @param otherProps Props of the element.
+ * @param ownerState
+ */
+function appendOwnerState(elementType, otherProps, ownerState) {
+  if (elementType === undefined || isHostComponent(elementType)) {
+    return otherProps;
+  }
+  return _extends({}, otherProps, {
+    ownerState: _extends({}, otherProps.ownerState, ownerState)
+  });
+}
+
+/**
+ * Extracts event handlers from a given object.
+ * A prop is considered an event handler if it is a function and its name starts with `on`.
+ *
+ * @param object An object to extract event handlers from.
+ * @param excludeKeys An array of keys to exclude from the returned object.
+ */
+function extractEventHandlers(object, excludeKeys = []) {
+  if (object === undefined) {
+    return {};
+  }
+  const result = {};
+  Object.keys(object).filter(prop => prop.match(/^on[A-Z]/) && typeof object[prop] === 'function' && !excludeKeys.includes(prop)).forEach(prop => {
+    result[prop] = object[prop];
+  });
+  return result;
+}
+
+/**
+ * If `componentProps` is a function, calls it with the provided `ownerState`.
+ * Otherwise, just returns `componentProps`.
+ */
+function resolveComponentProps(componentProps, ownerState, slotState) {
+  if (typeof componentProps === 'function') {
+    return componentProps(ownerState, slotState);
+  }
+  return componentProps;
+}
+
+/**
+ * Removes event handlers from the given object.
+ * A field is considered an event handler if it is a function with a name beginning with `on`.
+ *
+ * @param object Object to remove event handlers from.
+ * @returns Object with event handlers removed.
+ */
+function omitEventHandlers(object) {
+  if (object === undefined) {
+    return {};
+  }
+  const result = {};
+  Object.keys(object).filter(prop => !(prop.match(/^on[A-Z]/) && typeof object[prop] === 'function')).forEach(prop => {
+    result[prop] = object[prop];
+  });
+  return result;
+}
+
+/**
+ * Merges the slot component internal props (usually coming from a hook)
+ * with the externally provided ones.
+ *
+ * The merge order is (the latter overrides the former):
+ * 1. The internal props (specified as a getter function to work with get*Props hook result)
+ * 2. Additional props (specified internally on a Base UI component)
+ * 3. External props specified on the owner component. These should only be used on a root slot.
+ * 4. External props specified in the `slotProps.*` prop.
+ * 5. The `className` prop - combined from all the above.
+ * @param parameters
+ * @returns
+ */
+function mergeSlotProps(parameters) {
+  const {
+    getSlotProps,
+    additionalProps,
+    externalSlotProps,
+    externalForwardedProps,
+    className
+  } = parameters;
+  if (!getSlotProps) {
+    // The simpler case - getSlotProps is not defined, so no internal event handlers are defined,
+    // so we can simply merge all the props without having to worry about extracting event handlers.
+    const joinedClasses = clsx(additionalProps == null ? void 0 : additionalProps.className, className, externalForwardedProps == null ? void 0 : externalForwardedProps.className, externalSlotProps == null ? void 0 : externalSlotProps.className);
+    const mergedStyle = _extends({}, additionalProps == null ? void 0 : additionalProps.style, externalForwardedProps == null ? void 0 : externalForwardedProps.style, externalSlotProps == null ? void 0 : externalSlotProps.style);
+    const props = _extends({}, additionalProps, externalForwardedProps, externalSlotProps);
+    if (joinedClasses.length > 0) {
+      props.className = joinedClasses;
+    }
+    if (Object.keys(mergedStyle).length > 0) {
+      props.style = mergedStyle;
+    }
+    return {
+      props,
+      internalRef: undefined
+    };
+  }
+
+  // In this case, getSlotProps is responsible for calling the external event handlers.
+  // We don't need to include them in the merged props because of this.
+
+  const eventHandlers = extractEventHandlers(_extends({}, externalForwardedProps, externalSlotProps));
+  const componentsPropsWithoutEventHandlers = omitEventHandlers(externalSlotProps);
+  const otherPropsWithoutEventHandlers = omitEventHandlers(externalForwardedProps);
+  const internalSlotProps = getSlotProps(eventHandlers);
+
+  // The order of classes is important here.
+  // Emotion (that we use in libraries consuming Base UI) depends on this order
+  // to properly override style. It requires the most important classes to be last
+  // (see https://github.com/mui/material-ui/pull/33205) for the related discussion.
+  const joinedClasses = clsx(internalSlotProps == null ? void 0 : internalSlotProps.className, additionalProps == null ? void 0 : additionalProps.className, className, externalForwardedProps == null ? void 0 : externalForwardedProps.className, externalSlotProps == null ? void 0 : externalSlotProps.className);
+  const mergedStyle = _extends({}, internalSlotProps == null ? void 0 : internalSlotProps.style, additionalProps == null ? void 0 : additionalProps.style, externalForwardedProps == null ? void 0 : externalForwardedProps.style, externalSlotProps == null ? void 0 : externalSlotProps.style);
+  const props = _extends({}, internalSlotProps, additionalProps, otherPropsWithoutEventHandlers, componentsPropsWithoutEventHandlers);
+  if (joinedClasses.length > 0) {
+    props.className = joinedClasses;
+  }
+  if (Object.keys(mergedStyle).length > 0) {
+    props.style = mergedStyle;
+  }
+  return {
+    props,
+    internalRef: internalSlotProps.ref
+  };
+}
+
+const _excluded$u = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
+/**
+ * @ignore - do not document.
+ * Builds the props to be passed into the slot of an unstyled component.
+ * It merges the internal props of the component with the ones supplied by the user, allowing to customize the behavior.
+ * If the slot component is not a host component, it also merges in the `ownerState`.
+ *
+ * @param parameters.getSlotProps - A function that returns the props to be passed to the slot component.
+ */
+function useSlotProps(parameters) {
+  var _parameters$additiona;
+  const {
+      elementType,
+      externalSlotProps,
+      ownerState,
+      skipResolvingSlotProps = false
+    } = parameters,
+    rest = _objectWithoutPropertiesLoose(parameters, _excluded$u);
+  const resolvedComponentsProps = skipResolvingSlotProps ? {} : resolveComponentProps(externalSlotProps, ownerState);
+  const {
+    props: mergedProps,
+    internalRef
+  } = mergeSlotProps(_extends({}, rest, {
+    externalSlotProps: resolvedComponentsProps
+  }));
+  const ref = useForkRef(internalRef, resolvedComponentsProps == null ? void 0 : resolvedComponentsProps.ref, (_parameters$additiona = parameters.additionalProps) == null ? void 0 : _parameters$additiona.ref);
+  const props = appendOwnerState(elementType, _extends({}, mergedProps, {
+    ref
+  }), ownerState);
+  return props;
+}
 
 function Ripple(props) {
   const {
@@ -29015,9 +29255,8 @@ process.env.NODE_ENV !== "production" ? Ripple.propTypes = {
 } : void 0;
 
 const touchRippleClasses = generateUtilityClasses('MuiTouchRipple', ['root', 'ripple', 'rippleVisible', 'ripplePulsate', 'child', 'childLeaving', 'childPulsate']);
-var touchRippleClasses$1 = touchRippleClasses;
 
-const _excluded$u = ["center", "classes", "className"];
+const _excluded$t = ["center", "classes", "className"];
 let _ = t => t,
   _t,
   _t2,
@@ -29058,7 +29297,7 @@ const pulsateKeyframe = keyframes(_t3 || (_t3 = _`
     transform: scale(1);
   }
 `));
-const TouchRippleRoot = styled$1('span', {
+const TouchRippleRoot = styled('span', {
   name: 'MuiTouchRipple',
   slot: 'Root'
 })({
@@ -29075,7 +29314,7 @@ const TouchRippleRoot = styled$1('span', {
 
 // This `styled()` function invokes keyframes. `styled-components` only supports keyframes
 // in string templates. Do not convert these styles in JS object as it will break.
-const TouchRippleRipple = styled$1(Ripple, {
+const TouchRippleRipple = styled(Ripple, {
   name: 'MuiTouchRipple',
   slot: 'Ripple'
 })(_t4 || (_t4 = _`
@@ -29121,13 +29360,13 @@ const TouchRippleRipple = styled$1(Ripple, {
     animation-iteration-count: infinite;
     animation-delay: 200ms;
   }
-`), touchRippleClasses$1.rippleVisible, enterKeyframe, DURATION, ({
+`), touchRippleClasses.rippleVisible, enterKeyframe, DURATION, ({
   theme
-}) => theme.transitions.easing.easeInOut, touchRippleClasses$1.ripplePulsate, ({
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.ripplePulsate, ({
   theme
-}) => theme.transitions.duration.shorter, touchRippleClasses$1.child, touchRippleClasses$1.childLeaving, exitKeyframe, DURATION, ({
+}) => theme.transitions.duration.shorter, touchRippleClasses.child, touchRippleClasses.childLeaving, exitKeyframe, DURATION, ({
   theme
-}) => theme.transitions.easing.easeInOut, touchRippleClasses$1.childPulsate, pulsateKeyframe, ({
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.childPulsate, pulsateKeyframe, ({
   theme
 }) => theme.transitions.easing.easeInOut);
 
@@ -29146,7 +29385,7 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
       classes = {},
       className
     } = props,
-    other = _objectWithoutPropertiesLoose(props, _excluded$u);
+    other = _objectWithoutPropertiesLoose(props, _excluded$t);
   const [ripples, setRipples] = React.useState([]);
   const nextKey = React.useRef(0);
   const rippleCallback = React.useRef(null);
@@ -29161,18 +29400,11 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
   const ignoringMouseDown = React.useRef(false);
   // We use a timer in order to only show the ripples for touch "click" like events.
   // We don't want to display the ripple for touch scroll events.
-  const startTimer = React.useRef(0);
+  const startTimer = useTimeout();
 
   // This is the hook called once the previous timeout is ready.
   const startTimerCommit = React.useRef(null);
   const container = React.useRef(null);
-  React.useEffect(() => {
-    return () => {
-      if (startTimer.current) {
-        clearTimeout(startTimer.current);
-      }
-    };
-  }, []);
   const startCommit = React.useCallback(params => {
     const {
       pulsate,
@@ -29183,12 +29415,12 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
     } = params;
     setRipples(oldRipples => [...oldRipples, /*#__PURE__*/jsxRuntimeExports.jsx(TouchRippleRipple, {
       classes: {
-        ripple: clsx(classes.ripple, touchRippleClasses$1.ripple),
-        rippleVisible: clsx(classes.rippleVisible, touchRippleClasses$1.rippleVisible),
-        ripplePulsate: clsx(classes.ripplePulsate, touchRippleClasses$1.ripplePulsate),
-        child: clsx(classes.child, touchRippleClasses$1.child),
-        childLeaving: clsx(classes.childLeaving, touchRippleClasses$1.childLeaving),
-        childPulsate: clsx(classes.childPulsate, touchRippleClasses$1.childPulsate)
+        ripple: clsx(classes.ripple, touchRippleClasses.ripple),
+        rippleVisible: clsx(classes.rippleVisible, touchRippleClasses.rippleVisible),
+        ripplePulsate: clsx(classes.ripplePulsate, touchRippleClasses.ripplePulsate),
+        child: clsx(classes.child, touchRippleClasses.child),
+        childLeaving: clsx(classes.childLeaving, touchRippleClasses.childLeaving),
+        childPulsate: clsx(classes.childPulsate, touchRippleClasses.childPulsate)
       },
       timeout: DURATION,
       pulsate: pulsate,
@@ -29265,12 +29497,13 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
           });
         };
         // Delay the execution of the ripple effect.
-        startTimer.current = setTimeout(() => {
+        // We have to make a tradeoff with this delay value.
+        startTimer.start(DELAY_RIPPLE, () => {
           if (startTimerCommit.current) {
             startTimerCommit.current();
             startTimerCommit.current = null;
           }
-        }, DELAY_RIPPLE); // We have to make a tradeoff with this value.
+        });
       }
     } else {
       startCommit({
@@ -29281,21 +29514,21 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
         cb
       });
     }
-  }, [centerProp, startCommit]);
+  }, [centerProp, startCommit, startTimer]);
   const pulsate = React.useCallback(() => {
     start({}, {
       pulsate: true
     });
   }, [start]);
   const stop = React.useCallback((event, cb) => {
-    clearTimeout(startTimer.current);
+    startTimer.clear();
 
     // The touch interaction occurs too quickly.
     // We still want to show ripple effect.
     if ((event == null ? void 0 : event.type) === 'touchend' && startTimerCommit.current) {
       startTimerCommit.current();
       startTimerCommit.current = null;
-      startTimer.current = setTimeout(() => {
+      startTimer.start(0, () => {
         stop(event, cb);
       });
       return;
@@ -29308,14 +29541,14 @@ const TouchRipple = /*#__PURE__*/React.forwardRef(function TouchRipple(inProps, 
       return oldRipples;
     });
     rippleCallback.current = cb;
-  }, []);
+  }, [startTimer]);
   React.useImperativeHandle(ref, () => ({
     pulsate,
     start,
     stop
   }), [pulsate, start, stop]);
   return /*#__PURE__*/jsxRuntimeExports.jsx(TouchRippleRoot, _extends({
-    className: clsx(touchRippleClasses$1.root, classes.root, className),
+    className: clsx(touchRippleClasses.root, classes.root, className),
     ref: container
   }, other, {
     children: /*#__PURE__*/jsxRuntimeExports.jsx(TransitionGroup$1, {
@@ -29347,9 +29580,8 @@ function getButtonBaseUtilityClass(slot) {
   return generateUtilityClass('MuiButtonBase', slot);
 }
 const buttonBaseClasses = generateUtilityClasses('MuiButtonBase', ['root', 'disabled', 'focusVisible']);
-var buttonBaseClasses$1 = buttonBaseClasses;
 
-const _excluded$t = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
+const _excluded$s = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
 const useUtilityClasses$n = ownerState => {
   const {
     disabled,
@@ -29366,7 +29598,7 @@ const useUtilityClasses$n = ownerState => {
   }
   return composedClasses;
 };
-const ButtonBaseRoot = styled$1('button', {
+const ButtonBaseRoot = styled('button', {
   name: 'MuiButtonBase',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
@@ -29400,7 +29632,7 @@ const ButtonBaseRoot = styled$1('button', {
   '&::-moz-focus-inner': {
     borderStyle: 'none' // Remove Firefox dotted outline.
   },
-  [`&.${buttonBaseClasses$1.disabled}`]: {
+  [`&.${buttonBaseClasses.disabled}`]: {
     pointerEvents: 'none',
     // Disable link interactions
     cursor: 'default'
@@ -29450,7 +29682,7 @@ const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, re
       touchRippleRef,
       type
     } = props,
-    other = _objectWithoutPropertiesLoose(props, _excluded$t);
+    other = _objectWithoutPropertiesLoose(props, _excluded$s);
   const buttonRef = React.useRef(null);
   const rippleRef = React.useRef(null);
   const handleRippleRef = useForkRef(rippleRef, touchRippleRef);
@@ -29640,7 +29872,7 @@ const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, re
     type: type
   }, buttonProps, other, {
     children: [children, enableTouchRipple ?
-    
+    /*#__PURE__*/
     /* TouchRipple is only needed client-side, x2 boost on the server. */
     jsxRuntimeExports.jsx(TouchRipple$1, _extends({
       ref: handleRippleRef,
@@ -29649,10 +29881,10 @@ const ButtonBase = /*#__PURE__*/React.forwardRef(function ButtonBase(inProps, re
   }));
 });
 process.env.NODE_ENV !== "production" ? ButtonBase.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * A ref for imperative actions.
    * It currently only supports `focusVisible()` action.
@@ -29807,180 +30039,6 @@ process.env.NODE_ENV !== "production" ? ButtonBase.propTypes /* remove-proptypes
   type: PropTypes.oneOfType([PropTypes.oneOf(['button', 'reset', 'submit']), PropTypes.string])
 } : void 0;
 var ButtonBase$1 = ButtonBase;
-
-/**
- * Determines if a given element is a DOM element name (i.e. not a React component).
- */
-function isHostComponent(element) {
-  return typeof element === 'string';
-}
-
-/**
- * Type of the ownerState based on the type of an element it applies to.
- * This resolves to the provided OwnerState for React components and `undefined` for host components.
- * Falls back to `OwnerState | undefined` when the exact type can't be determined in development time.
- */
-
-/**
- * Appends the ownerState object to the props, merging with the existing one if necessary.
- *
- * @param elementType Type of the element that owns the `existingProps`. If the element is a DOM node or undefined, `ownerState` is not applied.
- * @param otherProps Props of the element.
- * @param ownerState
- */
-function appendOwnerState(elementType, otherProps, ownerState) {
-  if (elementType === undefined || isHostComponent(elementType)) {
-    return otherProps;
-  }
-  return _extends({}, otherProps, {
-    ownerState: _extends({}, otherProps.ownerState, ownerState)
-  });
-}
-
-/**
- * Extracts event handlers from a given object.
- * A prop is considered an event handler if it is a function and its name starts with `on`.
- *
- * @param object An object to extract event handlers from.
- * @param excludeKeys An array of keys to exclude from the returned object.
- */
-function extractEventHandlers(object, excludeKeys = []) {
-  if (object === undefined) {
-    return {};
-  }
-  const result = {};
-  Object.keys(object).filter(prop => prop.match(/^on[A-Z]/) && typeof object[prop] === 'function' && !excludeKeys.includes(prop)).forEach(prop => {
-    result[prop] = object[prop];
-  });
-  return result;
-}
-
-/**
- * If `componentProps` is a function, calls it with the provided `ownerState`.
- * Otherwise, just returns `componentProps`.
- */
-function resolveComponentProps(componentProps, ownerState, slotState) {
-  if (typeof componentProps === 'function') {
-    return componentProps(ownerState, slotState);
-  }
-  return componentProps;
-}
-
-/**
- * Removes event handlers from the given object.
- * A field is considered an event handler if it is a function with a name beginning with `on`.
- *
- * @param object Object to remove event handlers from.
- * @returns Object with event handlers removed.
- */
-function omitEventHandlers(object) {
-  if (object === undefined) {
-    return {};
-  }
-  const result = {};
-  Object.keys(object).filter(prop => !(prop.match(/^on[A-Z]/) && typeof object[prop] === 'function')).forEach(prop => {
-    result[prop] = object[prop];
-  });
-  return result;
-}
-
-/**
- * Merges the slot component internal props (usually coming from a hook)
- * with the externally provided ones.
- *
- * The merge order is (the latter overrides the former):
- * 1. The internal props (specified as a getter function to work with get*Props hook result)
- * 2. Additional props (specified internally on a Base UI component)
- * 3. External props specified on the owner component. These should only be used on a root slot.
- * 4. External props specified in the `slotProps.*` prop.
- * 5. The `className` prop - combined from all the above.
- * @param parameters
- * @returns
- */
-function mergeSlotProps(parameters) {
-  const {
-    getSlotProps,
-    additionalProps,
-    externalSlotProps,
-    externalForwardedProps,
-    className
-  } = parameters;
-  if (!getSlotProps) {
-    // The simpler case - getSlotProps is not defined, so no internal event handlers are defined,
-    // so we can simply merge all the props without having to worry about extracting event handlers.
-    const joinedClasses = clsx(additionalProps == null ? void 0 : additionalProps.className, className, externalForwardedProps == null ? void 0 : externalForwardedProps.className, externalSlotProps == null ? void 0 : externalSlotProps.className);
-    const mergedStyle = _extends({}, additionalProps == null ? void 0 : additionalProps.style, externalForwardedProps == null ? void 0 : externalForwardedProps.style, externalSlotProps == null ? void 0 : externalSlotProps.style);
-    const props = _extends({}, additionalProps, externalForwardedProps, externalSlotProps);
-    if (joinedClasses.length > 0) {
-      props.className = joinedClasses;
-    }
-    if (Object.keys(mergedStyle).length > 0) {
-      props.style = mergedStyle;
-    }
-    return {
-      props,
-      internalRef: undefined
-    };
-  }
-
-  // In this case, getSlotProps is responsible for calling the external event handlers.
-  // We don't need to include them in the merged props because of this.
-
-  const eventHandlers = extractEventHandlers(_extends({}, externalForwardedProps, externalSlotProps));
-  const componentsPropsWithoutEventHandlers = omitEventHandlers(externalSlotProps);
-  const otherPropsWithoutEventHandlers = omitEventHandlers(externalForwardedProps);
-  const internalSlotProps = getSlotProps(eventHandlers);
-
-  // The order of classes is important here.
-  // Emotion (that we use in libraries consuming Base UI) depends on this order
-  // to properly override style. It requires the most important classes to be last
-  // (see https://github.com/mui/material-ui/pull/33205) for the related discussion.
-  const joinedClasses = clsx(internalSlotProps == null ? void 0 : internalSlotProps.className, additionalProps == null ? void 0 : additionalProps.className, className, externalForwardedProps == null ? void 0 : externalForwardedProps.className, externalSlotProps == null ? void 0 : externalSlotProps.className);
-  const mergedStyle = _extends({}, internalSlotProps == null ? void 0 : internalSlotProps.style, additionalProps == null ? void 0 : additionalProps.style, externalForwardedProps == null ? void 0 : externalForwardedProps.style, externalSlotProps == null ? void 0 : externalSlotProps.style);
-  const props = _extends({}, internalSlotProps, additionalProps, otherPropsWithoutEventHandlers, componentsPropsWithoutEventHandlers);
-  if (joinedClasses.length > 0) {
-    props.className = joinedClasses;
-  }
-  if (Object.keys(mergedStyle).length > 0) {
-    props.style = mergedStyle;
-  }
-  return {
-    props,
-    internalRef: internalSlotProps.ref
-  };
-}
-
-const _excluded$s = ["elementType", "externalSlotProps", "ownerState", "skipResolvingSlotProps"];
-/**
- * @ignore - do not document.
- * Builds the props to be passed into the slot of an unstyled component.
- * It merges the internal props of the component with the ones supplied by the user, allowing to customize the behavior.
- * If the slot component is not a host component, it also merges in the `ownerState`.
- *
- * @param parameters.getSlotProps - A function that returns the props to be passed to the slot component.
- */
-function useSlotProps(parameters) {
-  var _parameters$additiona;
-  const {
-      elementType,
-      externalSlotProps,
-      ownerState,
-      skipResolvingSlotProps = false
-    } = parameters,
-    rest = _objectWithoutPropertiesLoose(parameters, _excluded$s);
-  const resolvedComponentsProps = skipResolvingSlotProps ? {} : resolveComponentProps(externalSlotProps, ownerState);
-  const {
-    props: mergedProps,
-    internalRef
-  } = mergeSlotProps(_extends({}, rest, {
-    externalSlotProps: resolvedComponentsProps
-  }));
-  const ref = useForkRef(internalRef, resolvedComponentsProps == null ? void 0 : resolvedComponentsProps.ref, (_parameters$additiona = parameters.additionalProps) == null ? void 0 : _parameters$additiona.ref);
-  const props = appendOwnerState(elementType, _extends({}, mergedProps, {
-    ref
-  }), ownerState);
-  return props;
-}
 
 // Inspired by https://github.com/focus-trap/tabbable
 const candidatesSelector = ['input', 'select', 'textarea', 'a[href]', 'button', '[tabindex]', 'audio[controls]', 'video[controls]', '[contenteditable]:not([contenteditable="false"])'].join(',');
@@ -30256,10 +30314,10 @@ function FocusTrap(props) {
   });
 }
 process.env.NODE_ENV !== "production" ? FocusTrap.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit TypeScript types and run "yarn proptypes"  |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * A single child content element.
    */
@@ -30339,12 +30397,12 @@ const Portal = /*#__PURE__*/React.forwardRef(function Portal(props, forwardedRef
   const [mountNode, setMountNode] = React.useState(null);
   // @ts-expect-error TODO upstream fix
   const handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.ref : null, forwardedRef);
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     if (!disablePortal) {
       setMountNode(getContainer$1(container) || document.body);
     }
   }, [container, disablePortal]);
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     if (mountNode && !disablePortal) {
       setRef(forwardedRef, mountNode);
       return () => {
@@ -30369,10 +30427,10 @@ const Portal = /*#__PURE__*/React.forwardRef(function Portal(props, forwardedRef
   });
 });
 process.env.NODE_ENV !== "production" ? Portal.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit TypeScript types and run "yarn proptypes"  |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The children to render into the `container`.
    */
@@ -30930,7 +30988,7 @@ const TextareaAutosize = /*#__PURE__*/React.forwardRef(function TextareaAutosize
     }
     setState(prevState => updateState(prevState, newState));
   }, [getUpdatedState]);
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     const syncHeightWithFlushSync = () => {
       const newState = getUpdatedState();
       if (isEmpty$1(newState)) {
@@ -30979,7 +31037,7 @@ const TextareaAutosize = /*#__PURE__*/React.forwardRef(function TextareaAutosize
       }
     };
   }, [getUpdatedState]);
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     syncHeight();
   });
   React.useEffect(() => {
@@ -31022,10 +31080,10 @@ const TextareaAutosize = /*#__PURE__*/React.forwardRef(function TextareaAutosize
   });
 });
 process.env.NODE_ENV !== "production" ? TextareaAutosize.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit TypeScript types and run "yarn proptypes"  |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * @ignore
    */
@@ -31093,10 +31151,10 @@ function GlobalStyles(props) {
   }));
 }
 process.env.NODE_ENV !== "production" ? GlobalStyles.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The styles you want to apply globally.
    */
@@ -31176,7 +31234,7 @@ const useUtilityClasses$m = ownerState => {
   };
   return composeClasses(slots, getInputBaseUtilityClass, classes);
 };
-const InputBaseRoot = styled$1('div', {
+const InputBaseRoot = styled('div', {
   name: 'MuiInputBase',
   slot: 'Root',
   overridesResolver: rootOverridesResolver
@@ -31204,7 +31262,7 @@ const InputBaseRoot = styled$1('div', {
 }), ownerState.fullWidth && {
   width: '100%'
 }));
-const InputBaseComponent = styled$1('input', {
+const InputBaseComponent = styled('input', {
   name: 'MuiInputBase',
   slot: 'Input',
   overridesResolver: inputOverridesResolver
@@ -31422,7 +31480,7 @@ const InputBase = /*#__PURE__*/React.forwardRef(function InputBase(inProps, ref)
       onEmpty();
     }
   }, [onFilled, onEmpty]);
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     if (isControlled) {
       checkDirty({
         value
@@ -31594,10 +31652,10 @@ const InputBase = /*#__PURE__*/React.forwardRef(function InputBase(inProps, ref)
   });
 });
 process.env.NODE_ENV !== "production" ? InputBase.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * @ignore
    */
@@ -31964,10 +32022,10 @@ const Fade = /*#__PURE__*/React.forwardRef(function Fade(props, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Fade.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * Add a custom transition end trigger. Called with the transitioning DOM
    * node and a done callback. Allows for more fine grained transition end
@@ -32056,7 +32114,7 @@ const useUtilityClasses$l = ownerState => {
   };
   return composeClasses(slots, getBackdropUtilityClass, classes);
 };
-const BackdropRoot = styled$1('div', {
+const BackdropRoot = styled('div', {
   name: 'MuiBackdrop',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -32124,10 +32182,10 @@ const Backdrop = /*#__PURE__*/React.forwardRef(function Backdrop(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Backdrop.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -32232,10 +32290,10 @@ const Box = createBox({
   generateClassName: ClassNameGenerator$1.generate
 });
 process.env.NODE_ENV !== "production" ? Box.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * @ignore
    */
@@ -32308,7 +32366,7 @@ const commonIconStyles = ownerState => _extends({}, ownerState.size === 'small' 
     fontSize: 22
   }
 });
-const ButtonRoot = styled$1(ButtonBase$1, {
+const ButtonRoot = styled(ButtonBase$1, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiButton',
   slot: 'Root',
@@ -32442,7 +32500,7 @@ const ButtonRoot = styled$1(ButtonBase$1, {
     boxShadow: 'none'
   }
 });
-const ButtonStartIcon = styled$1('span', {
+const ButtonStartIcon = styled('span', {
   name: 'MuiButton',
   slot: 'StartIcon',
   overridesResolver: (props, styles) => {
@@ -32460,7 +32518,7 @@ const ButtonStartIcon = styled$1('span', {
 }, ownerState.size === 'small' && {
   marginLeft: -2
 }, commonIconStyles(ownerState)));
-const ButtonEndIcon = styled$1('span', {
+const ButtonEndIcon = styled('span', {
   name: 'MuiButton',
   slot: 'EndIcon',
   overridesResolver: (props, styles) => {
@@ -32542,10 +32600,10 @@ const Button = /*#__PURE__*/React.forwardRef(function Button(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Button.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -32655,7 +32713,7 @@ const useUtilityClasses$j = ownerState => {
   };
   return composeClasses(slots, getModalUtilityClass, classes);
 };
-const ModalRoot = styled$1('div', {
+const ModalRoot = styled('div', {
   name: 'MuiModal',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -32677,7 +32735,7 @@ const ModalRoot = styled$1('div', {
 }, !ownerState.open && ownerState.exited && {
   visibility: 'hidden'
 }));
-const ModalBackdrop = styled$1(Backdrop$1, {
+const ModalBackdrop = styled(Backdrop$1, {
   name: 'MuiModal',
   slot: 'Backdrop',
   overridesResolver: (props, styles) => {
@@ -32826,10 +32884,10 @@ const Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
   });
 });
 process.env.NODE_ENV !== "production" ? Modal.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * A backdrop component. This prop enables custom backdrop rendering.
    * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
@@ -33021,7 +33079,7 @@ if (process.env.NODE_ENV !== 'production') {
 var DialogContext$1 = DialogContext;
 
 const _excluded$l = ["aria-describedby", "aria-labelledby", "BackdropComponent", "BackdropProps", "children", "className", "disableEscapeKeyDown", "fullScreen", "fullWidth", "maxWidth", "onBackdropClick", "onClose", "open", "PaperComponent", "PaperProps", "scroll", "TransitionComponent", "transitionDuration", "TransitionProps"];
-const DialogBackdrop = styled$1(Backdrop$1, {
+const DialogBackdrop = styled(Backdrop$1, {
   name: 'MuiDialog',
   slot: 'Backdrop',
   overrides: (props, styles) => styles.backdrop
@@ -33044,7 +33102,7 @@ const useUtilityClasses$i = ownerState => {
   };
   return composeClasses(slots, getDialogUtilityClass, classes);
 };
-const DialogRoot = styled$1(Modal$1, {
+const DialogRoot = styled(Modal$1, {
   name: 'MuiDialog',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
@@ -33054,7 +33112,7 @@ const DialogRoot = styled$1(Modal$1, {
     position: 'absolute !important'
   }
 });
-const DialogContainer = styled$1('div', {
+const DialogContainer = styled('div', {
   name: 'MuiDialog',
   slot: 'Container',
   overridesResolver: (props, styles) => {
@@ -33080,7 +33138,7 @@ const DialogContainer = styled$1('div', {
   overflowY: 'auto',
   overflowX: 'hidden',
   textAlign: 'center',
-  '&:after': {
+  '&::after': {
     content: '""',
     display: 'inline-block',
     verticalAlign: 'middle',
@@ -33088,7 +33146,7 @@ const DialogContainer = styled$1('div', {
     width: '0'
   }
 }));
-const DialogPaper = styled$1(Paper$1, {
+const DialogPaper = styled(Paper$1, {
   name: 'MuiDialog',
   slot: 'Paper',
   overridesResolver: (props, styles) => {
@@ -33264,10 +33322,10 @@ const Dialog = /*#__PURE__*/React.forwardRef(function Dialog(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Dialog.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The id(s) of the element(s) that describe the dialog.
    */
@@ -33409,7 +33467,7 @@ const useUtilityClasses$h = ownerState => {
   };
   return composeClasses(slots, getDialogActionsUtilityClass, classes);
 };
-const DialogActionsRoot = styled$1('div', {
+const DialogActionsRoot = styled('div', {
   name: 'MuiDialogActions',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -33452,10 +33510,10 @@ const DialogActions = /*#__PURE__*/React.forwardRef(function DialogActions(inPro
   }, other));
 });
 process.env.NODE_ENV !== "production" ? DialogActions.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -33502,7 +33560,7 @@ const useUtilityClasses$g = ownerState => {
   };
   return composeClasses(slots, getDialogContentUtilityClass, classes);
 };
-const DialogContentRoot = styled$1('div', {
+const DialogContentRoot = styled('div', {
   name: 'MuiDialogContent',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -33550,10 +33608,10 @@ const DialogContent = /*#__PURE__*/React.forwardRef(function DialogContent(inPro
   }, other));
 });
 process.env.NODE_ENV !== "production" ? DialogContent.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -33588,7 +33646,7 @@ const useUtilityClasses$f = ownerState => {
   };
   return composeClasses(slots, getDialogTitleUtilityClass, classes);
 };
-const DialogTitleRoot = styled$1(Typography$1, {
+const DialogTitleRoot = styled(Typography$1, {
   name: 'MuiDialogTitle',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
@@ -33621,10 +33679,10 @@ const DialogTitle = /*#__PURE__*/React.forwardRef(function DialogTitle(inProps, 
   }, other));
 });
 process.env.NODE_ENV !== "production" ? DialogTitle.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -33661,7 +33719,7 @@ const useUtilityClasses$e = ownerState => {
   const composedClasses = composeClasses(slots, getFilledInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-const FilledInputRoot = styled$1(InputBaseRoot, {
+const FilledInputRoot = styled(InputBaseRoot, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiFilledInput',
   slot: 'Root',
@@ -33704,7 +33762,7 @@ const FilledInputRoot = styled$1(InputBaseRoot, {
       backgroundColor: theme.vars ? theme.vars.palette.FilledInput.disabledBg : disabledBackground
     }
   }, !ownerState.disableUnderline && {
-    '&:after': {
+    '&::after': {
       borderBottom: `2px solid ${(_palette = (theme.vars || theme).palette[ownerState.color || 'primary']) == null ? void 0 : _palette.main}`,
       left: 0,
       bottom: 0,
@@ -33725,11 +33783,11 @@ const FilledInputRoot = styled$1(InputBaseRoot, {
       transform: 'scaleX(1) translateX(0)'
     },
     [`&.${filledInputClasses$1.error}`]: {
-      '&:before, &:after': {
+      '&::before, &::after': {
         borderBottomColor: (theme.vars || theme).palette.error.main
       }
     },
-    '&:before': {
+    '&::before': {
       borderBottom: `1px solid ${theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / ${theme.vars.opacity.inputUnderline})` : bottomLineColor}`,
       left: 0,
       bottom: 0,
@@ -33765,7 +33823,7 @@ const FilledInputRoot = styled$1(InputBaseRoot, {
     paddingBottom: 9
   }));
 });
-const FilledInputInput = styled$1(InputBaseComponent, {
+const FilledInputInput = styled(InputBaseComponent, {
   name: 'MuiFilledInput',
   slot: 'Input',
   overridesResolver: inputOverridesResolver
@@ -33868,10 +33926,10 @@ const FilledInput = /*#__PURE__*/React.forwardRef(function FilledInput(inProps, 
   }));
 });
 process.env.NODE_ENV !== "production" ? FilledInput.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * This prop helps users to fill forms faster, especially on mobile devices.
    * The name can be confusing, as it's more like an autofill.
@@ -34080,7 +34138,7 @@ const useUtilityClasses$d = ownerState => {
   };
   return composeClasses(slots, getFormControlUtilityClasses, classes);
 };
-const FormControlRoot = styled$1('div', {
+const FormControlRoot = styled('div', {
   name: 'MuiFormControl',
   slot: 'Root',
   overridesResolver: ({
@@ -34262,10 +34320,10 @@ const FormControl = /*#__PURE__*/React.forwardRef(function FormControl(inProps, 
   });
 });
 process.env.NODE_ENV !== "production" ? FormControl.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -34367,7 +34425,7 @@ const useUtilityClasses$c = ownerState => {
   };
   return composeClasses(slots, getFormHelperTextUtilityClasses, classes);
 };
-const FormHelperTextRoot = styled$1('p', {
+const FormHelperTextRoot = styled('p', {
   name: 'MuiFormHelperText',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -34442,10 +34500,10 @@ const FormHelperText = /*#__PURE__*/React.forwardRef(function FormHelperText(inP
   }));
 });
 process.env.NODE_ENV !== "production" ? FormHelperText.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    *
@@ -34524,7 +34582,7 @@ const useUtilityClasses$b = ownerState => {
   };
   return composeClasses(slots, getFormLabelUtilityClasses, classes);
 };
-const FormLabelRoot = styled$1('label', {
+const FormLabelRoot = styled('label', {
   name: 'MuiFormLabel',
   slot: 'Root',
   overridesResolver: ({
@@ -34551,7 +34609,7 @@ const FormLabelRoot = styled$1('label', {
     color: (theme.vars || theme).palette.error.main
   }
 }));
-const AsteriskComponent = styled$1('span', {
+const AsteriskComponent = styled('span', {
   name: 'MuiFormLabel',
   slot: 'Asterisk',
   overridesResolver: (props, styles) => styles.asterisk
@@ -34604,10 +34662,10 @@ const FormLabel = /*#__PURE__*/React.forwardRef(function FormLabel(inProps, ref)
   }));
 });
 process.env.NODE_ENV !== "production" ? FormLabel.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -34927,7 +34985,7 @@ function resolveSpacingStyles(spacing, breakpoints, styles = {}) {
 // alignItems: 'flex-start',
 // flexWrap: 'nowrap',
 // justifyContent: 'flex-start',
-const GridRoot = styled$1('div', {
+const GridRoot = styled('div', {
   name: 'MuiGrid',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -35084,10 +35142,10 @@ const Grid = /*#__PURE__*/React.forwardRef(function Grid(inProps, ref) {
   });
 });
 process.env.NODE_ENV !== "production" ? Grid.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -35272,7 +35330,7 @@ const Grow = /*#__PURE__*/React.forwardRef(function Grow(props, ref) {
       TransitionComponent = Transition$1
     } = props,
     other = _objectWithoutPropertiesLoose(props, _excluded$c);
-  const timer = React.useRef();
+  const timer = useTimeout();
   const autoTimeout = React.useRef();
   const theme = useTheme();
   const nodeRef = React.useRef(null);
@@ -35361,18 +35419,13 @@ const Grow = /*#__PURE__*/React.forwardRef(function Grow(props, ref) {
   const handleExited = normalizedTransitionCallback(onExited);
   const handleAddEndListener = next => {
     if (timeout === 'auto') {
-      timer.current = setTimeout(next, autoTimeout.current || 0);
+      timer.start(autoTimeout.current || 0, next);
     }
     if (addEndListener) {
       // Old call signature before `react-transition-group` implemented `nodeRef`
       addEndListener(nodeRef.current, next);
     }
   };
-  React.useEffect(() => {
-    return () => {
-      clearTimeout(timer.current);
-    };
-  }, []);
   return /*#__PURE__*/jsxRuntimeExports.jsx(TransitionComponent, _extends({
     appear: appear,
     in: inProp,
@@ -35399,10 +35452,10 @@ const Grow = /*#__PURE__*/React.forwardRef(function Grow(props, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Grow.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * Add a custom transition end trigger. Called with the transitioning DOM
    * node and a done callback. Allows for more fine grained transition end
@@ -35488,7 +35541,7 @@ const useUtilityClasses$9 = ownerState => {
   const composedClasses = composeClasses(slots, getInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-const InputRoot = styled$1(InputBaseRoot, {
+const InputRoot = styled(InputBaseRoot, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiInput',
   slot: 'Root',
@@ -35514,7 +35567,7 @@ const InputRoot = styled$1(InputBaseRoot, {
       marginTop: 16
     }
   }, !ownerState.disableUnderline && {
-    '&:after': {
+    '&::after': {
       borderBottom: `2px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
       left: 0,
       bottom: 0,
@@ -35535,11 +35588,11 @@ const InputRoot = styled$1(InputBaseRoot, {
       transform: 'scaleX(1) translateX(0)'
     },
     [`&.${inputClasses$1.error}`]: {
-      '&:before, &:after': {
+      '&::before, &::after': {
         borderBottomColor: (theme.vars || theme).palette.error.main
       }
     },
-    '&:before': {
+    '&::before': {
       borderBottom: `1px solid ${bottomLineColor}`,
       left: 0,
       bottom: 0,
@@ -35564,7 +35617,7 @@ const InputRoot = styled$1(InputBaseRoot, {
     }
   });
 });
-const InputInput = styled$1(InputBaseComponent, {
+const InputInput = styled(InputBaseComponent, {
   name: 'MuiInput',
   slot: 'Input',
   overridesResolver: inputOverridesResolver
@@ -35615,10 +35668,10 @@ const Input = /*#__PURE__*/React.forwardRef(function Input(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Input.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * This prop helps users to fill forms faster, especially on mobile devices.
    * The name can be confusing, as it's more like an autofill.
@@ -35826,7 +35879,7 @@ const useUtilityClasses$8 = ownerState => {
   const composedClasses = composeClasses(slots, getInputLabelUtilityClasses, classes);
   return _extends({}, classes, composedClasses);
 };
-const InputLabelRoot = styled$1(FormLabel$1, {
+const InputLabelRoot = styled(FormLabel$1, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiInputLabel',
   slot: 'Root',
@@ -35941,10 +35994,10 @@ const InputLabel = /*#__PURE__*/React.forwardRef(function InputLabel(inProps, re
   }));
 });
 process.env.NODE_ENV !== "production" ? InputLabel.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -36036,7 +36089,7 @@ const useUtilityClasses$7 = ownerState => {
   };
   return composeClasses(slots, getListUtilityClass, classes);
 };
-const ListRoot = styled$1('ul', {
+const ListRoot = styled('ul', {
   name: 'MuiList',
   slot: 'Root',
   overridesResolver: (props, styles) => {
@@ -36094,10 +36147,10 @@ const List = /*#__PURE__*/React.forwardRef(function List(inProps, ref) {
   });
 });
 process.env.NODE_ENV !== "production" ? List.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * The content of the component.
    */
@@ -36228,7 +36281,7 @@ const MenuList = /*#__PURE__*/React.forwardRef(function MenuList(props, ref) {
     previousKeyMatched: true,
     lastTime: null
   });
-  useEnhancedEffect$1(() => {
+  useEnhancedEffect(() => {
     if (autoFocus) {
       listRef.current.focus();
     }
@@ -36319,7 +36372,7 @@ const MenuList = /*#__PURE__*/React.forwardRef(function MenuList(props, ref) {
       return;
     }
     if (process.env.NODE_ENV !== 'production') {
-      if (reactIsExports$1.isFragment(child)) {
+      if (reactIsExports.isFragment(child)) {
         console.error(["MUI: The Menu component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
       }
     }
@@ -36362,10 +36415,10 @@ const MenuList = /*#__PURE__*/React.forwardRef(function MenuList(props, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? MenuList.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * If `true`, will focus the `[role="menu"]` container and move into tab order.
    * @default false
@@ -36454,12 +36507,12 @@ const useUtilityClasses$6 = ownerState => {
   };
   return composeClasses(slots, getPopoverUtilityClass, classes);
 };
-const PopoverRoot = styled$1(Modal$1, {
+const PopoverRoot = styled(Modal$1, {
   name: 'MuiPopover',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
 })({});
-const PopoverPaper = styled$1(Paper$1, {
+const PopoverPaper = styled(Paper$1, {
   name: 'MuiPopover',
   slot: 'Paper',
   overridesResolver: (props, styles) => styles.paper
@@ -36747,10 +36800,10 @@ const Popover = /*#__PURE__*/React.forwardRef(function Popover(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Popover.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * A ref for imperative actions.
    * It currently only supports updatePosition() action.
@@ -36951,13 +37004,13 @@ const useUtilityClasses$5 = ownerState => {
   };
   return composeClasses(slots, getMenuUtilityClass, classes);
 };
-const MenuRoot = styled$1(Popover$1, {
+const MenuRoot = styled(Popover$1, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiMenu',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
 })({});
-const MenuPaper = styled$1(PopoverPaper, {
+const MenuPaper = styled(PopoverPaper, {
   name: 'MuiMenu',
   slot: 'Paper',
   overridesResolver: (props, styles) => styles.paper
@@ -36969,7 +37022,7 @@ const MenuPaper = styled$1(PopoverPaper, {
   // Add iOS momentum scrolling for iOS < 13.0
   WebkitOverflowScrolling: 'touch'
 });
-const MenuMenuList = styled$1(MenuList$1, {
+const MenuMenuList = styled(MenuList$1, {
   name: 'MuiMenu',
   slot: 'List',
   overridesResolver: (props, styles) => styles.list
@@ -37049,7 +37102,7 @@ const Menu = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
       return;
     }
     if (process.env.NODE_ENV !== 'production') {
-      if (reactIsExports$1.isFragment(child)) {
+      if (reactIsExports.isFragment(child)) {
         console.error(["MUI: The Menu component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
       }
     }
@@ -37112,10 +37165,10 @@ const Menu = /*#__PURE__*/React.forwardRef(function Menu(inProps, ref) {
   }));
 });
 process.env.NODE_ENV !== "production" ? Menu.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * An HTML element, or a function that returns one.
    * It's used to set the position of the menu.
@@ -37293,7 +37346,7 @@ const nativeSelectSelectStyles = ({
     paddingRight: 32
   }
 });
-const NativeSelectSelect = styled$1('select', {
+const NativeSelectSelect = styled('select', {
   name: 'MuiNativeSelect',
   slot: 'Select',
   shouldForwardProp: rootShouldForwardProp,
@@ -37329,7 +37382,7 @@ const nativeSelectIconStyles = ({
 }, ownerState.variant === 'outlined' && {
   right: 7
 });
-const NativeSelectIcon = styled$1('svg', {
+const NativeSelectIcon = styled('svg', {
   name: 'MuiNativeSelect',
   slot: 'Icon',
   overridesResolver: (props, styles) => {
@@ -37432,7 +37485,7 @@ var NativeSelectInput$1 = NativeSelectInput;
 
 var _span$1;
 const _excluded$4 = ["children", "classes", "className", "label", "notched"];
-const NotchedOutlineRoot$1 = styled$1('fieldset', {
+const NotchedOutlineRoot$1 = styled('fieldset', {
   shouldForwardProp: rootShouldForwardProp
 })({
   textAlign: 'left',
@@ -37450,7 +37503,7 @@ const NotchedOutlineRoot$1 = styled$1('fieldset', {
   overflow: 'hidden',
   minWidth: '0%'
 });
-const NotchedOutlineLegend = styled$1('legend', {
+const NotchedOutlineLegend = styled('legend', {
   shouldForwardProp: rootShouldForwardProp
 })(({
   ownerState,
@@ -37572,7 +37625,7 @@ const useUtilityClasses$3 = ownerState => {
   const composedClasses = composeClasses(slots, getOutlinedInputUtilityClass, classes);
   return _extends({}, classes, composedClasses);
 };
-const OutlinedInputRoot = styled$1(InputBaseRoot, {
+const OutlinedInputRoot = styled(InputBaseRoot, {
   shouldForwardProp: prop => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'MuiOutlinedInput',
   slot: 'Root',
@@ -37614,7 +37667,7 @@ const OutlinedInputRoot = styled$1(InputBaseRoot, {
     padding: '8.5px 14px'
   }));
 });
-const NotchedOutlineRoot = styled$1(NotchedOutline, {
+const NotchedOutlineRoot = styled(NotchedOutline, {
   name: 'MuiOutlinedInput',
   slot: 'NotchedOutline',
   overridesResolver: (props, styles) => styles.notchedOutline
@@ -37626,7 +37679,7 @@ const NotchedOutlineRoot = styled$1(NotchedOutline, {
     borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor
   };
 });
-const OutlinedInputInput = styled$1(InputBaseComponent, {
+const OutlinedInputInput = styled(InputBaseComponent, {
   name: 'MuiOutlinedInput',
   slot: 'Input',
   overridesResolver: inputOverridesResolver
@@ -37725,10 +37778,10 @@ const OutlinedInput = /*#__PURE__*/React.forwardRef(function OutlinedInput(inPro
   }));
 });
 process.env.NODE_ENV !== "production" ? OutlinedInput.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * This prop helps users to fill forms faster, especially on mobile devices.
    * The name can be confusing, as it's more like an autofill.
@@ -37897,11 +37950,10 @@ function getSelectUtilityClasses(slot) {
   return generateUtilityClass('MuiSelect', slot);
 }
 const selectClasses = generateUtilityClasses('MuiSelect', ['root', 'select', 'multiple', 'filled', 'outlined', 'standard', 'disabled', 'focused', 'icon', 'iconOpen', 'iconFilled', 'iconOutlined', 'iconStandard', 'nativeInput', 'error']);
-var selectClasses$1 = selectClasses;
 
 var _span;
 const _excluded$2 = ["aria-describedby", "aria-label", "autoFocus", "autoWidth", "children", "className", "defaultOpen", "defaultValue", "disabled", "displayEmpty", "error", "IconComponent", "inputRef", "labelId", "MenuProps", "multiple", "name", "onBlur", "onChange", "onClose", "onFocus", "onOpen", "open", "readOnly", "renderValue", "SelectDisplayProps", "tabIndex", "type", "value", "variant"];
-const SelectSelect = styled$1('div', {
+const SelectSelect = styled('div', {
   name: 'MuiSelect',
   slot: 'Select',
   overridesResolver: (props, styles) => {
@@ -37911,18 +37963,18 @@ const SelectSelect = styled$1('div', {
     return [
     // Win specificity over the input base
     {
-      [`&.${selectClasses$1.select}`]: styles.select
+      [`&.${selectClasses.select}`]: styles.select
     }, {
-      [`&.${selectClasses$1.select}`]: styles[ownerState.variant]
+      [`&.${selectClasses.select}`]: styles[ownerState.variant]
     }, {
-      [`&.${selectClasses$1.error}`]: styles.error
+      [`&.${selectClasses.error}`]: styles.error
     }, {
-      [`&.${selectClasses$1.multiple}`]: styles.multiple
+      [`&.${selectClasses.multiple}`]: styles.multiple
     }];
   }
 })(nativeSelectSelectStyles, {
   // Win specificity over the input base
-  [`&.${selectClasses$1.select}`]: {
+  [`&.${selectClasses.select}`]: {
     height: 'auto',
     // Resets for multiple select with chips
     minHeight: '1.4375em',
@@ -37932,7 +37984,7 @@ const SelectSelect = styled$1('div', {
     overflow: 'hidden'
   }
 });
-const SelectIcon = styled$1('svg', {
+const SelectIcon = styled('svg', {
   name: 'MuiSelect',
   slot: 'Icon',
   overridesResolver: (props, styles) => {
@@ -37942,7 +37994,7 @@ const SelectIcon = styled$1('svg', {
     return [styles.icon, ownerState.variant && styles[`icon${capitalize$1(ownerState.variant)}`], ownerState.open && styles.iconOpen];
   }
 })(nativeSelectIconStyles);
-const SelectNativeInput = styled$1('input', {
+const SelectNativeInput = styled('input', {
   shouldForwardProp: prop => slotShouldForwardProp(prop) && prop !== 'classes',
   name: 'MuiSelect',
   slot: 'NativeInput',
@@ -38222,7 +38274,7 @@ const SelectInput = /*#__PURE__*/React.forwardRef(function SelectInput(props, re
       return null;
     }
     if (process.env.NODE_ENV !== 'production') {
-      if (reactIsExports$1.isFragment(child)) {
+      if (reactIsExports.isFragment(child)) {
         console.error(["MUI: The Select component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
       }
     }
@@ -38549,9 +38601,9 @@ const styledRootConfig = {
   shouldForwardProp: prop => rootShouldForwardProp(prop) && prop !== 'variant',
   slot: 'Root'
 };
-const StyledInput = styled$1(Input$1, styledRootConfig)('');
-const StyledOutlinedInput = styled$1(OutlinedInput$1, styledRootConfig)('');
-const StyledFilledInput = styled$1(FilledInput$1, styledRootConfig)('');
+const StyledInput = styled(Input$1, styledRootConfig)('');
+const StyledOutlinedInput = styled(OutlinedInput$1, styledRootConfig)('');
+const StyledFilledInput = styled(FilledInput$1, styledRootConfig)('');
 const Select = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
   const props = useThemeProps({
     name: 'MuiSelect',
@@ -38639,7 +38691,7 @@ const Select = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
       }, inputProps, {
         classes: inputProps ? deepmerge(restOfClasses, inputProps.classes) : restOfClasses
       }, input ? input.props.inputProps : {})
-    }, multiple && native && variant === 'outlined' ? {
+    }, (multiple && native || displayEmpty) && variant === 'outlined' ? {
       notched: true
     } : {}, {
       ref: inputComponentRef,
@@ -38650,10 +38702,10 @@ const Select = /*#__PURE__*/React.forwardRef(function Select(inProps, ref) {
   });
 });
 process.env.NODE_ENV !== "production" ? Select.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * If `true`, the width of the popover will automatically be set according to the items inside the
    * menu, otherwise it will be at least the width of the select input.
@@ -38819,7 +38871,7 @@ const useUtilityClasses = ownerState => {
   };
   return composeClasses(slots, getTextFieldUtilityClass, classes);
 };
-const TextFieldRoot = styled$1(FormControl$1, {
+const TextFieldRoot = styled(FormControl$1, {
   name: 'MuiTextField',
   slot: 'Root',
   overridesResolver: (props, styles) => styles.root
@@ -38985,10 +39037,10 @@ const TextField = /*#__PURE__*/React.forwardRef(function TextField(inProps, ref)
   }));
 });
 process.env.NODE_ENV !== "production" ? TextField.propTypes /* remove-proptypes */ = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
   /**
    * This prop helps users to fill forms faster, especially on mobile devices.
    * The name can be confusing, as it's more like an autofill.
@@ -48539,7 +48591,7 @@ var pickBy_1 = pickBy;
 
 var pickBy$1 = /*@__PURE__*/getDefaultExportFromCjs(pickBy_1);
 
-var getImportPathMap=memoize2(1)(entries=>Object.values(entries).reduce((acc,entry)=>(acc[entry.importPath]=acc[entry.importPath]||entry,acc),{})),StoryIndexStore=class{constructor({entries}={v:4,entries:{}}){this.entries=entries;}entryFromSpecifier(specifier){let entries=Object.values(this.entries);if(specifier==="*")return entries[0];if(typeof specifier=="string")return this.entries[specifier]?this.entries[specifier]:entries.find(entry=>entry.id.startsWith(specifier));let{name,title}=specifier;return entries.find(entry=>entry.name===name&&entry.title===title)}storyIdToEntry(storyId){let storyEntry=this.entries[storyId];if(!storyEntry)throw new MissingStoryAfterHmrError({storyId});return storyEntry}importPathToEntry(importPath){return getImportPathMap(this.entries)[importPath]}};var INCOMPATIBLE=Symbol("incompatible"),map=(arg,argType)=>{let type=argType.type;if(arg==null||!type||argType.mapping)return arg;switch(type.name){case"string":return String(arg);case"enum":return arg;case"number":return Number(arg);case"boolean":return arg==="true";case"array":return !type.value||!Array.isArray(arg)?INCOMPATIBLE:arg.reduce((acc,item,index)=>{let mapped=map(item,{type:type.value});return mapped!==INCOMPATIBLE&&(acc[index]=mapped),acc},new Array(arg.length));case"object":return typeof arg=="string"||typeof arg=="number"?arg:!type.value||typeof arg!="object"?INCOMPATIBLE:Object.entries(arg).reduce((acc,[key,val])=>{let mapped=map(val,{type:type.value[key]});return mapped===INCOMPATIBLE?acc:Object.assign(acc,{[key]:mapped})},{});default:return INCOMPATIBLE}},mapArgsToTypes=(args,argTypes)=>Object.entries(args).reduce((acc,[key,value])=>{if(!argTypes[key])return acc;let mapped=map(value,argTypes[key]);return mapped===INCOMPATIBLE?acc:Object.assign(acc,{[key]:mapped})},{}),combineArgs=(value,update)=>Array.isArray(value)&&Array.isArray(update)?update.reduce((acc,upd,index)=>(acc[index]=combineArgs(value[index],update[index]),acc),[...value]).filter(v=>v!==void 0):!isPlainObject$1(value)||!isPlainObject$1(update)?update:Object.keys({...value,...update}).reduce((acc,key)=>{if(key in update){let combined=combineArgs(value[key],update[key]);combined!==void 0&&(acc[key]=combined);}else acc[key]=value[key];return acc},{}),validateOptions=(args,argTypes)=>Object.entries(argTypes).reduce((acc,[key,{options}])=>{function allowArg(){return key in args&&(acc[key]=args[key]),acc}if(!options)return allowArg();if(!Array.isArray(options))return once.error(dedent`
+var getImportPathMap=memoize2(1)(entries=>Object.values(entries).reduce((acc,entry)=>(acc[entry.importPath]=acc[entry.importPath]||entry,acc),{})),StoryIndexStore=class{constructor({entries}={v:4,entries:{}}){this.entries=entries;}entryFromSpecifier(specifier){let entries=Object.values(this.entries);if(specifier==="*")return entries[0];if(typeof specifier=="string")return this.entries[specifier]?this.entries[specifier]:entries.find(entry=>entry.id.startsWith(specifier));let{name,title}=specifier;return entries.find(entry=>entry.name===name&&entry.title===title)}storyIdToEntry(storyId){let storyEntry=this.entries[storyId];if(!storyEntry)throw new MissingStoryAfterHmrError({storyId});return storyEntry}importPathToEntry(importPath){return getImportPathMap(this.entries)[importPath]}};var INCOMPATIBLE=Symbol("incompatible"),map=(arg,argType)=>{let type=argType.type;if(arg==null||!type||argType.mapping)return arg;switch(type.name){case"string":return String(arg);case"enum":return arg;case"number":return Number(arg);case"boolean":return String(arg)==="true";case"array":return !type.value||!Array.isArray(arg)?INCOMPATIBLE:arg.reduce((acc,item,index)=>{let mapped=map(item,{type:type.value});return mapped!==INCOMPATIBLE&&(acc[index]=mapped),acc},new Array(arg.length));case"object":return typeof arg=="string"||typeof arg=="number"?arg:!type.value||typeof arg!="object"?INCOMPATIBLE:Object.entries(arg).reduce((acc,[key,val])=>{let mapped=map(val,{type:type.value[key]});return mapped===INCOMPATIBLE?acc:Object.assign(acc,{[key]:mapped})},{});default:return INCOMPATIBLE}},mapArgsToTypes=(args,argTypes)=>Object.entries(args).reduce((acc,[key,value])=>{if(!argTypes[key])return acc;let mapped=map(value,argTypes[key]);return mapped===INCOMPATIBLE?acc:Object.assign(acc,{[key]:mapped})},{}),combineArgs=(value,update)=>Array.isArray(value)&&Array.isArray(update)?update.reduce((acc,upd,index)=>(acc[index]=combineArgs(value[index],update[index]),acc),[...value]).filter(v=>v!==void 0):!isPlainObject$1(value)||!isPlainObject$1(update)?update:Object.keys({...value,...update}).reduce((acc,key)=>{if(key in update){let combined=combineArgs(value[key],update[key]);combined!==void 0&&(acc[key]=combined);}else acc[key]=value[key];return acc},{}),validateOptions=(args,argTypes)=>Object.entries(argTypes).reduce((acc,[key,{options}])=>{function allowArg(){return key in args&&(acc[key]=args[key]),acc}if(!options)return allowArg();if(!Array.isArray(options))return once.error(dedent`
         Invalid argType: '${key}.options' should be an array.
 
         More info: https://storybook.js.org/docs/react/api/argtypes
@@ -48615,7 +48667,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       Omitted potentially unsafe URL args.
 
       More info: https://storybook.js.org/docs/react/writing-stories/args#setting-args-through-the-url
-    `),acc),{})};var{history,document: document$1}=scope;function pathToId(path){let match=(path||"").match(/^\/story\/(.+)/);if(!match)throw new Error(`Invalid path '${path}',  must start with '/story/'`);return match[1]}var getQueryString=({selection,extraParams})=>{let{search=""}=document$1.location,{path,selectedKind,selectedStory,...rest}=qs2.parse(search,{ignoreQueryPrefix:!0});return qs2.stringify({...rest,...extraParams,...selection&&{id:selection.storyId,viewMode:selection.viewMode}},{encode:!1,addQueryPrefix:!0})},setPath=selection=>{if(!selection)return;let query=getQueryString({selection}),{hash=""}=document$1.location;document$1.title=selection.storyId,history.replaceState({},"",`${document$1.location.pathname}${query}${hash}`);},isObject$1=val=>val!=null&&typeof val=="object"&&Array.isArray(val)===!1,getFirstString=v=>{if(v!==void 0){if(typeof v=="string")return v;if(Array.isArray(v))return getFirstString(v[0]);if(isObject$1(v))return getFirstString(Object.values(v).filter(Boolean))}},getSelectionSpecifierFromPath=()=>{let query=qs2.parse(document$1.location.search,{ignoreQueryPrefix:!0}),args=typeof query.args=="string"?parseArgsParam(query.args):void 0,globals=typeof query.globals=="string"?parseArgsParam(query.globals):void 0,viewMode=getFirstString(query.viewMode);(typeof viewMode!="string"||!viewMode.match(/docs|story/))&&(viewMode="story");let path=getFirstString(query.path),storyId=path?pathToId(path):getFirstString(query.id);return storyId?{storySpecifier:storyId,args,globals,viewMode}:null},UrlStore=class{constructor(){this.selectionSpecifier=getSelectionSpecifierFromPath();}setSelection(selection){this.selection=selection,setPath(this.selection);}setQueryParams(queryParams){let query=getQueryString({extraParams:queryParams}),{hash=""}=document$1.location;history.replaceState({},"",`${document$1.location.pathname}${query}${hash}`);}};var import_ansi_to_html=__toESM(require_ansi_to_html());var{document:document2}=scope,PREPARING_DELAY=100,Mode=(Mode2=>(Mode2.MAIN="MAIN",Mode2.NOPREVIEW="NOPREVIEW",Mode2.PREPARING_STORY="PREPARING_STORY",Mode2.PREPARING_DOCS="PREPARING_DOCS",Mode2.ERROR="ERROR",Mode2))(Mode||{}),classes={PREPARING_STORY:"sb-show-preparing-story",PREPARING_DOCS:"sb-show-preparing-docs",MAIN:"sb-show-main",NOPREVIEW:"sb-show-nopreview",ERROR:"sb-show-errordisplay"},layoutClassMap={centered:"sb-main-centered",fullscreen:"sb-main-fullscreen",padded:"sb-main-padded"},ansiConverter=new import_ansi_to_html.default({escapeXML:!0}),WebView=class{constructor(){this.testing=!1;let{__SPECIAL_TEST_PARAMETER__}=qs2.parse(document2.location.search,{ignoreQueryPrefix:!0});switch(__SPECIAL_TEST_PARAMETER__){case"preparing-story":{this.showPreparingStory(),this.testing=!0;break}case"preparing-docs":{this.showPreparingDocs(),this.testing=!0;break}}}prepareForStory(story){return this.showStory(),this.applyLayout(story.parameters.layout),document2.documentElement.scrollTop=0,document2.documentElement.scrollLeft=0,this.storyRoot()}storyRoot(){return document2.getElementById("storybook-root")}prepareForDocs(){return this.showMain(),this.showDocs(),this.applyLayout("fullscreen"),document2.documentElement.scrollTop=0,document2.documentElement.scrollLeft=0,this.docsRoot()}docsRoot(){return document2.getElementById("storybook-docs")}applyLayout(layout="padded"){if(layout==="none"){document2.body.classList.remove(this.currentLayoutClass),this.currentLayoutClass=null;return}this.checkIfLayoutExists(layout);let layoutClass=layoutClassMap[layout];document2.body.classList.remove(this.currentLayoutClass),document2.body.classList.add(layoutClass),this.currentLayoutClass=layoutClass;}checkIfLayoutExists(layout){layoutClassMap[layout]||logger.warn(dedent`The desired layout: ${layout} is not a valid option.
+    `),acc),{})};var{history,document: document$1}=scope;function pathToId(path){let match=(path||"").match(/^\/story\/(.+)/);if(!match)throw new Error(`Invalid path '${path}',  must start with '/story/'`);return match[1]}var getQueryString=({selection,extraParams})=>{let{search=""}=document$1.location,{path,selectedKind,selectedStory,...rest}=qs2.parse(search,{ignoreQueryPrefix:!0});return qs2.stringify({...rest,...extraParams,...selection&&{id:selection.storyId,viewMode:selection.viewMode}},{encode:!1,addQueryPrefix:!0})},setPath=selection=>{if(!selection)return;let query=getQueryString({selection}),{hash=""}=document$1.location;document$1.title=selection.storyId,history.replaceState({},"",`${document$1.location.pathname}${query}${hash}`);},isObject$1=val=>val!=null&&typeof val=="object"&&Array.isArray(val)===!1,getFirstString=v=>{if(v!==void 0){if(typeof v=="string")return v;if(Array.isArray(v))return getFirstString(v[0]);if(isObject$1(v))return getFirstString(Object.values(v).filter(Boolean))}},getSelectionSpecifierFromPath=()=>{let query=qs2.parse(document$1?.location?.search,{ignoreQueryPrefix:!0}),args=typeof query.args=="string"?parseArgsParam(query.args):void 0,globals=typeof query.globals=="string"?parseArgsParam(query.globals):void 0,viewMode=getFirstString(query.viewMode);(typeof viewMode!="string"||!viewMode.match(/docs|story/))&&(viewMode="story");let path=getFirstString(query.path),storyId=path?pathToId(path):getFirstString(query.id);return storyId?{storySpecifier:storyId,args,globals,viewMode}:null},UrlStore=class{constructor(){this.selectionSpecifier=getSelectionSpecifierFromPath();}setSelection(selection){this.selection=selection,setPath(this.selection);}setQueryParams(queryParams){let query=getQueryString({extraParams:queryParams}),{hash=""}=document$1.location;history.replaceState({},"",`${document$1.location.pathname}${query}${hash}`);}};var import_ansi_to_html=__toESM(require_ansi_to_html());var{document:document2}=scope,PREPARING_DELAY=100,Mode=(Mode2=>(Mode2.MAIN="MAIN",Mode2.NOPREVIEW="NOPREVIEW",Mode2.PREPARING_STORY="PREPARING_STORY",Mode2.PREPARING_DOCS="PREPARING_DOCS",Mode2.ERROR="ERROR",Mode2))(Mode||{}),classes={PREPARING_STORY:"sb-show-preparing-story",PREPARING_DOCS:"sb-show-preparing-docs",MAIN:"sb-show-main",NOPREVIEW:"sb-show-nopreview",ERROR:"sb-show-errordisplay"},layoutClassMap={centered:"sb-main-centered",fullscreen:"sb-main-fullscreen",padded:"sb-main-padded"},ansiConverter=new import_ansi_to_html.default({escapeXML:!0}),WebView=class{constructor(){this.testing=!1;let{__SPECIAL_TEST_PARAMETER__}=qs2.parse(document2?.location?.search,{ignoreQueryPrefix:!0});switch(__SPECIAL_TEST_PARAMETER__){case"preparing-story":{this.showPreparingStory(),this.testing=!0;break}case"preparing-docs":{this.showPreparingDocs(),this.testing=!0;break}}}prepareForStory(story){return this.showStory(),this.applyLayout(story.parameters.layout),document2.documentElement.scrollTop=0,document2.documentElement.scrollLeft=0,this.storyRoot()}storyRoot(){return document2.getElementById("storybook-root")}prepareForDocs(){return this.showMain(),this.showDocs(),this.applyLayout("fullscreen"),document2.documentElement.scrollTop=0,document2.documentElement.scrollLeft=0,this.docsRoot()}docsRoot(){return document2.getElementById("storybook-docs")}applyLayout(layout="padded"){if(layout==="none"){document2.body.classList.remove(this.currentLayoutClass),this.currentLayoutClass=null;return}this.checkIfLayoutExists(layout);let layoutClass=layoutClassMap[layout];document2.body.classList.remove(this.currentLayoutClass),document2.body.classList.add(layoutClass),this.currentLayoutClass=layoutClass;}checkIfLayoutExists(layout){layoutClassMap[layout]||logger.warn(dedent`The desired layout: ${layout} is not a valid option.
          The possible options are: ${Object.keys(layoutClassMap).join(", ")}, none.`);}showMode(mode){clearTimeout(this.preparingTimeout),Object.keys(Mode).forEach(otherMode=>{otherMode===mode?document2.body.classList.add(classes[otherMode]):document2.body.classList.remove(classes[otherMode]);});}showErrorDisplay({message="",stack=""}){let header=message,detail=stack,parts=message.split(`
 `);parts.length>1&&([header]=parts,detail=parts.slice(1).join(`
 `)),document2.getElementById("error-message").innerHTML=ansiConverter.toHtml(header),document2.getElementById("error-stack").innerHTML=ansiConverter.toHtml(detail),this.showMode("ERROR");}showNoPreview(){this.testing||(this.showMode("NOPREVIEW"),this.storyRoot()?.setAttribute("hidden","true"),this.docsRoot()?.setAttribute("hidden","true"));}showPreparingStory({immediate=!1}={}){clearTimeout(this.preparingTimeout),immediate?this.showMode("PREPARING_STORY"):this.preparingTimeout=setTimeout(()=>this.showMode("PREPARING_STORY"),PREPARING_DELAY);}showPreparingDocs({immediate=!1}={}){clearTimeout(this.preparingTimeout),immediate?this.showMode("PREPARING_DOCS"):this.preparingTimeout=setTimeout(()=>this.showMode("PREPARING_DOCS"),PREPARING_DELAY);}showMain(){this.showMode("MAIN");}showDocs(){this.storyRoot().setAttribute("hidden","true"),this.docsRoot().removeAttribute("hidden");}showStory(){this.docsRoot().setAttribute("hidden","true"),this.storyRoot().removeAttribute("hidden");}showStoryDuringRender(){document2.body.classList.add(classes.MAIN);}};var PreviewWeb=class extends PreviewWithSelection{constructor(){super(new UrlStore,new WebView),scope.__STORYBOOK_PREVIEW__=this;}};

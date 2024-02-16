@@ -1,0 +1,1 @@
+import{r as i,a as n}from"./chunk-JWY6Y6NU-D2Ka5Mfr.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./react-18-D8cruF67.js";import"./index-BtM5VmRH.js";var t={renderer:"react"};export{t as parameters,i as render,n as renderToCanvas};
