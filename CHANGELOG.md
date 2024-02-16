@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/harrybin/react-common/compare/v0.0.5...v0.0.6) (2024-02-16)
+
+
+### Features
+
+* removed @mui/icons-material dependency ([813066a](https://github.com/harrybin/react-common/commit/813066ad6628f3c04457caee53df5ce448ec8f22))
+
 ### [0.0.5](https://github.com/harrybin/react-common/compare/v0.0.4...v0.0.5) (2024-02-16)
 
 
