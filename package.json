@@ -1,6 +1,6 @@
 {
     "name": "@harrybin/react-common",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
