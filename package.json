@@ -1,6 +1,6 @@
 {
     "name": "@harrybin/react-common",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
@@ -77,6 +77,7 @@
         "vitest-sonar-reporter": "^1.0.0"
     },
     "peerDependencies": {
+        "@emotion/css": "^11.11.2",
         "@mui/material": "^5.15.10",
         "react": "^18.2.0"
     }
