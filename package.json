@@ -35,8 +35,7 @@
     "dependencies": {
         "@emotion/css": "^11.11.2",
         "@emotion/react": "^11.11.3",
-        "@emotion/styled": "^11.11.0",
-        "@mui/material": "^5.15.10",
+        "@emotion/styled": "^11.11.0",        
         "@rollup/plugin-commonjs": "^25.0.7",
         "markdown-to-jsx": "^7.4.1"
     },
@@ -82,7 +81,8 @@
         "vitest-sonar-reporter": "^1.0.0"
     },
     "peerDependencies": {
-        "@mui/icons-material": "^5.15.10",
-        "react": "18.2.0"
+        "react": "18.2.0",
+        "@mui/material": "^5.15.10",
+        "@mui/icons-material": "^5.15.10"
     }
 }
