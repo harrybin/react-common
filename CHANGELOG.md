@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 * removed boxedIcon component ([b687f0c](https://github.com/harrybin/react-common/commit/b687f0c7510401ac8d65bb7967d4a30ad9411060))
 
 ### 0.0.3 (2024-02-16)
-
+* bumped versions
 
 ### Bug Fixes
 
