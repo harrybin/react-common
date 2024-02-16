@@ -27652,13 +27652,13 @@ lodash.exports;
 var lodashExports = lodash.exports;
 var _$1 = /*@__PURE__*/getDefaultExportFromCjs(lodashExports);
 
-const useStyles$4 = makeStyles()((theme) => ({
+const useStyles$3 = makeStyles()((theme) => ({
     listItem: {
         marginTop: theme.spacing(1),
     },
 }));
 function Markdown(props) {
-    const { classes } = useStyles$4();
+    const { classes } = useStyles$3();
     const options = {
         overrides: {
             h1: {
@@ -39231,396 +39231,6 @@ process.env.NODE_ENV !== "production" ? TextField.propTypes /* remove-proptypes 
 } : void 0;
 var TextField$1 = TextField;
 
-// hooks that depend on these imports are commented
-// import { isMobileOrTablet } from '../globals/environment';
-// import { apiConfig, EnvName } from '../globals/interfaces/ApiConfig';
-// https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
-/**
- * preserves the props of the last rendering loop.
- * --> will return null on first render.
- *
- * @export
- * @template T type of props
- * @param {T} props props of the component
- * @returns {T}
- */
-function usePrevious(props) {
-    const ref = React.useRef();
-    React.useEffect(() => {
-        ref.current = props;
-    });
-    return ref.current;
-}
-/**
- * true if the reference comparison of the current props equals the one of the props from the previous render.
- *
- * @export
- * @template T type of props
- * @param {T} props props of the component
- * @returns {boolean}
- */
-function usePropsChanged(props) {
-    const prevProps = usePrevious(props);
-    const changed = (!prevProps && props) || prevProps !== props;
-    //ref compare
-    return changed;
-}
-/**
- * boolean can be used in useEffect function with an if() clause to execute code like in a "didmount" lifecycle function.
- * It's called only the *first* time the component is rendered.
- *
- * @export
- * @returns {boolean}
- */
-function useFirstRender() {
-    const didMount = React.useRef(false);
-    React.useEffect(() => {
-        if (!didMount.current)
-            didMount.current = true;
-    }, []);
-    return !didMount.current;
-}
-/**
- * Passed function is executed as "onDidmount" lifecycle function.
- * It's, only when the component is mounted/rendered the first time.
- *
- * @export
- * @returns {boolean}
- */
-function useDidMount(onDidmount) {
-    React.useEffect(() => {
-        onDidmount();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-}
-/**
- * Passed function is executed as "onUnmount" lifecycle function.
- * It's, only when the component is unmounted.
- * This also works because a useEffect without dependencies is used whereas return functions of useEffects having dependencies are are called on dependency changes too.
- *
- * @export
- * @returns {boolean}
- */
-function useWillUnmount(onUnmount) {
-    React.useEffect(() => {
-        return () => {
-            onUnmount();
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-}
-/**
- * gets a props object "initialized" with the default values passed, where no props values is assigned.
- *
- * @export
- * @template P
- * @template DP
- * @param {P} props component props
- * @param {DP} defaultProps default values object for component props (may be partial)
- * @returns {(DP & P)}
- */
-// eslint-disable-next-line @typescript-eslint/ban-types
-function useDefaultProps(props, defaultProps) {
-    return Object.assign(Object.assign({}, defaultProps), props);
-}
-/**
- * hook used tu replace 'useEffect' for getting debug information which dependency change caused the useEffect call.
- * Add an additional string[] with the dependency names as last array to get more readable logs.
- * @example <caption>original --> debugging</caption>
- *  ```ts
- *  //original code
- *  useEffect(()=>{
- *   //any code
- *  },[dep1, dep2])
- *  ```
- *  ```ts
- *  //original code
- *  useEffectDebugger(()=>{
- *   //debugging code
- *  },[dep1, dep2],["dep1","dep2"])
- *  ```
- * inspired from https://stackoverflow.com/questions/55187563/determine-which-dependency-array-variable-caused-useeffect-hook-to-fire
- * @param {EffectCallback} effectHook
- * @param {DependencyList} dependencies
- * @param {string[]} [dependencyNames=[]]
- */
-const useEffectDebugger = (effectHook, dependencies, dependencyNames = []) => {
-    var _a;
-    const previousDeps = (_a = usePrevious(dependencies)) !== null && _a !== void 0 ? _a : [];
-    const changedDeps = dependencies.reduce((accum, dependency, index) => {
-        if (dependency !== previousDeps[index]) {
-            const keyName = dependencyNames[index] || index;
-            return Object.assign({}, accum, {
-                [keyName]: {
-                    before: previousDeps[index],
-                    after: dependency,
-                },
-            });
-        }
-        return accum;
-    }, {});
-    if (Object.keys(changedDeps).length) {
-        console.log('[useEffectDebugger] ', changedDeps);
-    }
-    React.useEffect(effectHook, [effectHook]);
-};
-/**
- * Used to calculate the rest height of a page. With this you can set a component to fill the rest height of a page.
- * Remarks: only works for components directly rendering. If your component is rendered lazy, like components on non-active tabs you need useOnScreen too. See FillHeight component.
- * @export
- * @template T type of the container around the element to set the restHeight
- * @param {React.MutableRefObject<T>} ref ref of the container sourounding the element
- * @param {React.Dispatch<React.SetStateAction<number>>} setRestHeight state setter for the height of the element to fill the rest of the page
- * @returns
- */
-// export function useDimensions<T extends Element>(
-//   ref: React.MutableRefObject<T>,
-//   setRestHeight: React.Dispatch<React.SetStateAction<number>>,
-//   forceUpdate: boolean,
-// ) {
-//   const theme = useTheme();
-//   const orientationWidth = React.useRef<number>();
-//   const updateRestHeight = React.useCallback(() => {
-//     if (ref.current) {
-//       const rect = ref.current.getBoundingClientRect(); //fixes android keyboard shrinking height, see #REC-2464
-//       if (isMobileOrTablet() && !forceUpdate && orientationWidth.current === rect.width) return;
-//       setRestHeight(window.innerHeight - (rect.top + parseInt(theme.spacing(2))));
-//       orientationWidth.current = rect.width;
-//     }
-//   }, [forceUpdate, ref, setRestHeight, theme]);
-//   useLayoutEffect(() => {
-//     window.addEventListener('resize', updateRestHeight);
-//     updateRestHeight();
-//     return () => {
-//       window.removeEventListener('resize', updateRestHeight);
-//     };
-//   }, [ref, theme, updateRestHeight]);
-//   return { updateRestHeight };
-// }
-/**
- * Hook detecting if a component is visible and firing an event if a hidden component is to be rendered.
- *
- * @export
- * @template T type of component to observe
- * @param {React.MutableRefObject<T>} ref ref of component to observe
- * @param {() => void} [notifyIntersectionChange] event fired when visible state of component changes
- * @param {string} [rootMargin='0px'] intersection buffer for accuracy
- * @returns
- */
-function useOnScreen(ref, notifyIntersectionChange, rootMargin = '0px') {
-    // State and setter for storing whether element is visible
-    const [isIntersecting, setIntersecting] = React.useState(false);
-    React.useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            // Update our state when observer callback fires
-            setIntersecting(entry.isIntersecting);
-            if (notifyIntersectionChange)
-                notifyIntersectionChange();
-        }, {
-            rootMargin,
-        });
-        if (ref.current) {
-            const obServedRef = ref.current;
-            observer.observe(obServedRef);
-            return () => {
-                observer.unobserve(obServedRef);
-            };
-        }
-        return undefined;
-    }, [notifyIntersectionChange, ref, rootMargin]); // Empty array ensures that effect is only run on mount and unmount
-    return { isIntersecting };
-}
-/**
- * Provides a "isInDebugMode" state which can be trigger by pressing CTRL+ALT+SHIFT+D
- *
- * @export
- * @return {isInDebugMode, debugChangesApplied, setDebugChangesApplied}
- */
-// export function useDebugMode() {
-//   const controlPressed = React.useRef<boolean>(false);
-//   const altPressed = React.useRef<boolean>(false);
-//   const [isInDebugMode, setIsInDebugMode] = React.useState<boolean>(false);
-//   const [debugChangesApplied, setDebugChangesApplied] = React.useState<boolean>(false);
-//   React.useEffect(() => {
-//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//     function keydownHandler(ev: any) {
-//       if (ev.key === 'Control') controlPressed.current = true;
-//       if (ev.key === 'Alt') altPressed.current = true;
-//       if (ev.key === 'D' && controlPressed && altPressed) {
-//         //set debug mode
-//         setIsInDebugMode(true);
-//         alert('+++ DebugMode ENABLED +++');
-//       }
-//     }
-//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//     function keyupHandler(ev: any) {
-//       if (ev.key === 'Control') controlPressed.current = false;
-//       if (ev.key === 'Alt') altPressed.current = false;
-//     }
-//     //DEBUG only
-//     if (apiConfig.env.NAME !== EnvName.PRD) {
-//       window.addEventListener('keydown', keydownHandler);
-//       window.addEventListener('keyup', keyupHandler);
-//       return () => {
-//         window.removeEventListener('keydown', keydownHandler);
-//         window.removeEventListener('keyup', keyupHandler);
-//       };
-//     }
-//     return undefined;
-//   }, [altPressed, controlPressed]);
-//   return { isInDebugMode, debugChangesApplied, setDebugChangesApplied };
-// }
-// https://dev.to/selbekk/persisting-your-react-state-in-9-lines-of-code-9go
-/**
- * hook providing a useState with optionally persisting the value in the local storage. Loading and saving.
- *
- * @export
- * @template T type of the state variable
- * @param {string} prefix, if undefined the value will not be persisted in the local storage
- * @param {string} key, if undefined the value will not be persisted in the local storage
- * @param {T} defaultValue the default value for the setting
- * @returns {[T, Dispatch<SetStateAction<T>>]}
- */
-function usePersistedState(prefix, key, defaultValue) {
-    const [state, setState] = React.useState(() => {
-        if (!(prefix && key))
-            return defaultValue;
-        const storedItem = localStorage.getItem(prefix + '_' + key);
-        if (!storedItem || storedItem === 'undefined')
-            return defaultValue;
-        return JSON.parse(storedItem) || defaultValue;
-    });
-    React.useEffect(() => {
-        prefix && key && localStorage.setItem(prefix + '_' + key, JSON.stringify(state));
-    }, [key, prefix, state]);
-    return [state, setState];
-}
-/**
- * hook providing a useState with optionally writing the value in the local storage. WRITING ONLY.
- * Hint: you need to call "loadState" before any value will be saved!
- *
- * @export
- * @template T
- * @param {string} prefix
- * @param {string} key
- * @param {T} defaultValue
- * @returns {[T, Dispatch<SetStateAction<T>>]}
- */
-function usePersistedStateOneway(prefix, key, defaultValue) {
-    const [state, setState] = React.useState(defaultValue);
-    const loadCount = React.useRef(0);
-    React.useEffect(() => {
-        // only allow saving after loading, otherwise the initial state will always overwrite saved values with the default before loading
-        loadCount.current > 0 && prefix && key && localStorage.setItem(prefix + '_' + key, JSON.stringify(state));
-    }, [key, prefix, state]);
-    const loadState = () => {
-        var _a;
-        loadCount.current++;
-        return prefix && key
-            ? JSON.parse((_a = localStorage.getItem(prefix + '_' + key)) !== null && _a !== void 0 ? _a : '') || defaultValue
-            : defaultValue;
-    };
-    return [state, setState, loadState, loadCount];
-}
-/**
- * Provides a ref-variable (like useRef) but also stores it value in the local storage and is used like useState.
- *
- * @export
- * @template T type of the ref-variable
- * @param {string} key the name/key for the storage value
- * @param {T} defaultValue default value
- * @return {*}  {[T, Dispatch<SetStateAction<T>>]} [value,setter] array like when using useState
- */
-function usePersistedRef(key, defaultValue) {
-    const ref = React.useRef(defaultValue);
-    const localStoreVal = localStorage.getItem(key);
-    if (!localStoreVal) {
-        ref.current = defaultValue;
-        localStorage.setItem(key, JSON.stringify(defaultValue));
-    }
-    else
-        ref.current = JSON.parse(localStoreVal) || defaultValue;
-    const setRef = (refValue) => {
-        ref.current = refValue;
-        localStorage.setItem(key, JSON.stringify(refValue));
-    };
-    return [ref.current, setRef];
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function usePersistedReducer(reducer, defaultState, key, initFunc) {
-    const hookVars = React.useReducer(reducer, defaultState, (reDefaultState) => {
-        var _a;
-        const persisted = JSON.parse((_a = localStorage.getItem(key)) !== null && _a !== void 0 ? _a : '');
-        return persisted !== null ? persisted : initFunc ? initFunc(reDefaultState) : reDefaultState;
-    });
-    React.useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(hookVars[0]));
-    }, [hookVars, key]);
-    return hookVars;
-}
-/**
- *
- * Hook that activates debug mode based on a given shortcut.
- */
-function useDebugMode() {
-    const [isInDebugMode, setIsInDebugMode] = React.useState(false);
-    const [debugChangesApplied, setDebugChangesApplied] = React.useState(false);
-    React.useEffect(() => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        function keydownHandler(ev) {
-            if (ev.repeat)
-                return;
-            if (ev.ctrlKey && ev.shiftKey && ev.altKey && ev.key === 'D') {
-                //set debug mode
-                setIsInDebugMode(!isInDebugMode);
-            }
-        }
-        window.addEventListener('keydown', keydownHandler);
-        return () => {
-            window.removeEventListener('keydown', keydownHandler);
-        };
-    }, [isInDebugMode]);
-    return { isInDebugMode, debugChangesApplied, setDebugChangesApplied };
-}
-
-const useStyles$3 = makeStyles()(() => ({
-    box: {
-        marginLeft: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '50%',
-    },
-}));
-function BoxedIconComp(props) {
-    const { classes } = useStyles$3();
-    const theme = useTheme();
-    const _a = useDefaultProps(props, {
-        color: theme.palette.secondary.main,
-        backgroundColor: theme.palette.primary.main,
-        boxSize: 40,
-        boxMargin: parseInt(theme.spacing(1)),
-    }), { boxSize, boxMargin, color, backgroundColor } = _a, restProps = __rest$2(_a, ["boxSize", "boxMargin", "color", "backgroundColor"]);
-    const boxPadding = boxSize / 5;
-    const usedBoxMargin = boxMargin === undefined ? theme.spacing(1) : boxMargin;
-    return (React.createElement(Box$1, Object.assign({}, restProps, { className: classes.box, style: {
-            margin: usedBoxMargin,
-            padding: boxPadding,
-            width: boxSize,
-            height: boxSize,
-            fill: color,
-            backgroundColor: backgroundColor,
-        } }), props.icon));
-}
-/**
- * A component for displaying a ComplaintDetails.
- *
- * @export
- * @param {BoxedIconProps} props
- * @returns
- */
-const BoxedIcon = React.memo(BoxedIconComp);
-
 function insertWithoutScoping(cache, serialized) {
   if (cache.inserted[serialized.name] === undefined) {
     return cache.insert('', serialized, cache.sheet, true);
@@ -48757,6 +48367,358 @@ ErrorReportDialogComp.defaultProps = {
 };
 const ErrorReportDialog = React__namespace.memo(ErrorReportDialogComp);
 
+// hooks that depend on these imports are commented
+// import { isMobileOrTablet } from '../globals/environment';
+// import { apiConfig, EnvName } from '../globals/interfaces/ApiConfig';
+// https://stackoverflow.com/questions/53446020/how-to-compare-oldvalues-and-newvalues-on-react-hooks-useeffect
+/**
+ * preserves the props of the last rendering loop.
+ * --> will return null on first render.
+ *
+ * @export
+ * @template T type of props
+ * @param {T} props props of the component
+ * @returns {T}
+ */
+function usePrevious(props) {
+    const ref = React.useRef();
+    React.useEffect(() => {
+        ref.current = props;
+    });
+    return ref.current;
+}
+/**
+ * true if the reference comparison of the current props equals the one of the props from the previous render.
+ *
+ * @export
+ * @template T type of props
+ * @param {T} props props of the component
+ * @returns {boolean}
+ */
+function usePropsChanged(props) {
+    const prevProps = usePrevious(props);
+    const changed = (!prevProps && props) || prevProps !== props;
+    //ref compare
+    return changed;
+}
+/**
+ * boolean can be used in useEffect function with an if() clause to execute code like in a "didmount" lifecycle function.
+ * It's called only the *first* time the component is rendered.
+ *
+ * @export
+ * @returns {boolean}
+ */
+function useFirstRender() {
+    const didMount = React.useRef(false);
+    React.useEffect(() => {
+        if (!didMount.current)
+            didMount.current = true;
+    }, []);
+    return !didMount.current;
+}
+/**
+ * Passed function is executed as "onDidmount" lifecycle function.
+ * It's, only when the component is mounted/rendered the first time.
+ *
+ * @export
+ * @returns {boolean}
+ */
+function useDidMount(onDidmount) {
+    React.useEffect(() => {
+        onDidmount();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+}
+/**
+ * Passed function is executed as "onUnmount" lifecycle function.
+ * It's, only when the component is unmounted.
+ * This also works because a useEffect without dependencies is used whereas return functions of useEffects having dependencies are are called on dependency changes too.
+ *
+ * @export
+ * @returns {boolean}
+ */
+function useWillUnmount(onUnmount) {
+    React.useEffect(() => {
+        return () => {
+            onUnmount();
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+}
+/**
+ * gets a props object "initialized" with the default values passed, where no props values is assigned.
+ *
+ * @export
+ * @template P
+ * @template DP
+ * @param {P} props component props
+ * @param {DP} defaultProps default values object for component props (may be partial)
+ * @returns {(DP & P)}
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types
+function useDefaultProps(props, defaultProps) {
+    return Object.assign(Object.assign({}, defaultProps), props);
+}
+/**
+ * hook used tu replace 'useEffect' for getting debug information which dependency change caused the useEffect call.
+ * Add an additional string[] with the dependency names as last array to get more readable logs.
+ * @example <caption>original --> debugging</caption>
+ *  ```ts
+ *  //original code
+ *  useEffect(()=>{
+ *   //any code
+ *  },[dep1, dep2])
+ *  ```
+ *  ```ts
+ *  //original code
+ *  useEffectDebugger(()=>{
+ *   //debugging code
+ *  },[dep1, dep2],["dep1","dep2"])
+ *  ```
+ * inspired from https://stackoverflow.com/questions/55187563/determine-which-dependency-array-variable-caused-useeffect-hook-to-fire
+ * @param {EffectCallback} effectHook
+ * @param {DependencyList} dependencies
+ * @param {string[]} [dependencyNames=[]]
+ */
+const useEffectDebugger = (effectHook, dependencies, dependencyNames = []) => {
+    var _a;
+    const previousDeps = (_a = usePrevious(dependencies)) !== null && _a !== void 0 ? _a : [];
+    const changedDeps = dependencies.reduce((accum, dependency, index) => {
+        if (dependency !== previousDeps[index]) {
+            const keyName = dependencyNames[index] || index;
+            return Object.assign({}, accum, {
+                [keyName]: {
+                    before: previousDeps[index],
+                    after: dependency,
+                },
+            });
+        }
+        return accum;
+    }, {});
+    if (Object.keys(changedDeps).length) {
+        console.log('[useEffectDebugger] ', changedDeps);
+    }
+    React.useEffect(effectHook, [effectHook]);
+};
+/**
+ * Used to calculate the rest height of a page. With this you can set a component to fill the rest height of a page.
+ * Remarks: only works for components directly rendering. If your component is rendered lazy, like components on non-active tabs you need useOnScreen too. See FillHeight component.
+ * @export
+ * @template T type of the container around the element to set the restHeight
+ * @param {React.MutableRefObject<T>} ref ref of the container sourounding the element
+ * @param {React.Dispatch<React.SetStateAction<number>>} setRestHeight state setter for the height of the element to fill the rest of the page
+ * @returns
+ */
+// export function useDimensions<T extends Element>(
+//   ref: React.MutableRefObject<T>,
+//   setRestHeight: React.Dispatch<React.SetStateAction<number>>,
+//   forceUpdate: boolean,
+// ) {
+//   const theme = useTheme();
+//   const orientationWidth = React.useRef<number>();
+//   const updateRestHeight = React.useCallback(() => {
+//     if (ref.current) {
+//       const rect = ref.current.getBoundingClientRect(); //fixes android keyboard shrinking height, see #REC-2464
+//       if (isMobileOrTablet() && !forceUpdate && orientationWidth.current === rect.width) return;
+//       setRestHeight(window.innerHeight - (rect.top + parseInt(theme.spacing(2))));
+//       orientationWidth.current = rect.width;
+//     }
+//   }, [forceUpdate, ref, setRestHeight, theme]);
+//   useLayoutEffect(() => {
+//     window.addEventListener('resize', updateRestHeight);
+//     updateRestHeight();
+//     return () => {
+//       window.removeEventListener('resize', updateRestHeight);
+//     };
+//   }, [ref, theme, updateRestHeight]);
+//   return { updateRestHeight };
+// }
+/**
+ * Hook detecting if a component is visible and firing an event if a hidden component is to be rendered.
+ *
+ * @export
+ * @template T type of component to observe
+ * @param {React.MutableRefObject<T>} ref ref of component to observe
+ * @param {() => void} [notifyIntersectionChange] event fired when visible state of component changes
+ * @param {string} [rootMargin='0px'] intersection buffer for accuracy
+ * @returns
+ */
+function useOnScreen(ref, notifyIntersectionChange, rootMargin = '0px') {
+    // State and setter for storing whether element is visible
+    const [isIntersecting, setIntersecting] = React.useState(false);
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            // Update our state when observer callback fires
+            setIntersecting(entry.isIntersecting);
+            if (notifyIntersectionChange)
+                notifyIntersectionChange();
+        }, {
+            rootMargin,
+        });
+        if (ref.current) {
+            const obServedRef = ref.current;
+            observer.observe(obServedRef);
+            return () => {
+                observer.unobserve(obServedRef);
+            };
+        }
+        return undefined;
+    }, [notifyIntersectionChange, ref, rootMargin]); // Empty array ensures that effect is only run on mount and unmount
+    return { isIntersecting };
+}
+/**
+ * Provides a "isInDebugMode" state which can be trigger by pressing CTRL+ALT+SHIFT+D
+ *
+ * @export
+ * @return {isInDebugMode, debugChangesApplied, setDebugChangesApplied}
+ */
+// export function useDebugMode() {
+//   const controlPressed = React.useRef<boolean>(false);
+//   const altPressed = React.useRef<boolean>(false);
+//   const [isInDebugMode, setIsInDebugMode] = React.useState<boolean>(false);
+//   const [debugChangesApplied, setDebugChangesApplied] = React.useState<boolean>(false);
+//   React.useEffect(() => {
+//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//     function keydownHandler(ev: any) {
+//       if (ev.key === 'Control') controlPressed.current = true;
+//       if (ev.key === 'Alt') altPressed.current = true;
+//       if (ev.key === 'D' && controlPressed && altPressed) {
+//         //set debug mode
+//         setIsInDebugMode(true);
+//         alert('+++ DebugMode ENABLED +++');
+//       }
+//     }
+//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//     function keyupHandler(ev: any) {
+//       if (ev.key === 'Control') controlPressed.current = false;
+//       if (ev.key === 'Alt') altPressed.current = false;
+//     }
+//     //DEBUG only
+//     if (apiConfig.env.NAME !== EnvName.PRD) {
+//       window.addEventListener('keydown', keydownHandler);
+//       window.addEventListener('keyup', keyupHandler);
+//       return () => {
+//         window.removeEventListener('keydown', keydownHandler);
+//         window.removeEventListener('keyup', keyupHandler);
+//       };
+//     }
+//     return undefined;
+//   }, [altPressed, controlPressed]);
+//   return { isInDebugMode, debugChangesApplied, setDebugChangesApplied };
+// }
+// https://dev.to/selbekk/persisting-your-react-state-in-9-lines-of-code-9go
+/**
+ * hook providing a useState with optionally persisting the value in the local storage. Loading and saving.
+ *
+ * @export
+ * @template T type of the state variable
+ * @param {string} prefix, if undefined the value will not be persisted in the local storage
+ * @param {string} key, if undefined the value will not be persisted in the local storage
+ * @param {T} defaultValue the default value for the setting
+ * @returns {[T, Dispatch<SetStateAction<T>>]}
+ */
+function usePersistedState(prefix, key, defaultValue) {
+    const [state, setState] = React.useState(() => {
+        if (!(prefix && key))
+            return defaultValue;
+        const storedItem = localStorage.getItem(prefix + '_' + key);
+        if (!storedItem || storedItem === 'undefined')
+            return defaultValue;
+        return JSON.parse(storedItem) || defaultValue;
+    });
+    React.useEffect(() => {
+        prefix && key && localStorage.setItem(prefix + '_' + key, JSON.stringify(state));
+    }, [key, prefix, state]);
+    return [state, setState];
+}
+/**
+ * hook providing a useState with optionally writing the value in the local storage. WRITING ONLY.
+ * Hint: you need to call "loadState" before any value will be saved!
+ *
+ * @export
+ * @template T
+ * @param {string} prefix
+ * @param {string} key
+ * @param {T} defaultValue
+ * @returns {[T, Dispatch<SetStateAction<T>>]}
+ */
+function usePersistedStateOneway(prefix, key, defaultValue) {
+    const [state, setState] = React.useState(defaultValue);
+    const loadCount = React.useRef(0);
+    React.useEffect(() => {
+        // only allow saving after loading, otherwise the initial state will always overwrite saved values with the default before loading
+        loadCount.current > 0 && prefix && key && localStorage.setItem(prefix + '_' + key, JSON.stringify(state));
+    }, [key, prefix, state]);
+    const loadState = () => {
+        var _a;
+        loadCount.current++;
+        return prefix && key
+            ? JSON.parse((_a = localStorage.getItem(prefix + '_' + key)) !== null && _a !== void 0 ? _a : '') || defaultValue
+            : defaultValue;
+    };
+    return [state, setState, loadState, loadCount];
+}
+/**
+ * Provides a ref-variable (like useRef) but also stores it value in the local storage and is used like useState.
+ *
+ * @export
+ * @template T type of the ref-variable
+ * @param {string} key the name/key for the storage value
+ * @param {T} defaultValue default value
+ * @return {*}  {[T, Dispatch<SetStateAction<T>>]} [value,setter] array like when using useState
+ */
+function usePersistedRef(key, defaultValue) {
+    const ref = React.useRef(defaultValue);
+    const localStoreVal = localStorage.getItem(key);
+    if (!localStoreVal) {
+        ref.current = defaultValue;
+        localStorage.setItem(key, JSON.stringify(defaultValue));
+    }
+    else
+        ref.current = JSON.parse(localStoreVal) || defaultValue;
+    const setRef = (refValue) => {
+        ref.current = refValue;
+        localStorage.setItem(key, JSON.stringify(refValue));
+    };
+    return [ref.current, setRef];
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function usePersistedReducer(reducer, defaultState, key, initFunc) {
+    const hookVars = React.useReducer(reducer, defaultState, (reDefaultState) => {
+        var _a;
+        const persisted = JSON.parse((_a = localStorage.getItem(key)) !== null && _a !== void 0 ? _a : '');
+        return persisted !== null ? persisted : initFunc ? initFunc(reDefaultState) : reDefaultState;
+    });
+    React.useEffect(() => {
+        localStorage.setItem(key, JSON.stringify(hookVars[0]));
+    }, [hookVars, key]);
+    return hookVars;
+}
+/**
+ *
+ * Hook that activates debug mode based on a given shortcut.
+ */
+function useDebugMode() {
+    const [isInDebugMode, setIsInDebugMode] = React.useState(false);
+    const [debugChangesApplied, setDebugChangesApplied] = React.useState(false);
+    React.useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        function keydownHandler(ev) {
+            if (ev.repeat)
+                return;
+            if (ev.ctrlKey && ev.shiftKey && ev.altKey && ev.key === 'D') {
+                //set debug mode
+                setIsInDebugMode(!isInDebugMode);
+            }
+        }
+        window.addEventListener('keydown', keydownHandler);
+        return () => {
+            window.removeEventListener('keydown', keydownHandler);
+        };
+    }, [isInDebugMode]);
+    return { isInDebugMode, debugChangesApplied, setDebugChangesApplied };
+}
+
 /**
  * get the name of a property of type T
  *
@@ -49377,7 +49339,6 @@ function useQuery(props) {
     return wrappedPromise.query();
 }
 
-exports.BoxedIcon = BoxedIcon;
 exports.ConfirmationDialog = ConfirmationDialog;
 exports.ErrorReportDialog = ErrorReportDialog;
 exports.If = If;

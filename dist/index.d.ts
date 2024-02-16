@@ -2,7 +2,6 @@
 import * as React$1 from 'react';
 import React__default, { EffectCallback, Dispatch, SetStateAction, Reducer, ReducerState, ReducerAction } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
-import { BoxProps } from '@mui/material';
 
 interface IfProps {
     cond: boolean | string | null | undefined | unknown;
@@ -18,23 +17,6 @@ interface MarkdownProps {
     options?: MarkdownToJSX.Options;
 }
 declare function Markdown(props: MarkdownProps): React__default.JSX.Element;
-
-interface BoxedIconProps extends BoxProps {
-    icon: JSX.Element;
-    color?: string;
-    backgroundColor?: string;
-    boxSize?: number;
-    boxMargin?: number | undefined;
-}
-declare function BoxedIconComp(props: BoxedIconProps): React__default.JSX.Element;
-/**
- * A component for displaying a ComplaintDetails.
- *
- * @export
- * @param {BoxedIconProps} props
- * @returns
- */
-declare const BoxedIcon: React__default.MemoExoticComponent<typeof BoxedIconComp>;
 
 interface NameValueTextProps {
     name: string;
@@ -516,4 +498,4 @@ declare const queryPromiseCache: Map<string, SuspendedPromise<any>>;
  */
 declare function useQuery<T extends object>(props: LoadDataPropsAsync): T | undefined;
 
-export { type BaseEntity, BoxedIcon, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useWillUnmount };
+export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useWillUnmount };
