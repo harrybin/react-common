@@ -13,7 +13,6 @@ export default defineConfig({
         ],
         deps: {
             inline: [
-                '@mui/icons-material',
                 //in case using devexpress, you may need to add those packages here too
             ],
         },

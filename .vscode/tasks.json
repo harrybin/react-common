@@ -26,5 +26,22 @@
                 "kind": "build",
             },
         },
+        {
+            "label": "Prepare Release",
+            "type": "npm",
+            "script": "run release",
+            "group": {
+                "kind": "build",
+            },
+        },
+        {
+            "label": "Publish",
+            "type": "npm",
+            "script": "run publish",
+            "group": {
+                "kind": "build",
+            },
+        },
+    
     ]
 }

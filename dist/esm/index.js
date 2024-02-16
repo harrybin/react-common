@@ -1,5 +1,6 @@
 import * as React from 'react';
 import React__default, { useContext, forwardRef, useRef, useMemo, createContext, createElement, Children, isValidElement, cloneElement, StrictMode, Fragment, Component, useEffect, useState, useReducer } from 'react';
+import { cx } from '@emotion/css';
 import * as ReactDOM from 'react-dom';
 import ReactDOM__default from 'react-dom';
 import require$$0 from 'util';
@@ -2670,7 +2671,7 @@ var keyframes = function keyframes() {
   };
 };
 
-var classnames$2 = function classnames(args) {
+var classnames$1 = function classnames(args) {
   var len = args.length;
   var i = 0;
   var cls = '';
@@ -2721,7 +2722,7 @@ var classnames$2 = function classnames(args) {
   return cls;
 };
 
-function merge$3(registered, css, className) {
+function merge$2(registered, css, className) {
   var registeredStyles = [];
   var rawClassName = getRegisteredStyles(registered, registeredStyles, className);
 
@@ -2793,7 +2794,7 @@ var ClassNames = /* #__PURE__ */withEmotionCache(function (props, cache) {
       args[_key2] = arguments[_key2];
     }
 
-    return merge$3(cache.registered, css, classnames$2(args));
+    return merge$2(cache.registered, css, classnames$1(args));
   };
 
   var content = {
@@ -6777,7 +6778,7 @@ var shape$1 = shape;
 const responsivePropType = process.env.NODE_ENV !== 'production' ? PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object, PropTypes.array]) : {};
 var responsivePropType$1 = responsivePropType;
 
-function merge$2(acc, item) {
+function merge$1(acc, item) {
   if (!item) {
     return acc;
   }
@@ -7097,7 +7098,7 @@ function resolveCssProperty(props, keys, prop, transformer) {
 }
 function style(props, keys) {
   const transformer = createUnarySpacing(props.theme);
-  return Object.keys(props).map(prop => resolveCssProperty(props, keys, prop, transformer)).reduce(merge$2, {});
+  return Object.keys(props).map(prop => resolveCssProperty(props, keys, prop, transformer)).reduce(merge$1, {});
 }
 function margin(props) {
   return style(props, marginKeys);
@@ -7164,7 +7165,7 @@ function compose(...styles) {
   const fn = props => {
     return Object.keys(props).reduce((acc, prop) => {
       if (handlers[prop]) {
-        return merge$2(acc, handlers[prop](props));
+        return merge$1(acc, handlers[prop](props));
       }
       return acc;
     }, {});
@@ -7762,7 +7763,7 @@ function unstable_createStyleFunctionSx() {
         if (value !== null && value !== undefined) {
           if (typeof value === 'object') {
             if (config[styleKey]) {
-              css = merge$2(css, getThemeValue(styleKey, value, theme, config));
+              css = merge$1(css, getThemeValue(styleKey, value, theme, config));
             } else {
               const breakpointsValues = handleBreakpoints({
                 theme
@@ -7775,11 +7776,11 @@ function unstable_createStyleFunctionSx() {
                   theme
                 });
               } else {
-                css = merge$2(css, breakpointsValues);
+                css = merge$1(css, breakpointsValues);
               }
             }
           } else {
-            css = merge$2(css, getThemeValue(styleKey, value, theme, config));
+            css = merge$1(css, getThemeValue(styleKey, value, theme, config));
           }
         }
       });
@@ -9303,7 +9304,7 @@ function typeGuard(_value, isMatched) {
 /** Copy pasted from
  * https://github.com/emotion-js/emotion/blob/23f43ab9f24d44219b0b007a00f4ac681fe8712e/packages/react/src/class-names.js#L17-L63
  **/
-const classnames$1 = (args) => {
+const classnames = (args) => {
     const len = args.length;
     let i = 0;
     let cls = "";
@@ -9317,7 +9318,7 @@ const classnames$1 = (args) => {
                 break;
             case "object": {
                 if (Array.isArray(arg)) {
-                    toAdd = classnames$1(arg);
+                    toAdd = classnames(arg);
                 }
                 else {
                     assert(!typeGuard(arg, false));
@@ -9396,7 +9397,7 @@ const { createCssAndCx } = (() => {
             return className;
         };
         const cx = (...args) => {
-            const className = classnames$1(args);
+            const className = classnames(args);
             const feat27FixedClassnames = increaseSpecificityToTakePrecedenceOverMediaQueries.fixClassName(cache, className, css);
             return merge(cache.registered, css, feat27FixedClassnames);
             //return merge(cache.registered, css, className);
@@ -9453,7 +9454,7 @@ const increaseSpecificityToTakePrecedenceOverMediaQueries = (() => {
             }
             return (cache, className, css) => {
                 const cssObjectMap = cssObjectMapByCache.get(cache);
-                return classnames$1(fix(className
+                return classnames(fix(className
                     .split(" ")
                     .map(className => [
                     className,
@@ -39210,150 +39211,6 @@ process.env.NODE_ENV !== "production" ? TextField.propTypes /* remove-proptypes 
   variant: PropTypes.oneOf(['filled', 'outlined', 'standard'])
 } : void 0;
 var TextField$1 = TextField;
-
-function insertWithoutScoping(cache, serialized) {
-  if (cache.inserted[serialized.name] === undefined) {
-    return cache.insert('', serialized, cache.sheet, true);
-  }
-}
-
-function merge$1(registered, css, className) {
-  var registeredStyles = [];
-  var rawClassName = getRegisteredStyles(registered, registeredStyles, className);
-
-  if (registeredStyles.length < 2) {
-    return className;
-  }
-
-  return rawClassName + css(registeredStyles);
-}
-
-var createEmotion = function createEmotion(options) {
-  var cache = createCache(options); // $FlowFixMe
-
-  cache.sheet.speedy = function (value) {
-    if (process.env.NODE_ENV !== 'production' && this.ctr !== 0) {
-      throw new Error('speedy must be changed before any rules are inserted');
-    }
-
-    this.isSpeedy = value;
-  };
-
-  cache.compat = true;
-
-  var css = function css() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var serialized = serializeStyles(args, cache.registered, undefined);
-    insertStyles(cache, serialized, false);
-    return cache.key + "-" + serialized.name;
-  };
-
-  var keyframes = function keyframes() {
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    var serialized = serializeStyles(args, cache.registered);
-    var animation = "animation-" + serialized.name;
-    insertWithoutScoping(cache, {
-      name: serialized.name,
-      styles: "@keyframes " + animation + "{" + serialized.styles + "}"
-    });
-    return animation;
-  };
-
-  var injectGlobal = function injectGlobal() {
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    var serialized = serializeStyles(args, cache.registered);
-    insertWithoutScoping(cache, serialized);
-  };
-
-  var cx = function cx() {
-    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-      args[_key4] = arguments[_key4];
-    }
-
-    return merge$1(cache.registered, css, classnames(args));
-  };
-
-  return {
-    css: css,
-    cx: cx,
-    injectGlobal: injectGlobal,
-    keyframes: keyframes,
-    hydrate: function hydrate(ids) {
-      ids.forEach(function (key) {
-        cache.inserted[key] = true;
-      });
-    },
-    flush: function flush() {
-      cache.registered = {};
-      cache.inserted = {};
-      cache.sheet.flush();
-    },
-    // $FlowFixMe
-    sheet: cache.sheet,
-    cache: cache,
-    getRegisteredStyles: getRegisteredStyles.bind(null, cache.registered),
-    merge: merge$1.bind(null, cache.registered, css)
-  };
-};
-
-var classnames = function classnames(args) {
-  var cls = '';
-
-  for (var i = 0; i < args.length; i++) {
-    var arg = args[i];
-    if (arg == null) continue;
-    var toAdd = void 0;
-
-    switch (typeof arg) {
-      case 'boolean':
-        break;
-
-      case 'object':
-        {
-          if (Array.isArray(arg)) {
-            toAdd = classnames(arg);
-          } else {
-            toAdd = '';
-
-            for (var k in arg) {
-              if (arg[k] && k) {
-                toAdd && (toAdd += ' ');
-                toAdd += k;
-              }
-            }
-          }
-
-          break;
-        }
-
-      default:
-        {
-          toAdd = arg;
-        }
-    }
-
-    if (toAdd) {
-      cls && (cls += ' ');
-      cls += toAdd;
-    }
-  }
-
-  return cls;
-};
-
-var _createEmotion = createEmotion({
-  key: 'css'
-}),
-    cx = _createEmotion.cx;
 
 const useStyles$2 = makeStyles()((theme) => ({
     nameValueText: {
