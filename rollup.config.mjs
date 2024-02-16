@@ -9,7 +9,7 @@ import packageJson from './package.json' assert { type: 'json' };
 export default [
     {
         inlineDynamicImports: true,
-        external: [...Object.keys(packageJson.peerDependencies || {})],
+        //external: [...Object.keys(packageJson.peerDependencies || {})],
         input: 'src/index.ts',
         output: [
             {
