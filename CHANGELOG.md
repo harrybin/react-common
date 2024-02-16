@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.11](https://github.com/harrybin/react-common/compare/v0.0.10...v0.0.11) (2024-02-16)
 
+* reduced package size
 
 ### Bug Fixes
 
