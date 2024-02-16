@@ -29,7 +29,7 @@
         {
             "label": "Prepare Release",
             "type": "npm",
-            "script": "run release",
+            "script": "release",
             "group": {
                 "kind": "build",
             },
@@ -37,7 +37,7 @@
         {
             "label": "Publish",
             "type": "npm",
-            "script": "run publish",
+            "script": "publish",
             "group": {
                 "kind": "build",
             },
