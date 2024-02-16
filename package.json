@@ -1,6 +1,6 @@
 {
     "name": "@harrybin/react-common",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "A library containing useful common react components, helper functions and custom hooks.",
     "author": "harrybin",
     "license": "MIT",
@@ -59,8 +59,6 @@
         "identity-obj-proxy": "^3.0.0",
         "jsdom": "^24.0.0",
         "prop-types": "^15.8.1",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
         "rimraf": "^5.0.5",
         "rollup": "^4.11.0",
         "rollup-plugin-dts": "^6.1.0",
@@ -78,8 +76,9 @@
         "vitest-sonar-reporter": "^1.0.0"
     },
     "peerDependencies": {
-        "@emotion/css": "^11.11.2",
-        "@mui/material": "^5.15.10",
-        "react": "^18.2.0"
+        "@emotion/css": ">=11.11.2",
+        "@mui/material": ">=5.15.10",
+        "react": ">=18.2.0",
+        "react-dom": ">=18.2.0"
     }
 }
