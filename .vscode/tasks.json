@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Storybook",
+            "label": "🌍 Run Storybook",
             "type": "npm",
             "script": "storybook",
             "group": {
@@ -11,7 +11,7 @@
             },
         },
         {
-            "label": "Create Storybook&Docs",
+            "label": "📖 Create Storybook&Docs",
             "type": "npm",
             "script": "deploy",
             "group": {
@@ -19,7 +19,7 @@
             },
         },
         {
-            "label": "Create Package",
+            "label": "🔧 Create Package",
             "type": "npm",
             "script": "build",
             "group": {
@@ -27,7 +27,7 @@
             },
         },
         {
-            "label": "Prepare Release",
+            "label": "⚙️ Prepare Release",
             "type": "npm",
             "script": "release",
             "group": {
@@ -35,13 +35,12 @@
             },
         },
         {
-            "label": "Publish",
-            "type": "npm",
-            "script": "publish",
+            "label": "🚀 Publish",
+            "type": "shell",
+            "command": "npm publish",
             "group": {
                 "kind": "build",
             },
         },
-    
     ]
 }
