@@ -1,0 +1,85 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@harrybin/react-common</title><meta name="description" content="Documentation for @harrybin/react-common"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@harrybin/react-common</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>@harrybin/react-common</h2></div><div class="tsd-panel tsd-typography"><a id="md:react-common-components" class="tsd-anchor"></a><h1><a href="#md:react-common-components">React-Common-Components</a></h1><p>A library providing generic react-components, including helperfunctions and custom-hooks. 
+It is published as a package and can be installed via npm. The project also contains a storybook that can be used to test react components.
+The storybook is deployed on the <strong><a href="https://harrybin.github.io/react-common/">GitHub Pages</a></strong> of the project. To access the documentation for <a href="https://pages.github/harrybin/react-common">Helperfunctions/CustomHooks</a> click on the corresponding tab of the GitHub repository.   </p>
+<a id="md:--installing-bash---npm-install-harrybinreact-common--___" class="tsd-anchor"></a><h2><a href="#md:--installing-bash---npm-install-harrybinreact-common--___"><a name="installing"></a>
+## Installing
+<code>bash   npm install @harrybin/react-common </code>
+___</a></h2><a id="md:contribution" class="tsd-anchor"></a><h1><a href="#md:contribution">Contribution</a></h1><ol>
+<li><a href="#md:storybook">Storybook</a>  </li>
+<li><a href="#md:architecture">Architecture</a></li>
+<li><a href="#md:dependencies">Dependencies</a></li>
+<li><a href="#md:usage">Usage</a>  </li>
+<li><a href="#md:contributing">Contributing</a>  </li>
+<li><a href="#md:issues">Issues</a>  </li>
+<li><a href="#md:appendix">Appendix</a></li>
+</ol>
+<hr>
+<p><a name ="storybook"></a></p>
+<a id="md:storybook" class="tsd-anchor"></a><h2><a href="#md:storybook">Storybook</a></h2><p>Run this command to start the storybook on your development environment.
+Now you are able to write stories and test them locally.</p>
+<pre><code class="language-bash"><span class="hl-0">  </span><span class="hl-1">npm</span><span class="hl-0"> </span><span class="hl-2">run</span><span class="hl-0"> </span><span class="hl-2">storybook</span>
+</code><button>Copy</button></pre>
+<p>The Storybook is hosted on the github pages of the repository. If you want deploy/test your storybook changes using the cli  you can 
+run following command:</p>
+<pre><code class="language-bash"><span class="hl-0">    </span><span class="hl-1">npm</span><span class="hl-0"> </span><span class="hl-2">run</span><span class="hl-0"> </span><span class="hl-2">deploy</span>
+</code><button>Copy</button></pre>
+<hr>
+<p><a name="architecture"></a></p>
+<a id="md:architecture" class="tsd-anchor"></a><h2><a href="#md:architecture">Architecture</a></h2><p></p>
+
+<p><strong>Technologies</strong><br> The library is build with typescript and javascript. 
+ Rollup.js is used to bundle the modules.</p>
+<p><strong>Tests</strong></p>
+<p>The tests are divided into UI component tests(Storybook stories) and function unit tests(vitest).  </p>
+<p><a name="usage"></a></p>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><p>After installing the npm-package you can use the components in your react project.</p>
+<pre><code class="language-typescript"><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">BoxedIcon</span><span class="hl-0">, </span><span class="hl-4">areArraysEqual</span><span class="hl-0">, </span><span class="hl-4">usePrevious</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&quot;@harrybin/react-common&quot;</span><span class="hl-0">;</span>
+</code><button>Copy</button></pre>
+<p><a name="contributing"></a></p>
+<a id="md:contributing" class="tsd-anchor"></a><h2><a href="#md:contributing">Contributing</a></h2><hr>
+<p><strong>Something&#39;s missing?</strong>  </p>
+<p>If you&#39;re using custom components/helperfunctions or hooks that would fit into this library, feel free to open a Pull Request.
+Take a look at the contributing guide below:</p>
+<p><strong>Adding Components</strong></p>
+<p>The following steps demonstrate how to add components to the library using a component named <code>MyComponent</code></p>
+<ol>
+<li><p>Create a new folder under <code>src/components/</code> and name it after your component(in this case myComponent). Please note that the   first character of the foldername should be written in lowercase.</p>
+</li>
+<li><p>Add two files named <code>MyComponent.tsx</code> and <code>index.ts</code> to your components folder.</p>
+</li>
+<li><p>Add the code of your custom component to the MyComponent.tsx file. 
+Export the component using a named export.</p>
+</li>
+<li><p>Import your component in the <code>index.ts</code> file. Add also an named export of your component to that file.</p>
+</li>
+<li><p>Import the component in the <code>components/index.ts</code> from the component folder. 
+In addition to that add a named export of your component.</p>
+</li>
+</ol>
+<p><strong>Adding helperfunctions/ custom-hooks</strong></p>
+<p>The <code>src/utils</code> folder contains the folders <code>helperFunctions</code> and  <code>customHooks</code>.  </p>
+<p>In order to add a helperfunction to the library add it to the <code>helperFunctions.ts</code> file and export it with a named export. If you want to add an custom hook add it to the <code>customHooks.ts</code> file.</p>
+<p><strong>Adding tests</strong> </p>
+<p>To make sure your helperfunctions works like expected write a unittest and add it to
+ the <code>helperFunctions.test.ts</code> file.</p>
+<p><strong>Adding stories</strong></p>
+<p>The ui components are tested with storybook. Add a file named <code>MyComponent.stories.tsx</code> inside your components folder. This snippet can be used as a story template:</p>
+<pre><code class="language-typescript"><span class="hl-3">import</span><span class="hl-0"> </span><span class="hl-4">React</span><span class="hl-0"> </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&#39;react&#39;</span><span class="hl-0">;</span><br/><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">ComponentStory</span><span class="hl-0">, </span><span class="hl-4">ComponentMeta</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&#39;@storybook/react&#39;</span><span class="hl-0">;</span><br/><span class="hl-3">import</span><span class="hl-0"> { </span><span class="hl-4">MyComponent</span><span class="hl-0"> } </span><span class="hl-3">from</span><span class="hl-0"> </span><span class="hl-2">&#39;./MyComponent&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-3">export</span><span class="hl-0"> </span><span class="hl-3">default</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-4">title:</span><span class="hl-0"> </span><span class="hl-2">&#39;React Common Components/Components/MyComponent&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">component:</span><span class="hl-0"> </span><span class="hl-4">MyComponent</span><span class="hl-0">,</span><br/><span class="hl-0">} </span><span class="hl-3">as</span><span class="hl-0"> </span><span class="hl-5">ComponentMeta</span><span class="hl-0">&lt;</span><span class="hl-6">typeof</span><span class="hl-0"> </span><span class="hl-4">MyComponent</span><span class="hl-0">&gt;;</span><br/><br/><br/><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-1">Template</span><span class="hl-0">: </span><span class="hl-5">ComponentStory</span><span class="hl-0">&lt;</span><span class="hl-6">typeof</span><span class="hl-0"> </span><span class="hl-4">MyComponent</span><span class="hl-0">&gt; = (</span><span class="hl-4">args</span><span class="hl-0">) </span><span class="hl-6">=&gt;</span><span class="hl-0"> &lt;</span><span class="hl-5">MyComponent</span><span class="hl-0"> {...</span><span class="hl-5">args</span><span class="hl-0">} /&gt;;</span><br/><br/><span class="hl-3">export</span><span class="hl-0"> </span><span class="hl-6">const</span><span class="hl-0"> </span><span class="hl-7">MyComponentStory</span><span class="hl-0"> = </span><span class="hl-4">Template</span><span class="hl-0">.</span><span class="hl-1">bind</span><span class="hl-0">({});</span><br/><br/><span class="hl-8">// pass props to component</span><br/><span class="hl-4">MyComponentStory</span><span class="hl-0">.</span><span class="hl-4">args</span><span class="hl-0"> = {</span><br/><span class="hl-0">    </span><span class="hl-4">cond:</span><span class="hl-0"> </span><span class="hl-6">true</span><span class="hl-0">,</span><br/><span class="hl-0">};</span><br/>
+</code><button>Copy</button></pre>
+<p>Adjust the args of the story to pass initial props.
+Test if this story is displayed correctly by starting storybook(explained in storybook section)</p>
+<p><a name="issues"></a></p>
+<a id="md:known-issues" class="tsd-anchor"></a><h2><a href="#md:known-issues">Known Issues</a></h2><blockquote>
+<p>This warning may appear on your console but can be ignored.</p>
+</blockquote>
+<pre><code class="language-bash"><span class="hl-1">You</span><span class="hl-0"> </span><span class="hl-2">are</span><span class="hl-0"> </span><span class="hl-2">loading</span><span class="hl-0"> </span><span class="hl-2">@emotion/react</span><span class="hl-0"> </span><span class="hl-2">when</span><span class="hl-0"> </span><span class="hl-2">it</span><span class="hl-0"> </span><span class="hl-2">is</span><span class="hl-0"> </span><span class="hl-2">already</span><span class="hl-0"> </span><span class="hl-2">loaded.</span><span class="hl-0"> </span><span class="hl-2">Running</span><span class="hl-0"> </span><span class="hl-2">multiple</span><span class="hl-0"> </span><span class="hl-2">instances</span><span class="hl-0"> </span><span class="hl-2">may</span><span class="hl-0"> </span><span class="hl-2">cause</span><span class="hl-0"> </span><span class="hl-2">problems</span>
+</code><button>Copy</button></pre>
+<p><a name="appendix"></a></p>
+<a id="md:requirements" class="tsd-anchor"></a><h3><a href="#md:requirements">Requirements</a></h3><ul>
+<li>Admin rights on your local machine</li>
+<li>NPM installed</li>
+</ul>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:react-common-components"><span>React-<wbr/>Common-<wbr/>Components</span></a><ul><li><a href="#md:--installing-bash---npm-install-harrybinreact-common--___"><span>
+## <wbr/>Installing
+bash   npm install @harrybin/react-<wbr/>common 
+___</span></a></li></ul><a href="#md:contribution"><span>Contribution</span></a><ul><li><a href="#md:storybook"><span>Storybook</span></a></li><li><a href="#md:architecture"><span>Architecture</span></a></li><li><a href="#md:usage"><span>Usage</span></a></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:known-issues"><span>Known <wbr/>Issues</span></a></li><li><ul><li><a href="#md:requirements"><span>Requirements</span></a></li></ul></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@harrybin/react-common</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><div class="tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div></body></html>
