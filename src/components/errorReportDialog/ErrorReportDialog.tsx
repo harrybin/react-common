@@ -1,7 +1,6 @@
 import { Typography, Box, TextField, Link, Grid, Button } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 
 export const MIN_DESC_LENGTH = 10;
 
@@ -59,15 +58,16 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
     const [repro, setRepro] = React.useState('');
     const descriptions = props.errorReportDescriptions;
 
-    storiesOf('BoxedIcon', module)
-        .add('with text', () => <Button>Hello Button</Button>)
-        .add('with some emoji', () => (
-            <Button>
-                <span role="img" aria-label="so cool">
-                    😀 😎 👍 💯
-                </span>
-            </Button>
-        ));
+    // https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#removal-of-storiesof-api
+    // storiesOf('BoxedIcon', module)
+    //     .add('with text', () => <Button>Hello Button</Button>)
+    //     .add('with some emoji', () => (
+    //         <Button>
+    //             <span role="img" aria-label="so cool">
+    //                 😀 😎 👍 💯
+    //             </span>
+    //         </Button>
+    //     ));
 
     return (
         <>
@@ -152,3 +152,5 @@ ErrorReportDialogComp.defaultProps = {
 };
 
 export const ErrorReportDialog = React.memo(ErrorReportDialogComp);
+
+

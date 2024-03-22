@@ -1,0 +1,44 @@
+import {  Meta } from '@storybook/blocks';
+
+<Meta
+  title="React Common Components/Readme"
+  parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+/>
+
+## React Common Components - Storybook
+
+Welcome to the storybook of `@harrybin/react-common`
+
+### Components
+
+Take a look at the `components` folder if you want to test the behaviour of the components.
+
+Each component story has a `canvas` tab where you can manipulate the props of the corresponding component.
+
+The `docs` tab documents each prop and shows additional descriptions.
+
+### Helperfunctions/Custom Hooks
+
+The library also provides generic **Helperfunctions and Custom Hooks**. Take a look at the **<a href="https://harrybin.github.io/react-common/typedoc/" target="_blank" rel="noopener noreferrer">documentation</a>** to find out more.
+
+### Usage
+
+First import the component-library:
+
+```typescript
+    npm install @harrybin/react-common;
+```
+
+Now you can use the components in your project:
+
+```typescript
+import { NameValueText, areArraysEqual } from '@harrybin/react-common';
+```
+
+| Warning: Please **close the dialog components** on the canvas tab before switching to the docs tab, otherwise there are rendering issues! |
+| ----------------------------------------------------------------------------------------------------------------------------------------- |

@@ -40,7 +40,7 @@ export interface NameValueTextProps {
 function NameValueTextComp(props: NameValueTextProps) {
     const { classes } = useStyles();
     return (
-        <div className={props.verticalSpacing ? props.verticalSpacing : classes.padding}>
+        <div className={props.verticalSpacing ? props.verticalSpacing : classes.padding}>            
             <Grid container direction={props.oneLine ? 'row' : 'column'}>
                 <Grid item>
                     <Typography
