@@ -42,5 +42,14 @@
                 "kind": "build",
             },
         },
+        {
+            "label": "🪢 test watch",
+            "type": "npm",
+            "script": "test:watch",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+        },
     ]
 }

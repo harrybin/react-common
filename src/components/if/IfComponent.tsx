@@ -8,6 +8,13 @@ export interface IfProps {
 function IfComp(props: IfProps) {
     if (props.cond) return <>{props.children}</>;
     else return props.else ? <>{props.else}</> : <></>;
+    //return (props.cond ? <>{props.children}</> : <>{props.else}</>);
+    // return (
+    //     <>
+    //         {props.cond && <>{props.children}</>}
+    //         {!props.cond && <>{props.else}</>}  //does now work for "0"
+    //     </>
+    // );
 }
 
 export const If = React.memo(IfComp);
