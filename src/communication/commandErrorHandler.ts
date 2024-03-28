@@ -27,7 +27,7 @@ interface IGlobalFetchHandler {
     exceptionHanlder?: FetchExceptionHandler;
 }
 
-export default function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler) {
+export function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler) {
     if (handler.errorHandler) _globalFetchErrorHandler = handler.errorHandler;
     if (handler.exceptionHanlder) _globalFetchExceptionHandler = handler.exceptionHanlder;
 }
