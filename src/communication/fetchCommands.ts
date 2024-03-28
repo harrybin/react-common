@@ -26,7 +26,7 @@ export function useFetch<T extends BaseEntity | {} | null>() {
     const oidcBaerer = useOidcBaerer();
     const errorHandler = getRegisteredGlobalFetchErrorHandler();
 
-    //some kind of error middleware function. For detailed implementation see recon project
+    //some kind of error middleware function.
     function createErrorResponse(response: Response, handleErrorCallback?: ErrorResponseHandler) {
         const contentType = response.headers.get('content-type');
         if (contentType && contentType.indexOf('application/problem+json') !== -1) {

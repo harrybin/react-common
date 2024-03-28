@@ -15,7 +15,7 @@ interface IGlobalFetchHandler {
      */
     errorHandler?: FetchErrorHandler;
     /**
-     * Global fetch exception hanldler for handling exception like 'Failed to fetch' (occuring when the CORS pre-flight call fails).
+     * Global fetch exception handler for handling exception like 'Failed to fetch' (occuring when the CORS pre-flight call fails).
      *
      * @type {FetchExceptionHandler}
      * @memberof IRegisterGlobalFetchHandler

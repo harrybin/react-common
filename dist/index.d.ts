@@ -467,6 +467,32 @@ declare function useFetch<T extends BaseEntity | {} | null>(): {
     }) => void;
 };
 
+type FetchErrorHandler = ((resp: Response) => void) | undefined;
+type FetchExceptionHandler = ((err: Error) => void) | undefined;
+/**
+ * Method for registering global error/exception handlers/middleware on the fetch commands of the useFetch hook.
+ *
+ * @interface IRegisterGlobalFetchHandler
+ */
+interface IGlobalFetchHandler {
+    /**
+     * Global error handler method for handling non 2XX status codes.
+     * Take care, these are static global assignments, so settings these mir than once may cause undesirable behavior.
+     *
+     * @type {FetchErrorHandler}
+     * @memberof IRegisterGlobalFetchHandler
+     */
+    errorHandler?: FetchErrorHandler;
+    /**
+     * Global fetch exception handler for handling exception like 'Failed to fetch' (occuring when the CORS pre-flight call fails).
+     *
+     * @type {FetchExceptionHandler}
+     * @memberof IRegisterGlobalFetchHandler
+     */
+    exceptionHanlder?: FetchExceptionHandler;
+}
+declare function getRegisteredGlobalFetchErrorHandler(): IGlobalFetchHandler;
+
 declare function OidcBarerProxyProvider(props: {
     children: React$1.ReactNode;
 }): React$1.JSX.Element;
@@ -514,4 +540,4 @@ declare const updatePromiseCache: Map<string, SuspendedPromise<any>>;
  */
 declare function useUpdate<T extends object>(props: UpdateDataPropsAsync<T>): T | undefined;
 
-export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, type FetchErrorHandler, type FetchExceptionHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };

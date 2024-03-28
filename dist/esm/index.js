@@ -16,6 +16,13 @@ function IfComp(props) {
         return React.createElement(React.Fragment, null, props.children);
     else
         return props.else ? React.createElement(React.Fragment, null, props.else) : React.createElement(React.Fragment, null);
+    //return (props.cond ? <>{props.children}</> : <>{props.else}</>);
+    // return (
+    //     <>
+    //         {props.cond && <>{props.children}</>}
+    //         {!props.cond && <>{props.else}</>}  //does now work for "0"
+    //     </>
+    // );
 }
 const If = React.memo(IfComp);
 
@@ -20930,7 +20937,7 @@ const staticDataDict = {};
 function useFetch() {
     const oidcBaerer = useOidcBaerer();
     const errorHandler = getRegisteredGlobalFetchErrorHandler();
-    //some kind of error middleware function. For detailed implementation see recon project
+    //some kind of error middleware function.
     function createErrorResponse(response, handleErrorCallback) {
         const contentType = response.headers.get('content-type');
         if (contentType && contentType.indexOf('application/problem+json') !== -1) {
@@ -21250,5 +21257,5 @@ function useUpdate(props) {
     return wrappedPromise.query();
 }
 
-export { ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export { ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
 //# sourceMappingURL=index.js.map

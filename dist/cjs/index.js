@@ -36,6 +36,13 @@ function IfComp(props) {
         return React__namespace.createElement(React__namespace.Fragment, null, props.children);
     else
         return props.else ? React__namespace.createElement(React__namespace.Fragment, null, props.else) : React__namespace.createElement(React__namespace.Fragment, null);
+    //return (props.cond ? <>{props.children}</> : <>{props.else}</>);
+    // return (
+    //     <>
+    //         {props.cond && <>{props.children}</>}
+    //         {!props.cond && <>{props.else}</>}  //does now work for "0"
+    //     </>
+    // );
 }
 const If = React__namespace.memo(IfComp);
 
@@ -20950,7 +20957,7 @@ const staticDataDict = {};
 function useFetch() {
     const oidcBaerer = useOidcBaerer();
     const errorHandler = getRegisteredGlobalFetchErrorHandler();
-    //some kind of error middleware function. For detailed implementation see recon project
+    //some kind of error middleware function.
     function createErrorResponse(response, handleErrorCallback) {
         const contentType = response.headers.get('content-type');
         if (contentType && contentType.indexOf('application/problem+json') !== -1) {
@@ -21285,6 +21292,7 @@ exports.createPartialWithIdAndOptLock = createPartialWithIdAndOptLock;
 exports.downloadTxtFile = downloadTxtFile;
 exports.enumKeys = enumKeys;
 exports.getLatestDateof = getLatestDateof;
+exports.getRegisteredGlobalFetchErrorHandler = getRegisteredGlobalFetchErrorHandler;
 exports.guidGenerator = guidGenerator;
 exports.insertIntoArray = insertIntoArray;
 exports.isArray = isArray;
