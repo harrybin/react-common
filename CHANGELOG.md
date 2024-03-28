@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/harrybin/react-common/compare/v0.0.15...v0.0.16) (2024-03-28)
+
+
+### Bug Fixes
+
+* adds missing exports of commandErrorHandler ([8b7fdb7](https://github.com/harrybin/react-common/commit/8b7fdb755f71852cd979f826d5e4d8b5c1c2785b))
+
 ### [0.0.15](https://github.com/harrybin/react-common/compare/v0.0.14...v0.0.15) (2024-03-28)
 
 
