@@ -22,7 +22,7 @@ interface IGlobalFetchHandler {
      */
     exceptionHanlder?: FetchExceptionHandler;
 }
-export default function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler): void;
+export declare function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler): void;
 export declare function getRegisteredGlobalFetchErrorHandler(): IGlobalFetchHandler;
 export {};
 //# sourceMappingURL=commandErrorHandler.d.ts.map

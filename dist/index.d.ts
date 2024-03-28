@@ -491,6 +491,7 @@ interface IGlobalFetchHandler {
      */
     exceptionHanlder?: FetchExceptionHandler;
 }
+declare function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler): void;
 declare function getRegisteredGlobalFetchErrorHandler(): IGlobalFetchHandler;
 
 declare function OidcBarerProxyProvider(props: {
@@ -540,4 +541,4 @@ declare const updatePromiseCache: Map<string, SuspendedPromise<any>>;
  */
 declare function useUpdate<T extends object>(props: UpdateDataPropsAsync<T>): T | undefined;
 
-export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, type FetchErrorHandler, type FetchExceptionHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, type FetchErrorHandler, type FetchExceptionHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, registerGlobalFetchErrorHandler, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };

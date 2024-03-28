@@ -20826,6 +20826,12 @@ function useOidcBaerer() {
 
 var _globalFetchErrorHandler = undefined; // for non 2XX status codes
 var _globalFetchExceptionHandler = undefined; // for errors/exception like "Failed to fetch" you get when e.g. the preflight call (CORS) fails.
+function registerGlobalFetchErrorHandler(handler) {
+    if (handler.errorHandler)
+        _globalFetchErrorHandler = handler.errorHandler;
+    if (handler.exceptionHanlder)
+        _globalFetchExceptionHandler = handler.exceptionHanlder;
+}
 function getRegisteredGlobalFetchErrorHandler() {
     return { errorHandler: _globalFetchErrorHandler, exceptionHanlder: _globalFetchExceptionHandler };
 }
@@ -21257,5 +21263,5 @@ function useUpdate(props) {
     return wrappedPromise.query();
 }
 
-export { ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export { ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, registerGlobalFetchErrorHandler, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
 //# sourceMappingURL=index.js.map

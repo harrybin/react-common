@@ -20846,6 +20846,12 @@ function useOidcBaerer() {
 
 var _globalFetchErrorHandler = undefined; // for non 2XX status codes
 var _globalFetchExceptionHandler = undefined; // for errors/exception like "Failed to fetch" you get when e.g. the preflight call (CORS) fails.
+function registerGlobalFetchErrorHandler(handler) {
+    if (handler.errorHandler)
+        _globalFetchErrorHandler = handler.errorHandler;
+    if (handler.exceptionHanlder)
+        _globalFetchExceptionHandler = handler.exceptionHanlder;
+}
 function getRegisteredGlobalFetchErrorHandler() {
     return { errorHandler: _globalFetchErrorHandler, exceptionHanlder: _globalFetchExceptionHandler };
 }
@@ -21299,6 +21305,7 @@ exports.isArray = isArray;
 exports.isObject = isObject;
 exports.nameof = nameof;
 exports.queryPromiseCache = queryPromiseCache;
+exports.registerGlobalFetchErrorHandler = registerGlobalFetchErrorHandler;
 exports.removeFromArray = removeFromArray;
 exports.suspend = suspend;
 exports.updatePromiseCache = updatePromiseCache;
