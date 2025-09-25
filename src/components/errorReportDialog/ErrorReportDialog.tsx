@@ -71,13 +71,13 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
 
     return (
         <>
-            <Box margin="20px">
-                <Grid container direction="row" spacing={2}>
-                    <Grid item xs={12}>
+            <div style={{ margin: '20px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    <div>
                         <Typography>{descriptions.descMsg}</Typography>
                         <Typography color="error">{descriptions.descHintMsg}</Typography>
-                    </Grid>
-                    <Grid item xs={12}>
+                    </div>
+                    <div>
                         <TextField
                             fullWidth
                             multiline
@@ -92,8 +92,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.descChanged && props.descChanged(event.target.value);
                             }}
                         />
-                    </Grid>
-                    <Grid item xs={12}>
+                    </div>
+                    <div>
                         <TextField
                             fullWidth
                             multiline
@@ -108,8 +108,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.reproChanged && props.reproChanged(event.target.value);
                             }}
                         />
-                    </Grid>
-                    <Grid item xs={12}>
+                    </div>
+                    <div>
                         <TextField
                             fullWidth
                             label={descriptions.emailDescMsg}
@@ -117,8 +117,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             variant="outlined"
                             onChange={(event) => props.mailChanged && props.mailChanged(event.target.value)}
                         />
-                    </Grid>
-                    <Grid item xs={12}>
+                    </div>
+                    <div>
                         <TextField
                             fullWidth
                             label={descriptions.phoneDescMsg}
@@ -126,9 +126,9 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             variant="outlined"
                             onChange={(event) => props.phoneChanged && props.phoneChanged(event.target.value)}
                         />
-                    </Grid>
-                </Grid>
-            </Box>
+                    </div>
+                </div>
+            </div>
             <Typography variant="caption" hidden={false}>
                 <Link
                     className={classes.link}

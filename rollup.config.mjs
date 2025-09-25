@@ -22,14 +22,23 @@ export default [
                 sourcemap: true,
             },
         ],
-        plugins: [typescript({ tsconfig: './tsconfig.json' }), packageJson, resolve(), commonjs(), peerDepsExternal()],
+        plugins: [
+            typescript({ 
+                tsconfig: './tsconfig.json',
+                declaration: false,
+                outDir: 'dist'
+            }), 
+            resolve(), 
+            commonjs(), 
+            peerDepsExternal()
+        ],
         watch: {
             exclude: ['node_modules/**', 'test/**'],
         },
     },
     {
         external: ['react-dom', 'react'],
-        input: 'dist/esm/types/src/index.d.ts',
+        input: 'dist/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts()],
         watch: {

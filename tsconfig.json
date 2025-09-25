@@ -8,11 +8,9 @@
         "jsx": "react",
         "module": "ESNext",
         "declaration": true,
-        "declarationDir": "types",
         "sourceMap": true,
         "outDir": "dist",
         "moduleResolution": "node",
-        "declarationMap": true,
         "allowSyntheticDefaultImports": true,
         "emitDeclarationOnly": true
     },
@@ -21,7 +19,8 @@
         "src/**/*.test.ts",
         "src/**/*.stories.tsx",
         "src/**/*.stories.ts",
-        "test/*"
+        "test/*",
+        "vitest.config.ts"
     ],
     "typedocOptions": {
         "entryPoints": [

@@ -1,6 +1,5 @@
-/// <reference types="react" />
 import * as React$1 from 'react';
-import React__default, { EffectCallback, Dispatch, SetStateAction, Reducer, ReducerState, ReducerAction } from 'react';
+import React__default, { EffectCallback, DependencyList, Dispatch, SetStateAction, Reducer, ReducerState } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 
 interface IfProps {
@@ -20,7 +19,7 @@ declare function Markdown(props: MarkdownProps): React__default.JSX.Element;
 
 interface NameValueTextProps {
     name: string;
-    value?: string | number | JSX.Element;
+    value?: string | number | React__default.ReactElement;
     oneLine?: boolean;
     children?: React__default.ReactNode | React__default.ReactNode[];
     verticalSpacing?: string;
@@ -191,7 +190,7 @@ declare function useDefaultProps<P extends object, DP extends Partial<P>>(props:
  * @param {DependencyList} dependencies
  * @param {string[]} [dependencyNames=[]]
  */
-declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: React__default.DependencyList, dependencyNames?: string[]) => void;
+declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: DependencyList, dependencyNames?: string[]) => void;
 /**
  * Used to calculate the rest height of a page. With this you can set a component to fill the rest height of a page.
  * Remarks: only works for components directly rendering. If your component is rendered lazy, like components on non-active tabs you need useOnScreen too. See FillHeight component.
@@ -253,7 +252,7 @@ declare function usePersistedStateOneway<T>(prefix: string, key: string, default
  * @return {*}  {[T, Dispatch<SetStateAction<T>>]} [value,setter] array like when using useState
  */
 declare function usePersistedRef<T>(key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>];
-declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R, defaultState: T, key: string, initFunc?: (arg: T) => ReducerState<R>): [ReducerState<R>, Dispatch<ReducerAction<R>>];
+declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R, defaultState: T, key: string, initFunc?: (arg: T) => ReducerState<R>): [ReducerState<R>, Dispatch<Parameters<R>[1]>];
 /**
  *
  * Hook that activates debug mode based on a given shortcut.
@@ -279,7 +278,7 @@ declare function nameof<T>(name: keyof T): string;
  * @param {object} obj
  * @returns true if object is an arry, false in case Array.isArray is not availabe or the object is no array.
  */
-declare function isArray(obj: object): boolean;
+declare function isArray(obj: object): obj is any[];
 /**
  * determines is the value is an object and not null (which e.g. can't be rendered) or not.
  * (null is also treated as object)
@@ -288,7 +287,7 @@ declare function isArray(obj: object): boolean;
  * @param {unknown} value
  * @returns true if value is a non null object
  */
-declare function isObject(value: unknown): boolean;
+declare function isObject(value: unknown): value is object;
 /**
  * removes an element from an array. If the key is not passed a reference comparison is used.
  *
