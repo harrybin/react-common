@@ -60,7 +60,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol */
+/* global Reflect, Promise, SuppressedError, Symbol, Iterator */
 
 
 function __rest(s, e) {
@@ -265,6 +265,7 @@ var unitlessKeys = {
   opacity: 1,
   order: 1,
   orphans: 1,
+  scale: 1,
   tabSize: 1,
   widows: 1,
   zIndex: 1,
@@ -289,8 +290,6 @@ function memoize(fn) {
   };
 }
 
-var ILLEGAL_ESCAPE_SEQUENCE_ERROR = "You have illegal escape sequence in your template literal, most likely inside content's property value.\nBecause you write your CSS inside a JavaScript string you actually have to do double escaping, so for example \"content: '\\00d7';\" should become \"content: '\\\\00d7';\".\nYou can read more about this here:\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#ES2018_revision_of_illegal_escape_sequences";
-var UNDEFINED_AS_OBJECT_KEY_ERROR = "You have passed in falsy value as style object's key (can happen when in example you pass unexported component as computed key).";
 var hyphenateRegex = /[A-Z]|^ms/g;
 var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
 
@@ -331,47 +330,16 @@ var processStyleValue = function processStyleValue(key, value) {
   return value;
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  var contentValuePattern = /(var|attr|counters?|url|element|(((repeating-)?(linear|radial))|conic)-gradient)\(|(no-)?(open|close)-quote/;
-  var contentValues = ['normal', 'none', 'initial', 'inherit', 'unset'];
-  var oldProcessStyleValue = processStyleValue;
-  var msPattern = /^-ms-/;
-  var hyphenPattern = /-(.)/g;
-  var hyphenatedCache = {};
-
-  processStyleValue = function processStyleValue(key, value) {
-    if (key === 'content') {
-      if (typeof value !== 'string' || contentValues.indexOf(value) === -1 && !contentValuePattern.test(value) && (value.charAt(0) !== value.charAt(value.length - 1) || value.charAt(0) !== '"' && value.charAt(0) !== "'")) {
-        throw new Error("You seem to be using a value for 'content' without quotes, try replacing it with `content: '\"" + value + "\"'`");
-      }
-    }
-
-    var processed = oldProcessStyleValue(key, value);
-
-    if (processed !== '' && !isCustomProperty(key) && key.indexOf('-') !== -1 && hyphenatedCache[key] === undefined) {
-      hyphenatedCache[key] = true;
-      console.error("Using kebab-case for css properties in objects is not supported. Did you mean " + key.replace(msPattern, 'ms-').replace(hyphenPattern, function (str, _char) {
-        return _char.toUpperCase();
-      }) + "?");
-    }
-
-    return processed;
-  };
-}
-
-var noComponentSelectorMessage = 'Component selectors can only be used in conjunction with ' + '@emotion/babel-plugin, the swc Emotion plugin, or another Emotion-aware ' + 'compiler transform.';
-
 function handleInterpolation(mergedProps, registered, interpolation) {
   if (interpolation == null) {
     return '';
   }
 
-  if (interpolation.__emotion_styles !== undefined) {
-    if (process.env.NODE_ENV !== 'production' && interpolation.toString() === 'NO_COMPONENT_SELECTOR') {
-      throw new Error(noComponentSelectorMessage);
-    }
+  var componentSelector = interpolation;
 
-    return interpolation;
+  if (componentSelector.__emotion_styles !== undefined) {
+
+    return componentSelector;
   }
 
   switch (typeof interpolation) {
@@ -382,17 +350,21 @@ function handleInterpolation(mergedProps, registered, interpolation) {
 
     case 'object':
       {
-        if (interpolation.anim === 1) {
+        var keyframes = interpolation;
+
+        if (keyframes.anim === 1) {
           cursor = {
-            name: interpolation.name,
-            styles: interpolation.styles,
+            name: keyframes.name,
+            styles: keyframes.styles,
             next: cursor
           };
-          return interpolation.name;
+          return keyframes.name;
         }
 
-        if (interpolation.styles !== undefined) {
-          var next = interpolation.next;
+        var serializedStyles = interpolation;
+
+        if (serializedStyles.styles !== undefined) {
+          var next = serializedStyles.next;
 
           if (next !== undefined) {
             // not the most efficient thing ever but this is a pretty rare case
@@ -407,56 +379,23 @@ function handleInterpolation(mergedProps, registered, interpolation) {
             }
           }
 
-          var styles = interpolation.styles + ";";
-
-          if (process.env.NODE_ENV !== 'production' && interpolation.map !== undefined) {
-            styles += interpolation.map;
-          }
-
+          var styles = serializedStyles.styles + ";";
           return styles;
         }
 
         return createStringFromObject(mergedProps, registered, interpolation);
       }
-
-    case 'function':
-      {
-        if (mergedProps !== undefined) {
-          var previousCursor = cursor;
-          var result = interpolation(mergedProps);
-          cursor = previousCursor;
-          return handleInterpolation(mergedProps, registered, result);
-        } else if (process.env.NODE_ENV !== 'production') {
-          console.error('Functions that are interpolated in css calls will be stringified.\n' + 'If you want to have a css call based on props, create a function that returns a css call like this\n' + 'let dynamicStyle = (props) => css`color: ${props.color}`\n' + 'It can be called directly with props or interpolated in a styled call like this\n' + "let SomeComponent = styled('div')`${dynamicStyle}`");
-        }
-
-        break;
-      }
-
-    case 'string':
-      if (process.env.NODE_ENV !== 'production') {
-        var matched = [];
-        var replaced = interpolation.replace(animationRegex, function (match, p1, p2) {
-          var fakeVarName = "animation" + matched.length;
-          matched.push("const " + fakeVarName + " = keyframes`" + p2.replace(/^@keyframes animation-\w+/, '') + "`");
-          return "${" + fakeVarName + "}";
-        });
-
-        if (matched.length) {
-          console.error('`keyframes` output got interpolated into plain string, please wrap it with `css`.\n\n' + 'Instead of doing this:\n\n' + [].concat(matched, ["`" + replaced + "`"]).join('\n') + '\n\nYou should wrap it with `css` like this:\n\n' + ("css`" + replaced + "`"));
-        }
-      }
-
-      break;
   } // finalize string values (regular strings and functions interpolated into css calls)
 
 
+  var asString = interpolation;
+
   if (registered == null) {
-    return interpolation;
+    return asString;
   }
 
-  var cached = registered[interpolation];
-  return cached !== undefined ? cached : interpolation;
+  var cached = registered[asString];
+  return cached !== undefined ? cached : asString;
 }
 
 function createStringFromObject(mergedProps, registered, obj) {
@@ -467,44 +406,40 @@ function createStringFromObject(mergedProps, registered, obj) {
       string += handleInterpolation(mergedProps, registered, obj[i]) + ";";
     }
   } else {
-    for (var _key in obj) {
-      var value = obj[_key];
+    for (var key in obj) {
+      var value = obj[key];
 
       if (typeof value !== 'object') {
-        if (registered != null && registered[value] !== undefined) {
-          string += _key + "{" + registered[value] + "}";
-        } else if (isProcessableValue(value)) {
-          string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
+        var asString = value;
+
+        if (registered != null && registered[asString] !== undefined) {
+          string += key + "{" + registered[asString] + "}";
+        } else if (isProcessableValue(asString)) {
+          string += processStyleName(key) + ":" + processStyleValue(key, asString) + ";";
         }
       } else {
-        if (_key === 'NO_COMPONENT_SELECTOR' && process.env.NODE_ENV !== 'production') {
-          throw new Error(noComponentSelectorMessage);
-        }
 
         if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
           for (var _i = 0; _i < value.length; _i++) {
             if (isProcessableValue(value[_i])) {
-              string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+              string += processStyleName(key) + ":" + processStyleValue(key, value[_i]) + ";";
             }
           }
         } else {
           var interpolated = handleInterpolation(mergedProps, registered, value);
 
-          switch (_key) {
+          switch (key) {
             case 'animation':
             case 'animationName':
               {
-                string += processStyleName(_key) + ":" + interpolated + ";";
+                string += processStyleName(key) + ":" + interpolated + ";";
                 break;
               }
 
             default:
               {
-                if (process.env.NODE_ENV !== 'production' && _key === 'undefined') {
-                  console.error(UNDEFINED_AS_OBJECT_KEY_ERROR);
-                }
 
-                string += _key + "{" + interpolated + "}";
+                string += key + "{" + interpolated + "}";
               }
           }
         }
@@ -515,17 +450,11 @@ function createStringFromObject(mergedProps, registered, obj) {
   return string;
 }
 
-var labelPattern = /label:\s*([^\s;\n{]+)\s*(;|$)/g;
-var sourceMapPattern;
-
-if (process.env.NODE_ENV !== 'production') {
-  sourceMapPattern = /\/\*#\ssourceMappingURL=data:application\/json;\S+\s+\*\//g;
-} // this is the cursor for keyframes
+var labelPattern = /label:\s*([^\s;{]+)\s*(;|$)/g; // this is the cursor for keyframes
 // keyframes are stored on the SerializedStyles object as a linked list
 
-
 var cursor;
-var serializeStyles = function serializeStyles(args, registered, mergedProps) {
+function serializeStyles(args, registered, mergedProps) {
   if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
     return args[0];
   }
@@ -539,11 +468,9 @@ var serializeStyles = function serializeStyles(args, registered, mergedProps) {
     stringMode = false;
     styles += handleInterpolation(mergedProps, registered, strings);
   } else {
-    if (process.env.NODE_ENV !== 'production' && strings[0] === undefined) {
-      console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
-    }
+    var asTemplateStringsArr = strings;
 
-    styles += strings[0];
+    styles += asTemplateStringsArr[0];
   } // we start at 1 since we've already handled the first arg
 
 
@@ -551,21 +478,10 @@ var serializeStyles = function serializeStyles(args, registered, mergedProps) {
     styles += handleInterpolation(mergedProps, registered, args[i]);
 
     if (stringMode) {
-      if (process.env.NODE_ENV !== 'production' && strings[i] === undefined) {
-        console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
-      }
+      var templateStringsArr = strings;
 
-      styles += strings[i];
+      styles += templateStringsArr[i];
     }
-  }
-
-  var sourceMap;
-
-  if (process.env.NODE_ENV !== 'production') {
-    styles = styles.replace(sourceMapPattern, function (match) {
-      sourceMap = match;
-      return '';
-    });
   } // using a global regex with .exec is stateful so lastIndex has to be reset each time
 
 
@@ -574,39 +490,26 @@ var serializeStyles = function serializeStyles(args, registered, mergedProps) {
   var match; // https://esbench.com/bench/5b809c2cf2949800a0f61fb5
 
   while ((match = labelPattern.exec(styles)) !== null) {
-    identifierName += '-' + // $FlowFixMe we know it's not null
-    match[1];
+    identifierName += '-' + match[1];
   }
 
   var name = murmur2(styles) + identifierName;
-
-  if (process.env.NODE_ENV !== 'production') {
-    // $FlowFixMe SerializedStyles type doesn't have toString property (and we don't want to add it)
-    return {
-      name: name,
-      styles: styles,
-      map: sourceMap,
-      next: cursor,
-      toString: function toString() {
-        return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop).";
-      }
-    };
-  }
 
   return {
     name: name,
     styles: styles,
     next: cursor
   };
-};
+}
 
-var isBrowser$3 = typeof document !== 'undefined';
+var isBrowser$1 = typeof document !== 'undefined';
+
 function getRegisteredStyles(registered, registeredStyles, classNames) {
   var rawClassName = '';
   classNames.split(' ').forEach(function (className) {
     if (registered[className] !== undefined) {
       registeredStyles.push(registered[className] + ";");
-    } else {
+    } else if (className) {
       rawClassName += className + " ";
     }
   });
@@ -620,16 +523,12 @@ var registerStyles = function registerStyles(cache, serialized, isStringTag) {
   // the tree but if it's a string tag, we know it won't
   // so we don't have to add it to registered cache.
   // this improves memory usage since we can avoid storing the whole style string
-  (isStringTag === false || // we need to always store it if we're in compat mode and
-  // in node since emotion-server relies on whether a style is in
-  // the registered cache to know whether a style is global or not
-  // also, note that this check will be dead code eliminated in the browser
-  isBrowser$3 === false && cache.compat !== undefined) && cache.registered[className] === undefined) {
+  cache.registered[className] === undefined) {
     cache.registered[className] = serialized.styles;
   }
 };
 var insertStyles = function insertStyles(cache, serialized, isStringTag) {
-  registerStyles(cache, serialized, isStringTag);
+  registerStyles(cache, serialized);
   var className = cache.key + "-" + serialized.name;
 
   if (cache.inserted[serialized.name] === undefined) {
@@ -639,14 +538,14 @@ var insertStyles = function insertStyles(cache, serialized, isStringTag) {
     do {
       var maybeStyles = cache.insert(serialized === current ? "." + className : '', current, cache.sheet, true);
 
-      if (!isBrowser$3 && maybeStyles !== undefined) {
+      if (!isBrowser$1 && maybeStyles !== undefined) {
         stylesForSSR += maybeStyles;
       }
 
       current = current.next;
     } while (current !== undefined);
 
-    if (!isBrowser$3 && stylesForSSR.length !== 0) {
+    if (!isBrowser$1 && stylesForSSR.length !== 0) {
       return stylesForSSR;
     }
   }
@@ -688,7 +587,7 @@ const { createCssAndCx } = (() => {
         const { cache } = params;
         const css = (...args) => {
             const serialized = serializeStyles(args, cache.registered);
-            insertStyles(cache, serialized, false);
+            insertStyles(cache, serialized);
             const className = `${cache.key}-${serialized.name}`;
             scope: {
                 const arg = args[0];
@@ -904,10 +803,9 @@ styleSheet.flush()
 - empties the stylesheet of all its contents
 
 */
-// $FlowFixMe
+
 function sheetForTag(tag) {
   if (tag.sheet) {
-    // $FlowFixMe
     return tag.sheet;
   } // this weirdness brought to you by firefox
 
@@ -916,10 +814,13 @@ function sheetForTag(tag) {
 
   for (var i = 0; i < document.styleSheets.length; i++) {
     if (document.styleSheets[i].ownerNode === tag) {
-      // $FlowFixMe
       return document.styleSheets[i];
     }
-  }
+  } // this function should always return with a value
+  // TS can't understand it though so we make it stop complaining here
+
+
+  return undefined;
 }
 
 function createStyleElement(options) {
@@ -960,7 +861,7 @@ var StyleSheet = /*#__PURE__*/function () {
       _this.tags.push(tag);
     };
 
-    this.isSpeedy = options.speedy === undefined ? process.env.NODE_ENV === 'production' : options.speedy;
+    this.isSpeedy = options.speedy === undefined ? true : options.speedy;
     this.tags = [];
     this.ctr = 0;
     this.nonce = options.nonce; // key is the value of the data-emotion attribute, it's used to identify different sheets
@@ -988,18 +889,6 @@ var StyleSheet = /*#__PURE__*/function () {
 
     var tag = this.tags[this.tags.length - 1];
 
-    if (process.env.NODE_ENV !== 'production') {
-      var isImportRule = rule.charCodeAt(0) === 64 && rule.charCodeAt(1) === 105;
-
-      if (isImportRule && this._alreadyInsertedOrderInsensitiveRule) {
-        // this would only cause problem in speedy mode
-        // but we don't want enabling speedy to affect the observable behavior
-        // so we report this error at all times
-        console.error("You're attempting to insert the following rule:\n" + rule + '\n\n`@import` rules must be before all other types of rules in a stylesheet but other rules have already been inserted. Please ensure that `@import` rules are before all other rules.');
-      }
-      this._alreadyInsertedOrderInsensitiveRule = this._alreadyInsertedOrderInsensitiveRule || !isImportRule;
-    }
-
     if (this.isSpeedy) {
       var sheet = sheetForTag(tag);
 
@@ -1008,9 +897,6 @@ var StyleSheet = /*#__PURE__*/function () {
         // the big drawback is that the css won't be editable in devtools
         sheet.insertRule(rule, sheet.cssRules.length);
       } catch (e) {
-        if (process.env.NODE_ENV !== 'production' && !/:(-moz-placeholder|-moz-focus-inner|-moz-focusring|-ms-input-placeholder|-moz-read-write|-moz-read-only|-ms-clear|-ms-expand|-ms-reveal){/.test(rule)) {
-          console.error("There was a problem inserting the following rule: \"" + rule + "\"", e);
-        }
       }
     } else {
       tag.appendChild(document.createTextNode(rule));
@@ -1020,16 +906,13 @@ var StyleSheet = /*#__PURE__*/function () {
   };
 
   _proto.flush = function flush() {
-    // $FlowFixMe
     this.tags.forEach(function (tag) {
-      return tag.parentNode && tag.parentNode.removeChild(tag);
+      var _tag$parentNode;
+
+      return (_tag$parentNode = tag.parentNode) == null ? void 0 : _tag$parentNode.removeChild(tag);
     });
     this.tags = [];
     this.ctr = 0;
-
-    if (process.env.NODE_ENV !== 'production') {
-      this._alreadyInsertedOrderInsensitiveRule = false;
-    }
   };
 
   return StyleSheet;
@@ -1634,11 +1517,11 @@ function rulesheet (callback) {
 }
 
 var weakMemoize = function weakMemoize(func) {
-  // $FlowFixMe flow doesn't include all non-primitive types as allowed for weakmaps
   var cache = new WeakMap();
   return function (arg) {
     if (cache.has(arg)) {
-      // $FlowFixMe
+      // Use non-null assertion because we just checked that the cache `has` it
+      // This allows us to remove `undefined` from the return value
       return cache.get(arg);
     }
 
@@ -1647,6 +1530,8 @@ var weakMemoize = function weakMemoize(func) {
     return ret;
   };
 };
+
+var isBrowser = typeof document !== 'undefined';
 
 var identifierWithPointTracking = function identifierWithPointTracking(begin, points, index) {
   var previous = 0;
@@ -1726,8 +1611,8 @@ var compat = function compat(element) {
     return;
   }
 
-  var value = element.value,
-      parent = element.parent;
+  var value = element.value;
+  var parent = element.parent;
   var isImplicitRule = element.column === parent.column && element.line === parent.line;
 
   while (parent.type !== 'rule') {
@@ -1770,114 +1655,6 @@ var removeLabel = function removeLabel(element) {
       element["return"] = '';
       element.value = '';
     }
-  }
-};
-var ignoreFlag = 'emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason';
-
-var isIgnoringComment = function isIgnoringComment(element) {
-  return element.type === 'comm' && element.children.indexOf(ignoreFlag) > -1;
-};
-
-var createUnsafeSelectorsAlarm = function createUnsafeSelectorsAlarm(cache) {
-  return function (element, index, children) {
-    if (element.type !== 'rule' || cache.compat) return;
-    var unsafePseudoClasses = element.value.match(/(:first|:nth|:nth-last)-child/g);
-
-    if (unsafePseudoClasses) {
-      var isNested = !!element.parent; // in nested rules comments become children of the "auto-inserted" rule and that's always the `element.parent`
-      //
-      // considering this input:
-      // .a {
-      //   .b /* comm */ {}
-      //   color: hotpink;
-      // }
-      // we get output corresponding to this:
-      // .a {
-      //   & {
-      //     /* comm */
-      //     color: hotpink;
-      //   }
-      //   .b {}
-      // }
-
-      var commentContainer = isNested ? element.parent.children : // global rule at the root level
-      children;
-
-      for (var i = commentContainer.length - 1; i >= 0; i--) {
-        var node = commentContainer[i];
-
-        if (node.line < element.line) {
-          break;
-        } // it is quite weird but comments are *usually* put at `column: element.column - 1`
-        // so we seek *from the end* for the node that is earlier than the rule's `element` and check that
-        // this will also match inputs like this:
-        // .a {
-        //   /* comm */
-        //   .b {}
-        // }
-        //
-        // but that is fine
-        //
-        // it would be the easiest to change the placement of the comment to be the first child of the rule:
-        // .a {
-        //   .b { /* comm */ }
-        // }
-        // with such inputs we wouldn't have to search for the comment at all
-        // TODO: consider changing this comment placement in the next major version
-
-
-        if (node.column < element.column) {
-          if (isIgnoringComment(node)) {
-            return;
-          }
-
-          break;
-        }
-      }
-
-      unsafePseudoClasses.forEach(function (unsafePseudoClass) {
-        console.error("The pseudo class \"" + unsafePseudoClass + "\" is potentially unsafe when doing server-side rendering. Try changing it to \"" + unsafePseudoClass.split('-child')[0] + "-of-type\".");
-      });
-    }
-  };
-};
-
-var isImportRule = function isImportRule(element) {
-  return element.type.charCodeAt(1) === 105 && element.type.charCodeAt(0) === 64;
-};
-
-var isPrependedWithRegularRules = function isPrependedWithRegularRules(index, children) {
-  for (var i = index - 1; i >= 0; i--) {
-    if (!isImportRule(children[i])) {
-      return true;
-    }
-  }
-
-  return false;
-}; // use this to remove incorrect elements from further processing
-// so they don't get handed to the `sheet` (or anything else)
-// as that could potentially lead to additional logs which in turn could be overhelming to the user
-
-
-var nullifyElement = function nullifyElement(element) {
-  element.type = '';
-  element.value = '';
-  element["return"] = '';
-  element.children = '';
-  element.props = '';
-};
-
-var incorrectImportAlarm = function incorrectImportAlarm(element, index, children) {
-  if (!isImportRule(element)) {
-    return;
-  }
-
-  if (element.parent) {
-    console.error("`@import` rules can't be nested inside other rules. Please move it to the top level and put it before regular rules. Keep in mind that they can only be used within global styles.");
-    nullifyElement(element);
-  } else if (isPrependedWithRegularRules(index, children)) {
-    console.error("`@import` rules can't be after other rules. Please put your `@import` rules before your other rules.");
-    nullifyElement(element);
   }
 };
 
@@ -2093,13 +1870,9 @@ var prefixer = function prefixer(element, index, children, callback) {
   }
 };
 
-var isBrowser$2 = typeof document !== 'undefined';
-var getServerStylisCache = isBrowser$2 ? undefined : weakMemoize(function () {
+var getServerStylisCache = isBrowser ? undefined : weakMemoize(function () {
   return memoize(function () {
-    var cache = {};
-    return function (name) {
-      return cache[name];
-    };
+    return {};
   });
 });
 var defaultStylisPlugins = [prefixer];
@@ -2107,11 +1880,7 @@ var defaultStylisPlugins = [prefixer];
 var createCache = function createCache(options) {
   var key = options.key;
 
-  if (process.env.NODE_ENV !== 'production' && !key) {
-    throw new Error("You have to configure `key` for your cache. Please make sure it's unique (and not equal to 'css') as it's used for linking styles to your cache.\n" + "If multiple caches share the same key they might \"fight\" for each other's style elements.");
-  }
-
-  if (isBrowser$2 && key === 'css') {
+  if (isBrowser && key === 'css') {
     var ssrStyles = document.querySelectorAll("style[data-emotion]:not([data-s])"); // get SSRed styles out of the way of React's hydration
     // document.head is a safe place to move them to(though note document.head is not necessarily the last place they will be)
     // note this very very intentionally targets all style elements regardless of the key to ensure
@@ -2129,6 +1898,7 @@ var createCache = function createCache(options) {
       if (dataEmotionAttribute.indexOf(' ') === -1) {
         return;
       }
+
       document.head.appendChild(node);
       node.setAttribute('data-s', '');
     });
@@ -2136,23 +1906,16 @@ var createCache = function createCache(options) {
 
   var stylisPlugins = options.stylisPlugins || defaultStylisPlugins;
 
-  if (process.env.NODE_ENV !== 'production') {
-    // $FlowFixMe
-    if (/[^a-z-]/.test(key)) {
-      throw new Error("Emotion key must only contain lower case alphabetical characters and - but \"" + key + "\" was passed");
-    }
-  }
-
   var inserted = {};
   var container;
   var nodesToHydrate = [];
 
-  if (isBrowser$2) {
+  if (isBrowser) {
     container = options.container || document.head;
     Array.prototype.forEach.call( // this means we will ignore elements which don't have a space in them which
     // means that the style elements we're looking at are only Emotion 11 server-rendered style elements
     document.querySelectorAll("style[data-emotion^=\"" + key + " \"]"), function (node) {
-      var attrib = node.getAttribute("data-emotion").split(' '); // $FlowFixMe
+      var attrib = node.getAttribute("data-emotion").split(' ');
 
       for (var i = 1; i < attrib.length; i++) {
         inserted[attrib[i]] = true;
@@ -2166,28 +1929,9 @@ var createCache = function createCache(options) {
 
   var omnipresentPlugins = [compat, removeLabel];
 
-  if (process.env.NODE_ENV !== 'production') {
-    omnipresentPlugins.push(createUnsafeSelectorsAlarm({
-      get compat() {
-        return cache.compat;
-      }
-
-    }), incorrectImportAlarm);
-  }
-
-  if (isBrowser$2) {
+  if (!getServerStylisCache) {
     var currentSheet;
-    var finalizingPlugins = [stringify, process.env.NODE_ENV !== 'production' ? function (element) {
-      if (!element.root) {
-        if (element["return"]) {
-          currentSheet.insert(element["return"]);
-        } else if (element.value && element.type !== COMMENT) {
-          // insert empty rule in non-production environments
-          // so @emotion/jest can grab `key` from the (JS)DOM for caches without any rules inserted yet
-          currentSheet.insert(element.value + "{}");
-        }
-      }
-    } : rulesheet(function (rule) {
+    var finalizingPlugins = [stringify, rulesheet(function (rule) {
       currentSheet.insert(rule);
     })];
     var serializer = middleware(omnipresentPlugins.concat(stylisPlugins, finalizingPlugins));
@@ -2198,14 +1942,6 @@ var createCache = function createCache(options) {
 
     _insert = function insert(selector, serialized, sheet, shouldCache) {
       currentSheet = sheet;
-
-      if (process.env.NODE_ENV !== 'production' && serialized.map !== undefined) {
-        currentSheet = {
-          insert: function insert(rule) {
-            sheet.insert(rule + serialized.map);
-          }
-        };
-      }
 
       stylis(selector ? selector + "{" + serialized.styles + "}" : serialized.styles);
 
@@ -2220,8 +1956,7 @@ var createCache = function createCache(options) {
 
     var _stylis = function _stylis(styles) {
       return serialize(compile(styles), _serializer);
-    }; // $FlowFixMe
-
+    };
 
     var serverStylisCache = getServerStylisCache(stylisPlugins)(key);
 
@@ -2245,12 +1980,6 @@ var createCache = function createCache(options) {
         // we return them so that they are rendered in a style tag
         if (shouldCache) {
           cache.inserted[name] = true;
-        }
-
-        if ( // using === development instead of !== production
-        // because if people do ssr in tests, the source maps showing up would be annoying
-        process.env.NODE_ENV === 'development' && serialized.map !== undefined) {
-          return rules + serialized.map;
         }
 
         return rules;
@@ -2296,18 +2025,6 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-var isBrowser$1 = typeof document !== 'undefined';
-
-var syncFallback = function syncFallback(create) {
-  return create();
-};
-
-var useInsertionEffect = React__namespace['useInsertion' + 'Effect'] ? React__namespace['useInsertion' + 'Effect'] : false;
-var useInsertionEffectAlwaysWithSyncFallback = !isBrowser$1 ? syncFallback : useInsertionEffect || syncFallback;
-
-var isBrowser = typeof document !== 'undefined';
-var hasOwnProperty = {}.hasOwnProperty;
-
 var EmotionCacheContext = /* #__PURE__ */React__namespace.createContext( // we're doing this to avoid preconstruct's dead code elimination in this one case
 // because this module is primarily intended for the browser and node
 // but it's also required in react native and similar environments sometimes
@@ -2318,135 +2035,10 @@ typeof HTMLElement !== 'undefined' ? /* #__PURE__ */createCache({
   key: 'css'
 }) : null);
 
-if (process.env.NODE_ENV !== 'production') {
-  EmotionCacheContext.displayName = 'EmotionCacheContext';
-}
-
 EmotionCacheContext.Provider;
 var __unsafe_useEmotionCache = function useEmotionCache() {
   return React.useContext(EmotionCacheContext);
 };
-
-var withEmotionCache = function withEmotionCache(func) {
-  // $FlowFixMe
-  return /*#__PURE__*/React.forwardRef(function (props, ref) {
-    // the cache will never be null in the browser
-    var cache = React.useContext(EmotionCacheContext);
-    return func(props, cache, ref);
-  });
-};
-
-if (!isBrowser) {
-  withEmotionCache = function withEmotionCache(func) {
-    return function (props) {
-      var cache = React.useContext(EmotionCacheContext);
-
-      if (cache === null) {
-        // yes, we're potentially creating this on every render
-        // it doesn't actually matter though since it's only on the server
-        // so there will only every be a single render
-        // that could change in the future because of suspense and etc. but for now,
-        // this works and i don't want to optimise for a future thing that we aren't sure about
-        cache = createCache({
-          key: 'css'
-        });
-        return /*#__PURE__*/React__namespace.createElement(EmotionCacheContext.Provider, {
-          value: cache
-        }, func(props, cache));
-      } else {
-        return func(props, cache);
-      }
-    };
-  };
-}
-
-var ThemeContext = /* #__PURE__ */React__namespace.createContext({});
-
-if (process.env.NODE_ENV !== 'production') {
-  ThemeContext.displayName = 'EmotionThemeContext';
-}
-
-var typePropName = '__EMOTION_TYPE_PLEASE_DO_NOT_USE__';
-var labelPropName = '__EMOTION_LABEL_PLEASE_DO_NOT_USE__';
-
-var Insertion = function Insertion(_ref) {
-  var cache = _ref.cache,
-      serialized = _ref.serialized,
-      isStringTag = _ref.isStringTag;
-  registerStyles(cache, serialized, isStringTag);
-  var rules = useInsertionEffectAlwaysWithSyncFallback(function () {
-    return insertStyles(cache, serialized, isStringTag);
-  });
-
-  if (!isBrowser && rules !== undefined) {
-    var _ref2;
-
-    var serializedNames = serialized.name;
-    var next = serialized.next;
-
-    while (next !== undefined) {
-      serializedNames += ' ' + next.name;
-      next = next.next;
-    }
-
-    return /*#__PURE__*/React__namespace.createElement("style", (_ref2 = {}, _ref2["data-emotion"] = cache.key + " " + serializedNames, _ref2.dangerouslySetInnerHTML = {
-      __html: rules
-    }, _ref2.nonce = cache.sheet.nonce, _ref2));
-  }
-
-  return null;
-};
-
-var Emotion = /* #__PURE__ */withEmotionCache(function (props, cache, ref) {
-  var cssProp = props.css; // so that using `css` from `emotion` and passing the result to the css prop works
-  // not passing the registered cache to serializeStyles because it would
-  // make certain babel optimisations not possible
-
-  if (typeof cssProp === 'string' && cache.registered[cssProp] !== undefined) {
-    cssProp = cache.registered[cssProp];
-  }
-
-  var WrappedComponent = props[typePropName];
-  var registeredStyles = [cssProp];
-  var className = '';
-
-  if (typeof props.className === 'string') {
-    className = getRegisteredStyles(cache.registered, registeredStyles, props.className);
-  } else if (props.className != null) {
-    className = props.className + " ";
-  }
-
-  var serialized = serializeStyles(registeredStyles, undefined, React__namespace.useContext(ThemeContext));
-
-  if (process.env.NODE_ENV !== 'production' && serialized.name.indexOf('-') === -1) {
-    var labelFromStack = props[labelPropName];
-
-    if (labelFromStack) {
-      serialized = serializeStyles([serialized, 'label:' + labelFromStack + ';']);
-    }
-  }
-
-  className += cache.key + "-" + serialized.name;
-  var newProps = {};
-
-  for (var key in props) {
-    if (hasOwnProperty.call(props, key) && key !== 'css' && key !== typePropName && (process.env.NODE_ENV === 'production' || key !== labelPropName)) {
-      newProps[key] = props[key];
-    }
-  }
-
-  newProps.ref = ref;
-  newProps.className = className;
-  return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Insertion, {
-    cache: cache,
-    serialized: serialized,
-    isStringTag: typeof WrappedComponent === 'string'
-  }), /*#__PURE__*/React__namespace.createElement(WrappedComponent, newProps));
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  Emotion.displayName = 'EmotionCssPropInternal';
-}
 
 const useContextualCache = __unsafe_useEmotionCache;
 let counter$1 = 0;

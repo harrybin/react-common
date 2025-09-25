@@ -4,11 +4,10 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
-import packageJson from './package.json' assert { type: 'json' };
+import packageJson from './package.json' with { type: 'json' };
 
 export default [
     {
-        inlineDynamicImports: true,
         //external: [...Object.keys(packageJson.peerDependencies || {})],
         input: 'src/index.ts',
         output: [
