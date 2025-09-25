@@ -41,16 +41,16 @@ function NameValueTextComp(props: NameValueTextProps) {
     const { classes } = useStyles();
     return (
         <div className={props.verticalSpacing ? props.verticalSpacing : classes.padding}>            
-            <div style={{ display: 'flex', flexDirection: props.oneLine ? 'row' : 'column' }}>
-                <div>
+            <Grid container direction={props.oneLine ? 'row' : 'column'}>
+                <Grid>
                     <Typography
                         variant="body2"
                         className={cx(classes.nameValueText, classes.name, props.oneLine && classes.inlineBlock)}
                     >
                         {props.name}
                     </Typography>
-                </div>
-                <div>
+                </Grid>
+                <Grid>
                     {typeof props.value === 'string' ? (
                         <Typography variant="body1" className={cx(classes.nameValueText, classes.value)}>
                             {props.value}
@@ -61,8 +61,8 @@ function NameValueTextComp(props: NameValueTextProps) {
                             {props.children}
                         </>
                     )}
-                </div>
-            </div>
+                </Grid>
+            </Grid>
         </div>
     );
 }

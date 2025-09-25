@@ -3,7 +3,7 @@ import React__default, { useRef, useMemo, useContext, createContext, forwardRef,
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { Typography as Typography$1, TextField, Link as Link$1 } from '@mui/material';
+import { Grid, Typography as Typography$1, Box, TextField, Link as Link$1 } from '@mui/material';
 import { cx } from '@emotion/css';
 import Button from '@mui/material/Button';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -19848,10 +19848,10 @@ const useStyles$2 = makeStyles()((theme) => ({
 function NameValueTextComp(props) {
     const { classes } = useStyles$2();
     return (React__default.createElement("div", { className: props.verticalSpacing ? props.verticalSpacing : classes.padding },
-        React__default.createElement("div", { style: { display: 'flex', flexDirection: props.oneLine ? 'row' : 'column' } },
-            React__default.createElement("div", null,
+        React__default.createElement(Grid, { container: true, direction: props.oneLine ? 'row' : 'column' },
+            React__default.createElement(Grid, null,
                 React__default.createElement(Typography$1, { variant: "body2", className: cx(classes.nameValueText, classes.name, props.oneLine && classes.inlineBlock) }, props.name)),
-            React__default.createElement("div", null, typeof props.value === 'string' ? (React__default.createElement(Typography$1, { variant: "body1", className: cx(classes.nameValueText, classes.value) }, props.value)) : (React__default.createElement(React__default.Fragment, null,
+            React__default.createElement(Grid, null, typeof props.value === 'string' ? (React__default.createElement(Typography$1, { variant: "body1", className: cx(classes.nameValueText, classes.value) }, props.value)) : (React__default.createElement(React__default.Fragment, null,
                 props.value,
                 props.children))))));
 }
@@ -19932,24 +19932,24 @@ const ErrorReportDialogComp = (props) => {
     //         </Button>
     //     ));
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { style: { margin: '20px' } },
-            React.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
-                React.createElement("div", null,
+        React.createElement(Box, { margin: "20px" },
+            React.createElement(Grid, { container: true, spacing: 2 },
+                React.createElement(Grid, { size: 12 },
                     React.createElement(Typography$1, null, descriptions.descMsg),
                     React.createElement(Typography$1, { color: "error" }, descriptions.descHintMsg)),
-                React.createElement("div", null,
+                React.createElement(Grid, { size: 12 },
                     React.createElement(TextField, { fullWidth: true, multiline: true, error: (desc === null || desc === void 0 ? void 0 : desc.length) < MIN_DESC_LENGTH, helperText: (desc === null || desc === void 0 ? void 0 : desc.length) < MIN_DESC_LENGTH && descriptions.descRequiredMsg, rows: 3, label: descriptions.descCaptionMsg, variant: "outlined", value: desc, onChange: (event) => {
                             setDesc(event.target.value);
                             props.descChanged && props.descChanged(event.target.value);
                         } })),
-                React.createElement("div", null,
+                React.createElement(Grid, { size: 12 },
                     React.createElement(TextField, { fullWidth: true, multiline: true, error: (repro === null || repro === void 0 ? void 0 : repro.length) < MIN_DESC_LENGTH, helperText: (repro === null || repro === void 0 ? void 0 : repro.length) < MIN_DESC_LENGTH && descriptions.reproRequiredMsg, rows: 3, label: descriptions.reproCaptionMsg, variant: "outlined", value: repro, onChange: (event) => {
                             setRepro(event.target.value);
                             props.reproChanged && props.reproChanged(event.target.value);
                         } })),
-                React.createElement("div", null,
+                React.createElement(Grid, { size: 12 },
                     React.createElement(TextField, { fullWidth: true, label: descriptions.emailDescMsg, defaultValue: "bob.test@example.com", variant: "outlined", onChange: (event) => props.mailChanged && props.mailChanged(event.target.value) })),
-                React.createElement("div", null,
+                React.createElement(Grid, { size: 12 },
                     React.createElement(TextField, { fullWidth: true, label: descriptions.phoneDescMsg, defaultValue: "01234567", variant: "outlined", onChange: (event) => props.phoneChanged && props.phoneChanged(event.target.value) })))),
         React.createElement(Typography$1, { variant: "caption", hidden: false },
             React.createElement(Link$1, { className: classes.link, onClick: () => props.downloadClicked && props.downloadClicked(), underline: "hover" }, "Download Report"))));

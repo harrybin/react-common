@@ -19868,10 +19868,10 @@ const useStyles$2 = makeStyles()((theme) => ({
 function NameValueTextComp(props) {
     const { classes } = useStyles$2();
     return (React.createElement("div", { className: props.verticalSpacing ? props.verticalSpacing : classes.padding },
-        React.createElement("div", { style: { display: 'flex', flexDirection: props.oneLine ? 'row' : 'column' } },
-            React.createElement("div", null,
+        React.createElement(material.Grid, { container: true, direction: props.oneLine ? 'row' : 'column' },
+            React.createElement(material.Grid, null,
                 React.createElement(material.Typography, { variant: "body2", className: css.cx(classes.nameValueText, classes.name, props.oneLine && classes.inlineBlock) }, props.name)),
-            React.createElement("div", null, typeof props.value === 'string' ? (React.createElement(material.Typography, { variant: "body1", className: css.cx(classes.nameValueText, classes.value) }, props.value)) : (React.createElement(React.Fragment, null,
+            React.createElement(material.Grid, null, typeof props.value === 'string' ? (React.createElement(material.Typography, { variant: "body1", className: css.cx(classes.nameValueText, classes.value) }, props.value)) : (React.createElement(React.Fragment, null,
                 props.value,
                 props.children))))));
 }
@@ -19952,24 +19952,24 @@ const ErrorReportDialogComp = (props) => {
     //         </Button>
     //     ));
     return (React__namespace.createElement(React__namespace.Fragment, null,
-        React__namespace.createElement("div", { style: { margin: '20px' } },
-            React__namespace.createElement("div", { style: { display: 'flex', flexDirection: 'column', gap: '16px' } },
-                React__namespace.createElement("div", null,
+        React__namespace.createElement(material.Box, { margin: "20px" },
+            React__namespace.createElement(material.Grid, { container: true, spacing: 2 },
+                React__namespace.createElement(material.Grid, { size: 12 },
                     React__namespace.createElement(material.Typography, null, descriptions.descMsg),
                     React__namespace.createElement(material.Typography, { color: "error" }, descriptions.descHintMsg)),
-                React__namespace.createElement("div", null,
+                React__namespace.createElement(material.Grid, { size: 12 },
                     React__namespace.createElement(material.TextField, { fullWidth: true, multiline: true, error: (desc === null || desc === void 0 ? void 0 : desc.length) < MIN_DESC_LENGTH, helperText: (desc === null || desc === void 0 ? void 0 : desc.length) < MIN_DESC_LENGTH && descriptions.descRequiredMsg, rows: 3, label: descriptions.descCaptionMsg, variant: "outlined", value: desc, onChange: (event) => {
                             setDesc(event.target.value);
                             props.descChanged && props.descChanged(event.target.value);
                         } })),
-                React__namespace.createElement("div", null,
+                React__namespace.createElement(material.Grid, { size: 12 },
                     React__namespace.createElement(material.TextField, { fullWidth: true, multiline: true, error: (repro === null || repro === void 0 ? void 0 : repro.length) < MIN_DESC_LENGTH, helperText: (repro === null || repro === void 0 ? void 0 : repro.length) < MIN_DESC_LENGTH && descriptions.reproRequiredMsg, rows: 3, label: descriptions.reproCaptionMsg, variant: "outlined", value: repro, onChange: (event) => {
                             setRepro(event.target.value);
                             props.reproChanged && props.reproChanged(event.target.value);
                         } })),
-                React__namespace.createElement("div", null,
+                React__namespace.createElement(material.Grid, { size: 12 },
                     React__namespace.createElement(material.TextField, { fullWidth: true, label: descriptions.emailDescMsg, defaultValue: "bob.test@example.com", variant: "outlined", onChange: (event) => props.mailChanged && props.mailChanged(event.target.value) })),
-                React__namespace.createElement("div", null,
+                React__namespace.createElement(material.Grid, { size: 12 },
                     React__namespace.createElement(material.TextField, { fullWidth: true, label: descriptions.phoneDescMsg, defaultValue: "01234567", variant: "outlined", onChange: (event) => props.phoneChanged && props.phoneChanged(event.target.value) })))),
         React__namespace.createElement(material.Typography, { variant: "caption", hidden: false },
             React__namespace.createElement(material.Link, { className: classes.link, onClick: () => props.downloadClicked && props.downloadClicked(), underline: "hover" }, "Download Report"))));

@@ -1,4 +1,4 @@
-import { Typography, Box, TextField, Link, Grid, Button } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Typography, Grid, Box, Link } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import * as React from 'react';
 
@@ -71,13 +71,13 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
 
     return (
         <>
-            <div style={{ margin: '20px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                    <div>
+            <Box margin="20px">
+                <Grid container spacing={2}>
+                    <Grid size={12}>
                         <Typography>{descriptions.descMsg}</Typography>
                         <Typography color="error">{descriptions.descHintMsg}</Typography>
-                    </div>
-                    <div>
+                    </Grid>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             multiline
@@ -92,8 +92,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.descChanged && props.descChanged(event.target.value);
                             }}
                         />
-                    </div>
-                    <div>
+                    </Grid>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             multiline
@@ -108,8 +108,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.reproChanged && props.reproChanged(event.target.value);
                             }}
                         />
-                    </div>
-                    <div>
+                    </Grid>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             label={descriptions.emailDescMsg}
@@ -117,8 +117,8 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             variant="outlined"
                             onChange={(event) => props.mailChanged && props.mailChanged(event.target.value)}
                         />
-                    </div>
-                    <div>
+                    </Grid>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             label={descriptions.phoneDescMsg}
@@ -126,9 +126,9 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             variant="outlined"
                             onChange={(event) => props.phoneChanged && props.phoneChanged(event.target.value)}
                         />
-                    </div>
-                </div>
-            </div>
+                    </Grid>
+                </Grid>
+            </Box>
             <Typography variant="caption" hidden={false}>
                 <Link
                     className={classes.link}
