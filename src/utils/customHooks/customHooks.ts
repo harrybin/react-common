@@ -10,7 +10,6 @@ import React, {
     Dispatch,
     ReducerState,
     Reducer,
-    ReducerAction,
 } from 'react';
 // hooks that depend on these imports are commented
 // import { isMobileOrTablet } from '../globals/environment';
@@ -28,7 +27,7 @@ import React, {
  */
 
 export function usePrevious<T>(props: T): T | undefined {
-    const ref = useRef<T>();
+    const ref = useRef<T | undefined>(undefined);
     useEffect(() => {
         ref.current = props;
     });
@@ -377,7 +376,7 @@ export function usePersistedReducer<R extends Reducer<any, any>, T>(
     defaultState: T,
     key: string,
     initFunc?: (arg: T) => ReducerState<R>
-): [ReducerState<R>, Dispatch<ReducerAction<R>>] {
+): [ReducerState<R>, Dispatch<Parameters<R>[1]>] {
     const hookVars = useReducer(reducer, defaultState, (reDefaultState) => {
         const persisted = JSON.parse(localStorage.getItem(key) ?? '');
         return persisted !== null ? persisted : initFunc ? initFunc(reDefaultState) : reDefaultState;

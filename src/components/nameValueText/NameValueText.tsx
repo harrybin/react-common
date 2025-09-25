@@ -25,7 +25,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
 
 export interface NameValueTextProps {
     name: string;
-    value?: string | number | JSX.Element;
+    value?: string | number | React.ReactElement;
     oneLine?: boolean;
     children?: React.ReactNode | React.ReactNode[];
     verticalSpacing?: string;
@@ -42,7 +42,7 @@ function NameValueTextComp(props: NameValueTextProps) {
     return (
         <div className={props.verticalSpacing ? props.verticalSpacing : classes.padding}>            
             <Grid container direction={props.oneLine ? 'row' : 'column'}>
-                <Grid item>
+                <Grid>
                     <Typography
                         variant="body2"
                         className={cx(classes.nameValueText, classes.name, props.oneLine && classes.inlineBlock)}
@@ -50,7 +50,7 @@ function NameValueTextComp(props: NameValueTextProps) {
                         {props.name}
                     </Typography>
                 </Grid>
-                <Grid item>
+                <Grid>
                     {typeof props.value === 'string' ? (
                         <Typography variant="body1" className={cx(classes.nameValueText, classes.value)}>
                             {props.value}

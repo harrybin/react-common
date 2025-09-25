@@ -4,11 +4,10 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
-import packageJson from './package.json' assert { type: 'json' };
+import packageJson from './package.json' with { type: 'json' };
 
 export default [
     {
-        inlineDynamicImports: true,
         //external: [...Object.keys(packageJson.peerDependencies || {})],
         input: 'src/index.ts',
         output: [
@@ -23,14 +22,23 @@ export default [
                 sourcemap: true,
             },
         ],
-        plugins: [typescript({ tsconfig: './tsconfig.json' }), packageJson, resolve(), commonjs(), peerDepsExternal()],
+        plugins: [
+            typescript({ 
+                tsconfig: './tsconfig.json',
+                declaration: false,
+                outDir: 'dist'
+            }), 
+            resolve(), 
+            commonjs(), 
+            peerDepsExternal()
+        ],
         watch: {
             exclude: ['node_modules/**', 'test/**'],
         },
     },
     {
         external: ['react-dom', 'react'],
-        input: 'dist/esm/types/src/index.d.ts',
+        input: 'dist/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts()],
         watch: {
