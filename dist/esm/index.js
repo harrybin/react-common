@@ -1,5 +1,5 @@
 import * as React from 'react';
-import React__default, { useState, useMemo, useContext, forwardRef, createContext, createElement, useRef, useEffect, useReducer } from 'react';
+import React__default, { useRef, useMemo, useContext, forwardRef, createContext, createElement, useEffect, useState, useReducer } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
@@ -43,7 +43,7 @@ PERFORMANCE OF THIS SOFTWARE.
 /* global Reflect, Promise, SuppressedError, Symbol */
 
 
-function __rest$2(s, e) {
+function __rest(s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
@@ -70,7 +70,7 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
-function n(){return n=Object.assign?Object.assign.bind():function(e){for(var n=1;n<arguments.length;n++){var t=arguments[n];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r]);}return e},n.apply(this,arguments)}const t=["children","options"];var r,i;!function(e){e.blockQuote="0",e.breakLine="1",e.breakThematic="2",e.codeBlock="3",e.codeFenced="4",e.codeInline="5",e.footnote="6",e.footnoteReference="7",e.gfmTask="8",e.heading="9",e.headingSetext="10",e.htmlBlock="11",e.htmlComment="12",e.htmlSelfClosing="13",e.image="14",e.link="15",e.linkAngleBraceStyleDetector="16",e.linkBareUrlDetector="17",e.linkMailtoDetector="18",e.newlineCoalescer="19",e.orderedList="20",e.paragraph="21",e.ref="22",e.refImage="23",e.refLink="24",e.table="25",e.tableSeparator="26",e.text="27",e.textBolded="28",e.textEmphasized="29",e.textEscaped="30",e.textMarked="31",e.textStrikethroughed="32",e.unorderedList="33";}(r||(r={})),function(e){e[e.MAX=0]="MAX",e[e.HIGH=1]="HIGH",e[e.MED=2]="MED",e[e.LOW=3]="LOW",e[e.MIN=4]="MIN";}(i||(i={}));const l=["allowFullScreen","allowTransparency","autoComplete","autoFocus","autoPlay","cellPadding","cellSpacing","charSet","className","classId","colSpan","contentEditable","contextMenu","crossOrigin","encType","formAction","formEncType","formMethod","formNoValidate","formTarget","frameBorder","hrefLang","inputMode","keyParams","keyType","marginHeight","marginWidth","maxLength","mediaGroup","minLength","noValidate","radioGroup","readOnly","rowSpan","spellCheck","srcDoc","srcLang","srcSet","tabIndex","useMap"].reduce((e,n)=>(e[n.toLowerCase()]=n,e),{for:"htmlFor"}),o={amp:"&",apos:"'",gt:">",lt:"<",nbsp:" ",quot:"“"},c=["style","script"],a=/([-A-Z0-9_:]+)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|(?:\{((?:\\.|{[^}]*?}|[^}])*)\})))?/gi,s=/mailto:/i,d=/\n{2,}$/,u=/^( *>[^\n]+(\n[^\n]+)*\n*)+\n{2,}/,p=/^ *> ?/gm,f=/^ {2,}\n/,h=/^(?:( *[-*_])){3,} *(?:\n *)+\n/,m=/^\s*(`{3,}|~{3,}) *(\S+)?([^\n]*?)?\n([\s\S]+?)\s*\1 *(?:\n *)*\n?/,g=/^(?: {4}[^\n]+\n*)+(?:\n *)+\n?/,y=/^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,k=/^(?:\n *)*\n/,x=/\r\n?/g,b=/^\[\^([^\]]+)](:(.*)((\n+ {4,}.*)|(\n(?!\[\^).+))*)/,v=/^\[\^([^\]]+)]/,$=/\f/g,w=/^---[ \t]*\n(.|\n)*\n---[ \t]*\n/,E=/^\s*?\[(x|\s)\]/,S=/^ *(#{1,6}) *([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,C=/^ *(#{1,6}) +([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,A=/^([^\n]+)\n *(=|-){3,} *(?:\n *)+\n/,O=/^ *(?!<[a-z][^ >/]* ?\/>)<([a-z][^ >/]*) ?([^>]*)>\n?(\s*(?:<\1[^>]*?>[\s\S]*?<\/\1>|(?!<\1\b)[\s\S])*?)<\/\1>(?!<\/\1>)\n*/i,T=/&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-fA-F]{1,6});/gi,L=/^<!--[\s\S]*?(?:-->)/,R=/^(data|aria|x)-[a-z_][a-z\d_.-]*$/,z=/^ *<([a-z][a-z0-9:]*)(?:\s+((?:<.*?>|[^>])*))?\/?>(?!<\/\1>)(\s*\n)?/i,M=/^\{.*\}$/,I=/^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,U=/^<([^ >]+@[^ >]+)>/,j=/^<([^ >]+:\/[^ >]+)>/,B=/-([a-z])?/gi,N=/^(.*\|?.*)\n *(\|? *[-:]+ *\|[-| :]*)\n((?:.*\|.*\n)*)\n?/,H=/^\[([^\]]*)\]:\s+<?([^\s>]+)>?\s*("([^"]*)")?/,D=/^!\[([^\]]*)\] ?\[([^\]]*)\]/,P=/^\[([^\]]*)\] ?\[([^\]]*)\]/,_$1=/(\[|\])/g,F=/(\n|^[-*]\s|^#|^ {2,}|^-{2,}|^>\s)/,W=/\t/g,G=/^ *\| */,Z=/(^ *\||\| *$)/g,q=/ *$/,V=/^ *:-+: *$/,X=/^ *:-+ *$/,Q=/^ *-+: *$/,J="((?:\\[.*?\\][([].*?[)\\]]|<.*?>(?:.*?<.*?>)?|`.*?`|~~.*?~~|==.*?==|.|\\n)*?)",K=new RegExp(`^([*_])\\1${J}\\1\\1(?!\\1)`),Y=new RegExp(`^([*_])${J}\\1(?!\\1|\\w)`),ee=new RegExp(`^==${J}==`),ne=new RegExp(`^~~${J}~~`),te=/^\\([^0-9A-Za-z\s])/,re=/^[\s\S]+?(?=[^0-9A-Z\s\u00c0-\uffff&#;.()'"]|\d+\.|\n\n| {2,}\n|\w+:\S|$)/i,ie=/^\n+/,le=/^([ \t]*)/,oe=/\\([^\\])/g,ce=/ *\n+$/,ae=/(?:^|\n)( *)$/,se="(?:\\d+\\.)",de="(?:[*+-])";function ue(e){return "( *)("+(1===e?se:de)+") +"}const pe=ue(1),fe=ue(2);function he(e){return new RegExp("^"+(1===e?pe:fe))}const me=he(1),ge=he(2);function ye(e){return new RegExp("^"+(1===e?pe:fe)+"[^\\n]*(?:\\n(?!\\1"+(1===e?se:de)+" )[^\\n]*)*(\\n|$)","gm")}const ke=ye(1),xe=ye(2);function be(e){const n=1===e?se:de;return new RegExp("^( *)("+n+") [\\s\\S]+?(?:\\n{2,}(?! )(?!\\1"+n+" (?!"+n+" ))\\n*|\\s*\\n*$)")}const ve=be(1),$e=be(2);function we(e,n){const t=1===n,r=t?ve:$e,i=t?ke:xe,l=t?me:ge;return {match(e,n,t){const i=ae.exec(t);return i&&(n.list||!n.inline&&!n.simple)?r.exec(e=i[1]+e):null},order:1,parse(e,n,r){const o=t?+e[2]:void 0,c=e[0].replace(d,"\n").match(i);let a=!1;return {items:c.map(function(e,t){const i=l.exec(e)[0].length,o=new RegExp("^ {1,"+i+"}","gm"),s=e.replace(o,"").replace(l,""),d=t===c.length-1,u=-1!==s.indexOf("\n\n")||d&&a;a=u;const p=r.inline,f=r.list;let h;r.list=!0,u?(r.inline=!1,h=s.replace(ce,"\n\n")):(r.inline=!0,h=s.replace(ce,""));const m=n(h,r);return r.inline=p,r.list=f,m}),ordered:t,start:o}},render:(n,t,r)=>e(n.ordered?"ol":"ul",{key:r.key,start:"20"===n.type?n.start:void 0},n.items.map(function(n,i){return e("li",{key:i},t(n,r))}))}}const Ee=new RegExp("^\\[((?:\\[[^\\]]*\\]|[^\\[\\]]|\\](?=[^\\[]*\\]))*)\\]\\(\\s*<?((?:\\([^)]*\\)|[^\\s\\\\]|\\\\.)*?)>?(?:\\s+['\"]([\\s\\S]*?)['\"])?\\s*\\)"),Se=/^!\[(.*?)\]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/,Ce=[u,m,g,S,A,C,L,N,ke,ve,xe,$e],Ae=[...Ce,/^[^\n]+(?:  \n|\n{2,})/,O,z];function Oe(e){return e.replace(/[ÀÁÂÃÄÅàáâãäåæÆ]/g,"a").replace(/[çÇ]/g,"c").replace(/[ðÐ]/g,"d").replace(/[ÈÉÊËéèêë]/g,"e").replace(/[ÏïÎîÍíÌì]/g,"i").replace(/[Ññ]/g,"n").replace(/[øØœŒÕõÔôÓóÒò]/g,"o").replace(/[ÜüÛûÚúÙù]/g,"u").replace(/[ŸÿÝý]/g,"y").replace(/[^a-z0-9- ]/gi,"").replace(/ /gi,"-").toLowerCase()}function Te(e){return Q.test(e)?"right":V.test(e)?"center":X.test(e)?"left":null}function Le(e,n,t){const r=t.inTable;t.inTable=!0;const i=n(e.trim(),t);t.inTable=r;let l=[[]];return i.forEach(function(e,n){"26"===e.type?0!==n&&n!==i.length-1&&l.push([]):("27"!==e.type||null!=i[n+1]&&"26"!==i[n+1].type||(e.text=e.text.replace(q,"")),l[l.length-1].push(e));}),l}function Re(e,n,t){t.inline=!0;const r=Le(e[1],n,t),i=e[2].replace(Z,"").split("|").map(Te),l=function(e,n,t){return e.trim().split("\n").map(function(e){return Le(e,n,t)})}(e[3],n,t);return t.inline=!1,{align:i,cells:l,header:r,type:"25"}}function ze(e,n){return null==e.align[n]?{}:{textAlign:e.align[n]}}function Me(e){return function(n,t){return t.inline?e.exec(n):null}}function Ie(e){return function(n,t){return t.inline||t.simple?e.exec(n):null}}function Ue(e){return function(n,t){return t.inline||t.simple?null:e.exec(n)}}function je(e){return function(n){return e.exec(n)}}function Be(e,n,t){if(n.inline||n.simple)return null;if(t&&!t.endsWith("\n"))return null;let r="";e.split("\n").every(e=>!Ce.some(n=>n.test(e))&&(r+=e+"\n",e.trim()));const i=r.trimEnd();return ""==i?null:[r,i]}function Ne(e){try{if(decodeURIComponent(e).replace(/[^A-Za-z0-9/:]/g,"").match(/^\s*(javascript|vbscript|data(?!:image)):/i))return}catch(e){return null}return e}function He(e){return e.replace(oe,"$1")}function De(e,n,t){const r=t.inline||!1,i=t.simple||!1;t.inline=!0,t.simple=!0;const l=e(n,t);return t.inline=r,t.simple=i,l}function Pe(e,n,t){const r=t.inline||!1,i=t.simple||!1;t.inline=!1,t.simple=!0;const l=e(n,t);return t.inline=r,t.simple=i,l}function _e(e,n,t){return t.inline=!1,e(n,t)}const Fe=(e,n,t)=>({children:De(n,e[1],t)});function We(){return {}}function Ge(){return null}function Ze(...e){return e.filter(Boolean).join(" ")}function qe(e,n,t){let r=e;const i=n.split(".");for(;i.length&&(r=r[i[0]],void 0!==r);)i.shift();return r||t}function Ve(t="",r={}){r.overrides=r.overrides||{},r.slugify=r.slugify||Oe,r.namedCodesToUnicode=r.namedCodesToUnicode?n({},o,r.namedCodesToUnicode):o;const i=r.createElement||React.createElement;function d(e,t,...l){const o=qe(r.overrides,`${e}.props`,{});return i(function(e,n){const t=qe(n,e);return t?"function"==typeof t||"object"==typeof t&&"render"in t?t:qe(n,`${e}.component`,e):e}(e,r.overrides),n({},t,o,{className:Ze(null==t?void 0:t.className,o.className)||void 0}),...l)}function Z(n){n=n.replace(w,"");let t=!1;r.forceInline?t=!0:r.forceBlock||(t=!1===F.test(n));const i=oe(J(t?n:`${n.trimEnd().replace(ie,"")}\n\n`,{inline:t}));for(;"string"==typeof i[i.length-1]&&!i[i.length-1].trim();)i.pop();if(null===r.wrapper)return i;const l=r.wrapper||(t?"span":"div");let o;if(i.length>1||r.forceWrapper)o=i;else {if(1===i.length)return o=i[0],"string"==typeof o?d("span",{key:"outer"},o):o;o=null;}return React.createElement(l,{key:"outer"},o)}function q(n){const t=n.match(a);return t?t.reduce(function(n,t,r){const i=t.indexOf("=");if(-1!==i){const o=function(e){return -1!==e.indexOf("-")&&null===e.match(R)&&(e=e.replace(B,function(e,n){return n.toUpperCase()})),e}(t.slice(0,i)).trim(),c=function(e){const n=e[0];return ('"'===n||"'"===n)&&e.length>=2&&e[e.length-1]===n?e.slice(1,-1):e}(t.slice(i+1).trim()),a=l[o]||o,s=n[a]=function(e,n){return "style"===e?n.split(/;\s?/).reduce(function(e,n){const t=n.slice(0,n.indexOf(":"));return e[t.trim().replace(/(-[a-z])/g,e=>e[1].toUpperCase())]=n.slice(t.length+1).trim(),e},{}):"href"===e||"src"===e?Ne(n):(n.match(M)&&(n=n.slice(1,n.length-1)),"true"===n||"false"!==n&&n)}(o,c);"string"==typeof s&&(O.test(s)||z.test(s))&&(n[a]=React.cloneElement(Z(s.trim()),{key:r}));}else "style"!==t&&(n[l[t]||t]=!0);return n},{}):null}const V=[],X={},Q={0:{match:Ue(u),order:1,parse:(e,n,t)=>({children:n(e[0].replace(p,""),t)}),render:(e,n,t)=>d("blockquote",{key:t.key},n(e.children,t))},1:{match:je(f),order:1,parse:We,render:(e,n,t)=>d("br",{key:t.key})},2:{match:Ue(h),order:1,parse:We,render:(e,n,t)=>d("hr",{key:t.key})},3:{match:Ue(g),order:0,parse:e=>({lang:void 0,text:e[0].replace(/^ {4}/gm,"").replace(/\n+$/,"")}),render:(e,t,r)=>d("pre",{key:r.key},d("code",n({},e.attrs,{className:e.lang?`lang-${e.lang}`:""}),e.text))},4:{match:Ue(m),order:0,parse:e=>({attrs:q(e[3]||""),lang:e[2]||void 0,text:e[4],type:"3"})},5:{match:Ie(y),order:3,parse:e=>({text:e[2]}),render:(e,n,t)=>d("code",{key:t.key},e.text)},6:{match:Ue(b),order:0,parse:e=>(V.push({footnote:e[2],identifier:e[1]}),{}),render:Ge},7:{match:Me(v),order:1,parse:e=>({target:`#${r.slugify(e[1])}`,text:e[1]}),render:(e,n,t)=>d("a",{key:t.key,href:Ne(e.target)},d("sup",{key:t.key},e.text))},8:{match:Me(E),order:1,parse:e=>({completed:"x"===e[1].toLowerCase()}),render:(e,n,t)=>d("input",{checked:e.completed,key:t.key,readOnly:!0,type:"checkbox"})},9:{match:Ue(r.enforceAtxHeadings?C:S),order:1,parse:(e,n,t)=>({children:De(n,e[2],t),id:r.slugify(e[2]),level:e[1].length}),render:(e,n,t)=>d(`h${e.level}`,{id:e.id,key:t.key},n(e.children,t))},10:{match:Ue(A),order:0,parse:(e,n,t)=>({children:De(n,e[1],t),level:"="===e[2]?1:2,type:"9"})},11:{match:je(O),order:1,parse(e,n,t){const[,r]=e[3].match(le),i=new RegExp(`^${r}`,"gm"),l=e[3].replace(i,""),o=(a=l,Ae.some(e=>e.test(a))?_e:De);var a;const s=e[1].toLowerCase(),d=-1!==c.indexOf(s),u={attrs:q(e[2]),noInnerParse:d,tag:(d?s:e[1]).trim()};return t.inAnchor=t.inAnchor||"a"===s,d?u.text=e[3]:u.children=o(n,l,t),t.inAnchor=!1,u},render:(e,t,r)=>d(e.tag,n({key:r.key},e.attrs),e.text||t(e.children,r))},13:{match:je(z),order:1,parse:e=>({attrs:q(e[2]||""),tag:e[1].trim()}),render:(e,t,r)=>d(e.tag,n({},e.attrs,{key:r.key}))},12:{match:je(L),order:1,parse:()=>({}),render:Ge},14:{match:Ie(Se),order:1,parse:e=>({alt:e[1],target:He(e[2]),title:e[3]}),render:(e,n,t)=>d("img",{key:t.key,alt:e.alt||void 0,title:e.title||void 0,src:Ne(e.target)})},15:{match:Me(Ee),order:3,parse:(e,n,t)=>({children:Pe(n,e[1],t),target:He(e[2]),title:e[3]}),render:(e,n,t)=>d("a",{key:t.key,href:Ne(e.target),title:e.title},n(e.children,t))},16:{match:Me(j),order:0,parse:e=>({children:[{text:e[1],type:"27"}],target:e[1],type:"15"})},17:{match:(e,n)=>n.inAnchor?null:Me(I)(e,n),order:0,parse:e=>({children:[{text:e[1],type:"27"}],target:e[1],title:void 0,type:"15"})},18:{match:Me(U),order:0,parse(e){let n=e[1],t=e[1];return s.test(t)||(t="mailto:"+t),{children:[{text:n.replace("mailto:",""),type:"27"}],target:t,type:"15"}}},20:we(d,1),33:we(d,2),19:{match:Ue(k),order:3,parse:We,render:()=>"\n"},21:{match:Be,order:3,parse:Fe,render:(e,n,t)=>d("p",{key:t.key},n(e.children,t))},22:{match:Me(H),order:0,parse:e=>(X[e[1]]={target:e[2],title:e[4]},{}),render:Ge},23:{match:Ie(D),order:0,parse:e=>({alt:e[1]||void 0,ref:e[2]}),render:(e,n,t)=>X[e.ref]?d("img",{key:t.key,alt:e.alt,src:Ne(X[e.ref].target),title:X[e.ref].title}):null},24:{match:Me(P),order:0,parse:(e,n,t)=>({children:n(e[1],t),fallbackChildren:n(e[0].replace(_$1,"\\$1"),t),ref:e[2]}),render:(e,n,t)=>X[e.ref]?d("a",{key:t.key,href:Ne(X[e.ref].target),title:X[e.ref].title},n(e.children,t)):d("span",{key:t.key},n(e.fallbackChildren,t))},25:{match:Ue(N),order:1,parse:Re,render:(e,n,t)=>d("table",{key:t.key},d("thead",null,d("tr",null,e.header.map(function(r,i){return d("th",{key:i,style:ze(e,i)},n(r,t))}))),d("tbody",null,e.cells.map(function(r,i){return d("tr",{key:i},r.map(function(r,i){return d("td",{key:i,style:ze(e,i)},n(r,t))}))})))},26:{match:function(e,n){return n.inTable?(n.inline=!0,G.exec(e)):null},order:1,parse:function(){return {type:"26"}},render:()=>" | "},27:{match:je(re),order:4,parse:e=>({text:e[0].replace(T,(e,n)=>r.namedCodesToUnicode[n]?r.namedCodesToUnicode[n]:e)}),render:e=>e.text},28:{match:Ie(K),order:2,parse:(e,n,t)=>({children:n(e[2],t)}),render:(e,n,t)=>d("strong",{key:t.key},n(e.children,t))},29:{match:Ie(Y),order:3,parse:(e,n,t)=>({children:n(e[2],t)}),render:(e,n,t)=>d("em",{key:t.key},n(e.children,t))},30:{match:Ie(te),order:1,parse:e=>({text:e[1],type:"27"})},31:{match:Ie(ee),order:3,parse:Fe,render:(e,n,t)=>d("mark",{key:t.key},n(e.children,t))},32:{match:Ie(ne),order:3,parse:Fe,render:(e,n,t)=>d("del",{key:t.key},n(e.children,t))}};!0===r.disableParsingRawHTML&&(delete Q[11],delete Q[13]);const J=function(e){let n=Object.keys(e);function t(r,i){let l=[],o="";for(;r;){let c=0;for(;c<n.length;){const a=n[c],s=e[a],d=s.match(r,i,o);if(d){const e=d[0];r=r.substring(e.length);const n=s.parse(d,t,i);null==n.type&&(n.type=a),l.push(n),o=e;break}c++;}}return l}return n.sort(function(n,t){let r=e[n].order,i=e[t].order;return r!==i?r-i:n<t?-1:1}),function(e,n){return t(function(e){return e.replace(x,"\n").replace($,"").replace(W,"    ")}(e),n)}}(Q),oe=(ce=function(e,n){return function(t,r,i){const l=e[t.type].render;return n?n(()=>l(t,r,i),t,r,i):l(t,r,i)}}(Q,r.renderRule),function e(n,t={}){if(Array.isArray(n)){const r=t.key,i=[];let l=!1;for(let r=0;r<n.length;r++){t.key=r;const o=e(n[r],t),c="string"==typeof o;c&&l?i[i.length-1]+=o:null!==o&&i.push(o),l=c;}return t.key=r,i}return ce(n,e,t)});var ce;const ae=Z(t);return V.length?d("div",null,ae,d("footer",{key:"footer"},V.map(function(e){return d("div",{id:r.slugify(e.identifier),key:e.identifier},e.identifier,oe(J(e.footnote,{inline:!0})))}))):ae}var ReactMarkdown = n=>{let{children:r="",options:i}=n,l=function(e,n){if(null==e)return {};var t,r,i={},l=Object.keys(e);for(r=0;r<l.length;r++)n.indexOf(t=l[r])>=0||(i[t]=e[t]);return i}(n,t);return React.cloneElement(Ve(r,i),l)};
+function n(){return n=Object.assign?Object.assign.bind():function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t]);}return e},n.apply(this,arguments)}const r=["children","options"],o=["allowFullScreen","allowTransparency","autoComplete","autoFocus","autoPlay","cellPadding","cellSpacing","charSet","classId","colSpan","contentEditable","contextMenu","crossOrigin","encType","formAction","formEncType","formMethod","formNoValidate","formTarget","frameBorder","hrefLang","inputMode","keyParams","keyType","marginHeight","marginWidth","maxLength","mediaGroup","minLength","noValidate","radioGroup","readOnly","rowSpan","spellCheck","srcDoc","srcLang","srcSet","tabIndex","useMap"].reduce((e,n)=>(e[n.toLowerCase()]=n,e),{class:"className",for:"htmlFor"}),a={amp:"&",apos:"'",gt:">",lt:"<",nbsp:" ",quot:"“"},c=["style","script","pre"],i=["src","href","data","formAction","srcDoc","action"],u=/([-A-Z0-9_:]+)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|(?:\{((?:\\.|{[^}]*?}|[^}])*)\})))?/gi,l=/mailto:/i,s=/\n{2,}$/,f=/^(\s*>[\s\S]*?)(?=\n\n|$)/,_$1=/^ *> ?/gm,d=/^(?:\[!([^\]]*)\]\n)?([\s\S]*)/,p=/^ {2,}\n/,y=/^(?:( *[-*_])){3,} *(?:\n *)+\n/,h=/^(?: {1,3})?(`{3,}|~{3,}) *(\S+)? *([^\n]*?)?\n([\s\S]*?)(?:\1\n?|$)/,g=/^(?: {4}[^\n]+\n*)+(?:\n *)+\n?/,m=/^(`+)((?:\\`|(?!\1)`|[^`])+)\1/,k=/^(?:\n *)*\n/,x=/\r\n?/g,v=/^\[\^([^\]]+)](:(.*)((\n+ {4,}.*)|(\n(?!\[\^).+))*)/,q=/^\[\^([^\]]+)]/,$=/\f/g,b=/^---[ \t]*\n(.|\n)*\n---[ \t]*\n/,S=/^\s*?\[(x|\s)\]/,z=/^ *(#{1,6}) *([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,E=/^ *(#{1,6}) +([^\n]+?)(?: +#*)?(?:\n *)*(?:\n|$)/,A=/^([^\n]+)\n *(=|-){3,} *\n/,R=/^ *(?!<[a-z][^ >/]* ?\/>)<([a-z][^ >/]*) ?((?:[^>]*[^/])?)>\n?(\s*(?:<\1[^>]*?>[\s\S]*?<\/\1>|(?!<\1\b)[\s\S])*?)<\/\1>(?!<\/\1>)\n*/i,B=/&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-fA-F]{1,6});/gi,L=/^<!--[\s\S]*?(?:-->)/,O=/^(data|aria|x)-[a-z_][a-z\d_.-]*$/,j=/^ *<([a-z][a-z0-9:]*)(?:\s+((?:<.*?>|[^>])*))?\/?>(?!<\/\1>)(\s*\n)?/i,C=/^\{.*\}$/,I=/^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,T=/^<([^ >]+@[^ >]+)>/,M=/^<([^ >]+:\/[^ >]+)>/,w=/-([a-z])?/gi,D=/^(\|.*)\n(?: *(\|? *[-:]+ *\|[-| :]*)\n((?:.*\|.*\n)*))?\n?/,F=/^[^\n]+(?:  \n|\n{2,})/,P=/^\[([^\]]*)\]:\s+<?([^\s>]+)>?\s*("([^"]*)")?/,Z=/^!\[([^\]]*)\] ?\[([^\]]*)\]/,N=/^\[([^\]]*)\] ?\[([^\]]*)\]/,G=/(\n|^[-*]\s|^#|^ {2,}|^-{2,}|^>\s)/,U=/\t/g,V=/(^ *\||\| *$)/g,H=/^ *:-+: *$/,Q=/^ *:-+ *$/,W=/^ *-+: *$/,J=e=>`(?=[\\s\\S]+?\\1${e?"\\1":""})`,K="((?:\\[.*?\\][([].*?[)\\]]|<.*?>(?:.*?<.*?>)?|`.*?`|\\\\\\1|[\\s\\S])+?)",X=RegExp(`^([*_])\\1${J(1)}${K}\\1\\1(?!\\1)`),Y=RegExp(`^([*_])${J(0)}${K}\\1(?!\\1)`),ee=RegExp(`^(==)${J(0)}${K}\\1`),ne=RegExp(`^(~~)${J(0)}${K}\\1`),re=/^(:[a-zA-Z0-9-_]+:)/,te=/^\\([^0-9A-Za-z\s])/,oe=/\\([^0-9A-Za-z\s])/g,ae=/^[\s\S](?:(?!  \n|[0-9]\.|http)[^=*_~\-\n:<`\\\[!])*/,ce=/^\n+/,ie=/^([ \t]*)/,ue=/(?:^|\n)( *)$/,le="(?:\\d+\\.)",se="(?:[*+-])";function fe(e){return "( *)("+(1===e?le:se)+") +"}const _e=fe(1),de=fe(2);function pe(e){return RegExp("^"+(1===e?_e:de))}const ye=pe(1),he=pe(2);function ge(e){return RegExp("^"+(1===e?_e:de)+"[^\\n]*(?:\\n(?!\\1"+(1===e?le:se)+" )[^\\n]*)*(\\n|$)","gm")}const me=ge(1),ke=ge(2);function xe(e){const n=1===e?le:se;return RegExp("^( *)("+n+") [\\s\\S]+?(?:\\n{2,}(?! )(?!\\1"+n+" (?!"+n+" ))\\n*|\\s*\\n*$)")}const ve=xe(1),qe=xe(2);function $e(e,n){const r=1===n,t=r?ve:qe,o=r?me:ke,a=r?ye:he;return {t:e=>a.test(e),o:Ce(function(e,n){const r=ue.exec(n.prevCapture);return r&&(n.list||!n.inline&&!n.simple)?t.exec(e=r[1]+e):null}),i:1,u(e,n,t){const c=r?+e[2]:void 0,i=e[0].replace(s,"\n").match(o);let u=false;return {items:i.map(function(e,r){const o=a.exec(e)[0].length,c=RegExp("^ {1,"+o+"}","gm"),l=e.replace(c,"").replace(a,""),s=r===i.length-1,f=-1!==l.indexOf("\n\n")||s&&u;u=f;const _=t.inline,d=t.list;let p;t.list=true,f?(t.inline=false,p=ze(l)+"\n\n"):(t.inline=true,p=ze(l));const y=n(p,t);return t.inline=_,t.list=d,y}),ordered:r,start:c}},l:(n,r,t)=>e(n.ordered?"ol":"ul",{key:t.key,start:"20"===n.type?n.start:void 0},n.items.map(function(n,o){return e("li",{key:o},r(n,t))}))}}const be=RegExp("^\\[((?:\\[[^\\[\\]]*(?:\\[[^\\[\\]]*\\][^\\[\\]]*)*\\]|[^\\[\\]])*)\\]\\(\\s*<?((?:\\([^)]*\\)|[^\\s\\\\]|\\\\.)*?)>?(?:\\s+['\"]([\\s\\S]*?)['\"])?\\s*\\)"),Se=/^!\[(.*?)\]\( *((?:\([^)]*\)|[^() ])*) *"?([^)"]*)?"?\)/;function ze(e){let n=e.length;for(;n>0&&e[n-1]<=" ";)n--;return e.slice(0,n)}function Ee(e,n){return e.startsWith(n)}function Ae(e,n,r){if(Array.isArray(r)){for(let n=0;n<r.length;n++)if(Ee(e,r[n]))return  true;return  false}return r(e,n)}function Re(e){return e.replace(/[ÀÁÂÃÄÅàáâãäåæÆ]/g,"a").replace(/[çÇ]/g,"c").replace(/[ðÐ]/g,"d").replace(/[ÈÉÊËéèêë]/g,"e").replace(/[ÏïÎîÍíÌì]/g,"i").replace(/[Ññ]/g,"n").replace(/[øØœŒÕõÔôÓóÒò]/g,"o").replace(/[ÜüÛûÚúÙù]/g,"u").replace(/[ŸÿÝý]/g,"y").replace(/[^a-z0-9- ]/gi,"").replace(/ /gi,"-").toLowerCase()}function Be(e){return W.test(e)?"right":H.test(e)?"center":Q.test(e)?"left":null}function Le(e,n,r,t){const o=r.inTable;r.inTable=true;let a=[[]],c="";function i(){if(!c)return;const e=a[a.length-1];e.push.apply(e,n(c,r)),c="";}return e.trim().split(/(`[^`]*`|\\\||\|)/).filter(Boolean).forEach((e,n,r)=>{"|"===e.trim()&&(i(),t)?0!==n&&n!==r.length-1&&a.push([]):c+=e;}),i(),r.inTable=o,a}function Oe(e,n,r){r.inline=true;const t=e[2]?e[2].replace(V,"").split("|").map(Be):[],o=e[3]?function(e,n,r){return e.trim().split("\n").map(function(e){return Le(e,n,r,true)})}(e[3],n,r):[],a=Le(e[1],n,r,!!o.length);return r.inline=false,o.length?{align:t,cells:o,header:a,type:"25"}:{children:a,type:"21"}}function je(e,n){return null==e.align[n]?{}:{textAlign:e.align[n]}}function Ce(e){return e.inline=1,e}function Ie(e){return Ce(function(n,r){return r.inline?e.exec(n):null})}function Te(e){return Ce(function(n,r){return r.inline||r.simple?e.exec(n):null})}function Me(e){return function(n,r){return r.inline||r.simple?null:e.exec(n)}}function we(e){return Ce(function(n){return e.exec(n)})}const De=/(javascript|vbscript|data(?!:image)):/i;function Fe(e){try{const n=decodeURIComponent(e).replace(/[^A-Za-z0-9/:]/g,"");if(De.test(n))return null}catch(e){return null}return e}function Pe(e){return e?e.replace(oe,"$1"):e}function Ze(e,n,r){const t=r.inline||false,o=r.simple||false;r.inline=true,r.simple=true;const a=e(n,r);return r.inline=t,r.simple=o,a}function Ne(e,n,r){const t=r.inline||false,o=r.simple||false;r.inline=false,r.simple=true;const a=e(n,r);return r.inline=t,r.simple=o,a}function Ge(e,n,r){const t=r.inline||false;r.inline=false;const o=e(n,r);return r.inline=t,o}const Ue=(e,n,r)=>({children:Ze(n,e[2],r)});function Ve(){return {}}function He(){return null}function Qe(...e){return e.filter(Boolean).join(" ")}function We(e,n,r){let t=e;const o=n.split(".");for(;o.length&&(t=t[o[0]],void 0!==t);)o.shift();return t||r}function Je(r="",t={}){t.overrides=t.overrides||{},t.namedCodesToUnicode=t.namedCodesToUnicode?n({},a,t.namedCodesToUnicode):a;const s=t.slugify||Re,V=t.sanitizer||Fe,H=t.createElement||React.createElement,Q=[f,h,g,t.enforceAtxHeadings?E:z,A,D,ve,qe],W=[...Q,F,R,L,j];function J(e,r,...o){const a=We(t.overrides,e+".props",{});return H(function(e,n){const r=We(n,e);return r?"function"==typeof r||"object"==typeof r&&"render"in r?r:We(n,e+".component",e):e}(e,t.overrides),n({},r,a,{className:Qe(null==r?void 0:r.className,a.className)||void 0}),...o)}function K(e){e=e.replace(b,"");let n=false;t.forceInline?n=true:t.forceBlock||(n=false===G.test(e));const r=_e(fe(n?e:ze(e).replace(ce,"")+"\n\n",{inline:n}));for(;"string"==typeof r[r.length-1]&&!r[r.length-1].trim();)r.pop();if(null===t.wrapper)return r;const o=t.wrapper||(n?"span":"div");let a;if(r.length>1||t.forceWrapper)a=r;else {if(1===r.length)return a=r[0],"string"==typeof a?J("span",{key:"outer"},a):a;a=null;}return H(o,{key:"outer"},a)}function oe(e,n){if(!n||!n.trim())return null;const r=n.match(u);return r?r.reduce(function(n,r){const t=r.indexOf("=");if(-1!==t){const a=function(e){return  -1!==e.indexOf("-")&&null===e.match(O)&&(e=e.replace(w,function(e,n){return n.toUpperCase()})),e}(r.slice(0,t)).trim(),c=function(e){const n=e[0];return ('"'===n||"'"===n)&&e.length>=2&&e[e.length-1]===n?e.slice(1,-1):e}(r.slice(t+1).trim()),u=o[a]||a;if("ref"===u)return n;const l=n[u]=function(e,n,r,t){return "style"===n?function(e){const n=[];let r="",t=false,o=false,a="";if(!e)return n;for(let c=0;c<e.length;c++){const i=e[c];if('"'!==i&&"'"!==i||t||(o?i===a&&(o=false,a=""):(o=true,a=i)),"("===i&&r.endsWith("url")?t=true:")"===i&&t&&(t=false),";"!==i||o||t)r+=i;else {const e=r.trim();if(e){const r=e.indexOf(":");if(r>0){const t=e.slice(0,r).trim(),o=e.slice(r+1).trim();n.push([t,o]);}}r="";}}const c=r.trim();if(c){const e=c.indexOf(":");if(e>0){const r=c.slice(0,e).trim(),t=c.slice(e+1).trim();n.push([r,t]);}}return n}(r).reduce(function(n,[r,o]){return n[r.replace(/(-[a-z])/g,e=>e[1].toUpperCase())]=t(o,e,r),n},{}):-1!==i.indexOf(n)?t(Pe(r),e,n):(r.match(C)&&(r=Pe(r.slice(1,r.length-1))),"true"===r||"false"!==r&&r)}(e,a,c,V);"string"==typeof l&&(R.test(l)||j.test(l))&&(n[u]=K(l.trim()));}else "style"!==r&&(n[o[r]||r]=true);return n},{}):null}const ue=[],le={},se={0:{t:[">"],o:Me(f),i:1,u(e,n,r){const[,t,o]=e[0].replace(_$1,"").match(d);return {alert:t,children:n(o,r)}},l(e,n,r){const t={key:r.key};return e.alert&&(t.className="markdown-alert-"+s(e.alert.toLowerCase(),Re),e.children.unshift({attrs:{},children:[{type:"27",text:e.alert}],noInnerParse:true,type:"11",tag:"header"})),J("blockquote",t,n(e.children,r))}},1:{o:we(p),i:1,u:Ve,l:(e,n,r)=>J("br",{key:r.key})},2:{t:e=>{const n=e[0];return "-"===n||"*"===n||"_"===n},o:Me(y),i:1,u:Ve,l:(e,n,r)=>J("hr",{key:r.key})},3:{t:["    "],o:Me(g),i:0,u:e=>({lang:void 0,text:Pe(ze(e[0].replace(/^ {4}/gm,"")))}),l:(e,r,t)=>J("pre",{key:t.key},J("code",n({},e.attrs,{className:e.lang?"lang-"+e.lang:""}),e.text))},4:{t:["```","~~~"],o:Me(h),i:0,u:e=>({attrs:oe("code",e[3]||""),lang:e[2]||void 0,text:e[4],type:"3"})},5:{t:["`"],o:Te(m),i:3,u:e=>({text:Pe(e[2])}),l:(e,n,r)=>J("code",{key:r.key},e.text)},6:{t:["[^"],o:Me(v),i:0,u:e=>(ue.push({footnote:e[2],identifier:e[1]}),{}),l:He},7:{t:["[^"],o:Ie(q),i:1,u:e=>({target:"#"+s(e[1],Re),text:e[1]}),l:(e,n,r)=>J("a",{key:r.key,href:V(e.target,"a","href")},J("sup",{key:r.key},e.text))},8:{t:["[ ]","[x]"],o:Ie(S),i:1,u:e=>({completed:"x"===e[1].toLowerCase()}),l:(e,n,r)=>J("input",{checked:e.completed,key:r.key,readOnly:true,type:"checkbox"})},9:{t:["#"],o:Me(t.enforceAtxHeadings?E:z),i:1,u:(e,n,r)=>({children:Ze(n,e[2],r),id:s(e[2],Re),level:e[1].length}),l:(e,n,r)=>J("h"+e.level,{id:e.id,key:r.key},n(e.children,r))},10:{o:Me(A),i:0,u:(e,n,r)=>({children:Ze(n,e[1],r),level:"="===e[2]?1:2,type:"9"})},11:{t:["<"],o:we(R),i:1,u(e,n,r){const[,t]=e[3].match(ie),o=RegExp("^"+t,"gm"),a=e[3].replace(o,""),i=(u=a,W.some(e=>e.test(u))?Ge:Ze);var u;const l=e[1].toLowerCase(),s=-1!==c.indexOf(l),f=(s?l:e[1]).trim(),_={attrs:oe(f,e[2]),noInnerParse:s,tag:f};if(r.inAnchor=r.inAnchor||"a"===l,s)_.text=e[3];else {const e=r.inHTML;r.inHTML=true,_.children=i(n,a,r),r.inHTML=e;}return r.inAnchor=false,_},l:(e,r,t)=>J(e.tag,n({key:t.key},e.attrs),e.text||(e.children?r(e.children,t):""))},13:{t:["<"],o:we(j),i:1,u(e){const n=e[1].trim();return {attrs:oe(n,e[2]||""),tag:n}},l:(e,r,t)=>J(e.tag,n({},e.attrs,{key:t.key}))},12:{t:["\x3c!--"],o:we(L),i:1,u:()=>({}),l:He},14:{t:["!["],o:Te(Se),i:1,u:e=>({alt:Pe(e[1]),target:Pe(e[2]),title:Pe(e[3])}),l:(e,n,r)=>J("img",{key:r.key,alt:e.alt||void 0,title:e.title||void 0,src:V(e.target,"img","src")})},15:{t:["["],o:Ie(be),i:3,u:(e,n,r)=>({children:Ne(n,e[1],r),target:Pe(e[2]),title:Pe(e[3])}),l:(e,n,r)=>J("a",{key:r.key,href:V(e.target,"a","href"),title:e.title},n(e.children,r))},16:{t:["<"],o:Ie(M),i:0,u:e=>({children:[{text:e[1],type:"27"}],target:e[1],type:"15"})},17:{t:(e,n)=>!n.inAnchor&&!t.disableAutoLink&&(Ee(e,"http://")||Ee(e,"https://")),o:Ie(I),i:0,u:e=>({children:[{text:e[1],type:"27"}],target:e[1],title:void 0,type:"15"})},18:{t:["<"],o:Ie(T),i:0,u(e){let n=e[1],r=e[1];return l.test(r)||(r="mailto:"+r),{children:[{text:n.replace("mailto:",""),type:"27"}],target:r,type:"15"}}},20:$e(J,1),33:$e(J,2),19:{o:Me(k),i:3,u:Ve,l:()=>"\n"},21:{o:Ce(function(e,n){if(n.inline||n.simple||n.inHTML&&-1===e.indexOf("\n\n")&&-1===n.prevCapture.indexOf("\n\n"))return null;let r="";e.split("\n").every(e=>(e+="\n",!Q.some(n=>n.test(e))&&(r+=e,!!e.trim())));const t=ze(r);return ""===t?null:[r,,t]}),i:3,u:Ue,l:(e,n,r)=>J("p",{key:r.key},n(e.children,r))},22:{t:["["],o:Ie(P),i:0,u:e=>(le[e[1]]={target:e[2],title:e[4]},{}),l:He},23:{t:["!["],o:Te(Z),i:0,u:e=>({alt:e[1]?Pe(e[1]):void 0,ref:e[2]}),l:(e,n,r)=>le[e.ref]?J("img",{key:r.key,alt:e.alt,src:V(le[e.ref].target,"img","src"),title:le[e.ref].title}):null},24:{t:e=>"["===e[0]&&-1===e.indexOf("]("),o:Ie(N),i:0,u:(e,n,r)=>({children:n(e[1],r),fallbackChildren:e[0],ref:e[2]}),l:(e,n,r)=>le[e.ref]?J("a",{key:r.key,href:V(le[e.ref].target,"a","href"),title:le[e.ref].title},n(e.children,r)):J("span",{key:r.key},e.fallbackChildren)},25:{t:["|"],o:Me(D),i:1,u:Oe,l(e,n,r){const t=e;return J("table",{key:r.key},J("thead",null,J("tr",null,t.header.map(function(e,o){return J("th",{key:o,style:je(t,o)},n(e,r))}))),J("tbody",null,t.cells.map(function(e,o){return J("tr",{key:o},e.map(function(e,o){return J("td",{key:o,style:je(t,o)},n(e,r))}))})))}},27:{o:Ce(function(e,n){let r;return Ee(e,":")&&(r=re.exec(e)),r||ae.exec(e)}),i:4,u(e){const n=e[0];return {text:-1===n.indexOf("&")?n:n.replace(B,(e,n)=>t.namedCodesToUnicode[n]||e)}},l:e=>e.text},28:{t:["**","__"],o:Te(X),i:2,u:(e,n,r)=>({children:n(e[2],r)}),l:(e,n,r)=>J("strong",{key:r.key},n(e.children,r))},29:{t:e=>{const n=e[0];return ("*"===n||"_"===n)&&e[1]!==n},o:Te(Y),i:3,u:(e,n,r)=>({children:n(e[2],r)}),l:(e,n,r)=>J("em",{key:r.key},n(e.children,r))},30:{t:["\\"],o:Te(te),i:1,u:e=>({text:e[1],type:"27"})},31:{t:["=="],o:Te(ee),i:3,u:Ue,l:(e,n,r)=>J("mark",{key:r.key},n(e.children,r))},32:{t:["~~"],o:Te(ne),i:3,u:Ue,l:(e,n,r)=>J("del",{key:r.key},n(e.children,r))}};true===t.disableParsingRawHTML&&(delete se[11],delete se[13]);const fe=function(e){var n=Object.keys(e);function r(t,o){var a=[];if(o.prevCapture=o.prevCapture||"",t.trim())for(;t;)for(var c=0;c<n.length;){var i=n[c],u=e[i];if(!u.t||Ae(t,o,u.t)){var l=u.o(t,o);if(l&&l[0]){t=t.substring(l[0].length);var s=u.u(l,r,o);o.prevCapture+=l[0],s.type||(s.type=i),a.push(s);break}c++;}else c++;}return o.prevCapture="",a}return n.sort(function(n,r){return e[n].i-e[r].i||(n<r?-1:1)}),function(e,n){return r(function(e){return e.replace(x,"\n").replace($,"").replace(U,"    ")}(e),n)}}(se),_e=(de=function(e,n){return function(r,t,o){const a=e[r.type].l;return n?n(()=>a(r,t,o),r,t,o):a(r,t,o)}}(se,t.renderRule),function e(n,r={}){if(Array.isArray(n)){const t=r.key,o=[];let a=false;for(let t=0;t<n.length;t++){r.key=t;const c=e(n[t],r),i="string"==typeof c;i&&a?o[o.length-1]+=c:null!==c&&o.push(c),a=i;}return r.key=t,o}return de(n,e,r)});var de;const pe=K(r);return ue.length?J("div",null,pe,J("footer",{key:"footer"},ue.map(function(e){return J("div",{id:s(e.identifier,Re),key:e.identifier},e.identifier,_e(fe(e.footnote,{inline:true})))}))):pe}var ReactMarkdown = n=>{let{children:t="",options:o}=n,a=function(e,n){if(null==e)return {};var r,t,o={},a=Object.keys(e);for(t=0;t<a.length;t++)n.indexOf(r=a[t])>=0||(o[r]=e[r]);return o}(n,r);return React.cloneElement(Je(t,o),a)};
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const objectFromEntries = !Object
@@ -635,10 +635,11 @@ var insertStyles = function insertStyles(cache, serialized, isStringTag) {
 /** Like react's useMemo but with guarantee that the fn
  * won't be invoked again if deps hasn't change */
 function useGuaranteedMemo(fn, deps) {
-    const [ref] = useState({ "current": undefined });
-    if (ref.current === undefined ||
-        deps.length !== ref.current.prevDeps.length ||
-        ref.current.prevDeps.find((v, i) => v !== deps[i]) !== undefined) {
+    var _a;
+    const ref = useRef();
+    if (!ref.current ||
+        deps.length !== ((_a = ref.current.prevDeps) === null || _a === void 0 ? void 0 : _a.length) ||
+        ref.current.prevDeps.map((v, i) => v === deps[i]).indexOf(false) >= 0) {
         ref.current = {
             "v": fn(),
             "prevDeps": [...deps]
@@ -843,7 +844,11 @@ const useMuiThemeStyleOverridesPlugin = ({ classes, theme, muiStyleOverridesPara
                 continue;
             }
             themeClasses[ruleName] = css(typeof cssObjectOrGetCssObject === "function"
-                ? cssObjectOrGetCssObject(Object.assign({ theme, "ownerState": muiStyleOverridesParams === null || muiStyleOverridesParams === void 0 ? void 0 : muiStyleOverridesParams.ownerState }, muiStyleOverridesParams === null || muiStyleOverridesParams === void 0 ? void 0 : muiStyleOverridesParams.props))
+                ? cssObjectOrGetCssObject({
+                    theme,
+                    "ownerState": muiStyleOverridesParams === null || muiStyleOverridesParams === void 0 ? void 0 : muiStyleOverridesParams.ownerState,
+                    ...muiStyleOverridesParams === null || muiStyleOverridesParams === void 0 ? void 0 : muiStyleOverridesParams.props
+                })
                 : cssObjectOrGetCssObject);
         }
         return themeClasses;
@@ -2423,6 +2428,7 @@ if (process.env.NODE_ENV !== 'production') {
   Emotion.displayName = 'EmotionCssPropInternal';
 }
 
+const useContextualCache = __unsafe_useEmotionCache;
 let counter$1 = 0;
 function createMakeStyles(params) {
     const { useTheme, cache: cacheProvidedAtInception } = params;
@@ -2486,7 +2492,6 @@ function createMakeStyles(params) {
                         css,
                         cx,
                         "name": name !== null && name !== void 0 ? name : "makeStyle no name",
-                        "idOfUseStyles": uniqId,
                         muiStyleOverridesParams,
                         // NOTE: If it's not a Mui Theme the plugin is resilient, it will not crash
                         "theme": theme
@@ -2527,7 +2532,7 @@ const { createUseCache } = (() => {
         const { cacheProvidedAtInception } = params;
         function useCache() {
             var _a;
-            const contextualCache = __unsafe_useEmotionCache();
+            const contextualCache = useContextualCache();
             const cacheExplicitlyProvidedForTss = useCacheProvidedByProvider();
             const cacheToBeUsed = (_a = cacheProvidedAtInception !== null && cacheProvidedAtInception !== void 0 ? cacheProvidedAtInception : cacheExplicitlyProvidedForTss) !== null && _a !== void 0 ? _a : contextualCache;
             if (cacheToBeUsed === null) {
@@ -2552,17 +2557,7 @@ function capitalize(str) {
     return (str.charAt(0).toUpperCase() + str.slice(1));
 }
 
-var __rest$1 = (undefined && undefined.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
+/* eslint-disable @typescript-eslint/no-explicit-any */
 function createWithStyles(params) {
     const { useTheme, cache } = params;
     const { makeStyles } = createMakeStyles({ useTheme, cache });
@@ -2570,8 +2565,7 @@ function createWithStyles(params) {
         const Component_ = typeof Component === "string"
             ? (() => {
                 const tag = Component;
-                const Out = function (_a) {
-                    var { children } = _a, props = __rest$1(_a, ["children"]);
+                const Out = function ({ children, ...props }) {
                     return createElement(tag, props, children);
                 };
                 Object.defineProperty(Out, "name", {
@@ -2622,7 +2616,7 @@ function createWithStyles(params) {
             name = name.replace(/[^a-zA-Z0-9-_]/g, "_");
             return name;
         })();
-        const useStyles = makeStyles(Object.assign(Object.assign({}, params), { name }))(typeof cssObjectByRuleNameOrGetCssObjectByRuleName === "function"
+        const useStyles = makeStyles({ ...params, name })(typeof cssObjectByRuleNameOrGetCssObjectByRuleName === "function"
             ? (theme, props, classes) => incorporateMediaQueries(cssObjectByRuleNameOrGetCssObjectByRuleName(theme, props, classes))
             : incorporateMediaQueries(cssObjectByRuleNameOrGetCssObjectByRuleName));
         function getHasNonRootClasses(classes) {
@@ -2637,13 +2631,16 @@ function createWithStyles(params) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const Out = forwardRef(function (props, ref) {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { className, classes: _classes } = props, rest = __rest$1(props, ["className", "classes"]);
+            const { className, classes: _classes, ...rest } = props;
             const { classes, cx } = useStyles(props, { props });
             const rootClassName = cx(classes.root, className);
-            fixedClassesByClasses.set(classes, Object.assign(Object.assign({}, classes), { "root": rootClassName }));
-            return (React__default.createElement(Component_, Object.assign({ ref: ref, className: getHasNonRootClasses(classes)
+            fixedClassesByClasses.set(classes, {
+                ...classes,
+                "root": rootClassName
+            });
+            return (React__default.createElement(Component_, { ref: ref, className: getHasNonRootClasses(classes)
                     ? className
-                    : rootClassName }, (typeof Component === "string" ? {} : { classes }), rest)));
+                    : rootClassName, ...(typeof Component === "string" ? {} : { classes }), ...rest }));
         });
         if (name !== undefined) {
             Out.displayName = `${capitalize(name)}WithStyles`;
@@ -2679,7 +2676,10 @@ function incorporateMediaQueries(cssObjectByRuleNameWithMediaQueries) {
         const cssObjectByRuleNameBis = cssObjectByRuleNameWithMediaQueriesByMediaQuery[mediaQuery];
         Object.keys(cssObjectByRuleNameBis).forEach(ruleName => {
             var _a;
-            return (cssObjectByRuleName[ruleName] = Object.assign(Object.assign({}, ((_a = cssObjectByRuleName[ruleName]) !== null && _a !== void 0 ? _a : {})), { [mediaQuery]: cssObjectByRuleNameBis[ruleName] }));
+            return (cssObjectByRuleName[ruleName] = {
+                ...((_a = cssObjectByRuleName[ruleName]) !== null && _a !== void 0 ? _a : {}),
+                [mediaQuery]: cssObjectByRuleNameBis[ruleName]
+            });
         });
     });
     return cssObjectByRuleName;
@@ -2696,18 +2696,9 @@ const isSSR = (() => {
 })();
 
 /* eslint-disable @typescript-eslint/ban-types */
-var __rest = (undefined && undefined.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 function createTss(params) {
+    counter = 0;
+    nestedSelectorUsageTrackRecord.splice(0, nestedSelectorUsageTrackRecord.length);
     const { useContext, usePlugin, cache: cacheProvidedAtInception } = params;
     const { useCache } = createUseCache({ cacheProvidedAtInception });
     const { useCssAndCx } = createUseCssAndCx({ useCache });
@@ -2727,81 +2718,109 @@ const nestedSelectorUsageTrackRecord = [];
 function createTss_internal(params) {
     const { useContext, useCache, useCssAndCx, usePlugin, name, doesUseNestedSelectors } = params;
     return {
-        "withParams": () => createTss_internal(Object.assign({}, params)),
-        "withName": nameOrWrappedName => createTss_internal(Object.assign(Object.assign({}, params), { "name": typeof nameOrWrappedName !== "object"
+        "withParams": () => createTss_internal({ ...params }),
+        "withName": nameOrWrappedName => createTss_internal({
+            ...params,
+            "name": typeof nameOrWrappedName !== "object"
                 ? nameOrWrappedName
-                : Object.keys(nameOrWrappedName)[0] })),
-        "withNestedSelectors": () => createTss_internal(Object.assign(Object.assign({}, params), { "doesUseNestedSelectors": true })),
+                : Object.keys(nameOrWrappedName)[0]
+        }),
+        "withNestedSelectors": () => createTss_internal({
+            ...params,
+            "doesUseNestedSelectors": true
+        }),
         "create": (cssObjectByRuleNameOrGetCssObjectByRuleName) => {
             // NOTE: Not isomorphic. Not guaranteed to be the same on client and server.
             // Do not attempt to 'simplify' the code without taking this fact into account.
             const idOfUseStyles = `x${counter++}`;
+            // NOTE: Cleanup for hot module reloading.
+            if (name !== undefined) {
+                // eslint-disable-next-line no-constant-condition
+                while (true) {
+                    const wrap = nestedSelectorUsageTrackRecord.find(wrap => wrap.name === name);
+                    if (wrap === undefined) {
+                        break;
+                    }
+                    nestedSelectorUsageTrackRecord.splice(nestedSelectorUsageTrackRecord.indexOf(wrap), 1);
+                }
+            }
             const getCssObjectByRuleName = typeof cssObjectByRuleNameOrGetCssObjectByRuleName ===
                 "function"
                 ? cssObjectByRuleNameOrGetCssObjectByRuleName
                 : () => cssObjectByRuleNameOrGetCssObjectByRuleName;
             return function useStyles(params) {
                 var _a, _b, _c;
-                const _d = (params !== null && params !== void 0 ? params : {}), { classesOverrides } = _d, paramsAndPluginParams = __rest(_d, ["classesOverrides"]);
+                const { classesOverrides, ...paramsAndPluginParams } = (params !== null && params !== void 0 ? params : {});
                 const context = useContext();
                 const { css, cx } = useCssAndCx();
                 const cache = useCache();
-                let classes = useMemo(() => {
+                const getClasses = () => {
                     const refClassesCache = {};
                     // @ts-expect-error: Type safety non achievable.
-                    const cssObjectByRuleName = getCssObjectByRuleName(Object.assign(Object.assign(Object.assign({}, params), context), (!doesUseNestedSelectors
-                        ? {}
-                        : {
-                            "classes": typeof Proxy === "undefined"
-                                ? {}
-                                : new Proxy({}, {
-                                    "get": (_target, ruleName) => {
-                                        /* prettier-ignore */
-                                        if (typeof ruleName === "symbol") {
-                                            assert(false);
-                                        }
-                                        if (isSSR) {
-                                            {
+                    const cssObjectByRuleName = getCssObjectByRuleName({
+                        ...params,
+                        ...context,
+                        ...(!doesUseNestedSelectors
+                            ? {}
+                            : {
+                                "classes": typeof Proxy === "undefined"
+                                    ? {}
+                                    : new Proxy({}, {
+                                        "get": (_target, ruleName) => {
+                                            /* prettier-ignore */
+                                            if (typeof ruleName === "symbol") {
+                                                assert(false);
+                                            }
+                                            if (isSSR &&
+                                                name === undefined) {
+                                                throw new Error([
+                                                    `tss-react: In SSR setups, in order to use nested selectors, you must also give a unique name to the useStyle function.`,
+                                                    `Solution: Use tss.withName("ComponentName").withNestedSelectors<...>()... to set a name.`
+                                                ].join("\n"));
+                                            }
+                                            update_nested_selector_usage_track_record: {
+                                                if (name === undefined) {
+                                                    break update_nested_selector_usage_track_record;
+                                                }
                                                 /* prettier-ignore */
-                                                let wrap = nestedSelectorUsageTrackRecord.find(wrap => wrap.name === name &&
-                                                    wrap.idOfUseStyles === idOfUseStyles);
+                                                let wrap = nestedSelectorUsageTrackRecord.find(wrap => wrap.name === name && wrap.idOfUseStyles === idOfUseStyles);
                                                 /* prettier-ignore */
                                                 if (wrap === undefined) {
                                                     /* prettier-ignore */
-                                                    wrap = {
-                                                        name,
-                                                        idOfUseStyles,
-                                                        "nestedSelectorRuleNames": new Set()
-                                                    };
+                                                    wrap = { name, idOfUseStyles, "nestedSelectorRuleNames": new Set() };
                                                     /* prettier-ignore */
                                                     nestedSelectorUsageTrackRecord.push(wrap);
                                                 }
                                                 /* prettier-ignore */
                                                 wrap.nestedSelectorRuleNames.add(ruleName);
                                             }
-                                            if (
-                                            /* prettier-ignore */
-                                            nestedSelectorUsageTrackRecord.find(wrap => wrap.name === name &&
-                                                wrap.idOfUseStyles !== idOfUseStyles &&
-                                                wrap.nestedSelectorRuleNames.has(ruleName)) !== undefined) {
+                                            detect_potential_conflicts: {
+                                                if (name === undefined) {
+                                                    break detect_potential_conflicts;
+                                                }
+                                                const hasPotentialConflict = nestedSelectorUsageTrackRecord.find(wrap => wrap.name ===
+                                                    name &&
+                                                    wrap.idOfUseStyles !==
+                                                        idOfUseStyles &&
+                                                    wrap.nestedSelectorRuleNames.has(ruleName)) !== undefined;
+                                                if (!hasPotentialConflict) {
+                                                    break detect_potential_conflicts;
+                                                }
                                                 throw new Error([
-                                                    `tss-react: Duplicate nested selector "${ruleName}" detected in ${name ===
-                                                        undefined
-                                                        ? `useStyles named "${name}"`
-                                                        : "anonymous useStyles function"}.`,
-                                                    `In SSR setups, this may lead to CSS class name collisions, causing nested selectors to target elements outside of the intended scope.`,
-                                                    `Solution: Ensure each useStyles using nested selectors has a unique name. Use tss.withName("UniqueName").withNestedSelectors<...>()... to set a name.`
-                                                ].join("\n"));
+                                                    `tss-react: There are in your codebase two different useStyles named "${name}" that`,
+                                                    `both use use the nested selector ${ruleName}.\n`,
+                                                    `This may lead to CSS class name collisions, causing nested selectors to target elements outside of the intended scope.\n`,
+                                                    `Solution: Ensure each useStyles using nested selectors has a unique name.\n`,
+                                                    `Use: tss.withName("UniqueName").withNestedSelectors<...>()...`
+                                                ].join(" "));
                                             }
+                                            /* prettier-ignore */
+                                            return (refClassesCache[ruleName] = `${cache.key}-${name !== undefined ? name : idOfUseStyles}-${ruleName}-ref`);
                                         }
-                                        /* prettier-ignore */
-                                        return (refClassesCache[ruleName]
-                                            =
-                                                `${cache.key}-${idOfUseStyles}${name !== undefined ? `-${name}` : ""}-${ruleName}-ref`);
-                                    }
-                                })
-                        })));
-                    const classes = objectFromEntries(objectKeys(cssObjectByRuleName).map(ruleName => {
+                                    })
+                            })
+                    });
+                    let classes = objectFromEntries(objectKeys(cssObjectByRuleName).map(ruleName => {
                         const cssObject = cssObjectByRuleName[ruleName];
                         if (!cssObject.label) {
                             cssObject.label = `${name !== undefined ? `${name}-` : ""}${ruleName}`;
@@ -2820,30 +2839,128 @@ function createTss_internal(params) {
                         classes[ruleName] =
                             refClassesCache[ruleName];
                     });
+                    classes = mergeClasses(classes, classesOverrides, cx);
                     return classes;
-                }, [
+                };
+                const classes = runGetClassesOrUseCache({
                     cache,
-                    css,
-                    cx,
-                    getDependencyArrayRef(params),
-                    ...Object.values(context)
-                ]);
-                classes = useMemo(() => mergeClasses(classes, classesOverrides, cx), [classes, getDependencyArrayRef(classesOverrides), cx]);
+                    cssObjectByRuleNameOrGetCssObjectByRuleName,
+                    "classesOverridesRef": getDependencyArrayRef(classesOverrides),
+                    "paramsAndPluginParamsRef": getDependencyArrayRef(paramsAndPluginParams),
+                    idOfUseStyles,
+                    context,
+                    getClasses
+                });
                 // @ts-expect-error: Type safety non achievable.
-                const pluginResultWrap = usePlugin(Object.assign(Object.assign({ classes,
+                const pluginResultWrap = usePlugin({
+                    classes,
                     css,
                     cx,
                     idOfUseStyles,
-                    name }, context), paramsAndPluginParams));
-                return Object.assign({ "classes": (_a = pluginResultWrap.classes) !== null && _a !== void 0 ? _a : classes, "css": (_b = pluginResultWrap.css) !== null && _b !== void 0 ? _b : css, "cx": (_c = pluginResultWrap.cx) !== null && _c !== void 0 ? _c : cx }, context);
+                    name,
+                    ...context,
+                    ...paramsAndPluginParams
+                });
+                return {
+                    "classes": (_a = pluginResultWrap.classes) !== null && _a !== void 0 ? _a : classes,
+                    "css": (_b = pluginResultWrap.css) !== null && _b !== void 0 ? _b : css,
+                    "cx": (_c = pluginResultWrap.cx) !== null && _c !== void 0 ? _c : cx,
+                    ...context
+                };
             };
         }
     };
 }
+const mapCache = new WeakMap();
+function runGetClassesOrUseCache(params) {
+    const { cache, cssObjectByRuleNameOrGetCssObjectByRuleName, classesOverridesRef, paramsAndPluginParamsRef, idOfUseStyles, context, getClasses } = params;
+    use_cache: {
+        const mapCache_in = mapCache.get(cache);
+        if (mapCache_in === undefined) {
+            break use_cache;
+        }
+        const mapCache_in_in = mapCache_in.get(cssObjectByRuleNameOrGetCssObjectByRuleName);
+        if (mapCache_in_in === undefined) {
+            break use_cache;
+        }
+        const mapCache_in_in_in = mapCache_in_in.get(classesOverridesRef);
+        if (mapCache_in_in_in === undefined) {
+            break use_cache;
+        }
+        const arr = mapCache_in_in_in.get(paramsAndPluginParamsRef);
+        if (arr === undefined) {
+            break use_cache;
+        }
+        const entry = arr.find(({ context: context_i }) => {
+            if (context_i === context) {
+                return true;
+            }
+            if (objectKeys(context_i).length !== objectKeys(context).length) {
+                return false;
+            }
+            for (const key in context_i) {
+                if (getDependencyArrayRef(context_i[key]) !==
+                    getDependencyArrayRef(context[key])) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        if (entry === undefined) {
+            break use_cache;
+        }
+        if ((entry === null || entry === void 0 ? void 0 : entry.idOfUseStyles) !== idOfUseStyles) {
+            arr.splice(arr.indexOf(entry), 1);
+            break use_cache;
+        }
+        return entry.result;
+    }
+    const result = getClasses();
+    {
+        if (!mapCache.has(cache)) {
+            mapCache.set(cache, new WeakMap());
+        }
+        const mapCache_in = mapCache.get(cache);
+        assert(mapCache_in !== undefined);
+        if (!mapCache_in.has(cssObjectByRuleNameOrGetCssObjectByRuleName)) {
+            mapCache_in.set(cssObjectByRuleNameOrGetCssObjectByRuleName, new Map());
+        }
+        const mapCache_in_in = mapCache_in.get(cssObjectByRuleNameOrGetCssObjectByRuleName);
+        assert(mapCache_in_in !== undefined);
+        if (!mapCache_in_in.has(classesOverridesRef)) {
+            if (mapCache_in_in.size > 200) {
+                mapCache_in_in.clear();
+            }
+            mapCache_in_in.set(classesOverridesRef, new Map());
+        }
+        const mapCache_in_in_in = mapCache_in_in.get(classesOverridesRef);
+        assert(mapCache_in_in_in !== undefined);
+        if (!mapCache_in_in_in.has(paramsAndPluginParamsRef)) {
+            clear_cache: {
+                const threshold = typeof paramsAndPluginParamsRef === "string" ? 257 : 5;
+                if (mapCache_in_in_in.size < threshold) {
+                    break clear_cache;
+                }
+                mapCache_in_in_in.clear();
+            }
+            mapCache_in_in_in.set(paramsAndPluginParamsRef, []);
+        }
+        let arr = mapCache_in_in_in.get(paramsAndPluginParamsRef);
+        assert(arr !== undefined);
+        if (arr.length > 5) {
+            arr = [];
+        }
+        arr.push({ idOfUseStyles, context, result });
+    }
+    return result;
+}
 
 /** @see <https://docs.tss-react.dev/api/makestyles> */
 function createMakeAndWithStyles(params) {
-    return Object.assign(Object.assign({}, createMakeStyles(params)), createWithStyles(params));
+    return {
+        ...createMakeStyles(params),
+        ...createWithStyles(params)
+    };
 }
 const { tss: tss$1 } = createTss({
     "useContext": () => ({})
@@ -2851,7 +2968,7 @@ const { tss: tss$1 } = createTss({
 tss$1.create({});
 
 /** @see <https://docs.tss-react.dev/setup> */
-const { makeStyles, withStyles } = createMakeAndWithStyles({
+const { makeStyles} = createMakeAndWithStyles({
     useTheme
 });
 const { tss } = createTss({
@@ -8321,7 +8438,7 @@ lodash.exports;
 	      bitmask &= ~(isCurry ? WRAP_PARTIAL_RIGHT_FLAG : WRAP_PARTIAL_FLAG);
 
 	      if (!(bitmask & WRAP_CURRY_BOUND_FLAG)) {
-	        bitmask &= ~(WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG);
+	        bitmask &= -4;
 	      }
 	      var newData = [
 	        func, bitmask, thisArg, newPartials, newHolders, newPartialsRight,
@@ -8424,7 +8541,7 @@ lodash.exports;
 	      }
 	      var length = partials ? partials.length : 0;
 	      if (!length) {
-	        bitmask &= ~(WRAP_PARTIAL_FLAG | WRAP_PARTIAL_RIGHT_FLAG);
+	        bitmask &= -97;
 	        partials = holders = undefined$1;
 	      }
 	      ary = ary === undefined$1 ? ary : nativeMax(toInteger(ary), 0);
@@ -8457,7 +8574,7 @@ lodash.exports;
 	        : nativeMax(newData[9] - length, 0);
 
 	      if (!arity && bitmask & (WRAP_CURRY_FLAG | WRAP_CURRY_RIGHT_FLAG)) {
-	        bitmask &= ~(WRAP_CURRY_FLAG | WRAP_CURRY_RIGHT_FLAG);
+	        bitmask &= -25;
 	      }
 	      if (!bitmask || bitmask == WRAP_BIND_FLAG) {
 	        var result = createBind(func, bitmask, thisArg);
@@ -20098,7 +20215,7 @@ function Markdown(props) {
             },
         },
     };
-    const { options: passedOpt } = props, restProps = __rest$2(props, ["options"]);
+    const { options: passedOpt } = props, restProps = __rest(props, ["options"]);
     const mergedOptions = _.merge(options, passedOpt);
     return React__default.createElement(ReactMarkdown, Object.assign({ options: mergedOptions }, restProps));
 }
@@ -20156,7 +20273,7 @@ const useStyles$1 = makeStyles()((theme) => ({
 function ConfirmationDialog(props) {
     var _a;
     const { classes } = useStyles$1();
-    const { title, text, onClose, open, leftButtonLabel: okLable, rightButtonLabel: cancelLable, isRightButtonHighlighted } = props, other = __rest$2(props, ["title", "text", "onClose", "open", "leftButtonLabel", "rightButtonLabel", "isRightButtonHighlighted"]);
+    const { title, text, onClose, open, leftButtonLabel: okLable, rightButtonLabel: cancelLable, isRightButtonHighlighted } = props, other = __rest(props, ["title", "text", "onClose", "open", "leftButtonLabel", "rightButtonLabel", "isRightButtonHighlighted"]);
     const handleCancel = () => {
         if (onClose)
             onClose(false);
