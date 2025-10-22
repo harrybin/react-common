@@ -1,27 +1,27 @@
-import * as React__default__default__default from 'react';
-import React__default__default__default__default, { EffectCallback, DependencyList, Reducer, ReducerState, Dispatch, SetStateAction } from 'react';
+import * as React__default__default__default__default from 'react';
+import React__default__default__default__default__default, { EffectCallback, DependencyList, Reducer, ReducerState, Dispatch, SetStateAction } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 
 interface IfProps {
     cond: boolean | string | null | undefined | unknown;
-    else?: React__default__default__default.ReactNode | React__default__default__default.ReactNode[];
-    children: React__default__default__default.ReactNode | React__default__default__default.ReactNode[];
+    else?: React__default__default__default__default.ReactNode | React__default__default__default__default.ReactNode[];
+    children: React__default__default__default__default.ReactNode | React__default__default__default__default.ReactNode[];
 }
-declare function IfComp(props: IfProps): React__default__default__default.JSX.Element;
-declare const If: React__default__default__default.MemoExoticComponent<typeof IfComp>;
+declare function IfComp(props: IfProps): React__default__default__default__default.JSX.Element;
+declare const If: React__default__default__default__default.MemoExoticComponent<typeof IfComp>;
 
 interface MarkdownProps {
     [key: string]: any;
     children: string;
     options?: MarkdownToJSX.Options;
 }
-declare function Markdown(props: MarkdownProps): React__default__default__default__default.JSX.Element;
+declare function Markdown(props: MarkdownProps): React__default__default__default__default__default.JSX.Element;
 
 interface NameValueTextProps {
     name: string;
-    value?: string | number | React__default__default__default__default.ReactElement;
+    value?: string | number | React__default__default__default__default__default.ReactElement;
     oneLine?: boolean;
-    children?: React__default__default__default__default.ReactNode | React__default__default__default__default.ReactNode[];
+    children?: React__default__default__default__default__default.ReactNode | React__default__default__default__default__default.ReactNode[];
     verticalSpacing?: string;
 }
 /**
@@ -31,8 +31,8 @@ interface NameValueTextProps {
  * @param {NameValueTextProps} props
  * @returns
  */
-declare function NameValueTextComp(props: NameValueTextProps): React__default__default__default__default.JSX.Element;
-declare const NameValueText: React__default__default__default__default.MemoExoticComponent<typeof NameValueTextComp>;
+declare function NameValueTextComp(props: NameValueTextProps): React__default__default__default__default__default.JSX.Element;
+declare const NameValueText: React__default__default__default__default__default.MemoExoticComponent<typeof NameValueTextComp>;
 
 type ConfirmationDialogCloseHandler = (firstButtonPressed?: boolean) => void | unknown | Promise<unknown>;
 type ConfirmationDialogMaxWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
@@ -64,9 +64,9 @@ interface ConfirmationDialogRawProps {
     isRightButtonHighlighted?: boolean;
     fullScreen?: boolean;
     maxWidth?: ConfirmationDialogMaxWidth;
-    children?: React__default__default__default__default.ReactNode;
+    children?: React__default__default__default__default__default.ReactNode;
 }
-declare function ConfirmationDialog(props: ConfirmationDialogRawProps): React__default__default__default__default.JSX.Element;
+declare function ConfirmationDialog(props: ConfirmationDialogRawProps): React__default__default__default__default__default.JSX.Element;
 declare namespace ConfirmationDialog {
     var defaultProps: {
         title: string;
@@ -102,8 +102,8 @@ interface ErrorReportDialogProps {
      */
     errorReportDescriptions: ErrorReportDescriptions;
 }
-declare const ErrorReportDialog: React__default__default__default.MemoExoticComponent<{
-    (props: ErrorReportDialogProps): React__default__default__default.JSX.Element;
+declare const ErrorReportDialog: React__default__default__default__default.MemoExoticComponent<{
+    (props: ErrorReportDialogProps): React__default__default__default__default.JSX.Element;
     defaultProps: {
         downloadClicked: () => void;
         descChanged: () => void;
@@ -210,7 +210,7 @@ declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: Depe
  * @param {string} [rootMargin='0px'] intersection buffer for accuracy
  * @returns
  */
-declare function useOnScreen<T extends Element>(ref: React__default__default__default__default.MutableRefObject<T>, notifyIntersectionChange?: () => void, rootMargin?: string): {
+declare function useOnScreen<T extends Element>(ref: React__default__default__default__default__default.MutableRefObject<T>, notifyIntersectionChange?: () => void, rootMargin?: string): {
     isIntersecting: boolean;
 };
 /**
@@ -241,7 +241,7 @@ declare function usePersistedState<T>(prefix: string, key: string, defaultValue?
  * @param {T} defaultValue
  * @returns {[T, Dispatch<SetStateAction<T>>]}
  */
-declare function usePersistedStateOneway<T>(prefix: string, key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>, () => T, React__default__default__default__default.MutableRefObject<number>];
+declare function usePersistedStateOneway<T>(prefix: string, key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>, () => T, React__default__default__default__default__default.MutableRefObject<number>];
 /**
  * Provides a ref-variable (like useRef) but also stores it value in the local storage and is used like useState.
  *
@@ -260,7 +260,7 @@ declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R,
 declare function useDebugMode(): {
     isInDebugMode: boolean;
     debugChangesApplied: boolean;
-    setDebugChangesApplied: React__default__default__default__default.Dispatch<React__default__default__default__default.SetStateAction<boolean>>;
+    setDebugChangesApplied: React__default__default__default__default__default.Dispatch<React__default__default__default__default__default.SetStateAction<boolean>>;
 };
 
 /**
@@ -494,8 +494,8 @@ declare function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler): 
 declare function getRegisteredGlobalFetchErrorHandler(): IGlobalFetchHandler;
 
 declare function OidcBarerProxyProvider(props: {
-    children: React__default__default__default.ReactNode;
-}): React__default__default__default.JSX.Element;
+    children: React__default__default__default__default.ReactNode;
+}): React__default__default__default__default.JSX.Element;
 declare function useOidcBaerer(): string;
 
 declare enum SuspenseStatus {
