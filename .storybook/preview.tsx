@@ -1,8 +1,16 @@
 import type { Preview } from '@storybook/react';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { theme } from '../src/themes/mui.theme';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import React from 'react';
 import { themes } from '@storybook/theming';
+
+// Create a simple MUI theme for Storybook
+const muiTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2',
+        },
+    },
+});
 
 const preview: Preview = {
     parameters: {
@@ -22,7 +30,7 @@ const preview: Preview = {
 export default preview;
 
 export const withMuiTheme = (Story) => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={muiTheme}>
         <CssBaseline />
         <Story />
     </ThemeProvider>
