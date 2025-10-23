@@ -16,7 +16,10 @@
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "codemod.js",
+    "MIGRATION_GUIDE.md",
+    "USAGE_EXAMPLES.md"
   ],
   "scripts": {
     "deploy": "npm run build-storybook && npm run docs && npm run touchJekyll",

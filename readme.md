@@ -1,27 +1,112 @@
 # React-Common-Components
 
+A **framework-agnostic** library providing generic React components, helper functions, and custom hooks. Use it with Material-UI, shadcn/ui, Chakra UI, or any other React UI framework—or with no framework at all!
 
+## ✨ Features
 
-A library providing generic react-components, including helperfunctions and custom-hooks. 
-It is published as a package and can be installed via npm. The project also contains a storybook that can be used to test react components.
-The storybook is deployed on the **[GitHub Pages](https://harrybin.github.io/react-common/)** of the project. To access the documentation for [Helperfunctions/CustomHooks](https://pages.github/harrybin/react-common) click on the corresponding tab of the GitHub repository.   
+- 🎨 **Framework Agnostic** - Works with any UI framework or none
+- 📦 **Zero Dependencies** - No forced UI library dependencies
+- 🔧 **Fully Customizable** - Pass your own components or use sensible defaults
+- 📘 **TypeScript** - Full type safety and IntelliSense support
+- 🧪 **Well Tested** - Comprehensive test coverage
+- 📚 **Great Documentation** - Storybook examples and detailed guides
+
+## 📖 Documentation
+
+- **[Live Storybook](https://harrybin.github.io/react-common/)** - Interactive component examples
+- **[API Documentation](https://pages.github/harrybin/react-common)** - Helper functions and custom hooks reference
+- **[Usage Examples](./USAGE_EXAMPLES.md)** - Examples with MUI, shadcn/ui, Chakra UI, and more
+- **[Migration Guide](./MIGRATION_GUIDE.md)** - Upgrading from older versions
 
 <a name="installing"></a>
 ## Installing
+
 ```bash
-  npm install @harrybin/react-common
+npm install @harrybin/react-common
 ```
+
+## Quick Start
+
+### Without Any Framework
+
+```tsx
+import { NameValueText, ConfirmationDialog } from '@harrybin/react-common';
+
+// Works out of the box with native HTML elements
+function MyComponent() {
+  return (
+    <>
+      <NameValueText name="User" value="John Doe" />
+      <ConfirmationDialog
+        open={true}
+        title="Confirm"
+        text="Are you sure?"
+        onClose={handleClose}
+      />
+    </>
+  );
+}
+```
+
+### With Material-UI
+
+```tsx
+import { NameValueText } from '@harrybin/react-common';
+import { Grid, Typography } from '@mui/material';
+
+function MyComponent() {
+  return (
+    <NameValueText
+      name="User"
+      value="John Doe"
+      ContainerComponent={(props) => <Grid container {...props} />}
+      ItemComponent={Grid}
+      TextComponent={Typography}
+    />
+  );
+}
+```
+
+### With shadcn/ui
+
+```tsx
+import { ConfirmationDialog } from '@harrybin/react-common';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+
+// Use with shadcn components
+<ConfirmationDialog
+  open={open}
+  title="Delete Item"
+  text="Are you sure?"
+  onClose={handleClose}
+  DialogComponent={Dialog}
+  ButtonComponent={Button}
+  // ... other shadcn components
+/>
+```
+
+See **[USAGE_EXAMPLES.md](./USAGE_EXAMPLES.md)** for comprehensive examples with different UI frameworks.
+
+## 🔄 Migrating from Previous Versions
+
+If you're upgrading from a version that used Material-UI as a peer dependency, we provide an automated codemod to help:
+
+```bash
+npx jscodeshift -t node_modules/@harrybin/react-common/codemod.js --parser=tsx src/
+```
+
+See the **[Migration Guide](./MIGRATION_GUIDE.md)** for detailed instructions and manual migration steps.
 ___
 ---
-# Contribution
+# Development & Contribution
 
 1. [Storybook](#storybook)  
 2. [Architecture](#architecture)
-3. [Dependencies](#dependencies)
-4. [Usage](#usage)  
-5. [Contributing](#contributing)  
-6. [Issues](#issues)  
-7. [Appendix](#appendix)
+3. [Usage Examples](#usage-examples)
+4. [Contributing](#contributing)  
+5. [Issues](#issues)  
+6. [Appendix](#appendix)
 
 ___
 
@@ -59,15 +144,39 @@ ___
    
 The tests are divided into UI component tests(Storybook stories) and function unit tests(vitest).  
 
-<a name="usage"></a>
+<a name="usage-examples"></a>
 
-## Usage
+## Usage Examples
 
-After installing the npm-package you can use the components in your react project.
+The library is framework-agnostic and works with any React UI library. Check out **[USAGE_EXAMPLES.md](./USAGE_EXAMPLES.md)** for comprehensive examples including:
 
-``` typescript
-import { BoxedIcon, areArraysEqual, usePrevious } from "@harrybin/react-common";
+- Using without any UI framework (native HTML)
+- Material-UI integration
+- shadcn/ui integration  
+- Chakra UI integration
+- Ant Design integration
+- Custom component implementations
+
+### Basic Usage
+
+After installing the package, import and use components in your React project:
+
+```tsx
+import { NameValueText, ConfirmationDialog, areArraysEqual, usePrevious } from "@harrybin/react-common";
+
+// Use with default implementations
+<NameValueText name="User" value="John Doe" />
+
+// Or pass your own UI components
+<NameValueText
+  name="User"
+  value="John Doe"
+  TextComponent={YourTextComponent}
+  ContainerComponent={YourContainer}
+/>
 ```
+
+See **[USAGE_EXAMPLES.md](./USAGE_EXAMPLES.md)** for detailed examples with different UI frameworks.
 <a name="contributing"></a>
 ## Contributing
 ___
@@ -144,12 +253,7 @@ Test if this story is displayed correctly by starting storybook(explained in sto
   
 ## Known Issues
 
-> This warning may appear on your console but can be ignored.
-
-  
-```bash
-You are loading @emotion/react when it is already loaded. Running multiple instances may cause problems
-```
+None currently. The library is framework-agnostic and has no external UI dependencies.
 
 
 <a name="appendix"></a>
