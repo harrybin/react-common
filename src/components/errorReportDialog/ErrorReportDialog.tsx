@@ -1,16 +1,6 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Typography, Grid, Box, Link } from '@mui/material';
-import { makeStyles } from 'tss-react/mui';
 import * as React from 'react';
 
 export const MIN_DESC_LENGTH = 10;
-
-const useStyles = makeStyles()(() => ({
-    link: {
-        position: 'relative',
-        left: '20px',
-        bottom: 0,
-    },
-}));
 
 export interface ErrorReportDescriptions {
     descMsg: string;
@@ -38,6 +28,78 @@ export interface ErrorReportDialogProps {
      * use the default descriptions
      */
     errorReportDescriptions: ErrorReportDescriptions;
+
+    /**
+     * Custom Box/Container component from your UI framework.
+     */
+    BoxComponent?: React.ComponentType<{
+        margin?: string;
+        children: React.ReactNode;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Custom Grid container component from your UI framework.
+     */
+    GridContainerComponent?: React.ComponentType<{
+        spacing?: number;
+        children: React.ReactNode;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Custom Grid item component from your UI framework.
+     */
+    GridItemComponent?: React.ComponentType<{
+        size?: number;
+        children: React.ReactNode;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Custom TextField component from your UI framework.
+     */
+    TextFieldComponent?: React.ComponentType<{
+        fullWidth?: boolean;
+        multiline?: boolean;
+        error?: boolean;
+        helperText?: string | false;
+        rows?: number;
+        label?: string;
+        variant?: string;
+        value?: string;
+        defaultValue?: string;
+        onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Custom Typography/Text component from your UI framework.
+     */
+    TextComponent?: React.ComponentType<{
+        color?: string;
+        variant?: string;
+        children: React.ReactNode;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Custom Link component from your UI framework.
+     */
+    LinkComponent?: React.ComponentType<{
+        onClick?: () => void;
+        underline?: string;
+        className?: string;
+        children: React.ReactNode;
+        [key: string]: any;
+    }>;
+
+    /**
+     * Optional CSS classes for styling.
+     */
+    classes?: {
+        link?: string;
+    };
 }
 
 const defaultErrorDescriptions: ErrorReportDescriptions = {
@@ -52,33 +114,168 @@ const defaultErrorDescriptions: ErrorReportDescriptions = {
     phoneDescMsg: 'Phone',
 };
 
+// Default implementations
+const DefaultBox: React.FC<any> = ({ margin, children, ...props }) => (
+    <div style={{ margin: margin || '20px' }} {...props}>
+        {children}
+    </div>
+);
+
+const DefaultGridContainer: React.FC<any> = ({ spacing = 2, children, ...props }) => (
+    <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: `${spacing * 8}px`,
+        }}
+        {...props}
+    >
+        {children}
+    </div>
+);
+
+const DefaultGridItem: React.FC<any> = ({ children, ...props }) => (
+    <div {...props}>{children}</div>
+);
+
+const DefaultTextField: React.FC<any> = ({ 
+    fullWidth, 
+    multiline, 
+    error, 
+    helperText, 
+    rows, 
+    label, 
+    value, 
+    defaultValue,
+    onChange,
+    ...props 
+}) => (
+    <div style={{ width: fullWidth ? '100%' : 'auto' }}>
+        {label && (
+            <label
+                style={{
+                    display: 'block',
+                    marginBottom: '4px',
+                    fontSize: '0.875rem',
+                    color: error ? '#d32f2f' : '#666',
+                }}
+            >
+                {label}
+            </label>
+        )}
+        {multiline ? (
+            <textarea
+                value={value}
+                defaultValue={defaultValue}
+                onChange={onChange}
+                rows={rows}
+                style={{
+                    width: '100%',
+                    padding: '8px',
+                    border: error ? '1px solid #d32f2f' : '1px solid #ccc',
+                    borderRadius: '4px',
+                    fontSize: '1rem',
+                    fontFamily: 'inherit',
+                }}
+                {...props}
+            />
+        ) : (
+            <input
+                type="text"
+                value={value}
+                defaultValue={defaultValue}
+                onChange={onChange}
+                style={{
+                    width: '100%',
+                    padding: '8px',
+                    border: error ? '1px solid #d32f2f' : '1px solid #ccc',
+                    borderRadius: '4px',
+                    fontSize: '1rem',
+                }}
+                {...props}
+            />
+        )}
+        {helperText && (
+            <div
+                style={{
+                    marginTop: '4px',
+                    fontSize: '0.75rem',
+                    color: error ? '#d32f2f' : '#666',
+                }}
+            >
+                {helperText}
+            </div>
+        )}
+    </div>
+);
+
+const DefaultText: React.FC<any> = ({ color, variant, children, ...props }) => (
+    <div
+        style={{
+            color: color === 'error' ? '#d32f2f' : 'inherit',
+            fontSize: variant === 'caption' ? '0.75rem' : '1rem',
+        }}
+        {...props}
+    >
+        {children}
+    </div>
+);
+
+const DefaultLink: React.FC<any> = ({ onClick, className, children, ...props }) => (
+    <a
+        onClick={onClick}
+        className={className}
+        style={{
+            color: '#1976d2',
+            cursor: 'pointer',
+            textDecoration: 'none',
+        }}
+        {...props}
+    >
+        {children}
+    </a>
+);
+
+const defaultClasses = {
+    link: '',
+};
+
+const defaultStyles: Record<string, React.CSSProperties> = {
+    link: {
+        position: 'relative',
+        left: '20px',
+        bottom: 0,
+    },
+};
+
 export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
-    const { classes } = useStyles();
+    const {
+        BoxComponent = DefaultBox,
+        GridContainerComponent = DefaultGridContainer,
+        GridItemComponent = DefaultGridItem,
+        TextFieldComponent = DefaultTextField,
+        TextComponent = DefaultText,
+        LinkComponent = DefaultLink,
+        classes: customClasses,
+    } = props;
+
+    const classes = customClasses || defaultClasses;
+    const useDefaultStyles = !customClasses;
+
     const [desc, setDesc] = React.useState('');
     const [repro, setRepro] = React.useState('');
     const descriptions = props.errorReportDescriptions;
 
-    // https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#removal-of-storiesof-api
-    // storiesOf('BoxedIcon', module)
-    //     .add('with text', () => <Button>Hello Button</Button>)
-    //     .add('with some emoji', () => (
-    //         <Button>
-    //             <span role="img" aria-label="so cool">
-    //                 😀 😎 👍 💯
-    //             </span>
-    //         </Button>
-    //     ));
-
     return (
         <>
-            <Box margin="20px">
-                <Grid container spacing={2}>
-                    <Grid size={12}>
-                        <Typography>{descriptions.descMsg}</Typography>
-                        <Typography color="error">{descriptions.descHintMsg}</Typography>
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
+            <BoxComponent margin="20px">
+                <GridContainerComponent spacing={2}>
+                    <GridItemComponent size={12}>
+                        <TextComponent>{descriptions.descMsg}</TextComponent>
+                        <TextComponent color="error">{descriptions.descHintMsg}</TextComponent>
+                    </GridItemComponent>
+                    <GridItemComponent size={12}>
+                        <TextFieldComponent
                             fullWidth
                             multiline
                             error={desc?.length < MIN_DESC_LENGTH}
@@ -92,9 +289,9 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.descChanged && props.descChanged(event.target.value);
                             }}
                         />
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
+                    </GridItemComponent>
+                    <GridItemComponent size={12}>
+                        <TextFieldComponent
                             fullWidth
                             multiline
                             error={repro?.length < MIN_DESC_LENGTH}
@@ -108,36 +305,37 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                                 props.reproChanged && props.reproChanged(event.target.value);
                             }}
                         />
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
+                    </GridItemComponent>
+                    <GridItemComponent size={12}>
+                        <TextFieldComponent
                             fullWidth
                             label={descriptions.emailDescMsg}
                             defaultValue="bob.test@example.com"
                             variant="outlined"
                             onChange={(event) => props.mailChanged && props.mailChanged(event.target.value)}
                         />
-                    </Grid>
-                    <Grid size={12}>
-                        <TextField
+                    </GridItemComponent>
+                    <GridItemComponent size={12}>
+                        <TextFieldComponent
                             fullWidth
                             label={descriptions.phoneDescMsg}
                             defaultValue="01234567"
                             variant="outlined"
                             onChange={(event) => props.phoneChanged && props.phoneChanged(event.target.value)}
                         />
-                    </Grid>
-                </Grid>
-            </Box>
-            <Typography variant="caption" hidden={false}>
-                <Link
+                    </GridItemComponent>
+                </GridContainerComponent>
+            </BoxComponent>
+            <TextComponent variant="caption">
+                <LinkComponent
                     className={classes.link}
                     onClick={() => props.downloadClicked && props.downloadClicked()}
                     underline="hover"
+                    style={useDefaultStyles ? defaultStyles.link : undefined}
                 >
                     Download Report
-                </Link>
-            </Typography>
+                </LinkComponent>
+            </TextComponent>
         </>
     );
 };
@@ -152,5 +350,3 @@ ErrorReportDialogComp.defaultProps = {
 };
 
 export const ErrorReportDialog = React.memo(ErrorReportDialogComp);
-
-
