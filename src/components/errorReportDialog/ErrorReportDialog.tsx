@@ -1,4 +1,4 @@
-import { Typography, Box, TextField, Link, Grid, Button } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Typography, Grid, Box, Link } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import * as React from 'react';
 
@@ -72,12 +72,12 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
     return (
         <>
             <Box margin="20px">
-                <Grid container direction="row" spacing={2}>
-                    <Grid item xs={12}>
+                <Grid container spacing={2}>
+                    <Grid size={12}>
                         <Typography>{descriptions.descMsg}</Typography>
                         <Typography color="error">{descriptions.descHintMsg}</Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             multiline
@@ -93,7 +93,7 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             }}
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             multiline
@@ -109,7 +109,7 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             }}
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             label={descriptions.emailDescMsg}
@@ -118,7 +118,7 @@ export const ErrorReportDialogComp = (props: ErrorReportDialogProps) => {
                             onChange={(event) => props.mailChanged && props.mailChanged(event.target.value)}
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                         <TextField
                             fullWidth
                             label={descriptions.phoneDescMsg}

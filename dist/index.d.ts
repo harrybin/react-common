@@ -1,28 +1,27 @@
-/// <reference types="react" />
-import * as React$1 from 'react';
-import React__default, { EffectCallback, Dispatch, SetStateAction, Reducer, ReducerState, ReducerAction } from 'react';
+import * as React__default__default__default from 'react';
+import React__default__default__default__default, { EffectCallback, DependencyList, Reducer, ReducerState, Dispatch, SetStateAction } from 'react';
 import { MarkdownToJSX } from 'markdown-to-jsx';
 
 interface IfProps {
     cond: boolean | string | null | undefined | unknown;
-    else?: React$1.ReactNode | React$1.ReactNode[];
-    children: React$1.ReactNode | React$1.ReactNode[];
+    else?: React__default__default__default.ReactNode | React__default__default__default.ReactNode[];
+    children: React__default__default__default.ReactNode | React__default__default__default.ReactNode[];
 }
-declare function IfComp(props: IfProps): React$1.JSX.Element;
-declare const If: React$1.MemoExoticComponent<typeof IfComp>;
+declare function IfComp(props: IfProps): React__default__default__default.JSX.Element;
+declare const If: React__default__default__default.MemoExoticComponent<typeof IfComp>;
 
 interface MarkdownProps {
     [key: string]: any;
     children: string;
     options?: MarkdownToJSX.Options;
 }
-declare function Markdown(props: MarkdownProps): React__default.JSX.Element;
+declare function Markdown(props: MarkdownProps): React__default__default__default__default.JSX.Element;
 
 interface NameValueTextProps {
     name: string;
-    value?: string | number | JSX.Element;
+    value?: string | number | React__default__default__default__default.ReactElement;
     oneLine?: boolean;
-    children?: React__default.ReactNode | React__default.ReactNode[];
+    children?: React__default__default__default__default.ReactNode | React__default__default__default__default.ReactNode[];
     verticalSpacing?: string;
 }
 /**
@@ -32,8 +31,8 @@ interface NameValueTextProps {
  * @param {NameValueTextProps} props
  * @returns
  */
-declare function NameValueTextComp(props: NameValueTextProps): React__default.JSX.Element;
-declare const NameValueText: React__default.MemoExoticComponent<typeof NameValueTextComp>;
+declare function NameValueTextComp(props: NameValueTextProps): React__default__default__default__default.JSX.Element;
+declare const NameValueText: React__default__default__default__default.MemoExoticComponent<typeof NameValueTextComp>;
 
 type ConfirmationDialogCloseHandler = (firstButtonPressed?: boolean) => void | unknown | Promise<unknown>;
 type ConfirmationDialogMaxWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
@@ -65,9 +64,9 @@ interface ConfirmationDialogRawProps {
     isRightButtonHighlighted?: boolean;
     fullScreen?: boolean;
     maxWidth?: ConfirmationDialogMaxWidth;
-    children?: React__default.ReactNode;
+    children?: React__default__default__default__default.ReactNode;
 }
-declare function ConfirmationDialog(props: ConfirmationDialogRawProps): React__default.JSX.Element;
+declare function ConfirmationDialog(props: ConfirmationDialogRawProps): React__default__default__default__default.JSX.Element;
 declare namespace ConfirmationDialog {
     var defaultProps: {
         title: string;
@@ -103,8 +102,8 @@ interface ErrorReportDialogProps {
      */
     errorReportDescriptions: ErrorReportDescriptions;
 }
-declare const ErrorReportDialog: React$1.MemoExoticComponent<{
-    (props: ErrorReportDialogProps): React$1.JSX.Element;
+declare const ErrorReportDialog: React__default__default__default.MemoExoticComponent<{
+    (props: ErrorReportDialogProps): React__default__default__default.JSX.Element;
     defaultProps: {
         downloadClicked: () => void;
         descChanged: () => void;
@@ -191,7 +190,7 @@ declare function useDefaultProps<P extends object, DP extends Partial<P>>(props:
  * @param {DependencyList} dependencies
  * @param {string[]} [dependencyNames=[]]
  */
-declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: React__default.DependencyList, dependencyNames?: string[]) => void;
+declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: DependencyList, dependencyNames?: string[]) => void;
 /**
  * Used to calculate the rest height of a page. With this you can set a component to fill the rest height of a page.
  * Remarks: only works for components directly rendering. If your component is rendered lazy, like components on non-active tabs you need useOnScreen too. See FillHeight component.
@@ -211,7 +210,7 @@ declare const useEffectDebugger: (effectHook: EffectCallback, dependencies: Reac
  * @param {string} [rootMargin='0px'] intersection buffer for accuracy
  * @returns
  */
-declare function useOnScreen<T extends Element>(ref: React__default.MutableRefObject<T>, notifyIntersectionChange?: () => void, rootMargin?: string): {
+declare function useOnScreen<T extends Element>(ref: React__default__default__default__default.MutableRefObject<T>, notifyIntersectionChange?: () => void, rootMargin?: string): {
     isIntersecting: boolean;
 };
 /**
@@ -242,7 +241,7 @@ declare function usePersistedState<T>(prefix: string, key: string, defaultValue?
  * @param {T} defaultValue
  * @returns {[T, Dispatch<SetStateAction<T>>]}
  */
-declare function usePersistedStateOneway<T>(prefix: string, key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>, () => T, React__default.MutableRefObject<number>];
+declare function usePersistedStateOneway<T>(prefix: string, key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>, () => T, React__default__default__default__default.MutableRefObject<number>];
 /**
  * Provides a ref-variable (like useRef) but also stores it value in the local storage and is used like useState.
  *
@@ -253,7 +252,7 @@ declare function usePersistedStateOneway<T>(prefix: string, key: string, default
  * @return {*}  {[T, Dispatch<SetStateAction<T>>]} [value,setter] array like when using useState
  */
 declare function usePersistedRef<T>(key: string, defaultValue: T): [T, Dispatch<SetStateAction<T>>];
-declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R, defaultState: T, key: string, initFunc?: (arg: T) => ReducerState<R>): [ReducerState<R>, Dispatch<ReducerAction<R>>];
+declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R, defaultState: T, key: string, initFunc?: (arg: T) => ReducerState<R>): [ReducerState<R>, Dispatch<Parameters<R>[1]>];
 /**
  *
  * Hook that activates debug mode based on a given shortcut.
@@ -261,7 +260,7 @@ declare function usePersistedReducer<R extends Reducer<any, any>, T>(reducer: R,
 declare function useDebugMode(): {
     isInDebugMode: boolean;
     debugChangesApplied: boolean;
-    setDebugChangesApplied: React__default.Dispatch<React__default.SetStateAction<boolean>>;
+    setDebugChangesApplied: React__default__default__default__default.Dispatch<React__default__default__default__default.SetStateAction<boolean>>;
 };
 
 /**
@@ -279,7 +278,7 @@ declare function nameof<T>(name: keyof T): string;
  * @param {object} obj
  * @returns true if object is an arry, false in case Array.isArray is not availabe or the object is no array.
  */
-declare function isArray(obj: object): boolean;
+declare function isArray(obj: object): obj is any[];
 /**
  * determines is the value is an object and not null (which e.g. can't be rendered) or not.
  * (null is also treated as object)
@@ -288,7 +287,7 @@ declare function isArray(obj: object): boolean;
  * @param {unknown} value
  * @returns true if value is a non null object
  */
-declare function isObject(value: unknown): boolean;
+declare function isObject(value: unknown): value is object;
 /**
  * removes an element from an array. If the key is not passed a reference comparison is used.
  *
@@ -495,8 +494,8 @@ declare function registerGlobalFetchErrorHandler(handler: IGlobalFetchHandler): 
 declare function getRegisteredGlobalFetchErrorHandler(): IGlobalFetchHandler;
 
 declare function OidcBarerProxyProvider(props: {
-    children: React$1.ReactNode;
-}): React$1.JSX.Element;
+    children: React__default__default__default.ReactNode;
+}): React__default__default__default.JSX.Element;
 declare function useOidcBaerer(): string;
 
 declare enum SuspenseStatus {
@@ -541,4 +540,5 @@ declare const updatePromiseCache: Map<string, SuspendedPromise<any>>;
  */
 declare function useUpdate<T extends object>(props: UpdateDataPropsAsync<T>): T | undefined;
 
-export { type BaseEntity, ConfirmationDialog, type CustomHeader, type DataContextType, type DataProps, ErrorReportDialog, type ErrorResponseHandler, type FetchErrorHandler, type FetchExceptionHandler, If, type LoadDataProps, type LoadDataPropsAsync, Markdown, NameValueText, OidcBarerProxyProvider, type RestMethod, type SetStateWithCallback, type StaticDataProps, type SuspendedPromise, SuspenseStatus, type UpdateDataProps, type UpdateDataPropsAsync, type UrlProps, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, registerGlobalFetchErrorHandler, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export { ConfirmationDialog, ErrorReportDialog, If, Markdown, NameValueText, OidcBarerProxyProvider, SuspenseStatus, areArraysEqual, cloneData, compareDate, createCommonHeaders, createPartialObject, createPartialWithIdAndOptLock, downloadTxtFile, enumKeys, getLatestDateof, getRegisteredGlobalFetchErrorHandler, guidGenerator, insertIntoArray, isArray, isObject, nameof, queryPromiseCache, registerGlobalFetchErrorHandler, removeFromArray, suspend, updatePromiseCache, useDebugMode, useDefaultProps, useDidMount, useEffectDebugger, useFetch, useFirstRender, useOidcBaerer, useOnScreen, usePersistedReducer, usePersistedRef, usePersistedState, usePersistedStateOneway, usePrevious, usePropsChanged, useQuery, useUpdate, useWillUnmount };
+export type { BaseEntity, CustomHeader, DataContextType, DataProps, ErrorResponseHandler, FetchErrorHandler, FetchExceptionHandler, LoadDataProps, LoadDataPropsAsync, RestMethod, SetStateWithCallback, StaticDataProps, SuspendedPromise, UpdateDataProps, UpdateDataPropsAsync, UrlProps };
